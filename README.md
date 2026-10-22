@@ -13,7 +13,7 @@ A source-linked comparison of nationally available, FDIC-insured savings account
 | Page | What it shows |
 |---|---|
 | **Overview** | Key findings, best 1-year return at $250,000, verification status |
-| **Accounts** | All 17 products: headline APY, post-intro APY, minimums, fees, FDIC certificate, app status, official source |
+| **Accounts** | All 18 products: headline APY, post-intro APY, minimums, fees, FDIC certificate, app status, official source |
 | **Returns** | Interest by deposit size ($1k–$1M), 1-year and 5-year, blended APY, winner at each tier |
 | **Promotions** | Cash bonuses, promo APYs, referral offers, deadlines, exact conditions |
 | **FDIC coverage** | $250k rule, ownership categories, insured vs uninsured amounts, programme coverage |
@@ -65,18 +65,18 @@ data/
 scripts/
   build_site.py      generates docs/ from data/ (all return math lives here)
   verify_data.py     integrity checks: sources, dates, links, no literal "None"/"NaN"
-docs/                the published site (GitHub Pages: main branch, /docs)
+*.html, assets/      the published site (GitHub Pages: main branch, root)
 COORDINATION.md      shared task board and verification log
 ```
 
 ## Rebuild
 
 ```bash
-python3 scripts/build_site.py    # data/*.json -> docs/*.html
+python3 scripts/build_site.py    # data/*.json -> *.html at repo root
 python3 scripts/verify_data.py   # fails on missing sources or broken links
 ```
 
-CI (`.github/workflows/verify.yml`) runs both on every push and fails if `docs/` is out of date with `data/`.
+CI (`.github/workflows/verify.yml`) runs both on every push and fails if the published pages are out of date with `data/`.
 
 ## Method summary
 

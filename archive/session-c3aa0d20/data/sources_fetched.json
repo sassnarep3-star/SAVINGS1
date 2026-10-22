@@ -1,0 +1,203 @@
+{
+  "meta": {
+    "note": "Every external link used on the site must appear here. 'fetched' means the page was retrieved and read during this session; 'linked-from-official-page' means the URL is printed as a link on an official page that was fetched (used only for security-program links); 'pattern' means a URL family generated from verified FDIC data rather than fetched one by one.",
+    "fetched_on": [
+      "2026-10-21",
+      "2026-10-22"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://www.chase.com/personal/savings/savings-account",
+      "method": "fetched",
+      "used_for": "Chase Savings: $5/$300 fee and five waiver routes, no minimum to open, monthly compounding, FDIC statement, Chase Mobile app, online opening requirements"
+    },
+    {
+      "url": "https://www.chase.com/personal/savings/savings-account/interest-rates",
+      "method": "fetched",
+      "used_for": "Chase: proof that the rate table is ZIP-gated (no APY value could be read)"
+    },
+    {
+      "url": "https://www.bankofamerica.com/deposits/savings/savings-accounts/",
+      "method": "fetched",
+      "used_for": "Bank of America: $XXXX placeholders for fee/rate, six-month new-account fee waiver and its conditions, FDIC banner, mobile app badges"
+    },
+    {
+      "url": "https://www.wellsfargo.com/savings-cds/way2save/",
+      "method": "fetched",
+      "used_for": "Wells Fargo Way2Save: 0.01% APY (CA 94105 location shown), $25 minimum opening deposit, $5 fee and waivers, daily compounding, ID and age rules"
+    },
+    {
+      "url": "https://www.citi.com/banking/savings-account",
+      "method": "fetched",
+      "used_for": "Citi Savings: $4.50 monthly fee, $500 average-balance waiver, 90-day zero-balance closure, 65,000+ fee-free ATMs, Citi Mobile app, rate tokens that are location/tier-driven"
+    },
+    {
+      "url": "https://www.usbank.com/bank-accounts/savings-accounts.html",
+      "method": "fetched",
+      "used_for": "U.S. Bank: Bank Smartly Savings overview, $25 minimum opening deposit, $5 monthly fee, mobile and security claims, FDIC insurance"
+    },
+    {
+      "url": "https://www.usbank.com/bank-accounts/savings-accounts/bank-smartly-savings/savings-account-interest-rates.html",
+      "method": "fetched",
+      "used_for": "U.S. Bank: exact APY table (0.05% standard; 1.00%/2.00%/3.50% relationship tiers), effective 2026-10-21 for ZIP 55402"
+    },
+    {
+      "url": "https://www.pnc.com/en/personal-banking/banking/savings/standard-savings.html",
+      "method": "fetched",
+      "used_for": "PNC Standard Savings: $0 online minimum, $1 to earn interest, $5 fee and waivers, 6 restricted transfers, PNC Mobile app, FDIC statement"
+    },
+    {
+      "url": "https://www.pnc.com/en/personal-banking/banking/deposit-rates/standard-savings.html",
+      "method": "fetched",
+      "used_for": "PNC: exact APY table by balance and TotalRewards tier, dated 10/21/2026 for ZIP 15222; $5,000,000 aggregate balance note"
+    },
+    {
+      "url": "https://www.td.com/us/en/personal-banking/savings-accounts",
+      "method": "fetched",
+      "used_for": "TD Bank: Simple/Signature fee and waiver schedules, $0 opening deposit, 45-day funding rule, opening-document requirements"
+    },
+    {
+      "url": "https://www.td.com/us/en/personal-banking/savings-accounts/rates",
+      "method": "fetched",
+      "used_for": "TD Bank: proof the rate table renders empty without a location; APY disclosure date 10/21/2026"
+    },
+    {
+      "url": "https://www.ally.com/bank/online-savings-account/",
+      "method": "fetched",
+      "used_for": "Ally Bank: 3.1% APY 'correct as of 10/21/26', no monthly fee or minimum balance, 10 withdrawals per cycle, daily compounding, FDIC statement"
+    },
+    {
+      "url": "https://www.ally.com/security/",
+      "method": "fetched",
+      "used_for": "Ally: multi-factor authentication statement and the online/mobile security guarantee"
+    },
+    {
+      "url": "https://www.marcus.com/us/en/savings/high-yield-savings",
+      "method": "fetched",
+      "used_for": "Marcus: 3.50% APY as of October 21, 2026, no fees or minimum deposit, same-day transfers, referral promo illustration (3.75%)"
+    },
+    {
+      "url": "https://www.marcus.com/us/en/faqs",
+      "method": "fetched",
+      "used_for": "Marcus: $3,000,000 per-owner and $1,000,000 per-account deposit limits, withdrawal methods, Marcus app reference"
+    },
+    {
+      "url": "https://www.americanexpress.com/en-us/banking/online-savings/account/",
+      "method": "fetched",
+      "used_for": "Amex: 3.20% APY accurate as of 10/21/2026, no minimum balance or monthly fee, $250,000 per depositor/per bank/per ownership category FDIC statement, account-opening steps"
+    },
+    {
+      "url": "https://www.capitalone.com/bank/savings-accounts/",
+      "method": "fetched",
+      "used_for": "Capital One: 3.20% variable APY for 360 Performance Savings, no fees or minimums, FDIC and Discover-combination note, separate 11-month CD at 4.40%"
+    },
+    {
+      "url": "https://www.capitalone.com/bank/savings-accounts/online-performance-savings-account/",
+      "method": "fetched",
+      "used_for": "Capital One: APY effective date 10/21/2026, 60-day funding window, account-opening data requirements, no ATM withdrawals, up to 10 POD beneficiaries, 'NaN APY' rendering"
+    },
+    {
+      "url": "https://www.capitalone.com/bank/security-fraud-protection/",
+      "method": "linked-from-official-page",
+      "used_for": "Capital One: security and fraud-protection program link printed on the 360 Performance Savings page"
+    },
+    {
+      "url": "https://www.synchrony.com/banking/products/hys-core",
+      "method": "fetched",
+      "used_for": "Synchrony: 3.55% headline APY as of 10/21/2026, competing 2.85% figure in the calculator, no minimums or fees, ATM/mobile-deposit limits, FDIC statement, app ratings"
+    },
+    {
+      "url": "https://banking.us.barclays/tiered-savings.html",
+      "method": "fetched",
+      "used_for": "Barclays Tiered Savings: full APY tier table dated 10/07/2026, $1M per-account / 3-account limits, $200 bonus terms and deadline"
+    },
+    {
+      "url": "https://banking.us.barclays/online-savings.html",
+      "method": "fetched",
+      "used_for": "Barclays Online Savings: 3.20% APY, no monthly fees, unlimited withdrawals, funding and hold rules"
+    },
+    {
+      "url": "https://banking.us.barclays/about-barclays.html",
+      "method": "fetched",
+      "used_for": "Barclays: Wilmington DE headquarters, 'digital banking solutions' and 'U.S. digital banking platform' language (no native app named)"
+    },
+    {
+      "url": "https://www.sofi.com/banking/high-yield-savings-account/",
+      "method": "fetched",
+      "used_for": "SoFi: 3.30% base APY as of 10/20/26, 1.10% six-month boost to 4.40%, $50/$400 direct-deposit bonus, $0 fees, no withdrawal limit, $3M partner-network FDIC claim"
+    },
+    {
+      "url": "https://www.fdic.gov/national-rates-and-rate-caps",
+      "method": "fetched",
+      "used_for": "FDIC National Rates and Rate Caps \u2013 October 2026 (revised 2026-10-19): savings national rate 0.38%, used as the benchmark"
+    },
+    {
+      "url": "https://www.fdic.gov/resources/deposit-insurance",
+      "method": "fetched",
+      "used_for": "FDIC: deposits automatically insured to at least $250,000 at each FDIC-insured bank; BankFind and EDIE links"
+    },
+    {
+      "url": "https://www.fdic.gov/resources/deposit-insurance/faq",
+      "method": "fetched",
+      "used_for": "FDIC FAQ: $250,000 per depositor, per FDIC-insured bank, per ownership category; insurance is dollar-for-dollar including accrued interest"
+    },
+    {
+      "url": "https://www.fdic.gov/resources/deposit-insurance/understanding-deposit-insurance",
+      "method": "fetched",
+      "used_for": "FDIC: list of ownership categories and the rule that deposits in the same category at the same bank are added together"
+    },
+    {
+      "url": "https://www.fdic.gov/resources/deposit-insurance/brochures/insured-deposits",
+      "method": "fetched",
+      "used_for": "FDIC: $1,250,000 maximum coverage per trust owner with five or more beneficiaries (rule effective April 1, 2024), covering POD/ITF, revocable and irrevocable trusts"
+    },
+    {
+      "url": "https://banks.data.fdic.gov/api/institutions",
+      "method": "fetched",
+      "used_for": "FDIC institutions API: certificate number, active status, total assets, domestic deposits and location for all 14 charters, index dated 2026-10-16"
+    },
+    {
+      "url": "https://edie.fdic.gov/",
+      "method": "linked-from-official-page",
+      "used_for": "FDIC Electronic Deposit Insurance Estimator, linked from the FDIC deposit-insurance page and the Amex FDIC disclosure"
+    },
+    {
+      "url": "https://banks.data.fdic.gov/bankfind-suite/bankfind",
+      "method": "linked-from-official-page",
+      "used_for": "FDIC BankFind Suite, the official tool to confirm a bank is FDIC-insured"
+    },
+    {
+      "url": "https://github.com/sassnarep3-star/SAVINGS1",
+      "method": "fetched",
+      "used_for": "Repository audit: main contained only a one-line README.md at commit e6a9e13; no prior data, site or claims"
+    },
+    {
+      "url": "https://api.github.com/repos/sassnarep3-star/SAVINGS1/pages",
+      "method": "fetched",
+      "used_for": "GitHub Pages configuration: build_type legacy, source main:/, https enforced, site public"
+    },
+    {
+      "url": "https://api.github.com/repos/sassnarep3-star/SAVINGS1",
+      "method": "fetched",
+      "used_for": "Repository metadata: default branch main, public visibility, Pages enabled"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/{cert}",
+      "method": "pattern",
+      "used_for": "Per-bank FDIC BankFind detail page, generated from the certificate number verified in the FDIC institutions API"
+    }
+  ],
+  "rejected_sources": [
+    {
+      "type": "rate aggregators and news sites",
+      "reason": "Search results for savings rates returned NerdWallet, Forbes Advisor, Business Insider, GOBankingRates and similar pages. None of their numbers are used, because the requirement is an official first-party source. They were consulted only to discover official URLs (for example the citi.com savings page path)."
+    },
+    {
+      "type": "Marcus / SoFi / Synchrony competitor tables",
+      "reason": "These banks publish comparison tables quoting competitors' rates (for example 'Chase 0.02%'). Those figures are marketing quotes about other banks, not those banks' own publications, so they are excluded."
+    }
+  ]
+}
