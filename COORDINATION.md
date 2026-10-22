@@ -162,7 +162,10 @@ After PR #2 merged, `main` moved on with PRs #3, #5 and #6. Merging `main` back 
 | PR #5 | https://github.com/sassnarep3-star/SAVINGS1/pull/5 — merged (`6bc6e36`) |
 | PR #6 | https://github.com/sassnarep3-star/SAVINGS1/pull/6 — merged (`4d5f7d8`) |
 | PR #7 | https://github.com/sassnarep3-star/SAVINGS1/pull/7 — merged (`88e95e7`), security review added to the primary site |
-| Reconciliation PR | [#8](https://github.com/sassnarep3-star/SAVINGS1/pull/8) — merged 2026-10-22T00:20:19Z as `9edb4d3`, CI `verify` green before merge |
+| PR #8 | https://github.com/sassnarep3-star/SAVINGS1/pull/8 — merged 2026-10-22T00:20:19Z (`9edb4d3`), cross-check published at `/verified/` |
+| PR #9 | https://github.com/sassnarep3-star/SAVINGS1/pull/9 — merged (`4f65343`), primary-site security table |
+| PR #10 | https://github.com/sassnarep3-star/SAVINGS1/pull/10 — merged (`c29522c`), deploy record for the reconciliation |
+| Reconciliation PR | [#8](https://github.com/sassnarep3-star/SAVINGS1/pull/8) — merged 2026-10-22T00:20:19Z as `9edb4d3`, CI `verify` green before merge; follow-up [#10](https://github.com/sassnarep3-star/SAVINGS1/pull/10) merged as `c29522c` |
 | GitHub Pages | `main` branch, root (`/`), legacy build, HTTPS enforced |
 | Live URL | https://sassnarep3-star.github.io/SAVINGS1/ · cross-check at `/verified/` |
-| Deploy status | Pages build for `9edb4d3` completed with status `built` at 00:20:21Z; `/` (primary) and `/verified/` (cross-check) both serve |
+| Deploy status | Pages builds for `9edb4d3` and `c29522c` completed with status `built`; `/` (primary) and `/verified/` (cross-check) both serve |
