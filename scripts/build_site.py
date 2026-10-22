@@ -356,7 +356,7 @@ def build_index():
 <div class="tablewrap"><table>
 <thead><tr><th>#</th><th>Bank / account</th><th class="num">Headline APY</th><th class="num">Post-intro APY</th><th class="num">Year-1 interest</th><th class="num">Blended APY</th><th>Official source</th></tr></thead>
 <tbody>{rows}</tbody></table></div>
-<p class="legend">Full 16-account table on <a href="accounts.html">Accounts</a> · all deposit sizes on <a href="returns.html">Returns</a> · bonus terms on <a href="promotions.html">Promotions</a>.</p>
+<p class="legend">Full {len(ACCOUNTS)}-account table on <a href="accounts.html">Accounts</a> · all deposit sizes on <a href="returns.html">Returns</a> · bonus terms on <a href="promotions.html">Promotions</a>.</p>
 
 <h2>How to read this dashboard</h2>
 <div class="grid g2">

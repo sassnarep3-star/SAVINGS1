@@ -121,9 +121,9 @@ _None outstanding. PR #2 (session `arena-c3aa0d20`) integrated as above._
 | Item | Value |
 |---|---|
 | Session branch | `arena/830079cd-savings1` |
-| PR | #1 (merged) · #3 (this branch, root-publish fix) |
-| Merge result | PR #1 merged to main at 2026-10-22T00:10:33Z (commit `442a5e1`); PR #3 pending |
-| Parallel session | PR #2 (`arena/c3aa0d20-savings1`) archived + integrated; closed with explanation |
+| PR #1 | https://github.com/sassnarep3-star/SAVINGS1/pull/1 — merged 2026-10-22T00:10:33Z as `442a5e1` |
+| PR #3 | https://github.com/sassnarep3-star/SAVINGS1/pull/3 — merged 2026-10-22T00:14:00Z as `9f50b91` (moves output from `docs/` to repo root) |
+| Parallel session | PR #2 (`arena/c3aa0d20-savings1`) merged as `4640e47` with its tree archived; closed |
 | GitHub Pages | main branch, root (`/`) |
 | Live URL | https://sassnarep3-star.github.io/SAVINGS1/ |
-| Deploy status | _recorded after deploy_ |
+| Deploy status | `built` for commit `9f50b91` at 2026-10-22T00:13:48Z; root document and `accounts.html` verified live |
