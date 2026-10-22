@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FDIC coverage · SAVINGS1</title>
+<meta name="description" content="Verified comparison of national-bank savings accounts: APYs, returns by deposit size, FDIC coverage, promotions, and flagged irregularities.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%8F%A6</text></svg>">
+</head>
+<body>
+<header class="site"><div class="wrap"><nav class="nav">
+<a class="brand" href="index.html">SAVINGS<span>1</span></a>
+<a class="lnk" href="index.html">Overview</a><a class="lnk" href="accounts.html">Accounts</a><a class="lnk" href="returns.html">Returns</a><a class="lnk" href="promotions.html">Promotions</a><a class="lnk active" href="fdic.html">FDIC coverage</a><a class="lnk" href="analysis.html">Analysis</a><a class="lnk" href="sources.html">Sources</a><a class="lnk" href="flagged.html">Flagged for review</a><a class="lnk" href="method.html">Method</a>
+<span class="spacer"></span>
+</nav></div></header>
+<main><div class="wrap">
+<h1>FDIC insurance, by certificate number</h1><p class='lede'>What the $250,000 limit actually covers, how ownership categories interact, and which banks offer expanded programme coverage.</p>
+<div class="banner"><div><strong>FDIC coverage is $250,000 per depositor, per insured bank, per ownership category</strong> — not $250,000 per account. All deposits in the same category at the same bank are added together. Source: <a href="https://www.fdic.gov/resources/deposit-insurance/understanding-deposit-insurance" target="_blank" rel="noopener">FDIC, Understanding Deposit Insurance</a>.</div></div>
+
+<div class="grid g3">
+  <div class="card kpi"><div class="label">Single-owner limit</div><div class="value">$250,000</div><div class="sub">per depositor, per bank</div></div>
+  <div class="card kpi"><div class="label">Joint-account limit</div><div class="value">$500,000</div><div class="sub">two owners, $250,000 each</div></div>
+  <div class="card kpi"><div class="label">Coverage basis</div><div class="value" style="font-size:20px">Ownership category</div><div class="sub">same-category balances are combined</div></div>
+</div>
+
+<h2>How much of a deposit is insured at one bank</h2>
+<div class="tablewrap"><table>
+<thead><tr><th class="num">Deposit</th><th class="num">Insured (single)</th><th class="num">Uninsured excess</th><th class="num">Insured (joint)</th><th class="num">Banks needed for full coverage</th></tr></thead>
+<tbody><tr><td class="num"><b>$250,000</b></td><td class="num">$250,000</td>
+<td class="num">$0</td><td class="num">$250,000</td><td class="num">1 banks</td></tr><tr><td class="num"><b>$500,000</b></td><td class="num">$250,000</td>
+<td class="num">$250,000</td><td class="num">$500,000</td><td class="num">2 banks</td></tr><tr><td class="num"><b>$750,000</b></td><td class="num">$250,000</td>
+<td class="num">$500,000</td><td class="num">$500,000</td><td class="num">3 banks</td></tr><tr><td class="num"><b>$1,000,000</b></td><td class="num">$250,000</td>
+<td class="num">$750,000</td><td class="num">$500,000</td><td class="num">4 banks</td></tr><tr><td class="num"><b>$2,000,000</b></td><td class="num">$250,000</td>
+<td class="num">$1,750,000</td><td class="num">$500,000</td><td class="num">8 banks</td></tr><tr><td class="num"><b>$5,000,000</b></td><td class="num">$250,000</td>
+<td class="num">$4,750,000</td><td class="num">$500,000</td><td class="num">20 banks</td></tr></tbody></table></div>
+<p class="small">A joint account doubles the limit only because two depositors each have a $250,000 share; it does not double the per-person limit. Different ownership categories at the <i>same</i> bank can also extend coverage.</p>
+
+<h2>Ownership categories the FDIC recognises</h2>
+<div class="card"><ul class="tight"><li>Single Accounts</li><li>Joint Accounts</li><li>Certain Retirement Accounts (e.g., IRAs)</li><li>Trust Accounts</li><li>Employee Benefit Plan Accounts</li><li>Corporation / Partnership / Unincorporated Association Accounts</li><li>Government Accounts</li></ul>
+<p class="small" style="margin-top:10px">Balances held in the same category are added together. A single account plus a joint account plus an IRA at one bank can therefore be insured above $250,000 — but the categories must genuinely apply. The FDIC's EDIE tool calculates a specific situation: <a href="https://edie.fdic.gov/" target="_blank" rel="noopener">edie.fdic.gov</a>.</p></div>
+
+<h2>Bank-by-bank FDIC status</h2>
+<p class="small">Certificate numbers checked directly against the FDIC's institution API on 2026-10-22. The API index is dated institutions_20261016090006.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Bank</th><th class="num">FDIC cert</th><th>Status</th><th class="num">Base limit</th><th class="num">Expanded coverage</th><th>Mechanism</th><th>Record</th></tr></thead>
+<tbody><tr><td><b>Axos Bank</b></td><td class="num">35546</td><td><span class="badge ok">active</span></td>
+<td class="num">$250,000</td><td class="num">$2,500,000</td><td class="small">Axos Insured Deposit Program</td><td><a href="https://api.fdic.gov/banks/institutions?filters=CERT:35546" target="_blank" rel="noopener">FDIC API</a></td></tr><tr><td><b>E*TRADE (Morgan Stanley Private Bank, N.A.)</b></td><td class="num">34221</td><td><span class="badge ok">active</span></td>
+<td class="num">$250,000</td><td class="num">$500,000</td><td class="small">Up to $500,000 'if certain conditions are met' (conditions not disclosed on page reviewed)</td><td><a href="https://api.fdic.gov/banks/institutions?filters=CERT:34221" target="_blank" rel="noopener">FDIC API</a></td></tr><tr><td><b>Openbank (Santander Bank, N.A.)</b></td><td class="num">29950</td><td><span class="badge ok">active</span></td>
+<td class="num">$250,000</td><td class="num"><span class="unv">none stated</span></td><td class="small">None; Openbank and Santander deposits are combined and not separately insured</td><td><a href="https://api.fdic.gov/banks/institutions?filters=CERT:29950" target="_blank" rel="noopener">FDIC API</a></td></tr><tr><td><b>SoFi Bank, N.A.</b></td><td class="num">26881</td><td><span class="badge ok">active</span></td>
+<td class="num">$250,000</td><td class="num">$3,000,000</td><td class="small">SoFi Insured Deposit Program (participating banks)</td><td><a href="https://api.fdic.gov/banks/institutions?filters=CERT:26881" target="_blank" rel="noopener">FDIC API</a></td></tr><tr><td><b>CIT Bank (First-Citizens Bank &amp; Trust Company)</b></td><td class="num">11063</td><td><span class="badge ok">active</span></td>
+<td class="num">$250,000</td><td class="num"><span class="unv">none stated</span></td><td class="small">None; all First Citizens divisions combined</td><td><a href="https://api.fdic.gov/banks/institutions?filters=CERT:11063" target="_blank" rel="noopener">FDIC API</a></td></tr><tr><td><b>EverBank, N.A.</b></td><td class="num">34775</td><td><span class="badge ok">active</span></td>
+<td class="num">$250,000</td><td class="num"><span class="unv">none stated</span></td><td class="small">None stated on product page</td><td><a href="https://api.fdic.gov/banks/institutions?filters=CERT:34775" target="_blank" rel="noopener">FDIC API</a></td></tr><tr><td><b>Barclays Bank Delaware</b></td><td class="num">57203</td><td><span class="badge ok">active</span></td>
+<td class="num">$250,000</td><td class="num"><span class="unv">none stated</span></td><td class="small">None stated on product page</td><td><a href="https://api.fdic.gov/banks/institutions?filters=CERT:57203" target="_blank" rel="noopener">FDIC API</a></td></tr><tr><td><b>Synchrony Bank</b></td><td class="num">27314</td><td><span class="badge ok">active</span></td>
+<td class="num">$250,000</td><td class="num"><span class="unv">none stated</span></td><td class="small">None stated</td><td><a href="https://api.fdic.gov/banks/institutions?filters=CERT:27314" target="_blank" rel="noopener">FDIC API</a></td></tr><tr><td><b>Marcus by Goldman Sachs (Goldman Sachs Bank USA)</b></td><td class="num">33124</td><td><span class="badge ok">active</span></td>
+<td class="num">$250,000</td><td class="num"><span class="unv">none stated</span></td><td class="small">None stated</td><td><a href="https://api.fdic.gov/banks/institutions?filters=CERT:33124" target="_blank" rel="noopener">FDIC API</a></td></tr><tr><td><b>American Express National Bank</b></td><td class="num">27471</td><td><span class="badge ok">active</span></td>
+<td class="num">$250,000</td><td class="num"><span class="unv">none stated</span></td><td class="small">None stated</td><td><a href="https://api.fdic.gov/banks/institutions?filters=CERT:27471" target="_blank" rel="noopener">FDIC API</a></td></tr><tr><td><b>Capital One, N.A.</b></td><td class="num">4297</td><td><span class="badge ok">active</span></td>
+<td class="num">$250,000</td><td class="num"><span class="unv">none stated</span></td><td class="small">Capital One and Discover deposits combined since 5/18/2025</td><td><a href="https://api.fdic.gov/banks/institutions?filters=CERT:4297" target="_blank" rel="noopener">FDIC API</a></td></tr><tr><td><b>Ally Bank</b></td><td class="num">57803</td><td><span class="badge ok">active</span></td>
+<td class="num">$250,000</td><td class="num"><span class="unv">none stated</span></td><td class="small">None stated</td><td><a href="https://api.fdic.gov/banks/institutions?filters=CERT:57803" target="_blank" rel="noopener">FDIC API</a></td></tr><tr><td><b>JPMorgan Chase Bank, N.A.</b></td><td class="num">628</td><td><span class="badge ok">active</span></td>
+<td class="num">$250,000</td><td class="num"><span class="unv">none stated</span></td><td class="small">None stated</td><td><a href="https://api.fdic.gov/banks/institutions?filters=CERT:628" target="_blank" rel="noopener">FDIC API</a></td></tr><tr><td><b>Bank of America, N.A.</b></td><td class="num">3510</td><td><span class="badge ok">active</span></td>
+<td class="num">$250,000</td><td class="num"><span class="unv">none stated</span></td><td class="small">None stated</td><td><a href="https://api.fdic.gov/banks/institutions?filters=CERT:3510" target="_blank" rel="noopener">FDIC API</a></td></tr><tr><td><b>Wells Fargo Bank, N.A.</b></td><td class="num">3511</td><td><span class="badge ok">active</span></td>
+<td class="num">$250,000</td><td class="num"><span class="unv">none stated</span></td><td class="small">None stated</td><td><a href="https://api.fdic.gov/banks/institutions?filters=CERT:3511" target="_blank" rel="noopener">FDIC API</a></td></tr><tr><td><b>Citibank, N.A.</b></td><td class="num">7213</td><td><span class="badge ok">active</span></td>
+<td class="num">$250,000</td><td class="num"><span class="unv">none stated</span></td><td class="small">None stated</td><td><a href="https://api.fdic.gov/banks/institutions?filters=CERT:7213" target="_blank" rel="noopener">FDIC API</a></td></tr><tr><td><b>Discover Bank</b></td><td class="num">5649</td><td><span class="badge no">inactive</span></td>
+<td class="num">—</td><td class="num"><span class="unv">none stated</span></td><td class="small">Certificate inactive; merged into Capital One</td><td><a href="https://api.fdic.gov/banks/institutions?filters=CERT:5649" target="_blank" rel="noopener">FDIC API</a></td></tr></tbody></table></div>
+
+<h2>If the goal is the maximum insured balance</h2>
+<div class="grid g2">
+  <div class="card"><h3 style="margin-top:0">Option A: one bank per $250,000</h3>
+  <p class="small">Straightforward and fully transparent. At $1,000,000, four banks at $250,000 each are fully covered in a single ownership category. This dashboard's return tables let you pick the best payer at exactly $250,000.</p></div>
+  <div class="card"><h3 style="margin-top:0">Option B: programme coverage at one bank</h3>
+  <p class="small">Axos (up to $2.5M) and SoFi (up to $3M) place deposits with participating banks through insured deposit programmes. The FDIC insurance is real, but it depends on those partner banks and the programme's terms — it is not extra insurance issued by the host bank. E*TRADE advertises $500,000 without disclosing the conditions; that item is flagged.</p></div>
+</div>
+<div class="note"><b>Practical warning:</b> $500,000 in a single-owner savings account at one bank leaves $250,000 uninsured, no matter which bank it is or how high its APY is. Above $250,000, the ranking in <a href="returns.html">Returns</a> should be applied per bank, not to the whole balance.</div>
+
+</div></main>
+<footer><div class="wrap">
+<p><strong>SAVINGS1</strong> — independent, source-linked comparison built 2026-10-22. Account opening date used for all return math: 2026-10-22.</p>
+<p>Rates change daily. Every figure links to the official page it came from; blank cells are unverified and listed on the <a href="flagged.html">Flagged for review</a> page. This is research, not financial advice.</p>
+</div></footer>
+<script src="assets/app.js"></script>
+</body></html>

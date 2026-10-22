@@ -1,0 +1,45 @@
+{
+  "as_of": "2026-10-22",
+  "rules": {
+    "standard_limit": 250000,
+    "basis": "per depositor, per FDIC-insured bank, per account ownership category",
+    "joint_limit": 500000,
+    "source": "https://www.fdic.gov/resources/deposit-insurance/understanding-deposit-insurance",
+    "ownership_categories": [
+      "Single Accounts",
+      "Joint Accounts",
+      "Certain Retirement Accounts (e.g., IRAs)",
+      "Trust Accounts",
+      "Employee Benefit Plan Accounts",
+      "Corporation / Partnership / Unincorporated Association Accounts",
+      "Government Accounts"
+    ],
+    "notes": [
+      "All deposits in the same ownership category at the same bank are added together when determining coverage.",
+      "Coverage can exceed $250,000 at one bank by using different ownership categories (for example a single account plus a joint account plus an IRA).",
+      "Non-deposit products (stocks, bonds, mutual funds, annuities, crypto) are not FDIC-insured.",
+      "The FDIC's EDIE tool estimates coverage for a specific situation."
+    ]
+  },
+  "banks": [
+    {"bank": "Axos Bank", "cert": 35546, "active": true, "base_limit": 250000, "expanded_limit": 2500000, "expanded_mechanism": "Axos Insured Deposit Program", "source": "https://api.fdic.gov/banks/institutions?filters=CERT:35546", "product_source": "https://www.axosbank.com/personal/bank/axos-one"},
+    {"bank": "E*TRADE (Morgan Stanley Private Bank, N.A.)", "cert": 34221, "active": true, "base_limit": 250000, "expanded_limit": 500000, "expanded_mechanism": "Up to $500,000 'if certain conditions are met' (conditions not disclosed on page reviewed)", "source": "https://api.fdic.gov/banks/institutions?filters=CERT:34221", "product_source": "https://us.etrade.com/promo/savings"},
+    {"bank": "Openbank (Santander Bank, N.A.)", "cert": 29950, "active": true, "base_limit": 250000, "expanded_limit": null, "expanded_mechanism": "None; Openbank and Santander deposits are combined and not separately insured", "source": "https://api.fdic.gov/banks/institutions?filters=CERT:29950", "product_source": "https://www.openbank.us/banking/high-yield-savings-account/"},
+    {"bank": "SoFi Bank, N.A.", "cert": 26881, "active": true, "base_limit": 250000, "expanded_limit": 3000000, "expanded_mechanism": "SoFi Insured Deposit Program (participating banks)", "source": "https://api.fdic.gov/banks/institutions?filters=CERT:26881", "product_source": "https://www.sofi.com/banking/high-yield-savings-account/"},
+    {"bank": "CIT Bank (First-Citizens Bank & Trust Company)", "cert": 11063, "active": true, "base_limit": 250000, "expanded_limit": null, "expanded_mechanism": "None; all First Citizens divisions combined", "source": "https://api.fdic.gov/banks/institutions?filters=CERT:11063", "product_source": "https://www.cit.com/cit-bank/platinum-savings/boost"},
+    {"bank": "EverBank, N.A.", "cert": 34775, "active": true, "base_limit": 250000, "expanded_limit": null, "expanded_mechanism": "None stated on product page", "source": "https://api.fdic.gov/banks/institutions?filters=CERT:34775", "product_source": "https://www.everbank.com/banking/performance-savings"},
+    {"bank": "Barclays Bank Delaware", "cert": 57203, "active": true, "base_limit": 250000, "expanded_limit": null, "expanded_mechanism": "None stated on product page", "source": "https://api.fdic.gov/banks/institutions?filters=CERT:57203", "product_source": "https://banking.us.barclays/tiered-savings.html"},
+    {"bank": "Synchrony Bank", "cert": 27314, "active": true, "base_limit": 250000, "expanded_limit": null, "expanded_mechanism": "None stated", "source": "https://api.fdic.gov/banks/institutions?filters=CERT:27314", "product_source": "https://www.synchrony.com/banking/products/hys-core"},
+    {"bank": "Marcus by Goldman Sachs (Goldman Sachs Bank USA)", "cert": 33124, "active": true, "base_limit": 250000, "expanded_limit": null, "expanded_mechanism": "None stated", "source": "https://api.fdic.gov/banks/institutions?filters=CERT:33124", "product_source": "https://www.marcus.com/us/en/savings/high-yield-savings"},
+    {"bank": "American Express National Bank", "cert": 27471, "active": true, "base_limit": 250000, "expanded_limit": null, "expanded_mechanism": "None stated", "source": "https://api.fdic.gov/banks/institutions?filters=CERT:27471", "product_source": "https://www.americanexpress.com/en-us/banking/online-savings/high-yield-savings-account/"},
+    {"bank": "Capital One, N.A.", "cert": 4297, "active": true, "base_limit": 250000, "expanded_limit": null, "expanded_mechanism": "Capital One and Discover deposits combined since 5/18/2025", "source": "https://api.fdic.gov/banks/institutions?filters=CERT:4297", "product_source": "https://www.capitalone.com/bank/savings-accounts/online-performance-savings-account/"},
+    {"bank": "Ally Bank", "cert": 57803, "active": true, "base_limit": 250000, "expanded_limit": null, "expanded_mechanism": "None stated", "source": "https://api.fdic.gov/banks/institutions?filters=CERT:57803", "product_source": "https://www.ally.com/bank/view-rates/"},
+    {"bank": "JPMorgan Chase Bank, N.A.", "cert": 628, "active": true, "base_limit": 250000, "expanded_limit": null, "expanded_mechanism": "None stated", "source": "https://api.fdic.gov/banks/institutions?filters=CERT:628", "product_source": "https://www.chase.com/personal/savings/savings-account"},
+    {"bank": "Bank of America, N.A.", "cert": 3510, "active": true, "base_limit": 250000, "expanded_limit": null, "expanded_mechanism": "None stated", "source": "https://api.fdic.gov/banks/institutions?filters=CERT:3510", "product_source": "https://www.bankofamerica.com/deposits/savings/savings-accounts/"},
+    {"bank": "Wells Fargo Bank, N.A.", "cert": 3511, "active": true, "base_limit": 250000, "expanded_limit": null, "expanded_mechanism": "None stated", "source": "https://api.fdic.gov/banks/institutions?filters=CERT:3511", "product_source": "https://www.wellsfargo.com/savings-cds/way2save/"},
+    {"bank": "Citibank, N.A.", "cert": 7213, "active": true, "base_limit": 250000, "expanded_limit": null, "expanded_mechanism": "None stated", "source": "https://api.fdic.gov/banks/institutions?filters=CERT:7213", "product_source": "https://www.citi.com/banking/savings-account"},
+    {"bank": "Discover Bank", "cert": 5649, "active": false, "base_limit": null, "expanded_limit": null, "expanded_mechanism": "Certificate inactive; merged into Capital One", "source": "https://api.fdic.gov/banks/institutions?filters=CERT:5649", "product_source": "https://www.discover.com/online-banking/savings-accounts/"}
+  ],
+  "api_index": "institutions_20261016090006 (created 2026-10-16T11:58:03Z)",
+  "api_note": "Certificate status was checked against api.fdic.gov on 2026-10-22. The API's institution index is dated 2026-10-16."
+}
