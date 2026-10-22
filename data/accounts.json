@@ -776,9 +776,9 @@
         "source": null
       },
       "security": {
-        "verified": false,
-        "note": "Security page not reviewed in this session.",
-        "source": null
+        "verified": true,
+        "note": "Multi-factor authentication; online and mobile security guarantee (no liability for unauthorised transactions reported within 60 days).",
+        "source": "https://www.ally.com/security/"
       },
       "bonus": {
         "value": "No opening bonus found on official page",
@@ -795,6 +795,60 @@
       ],
       "flags": [
         "Mobile app availability was not confirmed on the pages reviewed."
+      ],
+      "tier_mode": "marginal"
+    },
+    {
+      "id": "usbank",
+      "bank": "U.S. Bank",
+      "product": "Bank Smartly Savings",
+      "category": "big_four",
+      "headline_apy": null,
+      "headline_apy_note": "Up to 3.50% APY with a relationship account and a Combined Qualifying Balance of at least $25,000. The standard APY is shown only for the page's default ZIP (55402) and varies by location.",
+      "standard_apy": null,
+      "standard_apy_note": "Not verified for New York.",
+      "promo_months": 0,
+      "promo_bands": null,
+      "standard_bands": null,
+      "rate_as_of": "2026-10-21",
+      "rate_as_of_note": "Page states APYs are effective October 21, 2026 for ZIP 55402 (the page's default). Rates vary by location.",
+      "min_open": 25,
+      "min_balance_for_apy": null,
+      "monthly_fee": 5.0,
+      "fee_waiver": "$5 monthly maintenance fee waived when you are an owner of an eligible U.S. Bank account (Bank Smartly Checking, Safe Debit, or Bank Smartly Visa Signature).",
+      "withdrawal_limit": "Not stated on page.",
+      "fdic": {
+        "cert": 6548,
+        "name": "U.S. Bank National Association",
+        "active": true,
+        "city": "Cincinnati, OH"
+      },
+      "app": {
+        "verified": true,
+        "name": "U.S. Bank Mobile App",
+        "source": "https://www.usbank.com/bank-accounts/savings-accounts/bank-smartly-savings.html"
+      },
+      "security": {
+        "verified": false,
+        "note": "Security page not reviewed in this session.",
+        "source": null
+      },
+      "bonus": {
+        "value": "Not verified",
+        "terms": "No savings bonus terms reviewed in this session.",
+        "source": null
+      },
+      "expanded_coverage": null,
+      "source": "https://www.usbank.com/bank-accounts/savings-accounts/bank-smartly-savings.html",
+      "terms_source": "https://www.usbank.com/bank-accounts/savings-accounts/bank-smartly-savings/savings-account-interest-rates.html",
+      "notes": [
+        "Relationship rates: up to 3.50% APY when you own a Bank Smartly Checking account, Safe Debit account, or Bank Smartly Visa Signature card and have a Combined Qualifying Balance of at least $25,000.",
+        "$25 minimum opening deposit.",
+        "The APY table is ZIP-specific; the page defaulted to ZIP 55402 (Minneapolis) during verification."
+      ],
+      "flags": [
+        "APY not verified for New York: U.S. Bank displays rates by location and the page defaulted to ZIP 55402.",
+        "The headline 3.50% is a relationship rate requiring another U.S. Bank product and $25,000 in combined balances."
       ],
       "tier_mode": "marginal"
     },

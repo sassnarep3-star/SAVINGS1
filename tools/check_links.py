@@ -20,6 +20,7 @@ import urllib.parse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data", "v2")
+PAGES_DIR = os.path.join(ROOT, "verified")
 PAGES = ["index.html", "rates.html", "returns.html", "promotions.html", "rules.html",
          "security.html", "flagged.html", "methodology.html"]
 
@@ -42,7 +43,7 @@ def main():
 
     # ---- 1. HTML links
     for page in PAGES:
-        path = os.path.join(ROOT, page)
+        path = os.path.join(PAGES_DIR, page)
         if not os.path.exists(path):
             problems.append(f"missing page: {page}")
             continue
@@ -63,7 +64,7 @@ def main():
                 target = urllib.parse.urlparse(url).path
                 if not target:
                     continue
-                if not os.path.exists(os.path.join(ROOT, target)):
+                if not os.path.exists(os.path.join(PAGES_DIR, target)):
                     problems.append(f"{page}: broken internal link {url}")
 
     # ---- 2. data files

@@ -13,6 +13,7 @@ from html import escape
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data", "v2")
+OUT = os.path.join(ROOT, "verified")  # the independent 20-account verification dashboard
 
 accounts = json.load(open(os.path.join(DATA, "accounts.json")))
 projections = json.load(open(os.path.join(DATA, "projections.json")))
@@ -140,12 +141,19 @@ def page(slug, title, body, active, description):
   <div class="wrap header-inner">
     <div class="brand">
       <span class="mark">$</span>
-      <span>SAVINGS1<small>Verified savings dashboard</small></span>
+      <span>SAVINGS1<small>Independent 20-account verification</small></span>
     </div>
     <nav class="main-nav">{nav}</nav>
   </div>
 </header>
 <main id="main"><div class="wrap">
+<div class="callout info" style="margin-bottom:18px">
+  <strong>This is the cross-check dashboard.</strong> The primary SAVINGS1 dashboard — 18 products, promoted from
+  the repository root by the parallel session — is at <a href="../index.html">../index.html</a>. This section keeps
+  the <em>independent</em> 20-account dataset, its 41 registered sources, the tier-aware return maths and the
+  26-item flagged list, so the two can be compared line by line. Where the two disagree, both figures are published
+  and the difference is explained on <a href="flagged.html">Flagged for review</a>.
+</div>
 {body}
 </div></main>
 <footer class="site-footer">
@@ -155,6 +163,7 @@ def page(slug, title, body, active, description):
       Projections assume an account opened {OPENING} and a constant APY. Not financial advice.
     </div>
     <div>
+      <a href="../index.html">Primary dashboard</a> ·
       <a href="methodology.html">Method &amp; sources</a> ·
       <a href="flagged.html">Flagged for review</a> ·
       <a href="https://github.com/sassnarep3-star/SAVINGS1">Repository</a>
@@ -164,7 +173,8 @@ def page(slug, title, body, active, description):
 </body>
 </html>
 """
-    with open(os.path.join(ROOT, slug), "w") as fh:
+    os.makedirs(OUT, exist_ok=True)
+    with open(os.path.join(OUT, slug), "w") as fh:
         fh.write(html)
 
 
