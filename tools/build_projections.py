@@ -19,7 +19,7 @@ import json
 import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = os.path.join(ROOT, "data")
+DATA = os.path.join(ROOT, "data", "v2")
 
 DEPOSITS = [10000, 50000, 100000, 250000, 500000, 1000000]
 YEARS = [1, 3, 5]
@@ -40,12 +40,54 @@ DERIVED = [
     {
         "id": "sofi-year1-boost",
         "account_id": "sofi-savings",
-        "label": "SoFi Savings — year 1 including the 1.10% six-month boost",
+        "label": "SoFi Savings — including the 1.10% six-month boost",
         "apy": None,  # computed below
         "tier_label": "Requires eligible direct deposit; boost lasts 6 months",
         "note": "Blend computed as sqrt((1+0.0440)*(1+0.0330))-1 from SoFi's own published 4.40% boosted and 3.30% base APYs.",
         "apy_as_of": "2026-10-20",
         "blend": [4.40, 3.30],
+    },
+    {
+        "id": "axos-year1-intro",
+        "account_id": "axos-one-savings",
+        "label": "Axos ONE Savings — with the 5.00% six-month intro",
+        "apy": None,
+        "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it)",
+        "note": ("Blend computed as sqrt((1+0.0500)*(1+0.0350))-1 from Axos's own published intro rate and the tier that "
+                 "applies at $250,000. At $249,999 or less the post-intro rate is 4.21% and the blend would be 4.60%. "
+                 "Both rates require the Axos ONE checking bundle; miss it and the post-intro rate is 1.00%."),
+        "apy_as_of": "",
+        "blend": [5.00, 3.50],
+    },
+    {
+        "id": "etrade-year1-boost",
+        "account_id": "etrade-premium-savings",
+        "label": "E*TRADE Premium Savings — with the 6-month 4.25% boost",
+        "apy": None,
+        "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate",
+        "note": "Blend computed as sqrt((1+0.0425)*(1+0.0375))-1 from E*TRADE's own published boosted and base APYs.",
+        "apy_as_of": "2026-10-21",
+        "blend": [4.25, 3.75],
+    },
+    {
+        "id": "openbank-year1-boost",
+        "account_id": "openbank-hys",
+        "label": "Openbank High Yield Savings — with the 0.35% six-month boost",
+        "apy": None,
+        "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY",
+        "note": "Blend computed as sqrt((1+0.0435)*(1+0.0400))-1 from Openbank's own published boosted and standard APYs.",
+        "apy_as_of": "",
+        "blend": [4.35, 4.00],
+    },
+    {
+        "id": "cit-year1-boost",
+        "account_id": "cit-platinum-savings",
+        "label": "CIT Platinum Savings — with the BOOST50 six-month boost",
+        "apy": None,
+        "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75%",
+        "note": "Blend computed as sqrt((1+0.0425)*(1+0.0375))-1 from CIT's own published boosted and standard APYs.",
+        "apy_as_of": "2026-07-01",
+        "blend": [4.25, 3.75],
     },
     {
         "id": "marcus-year1-referral",
@@ -166,6 +208,7 @@ def main():
             "apy": round(apy, 4),
             "tier_label": d["tier_label"],
             "note": d["note"],
+            "blend": d.get("blend"),
             "apy_as_of": d["apy_as_of"],
             "results": results,
         })

@@ -1,7 +1,8 @@
 {
   "meta": {
-    "rule": "Only promotions printed on the bank's own pages are listed. 'no-offer-displayed' means the official product page fetched on 2026-10-21/22 showed no opening cash bonus and no promotional APY — it does not prove that no targeted or mailer offer exists.",
-    "checked_on": "2026-10-21 / 2026-10-22"
+    "rule": "Only promotions printed on the bank's own pages are listed. 'no-offer-displayed' means the official product page fetched on 2026-10-21/22 showed no opening cash bonus and no promotional APY \u2014 it does not prove that no targeted or mailer offer exists.",
+    "checked_on": "2026-10-21 / 2026-10-22",
+    "promotions_count": 20
   },
   "promotions": [
     {
@@ -13,7 +14,7 @@
       "deadline": "2026-10-31",
       "status": "verified",
       "source": "https://banking.us.barclays/tiered-savings.html",
-      "value_note": "$200 on a $25,000 deposit equals 0.80% of principal, one time — on top of the APY earned during the 120 days."
+      "value_note": "$200 on a $25,000 deposit equals 0.80% of principal, one time \u2014 on top of the APY earned during the 120 days."
     },
     {
       "account_id": "sofi-savings",
@@ -35,7 +36,7 @@
       "deadline": "",
       "status": "verified",
       "source": "https://www.marcus.com/us/en/savings/high-yield-savings",
-      "value_note": "Rate promotion, not a cash bonus. Requires a referral — the referral terms themselves were not opened in this session, so eligibility details are flagged for manual review."
+      "value_note": "Rate promotion, not a cash bonus. Requires a referral \u2014 the referral terms themselves were not opened in this session, so eligibility details are flagged for manual review."
     },
     {
       "account_id": "synchrony-hys",
@@ -46,7 +47,7 @@
       "deadline": "",
       "status": "verified",
       "source": "https://www.synchrony.com/banking/products/hys-core",
-      "value_note": "Promotional rate; eligibility unclear — flagged."
+      "value_note": "Promotional rate; eligibility unclear \u2014 flagged."
     },
     {
       "account_id": "chase-savings",
@@ -86,7 +87,7 @@
       "bank": "Citibank",
       "offer": "No opening cash bonus displayed on the product page",
       "amount_usd": 0,
-      "requirement": "Citi states that APY is determined by rate region, Relationship Tier and applicable promotion — a promotional APY may apply by location and is not printed on the page.",
+      "requirement": "Citi states that APY is determined by rate region, Relationship Tier and applicable promotion \u2014 a promotional APY may apply by location and is not printed on the page.",
       "deadline": "",
       "status": "no-offer-displayed",
       "source": "https://www.citi.com/banking/savings-account",
@@ -168,6 +169,61 @@
       "status": "no-offer-displayed",
       "source": "https://banking.us.barclays/online-savings.html",
       "value_note": ""
+    },
+    {
+      "account_id": "axos-one-savings",
+      "bank": "Axos Bank",
+      "offer": "5.00% APY for the first 6 months, then 4.21% (balances under $250,000) or 3.50% ($250,000+)",
+      "amount_usd": null,
+      "requirement": "Open and fund an Axos ONE Savings account and hold an Axos ONE Checking account with qualifying activity: $1,500 in monthly direct deposits plus a $1,500 average daily balance, or $5,000 in direct deposits plus a $5,000 average daily balance. Qualifying deposits must post by the 25th of the month. If the requirement is missed the rate is 1.00%.",
+      "deadline": "",
+      "status": "verified",
+      "source": "https://www.axosbank.com/personal/bank/axos-one",
+      "value_note": "On $250,000 the six-month 5.00% intro is worth about $6,250 of interest before the tier drops to 3.50%, a blended 4.25% for year one ($10,618) versus $8,750 at a flat 3.50%."
+    },
+    {
+      "account_id": "etrade-premium-savings",
+      "bank": "E*TRADE from Morgan Stanley",
+      "offer": "Up to $800 cash bonus (promo code SAVE800) plus 4.25% APY for 6 months",
+      "amount_usd": 800,
+      "requirement": "Use promo code SAVE800 when opening a new Premium Savings account and fund it within the stated window (2026-09-22 through 2027-01-10). The bonus is tiered by the amount deposited; $800 is the top tier advertised on the page.",
+      "deadline": "2027-01-10",
+      "status": "verified",
+      "source": "https://us.etrade.com/bank/premium-savings-account",
+      "value_note": "$800 is 0.32% of a $250,000 deposit, one time. The 6-month 4.25% rate is worth more: about $625 extra interest on $250,000 versus the 3.75% base rate."
+    },
+    {
+      "account_id": "openbank-hys",
+      "bank": "Openbank by Santander",
+      "offer": "0.35% APY boost for the first 6 months (4.00% standard + 0.35% = 4.35%)",
+      "amount_usd": null,
+      "requirement": "New Openbank High Yield Savings customers only. $500 minimum to open. No checks or debit card on the account; the bank requires a trusted device for login.",
+      "deadline": "",
+      "status": "verified",
+      "source": "https://www.openbank.us/banking/high-yield-savings-account/",
+      "value_note": "The boost adds about $440 of interest on $250,000 over six months; the standard 4.00% still pays $10,000 a year after it ends."
+    },
+    {
+      "account_id": "cit-platinum-savings",
+      "bank": "CIT Bank",
+      "offer": "BOOST50 promo code: 4.25% APY for 6 months (0.75% on balances under $5,000)",
+      "amount_usd": null,
+      "requirement": "Apply promo code BOOST50 when opening a new Platinum Savings account. Promo window 2026-09-29 through 2026-12-15. $100 minimum to open. Boost applies to balances up to $9,999,999. After 6 months the rate returns to 3.75% on $5,000+ and 0.25% below $5,000.",
+      "deadline": "2026-12-15",
+      "status": "verified",
+      "source": "https://www.cit.com/cit-bank/platinum-savings/boost",
+      "value_note": "The boost adds about $625 of interest on $250,000 over six months. Under $5,000 the boosted rate is 0.75%, not 4.25%."
+    },
+    {
+      "account_id": "everbank-performance-savings",
+      "bank": "EverBank",
+      "offer": "No opening bonus or promotional rate advertised",
+      "amount_usd": null,
+      "requirement": "The official product page was checked on 2026-10-22 and showed no opening bonus, promo code or introductory APY \u2014 only the 4.20% rate for new accounts.",
+      "deadline": "",
+      "status": "none",
+      "source": "https://www.everbank.com/banking/performance-savings",
+      "value_note": "Rate-only account: 4.20% pays $10,500 a year on $250,000, the highest flat verified rate in this comparison."
     }
   ]
 }

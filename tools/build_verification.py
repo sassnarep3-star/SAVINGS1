@@ -10,7 +10,7 @@ import json
 import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = os.path.join(ROOT, "data")
+DATA = os.path.join(ROOT, "data", "v2")
 BANKFIND = "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/{}"
 
 
