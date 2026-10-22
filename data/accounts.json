@@ -22,14 +22,17 @@
       25000,
       50000,
       100000,
+      240000,
       250000,
       500000,
       1000000
     ],
     "primary_deposit_tiers": [
       10000,
+      25000,
       50000,
       100000,
+      240000,
       250000,
       500000,
       1000000
@@ -482,14 +485,14 @@
         "city": "Wilmington, DE"
       },
       "app": {
-        "verified": false,
-        "name": "Not verified in this session",
-        "source": null
+        "verified": true,
+        "name": "Barclays US App",
+        "source": "https://banking.us.barclays/faq.html"
       },
       "security": {
         "verified": true,
-        "note": "Secure 24/7 online access (per product page).",
-        "source": "https://banking.us.barclays/tiered-savings.html"
+        "note": "Barclays describes TLS/SSL encryption, firewalls, encrypted information, automatic session timeout and one-time passcodes for password reset; the mobile deposit FAQ also cites password protection and encryption. Bank-published controls, not an independent audit.",
+        "source": "https://banking.us.barclays/security.html"
       },
       "bonus": {
         "value": "$200 cash bonus",
@@ -504,7 +507,6 @@
         "The $200 bonus requires a $25,000 balance held for 120 days."
       ],
       "flags": [
-        "Mobile app availability was not confirmed on the pages reviewed.",
         "3.65% headline applies only to the $250,000-$1,000,000 tier."
       ],
       "tier_mode": "cliff"
@@ -597,14 +599,14 @@
         "city": "New York, NY"
       },
       "app": {
-        "verified": false,
-        "name": "Not verified in this session",
-        "source": null
+        "verified": true,
+        "name": "Marcus Mobile Banking App",
+        "source": "https://www.marcus.com/us/en/marcus-mobile-banking-app"
       },
       "security": {
-        "verified": false,
-        "note": "Security page not reviewed in this session.",
-        "source": null
+        "verified": true,
+        "note": "Marcus describes biometric sign-in, 128-bit SSL encryption and multi-factor authentication. Bank-published controls, not an independent audit.",
+        "source": "https://www.marcus.com/us/en/banking-with-us/security-center"
       },
       "bonus": {
         "value": "Referral: 3-month 1.00% APY increase",
@@ -680,7 +682,8 @@
       "flags": [
         "American Express cites 0.37% as the national average while the FDIC page shows 0.38%; the FDIC figure is used here."
       ],
-      "tier_mode": "marginal"
+      "tier_mode": "marginal",
+      "opening_requirements": "Online application and identity verification. Amex requires legal name, street address, date of birth, contact information, and SSN or ITIN; accounts are for individual or joint personal, family or household use."
     },
     {
       "id": "capone",
@@ -771,9 +774,9 @@
         "city": "Sandy, UT"
       },
       "app": {
-        "verified": false,
-        "name": "Not verified in this session",
-        "source": null
+        "verified": true,
+        "name": "Ally Mobile App",
+        "source": "https://www.ally.com/bank/online-savings-account/"
       },
       "security": {
         "verified": true,
@@ -797,6 +800,73 @@
         "Mobile app availability was not confirmed on the pages reviewed."
       ],
       "tier_mode": "marginal"
+    },
+    {
+      "id": "barclays-aarp",
+      "bank": "Barclays US Consumer Bank (AARP members)",
+      "product": "Select Savings from Barclays",
+      "category": "national_digital",
+      "headline_apy": 4.25,
+      "headline_apy_note": "AARP-member-exclusive variable APY of 4.25% across the listed balance tiers, accurate as of 10/07/2026. Active membership and current AARP membership number required.",
+      "standard_apy": 4.25,
+      "standard_apy_note": "Same 4.25% APY across all published balance tiers as of 10/07/2026; variable and may change.",
+      "promo_months": 0,
+      "promo_bands": null,
+      "standard_bands": [
+        {
+          "upto": 1000000,
+          "rate": 4.25
+        },
+        {
+          "upto": null,
+          "rate": 4.25
+        }
+      ],
+      "rate_as_of": "2026-10-07",
+      "rate_as_of_note": "Select Savings rate table accurate as of 10/07/2026.",
+      "min_open": 0,
+      "min_balance_for_apy": null,
+      "monthly_fee": 0,
+      "fee_waiver": "No monthly maintenance or annual fee. Other fees may apply in specified circumstances under account terms.",
+      "withdrawal_limit": "Maximum $1,000,000 per Select Savings account; maximum 3 Select Savings accounts per customer; zero-balance accounts may close after 6 months.",
+      "fdic": {
+        "cert": 57203,
+        "name": "Barclays Bank Delaware",
+        "active": true,
+        "city": "Wilmington, DE"
+      },
+      "app": {
+        "verified": true,
+        "name": "Barclays US App",
+        "source": "https://banking.us.barclays/select-home/faqs.html"
+      },
+      "security": {
+        "verified": true,
+        "note": "Barclays describes TLS/SSL encryption, firewalls, encrypted information, automatic session timeout and one-time passcodes for password reset; the mobile deposit FAQ also cites password protection and encryption. Bank-published controls, not an independent audit.",
+        "source": "https://banking.us.barclays/select-home/security.html"
+      },
+      "bonus": {
+        "value": "$400 bonus",
+        "terms": "New Select Savings customer and active AARP member required. Open through 10/31/2026, fund at least $40,000 within 30 days, and maintain $40,000 for 120 consecutive days; bonus added about 60 days later and treated as taxable interest. Barclays direct page deadline conflicts with the AARP page; see flag F22.",
+        "source": "https://banking.us.barclays/select-home/savings.html"
+      },
+      "expanded_coverage": null,
+      "source": "https://banking.us.barclays/select-home/savings.html",
+      "terms_source": "https://banking.us.barclays/select-home/savings.html",
+      "notes": [
+        "Active AARP membership and current membership number required to open; no minimum deposit to open.",
+        "4.25% variable APY applies to all published balance tiers, accurate as of 10/07/2026.",
+        "$400 bonus deadline on Barclays direct page is 10/31/2026; AARP partner page currently says 1/31/2027. Dashboard uses the bank’s explicit terms and flags the discrepancy.",
+        "The $400 bonus is treated as interest for tax purposes; membership dues, if any, are not included in scenario returns.",
+        "Barclays Tiered Savings and AARP Select Savings are both deposits at Barclays Bank Delaware and share FDIC aggregation for the same ownership category."
+      ],
+      "flags": [
+        "AARP partner page and Barclays direct page list different $400 bonus deadlines; verify in the application flow.",
+        "Membership restriction applies; the 4.25% is not available to non-members."
+      ],
+      "tier_mode": "cliff",
+      "opening_requirements": "An active AARP membership and current membership number are required to apply. No minimum deposit to open. The separate $400 offer requires new Select Savings customer status, opening by 10/31/2026, $40,000 funded within 30 days and maintained for 120 consecutive days.",
+"rate_status": "membership"
     },
     {
       "id": "usbank",
@@ -850,7 +920,8 @@
         "APY not verified for New York: U.S. Bank displays rates by location and the page defaulted to ZIP 55402.",
         "The headline 3.50% is a relationship rate requiring another U.S. Bank product and $25,000 in combined balances."
       ],
-      "tier_mode": "marginal"
+      "tier_mode": "marginal",
+      "opening_requirements": "For an individual online application, U.S. Bank states applicant must be at least 18 and a legal U.S. resident, with SSN, valid government-issued photo ID, approval/identity verification, and $25 opening deposit."
     },
     {
       "id": "chase",
@@ -937,9 +1008,9 @@
         "source": "https://www.bankofamerica.com/deposits/savings/savings-accounts/"
       },
       "security": {
-        "verified": false,
-        "note": "Security page not reviewed in this session.",
-        "source": null
+        "verified": true,
+        "note": "Bank of America describes two-factor authentication and account/security alerts. Bank-published controls, not an independent audit.",
+        "source": "https://web.bankofamerica.com/en/security/tools-resources/take-your-security-to-the-next-level"
       },
       "bonus": {
         "value": "Not verified",
@@ -984,14 +1055,14 @@
         "city": "Sioux Falls, SD"
       },
       "app": {
-        "verified": false,
-        "name": "Not verified in this session",
-        "source": null
+        "verified": true,
+        "name": "Wells Fargo Mobile app",
+        "source": "https://www.wellsfargo.com/mobile-online-banking/"
       },
       "security": {
-        "verified": false,
-        "note": "Security page not reviewed in this session.",
-        "source": null
+        "verified": true,
+        "note": "Wells Fargo says its Mobile app Security Center lets customers review and update security settings, security best practices and scam-prevention tips. Bank-published controls, not an independent audit.",
+        "source": "https://www.wellsfargo.com/mobile-online-banking/"
       },
       "bonus": {
         "value": "Not verified",
@@ -1013,20 +1084,101 @@
       "tier_mode": "marginal"
     },
     {
+      "id": "wells-platinum",
+      "bank": "Wells Fargo",
+      "product": "Platinum Savings",
+      "category": "big_four",
+      "headline_apy": 3.25,
+      "headline_apy_note": "Conditional 3.25% variable APY for new consumer savings customers who maintain at least $25,000 in collected balance; available in all states except Colorado, per the October 7, 2026 account addendum.",
+      "standard_apy": 0.01,
+      "standard_apy_note": "Standard/relationship rate shown as 0.01% APY when the qualifying new-customer balance or eligibility requirements are not met; variable.",
+      "promo_months": 0,
+      "promo_bands": null,
+      "standard_bands": [
+        {
+          "upto": null,
+          "rate": 0.01
+        }
+      ],
+      "rate_as_of": "2026-10-07",
+      "rate_as_of_note": "Wells Fargo footnote and October account addendum date the new-customer offer 10/07/2026; variable and subject to change.",
+      "min_open": 25,
+      "min_balance_for_apy": 0,
+      "monthly_fee": 12,
+      "fee_waiver": "$12 monthly service fee; waive with a $3,500 minimum daily balance or another qualifying fee-waiver condition in the current schedule.",
+      "withdrawal_limit": "Savings-account transaction limits and fees apply under the account agreement.",
+      "fdic": {
+        "cert": 3511,
+        "name": "Wells Fargo Bank, National Association",
+        "active": true,
+        "city": "Sioux Falls, SD"
+      },
+      "app": {
+        "verified": true,
+        "name": "Wells Fargo Mobile app",
+        "source": "https://www.wellsfargo.com/mobile-online-banking/"
+      },
+      "security": {
+        "verified": true,
+        "note": "Wells Fargo says its Mobile app Security Center lets customers review and update security settings, security best practices and scam-prevention tips. Bank-published controls, not an independent audit.",
+        "source": "https://www.wellsfargo.com/mobile-online-banking/"
+      },
+      "bonus": {
+        "value": "No cash bonus; conditional variable APY offer",
+        "terms": "3.25% APY for new consumer savings customers with at least $25,000 collected balance; not a cash bonus. The rate is variable.",
+        "source": "https://www.wellsfargo.com/savings-cds/rates/"
+      },
+      "expanded_coverage": null,
+      "source": "https://www.wellsfargo.com/savings-cds/rates/",
+      "terms_source": "https://www.wellsfargo.com/savings-cds/platinum/",
+      "notes": [
+        "Minimum opening deposit is $25. The $25,000 offer-qualification balance is separate from the opening deposit.",
+        "Primary owner must not have owned, jointly owned, been trustee of, or held a trust on a Wells Fargo consumer savings account in the preceding 30 days.",
+        "Fund at least $25,000 within 30 days of opening and maintain at least $25,000 collected balance each day; if the daily balance falls below the threshold, standard/relationship rate applies for that day.",
+        "Offer applies in all states except Colorado according to the October 7, 2026 addendum. APY is variable; no future rate is guaranteed.",
+        "Shares FDIC cert 3511 with other Wells Fargo deposits in the same ownership category."
+      ],
+      "flags": [
+        "Conditional rate is for eligible new savings customers only and requires $25,000 maintained daily.",
+        "Rate is variable; the current promotion has no fixed future yield guarantee."
+      ],
+      "tier_mode": "cliff",
+      "rate_status": "conditional",
+      "projection_rate_threshold": 25000,
+      "projection_rate_above": 3.25,
+      "projection_rate_below": 0.01,
+      "projection_max_years": 1,
+      "opening_requirements": "Open with $25. For the 3.25% offer, the primary owner must not have owned, jointly owned, been trustee of, or held a trust on a Wells Fargo consumer savings account in the prior 30 days; fund at least $25,000 within 30 days; maintain at least $25,000 collected balance each day; Colorado residents are excluded."
+    },
+    {
       "id": "citi",
       "bank": "Citibank",
       "product": "Citi Savings",
       "category": "big_four",
-      "headline_apy": null,
-      "headline_apy_note": "Not visible on the official product page; rate table is rendered dynamically.",
-      "standard_apy": null,
-      "standard_apy_note": "Not verified.",
-      "promo_months": 0,
-      "promo_bands": null,
-      "standard_bands": null,
-      "rate_as_of": null,
-      "rate_as_of_note": "Not verified.",
-      "min_open": null,
+      "headline_apy": 0.98,
+      "headline_apy_note": "0.98% is the official New York one-year blended APY for qualifying $25,000–$999,999 balances under the Q3 2026 savings promotion; it combines 3.75% promotional interest for up to 3 months and the 0.03% basic standard interest rate for the remainder of one year. Variable and conditional, not an ongoing standard APY.",
+      "standard_apy": 0.03,
+      "standard_apy_note": "The official promotion chart labels 0.03% as the basic-tier standard interest rate (not as an APY); variable and subject to change.",
+      "promo_months": 3,
+      "promo_bands": [
+        {
+          "upto": 999999.99,
+          "rate": 3.75
+        },
+        {
+          "upto": null,
+          "rate": 3.75
+        }
+      ],
+      "standard_bands": [
+        {
+          "upto": null,
+          "rate": 0.03
+        }
+      ],
+      "rate_as_of": "2026-07-14",
+      "rate_as_of_note": "Official Q3 2026 promotional-rate chart states rates accurate as of 07/14/2026; New York is included.",
+      "min_open": 0,
       "min_balance_for_apy": null,
       "monthly_fee": 4.5,
       "fee_waiver": "$4.50 monthly service fee waived with a $500+ average monthly balance, a Citi checking account, or a Citi Priority/Citigold/Citigold Private Client relationship tier; not charged in the month of opening or the first three full calendar months.",
@@ -1040,33 +1192,39 @@
       "app": {
         "verified": true,
         "name": "Citi Mobile App",
-        "source": "https://www.citi.com/banking/savings-account"
+        "source": "https://www.citi.com/banking/bank-accounts"
       },
       "security": {
         "verified": true,
-        "note": "Two-step authentication, biometric authentication, security word/PIN, QuickLock card lock.",
-        "source": "https://online.citi.com/US/nga/security-center"
+        "note": "Citi describes 128-bit SSL encryption, additional authentication for sensitive/unusual activity, biometric sign-in options, and controls that block mobile access if credentials are believed compromised. Bank-published controls, not an independent audit.",
+        "source": "https://sit58.online.citi.com/US/JRS/pands/detail.do?ID=CitiProtectsYou"
       },
       "bonus": {
-        "value": "Not verified",
-        "terms": "No savings bonus terms reviewed in this session.",
-        "source": null
+        "value": "No cash bonus; savings-rate promotion only",
+        "terms": "3.75% promotional interest for up to three months for eligible new Citi Savings accounts opened by 2026-10-22 with at least $25,000 in New-to-Citibank Funds. This is not a cash bonus.",
+        "source": "https://banking.citi.com/cbol/OM/checking/tiered/featured-offers/default.htm"
       },
       "expanded_coverage": null,
-      "source": "https://www.citi.com/banking/savings-account",
+      "source": "https://banking.citi.com/cbol/OM/checking/tiered/featured-offers/default.htm",
       "terms_source": "https://www.citi.com/banking/savings-account",
       "notes": [
-        "$4.50 monthly service fee, waived with a $500+ average monthly balance, a Citi checking account, or a relationship tier.",
-        "APY is accurate as of 10/21/2026 per Citi's footnote, but the value is a dynamic placeholder on the page and could not be read.",
-        "Citi Accelerate Savings is limited to the states listed on Citi's page; New York is not on that list.",
-        "FDIC insured up to $250,000 per depositor, per account ownership category."
+        "Basic Citi Savings has no minimum opening deposit; $4.50 monthly service fee is waived with $500+ average monthly balance or Citi checking, and is also waived during the opening month and first three full calendar months.",
+        "The 0.98% blended APY is for qualifying New York balances of $25,000–$999,999; do not use it below $25,000 or above $999,999.",
+        "Eligible accounts must be opened July 14–October 22, 2026. At least $25,000 in New-to-Citibank Funds must be present for Citi’s 11th-business-day balance check; the promotional rate may end early if the balance falls below the minimum. Maximum promotional interest is $10,000.",
+        "Citi Accelerate Savings is not listed as available to New York residents; this record is the separate basic Citi Savings product.",
+        "Zero-balance accounts may close after 90 days. FDIC cert 7213 is active."
       ],
       "flags": [
-        "APY rendered as a dynamic placeholder (':BLUE_AccSavings_Rate%'); left blank.",
-        "Citi Accelerate Savings is not listed as available to New York residents.",
-        "Minimum opening deposit not stated on the page reviewed."
+        "The product page dynamically renders its general rate, but the official Q3 2026 offer page provides the New York 0.98% blended promotion and 0.03% standard rate. The 0.98% figure is date-limited and conditional.",
+        "Promotion is only modeled for $25,000–$999,999 and one year; no multi-year projection is made."
       ],
-      "tier_mode": "marginal"
+      "tier_mode": "cliff",
+      "projection_min_balance": 25000,
+      "projection_max_balance": 999999.99,
+      "projection_max_years": 1,
+      "first_year_blended_apy": 0.98,
+      "opening_requirements": "No minimum opening deposit. Apply at a branch, Citi Online or Citi Mobile, subject to identity/approval review. For the 2026 promotion, open by 10/22/2026, deposit at least $25,000 in qualifying New-to-Citibank Funds within 10 business days, and meet Citi’s 11th-business-day balance check; zero-balance accounts may close after 90 days.",
+      "standard_rate_label": "0.03% interest rate"
     },
     {
       "id": "discover",

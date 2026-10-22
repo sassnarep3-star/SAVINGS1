@@ -134,7 +134,31 @@ def balance_after(acct: dict, deposit: float, years: float) -> float:
     return sum(p * (1 + r) ** years for p, r in split_bands(deposit, std))
 
 
-def interest(acct: dict, deposit: float, years: float) -> float:
+def projection_eligible(acct: dict, deposit: float, years: float = 1.0) -> bool:
+    """Apply explicit product-specific projection bounds without inferring a rate."""
+    minimum = acct.get("projection_min_balance")
+    maximum = acct.get("projection_max_balance")
+    max_years = acct.get("projection_max_years")
+    if minimum is not None and deposit < float(minimum):
+        return False
+    if maximum is not None and deposit > float(maximum):
+        return False
+    if max_years is not None and years > float(max_years):
+        return False
+    return True
+
+
+def interest(acct: dict, deposit: float, years: float) -> float | None:
+    if not projection_eligible(acct, deposit, years):
+        return None
+    # Citi publishes this exact New York blended APY for the eligible one-year offer.
+    # Prefer the official blended figure rather than recomputing it with simplified
+    # annual compounding of the separate promotional and standard rates.
+    if years == 1.0 and acct.get("first_year_blended_apy") is not None:
+        return deposit * float(acct["first_year_blended_apy"]) / 100.0
+    if years == 1.0 and acct.get("projection_rate_threshold") is not None:
+        rate = acct["projection_rate_above"] if deposit >= float(acct["projection_rate_threshold"]) else acct["projection_rate_below"]
+        return deposit * float(rate) / 100.0
     return balance_after(acct, deposit, years) - deposit
 
 
@@ -148,7 +172,13 @@ def standard_interest(acct: dict, deposit: float) -> float:
     return sum(p * r for p, r in split_bands(deposit, std))
 
 
-def blended_apy(acct: dict, deposit: float) -> float:
+def blended_apy(acct: dict, deposit: float) -> float | None:
+    if not projection_eligible(acct, deposit, 1.0):
+        return None
+    if acct.get("first_year_blended_apy") is not None:
+        return float(acct["first_year_blended_apy"])
+    if acct.get("projection_rate_threshold") is not None:
+        return float(acct["projection_rate_above"] if deposit >= float(acct["projection_rate_threshold"]) else acct["projection_rate_below"])
     return (balance_after(acct, deposit, 1.0) / deposit - 1) * 100
 
 
@@ -165,7 +195,8 @@ def top_for_tier(deposit, metric="y1"):
             val = interest(a, deposit, 5.0)
         else:
             val = blended_apy(a, deposit)
-        rows.append((val, a))
+        if val is not None:
+            rows.append((val, a))
     return sorted(rows, key=lambda x: -x[0])
 
 
@@ -306,6 +337,10 @@ def status_cell(a):
         return badge("no", "closed")
     if a.get("headline_apy") is None:
         return badge("no", "APY unverified")
+    if a.get("rate_status") == "conditional":
+        return badge("warn", "conditional rate")
+    if a.get("rate_status") == "membership":
+        return badge("warn", "membership required")
     if a.get("promo_months"):
         return badge("warn", "intro rate")
     return badge("ok", "verified")
@@ -320,11 +355,13 @@ def build_index():
 
     rows = ""
     for i, (val, a) in enumerate(t250[:6], 1):
+        std = esc(a.get("standard_rate_label")) if a.get("standard_rate_label") else pct(a['standard_apy'])
+        rate_label = 'membership required' if a.get('rate_status') == 'membership' else ('conditional, variable' if a.get('rate_status') == 'conditional' else ('6-mo intro' if a.get('promo_months') else 'variable'))
         rows += f"""<tr>
 <td><span class="rank">{i}</span></td>
 <td><b>{esc(a['bank'])}</b><div class="small">{esc(a['product'])}</div></td>
-<td class="num"><b>{pct(a['headline_apy'])}</b><div class="small">{'6-mo intro' if a.get('promo_months') else 'variable'}</div></td>
-<td class="num">{pct(a['standard_apy'])}</td>
+<td class="num"><b>{pct(a['headline_apy'])}</b><div class="small">{rate_label}</div></td>
+<td class="num">{std}</td>
 <td class="num"><b>{money(val)}</b></td>
 <td class="num">{pct(blended_apy(a, 250000))}</td>
 <td>{source_cell(a)}</td></tr>"""
@@ -336,7 +373,7 @@ def build_index():
   <div class="card kpi"><div class="label">Highest 1-year return on $250,000</div><div class="value">{pct(blended_apy(best[1], 250000), 2)}</div><div class="sub">{esc(best[1]['bank'])} · {money(best[0])} interest</div></div>
   <div class="card kpi"><div class="label">FDIC national savings average</div><div class="value">{NATIONAL:.2f}%</div><div class="sub">as of {META['fdic_national_savings_rate_as_of']} · <a href="https://www.fdic.gov/national-rates-and-rate-caps" target="_blank" rel="noopener">FDIC</a></div></div>
   <div class="card kpi"><div class="label">Federal funds target</div><div class="value">{META['fed_funds_target_range']}%</div><div class="sub">after the {META['fed_funds_as_of']} FOMC move · <a href="https://www.federalreserve.gov/monetarypolicy/openmarket.htm" target="_blank" rel="noopener">Federal Reserve</a></div></div>
-  <div class="card kpi"><div class="label">Accounts with a verified APY</div><div class="value">{n_active}<span style="font-size:16px;color:#667085">/{len(ACCOUNTS)}</span></div><div class="sub">5 unverified (Big Four + U.S. Bank) · 1 closed · {n_flags} flags</div></div>
+  <div class="card kpi"><div class="label">Accounts with a verified APY</div><div class="value">{n_active}<span style="font-size:16px;color:#667085">/{len(ACCOUNTS)}</span></div><div class="sub">4 rates unverified · 1 closed · Citi promotion conditional · {n_flags} flags</div></div>
 </div>
 
 <h2>What the data says</h2>
@@ -347,15 +384,15 @@ def build_index():
   <div class="card"><h3 style="margin-top:0">2. No-strings rates cluster at 3.10%–4.20%</h3>
   <p class="small">EverBank pays <b>4.20%</b> with $0 to open and no monthly fee; Openbank pays <b>4.00%</b> after its six-month boost; Synchrony <b>3.55%</b>; Marcus <b>3.50%</b>. These are the cleanest comparisons because the rate does not depend on a second account.</p>
   <p>{link('https://www.everbank.com/rates', 'EverBank rates')} · {link('https://www.openbank.us/banking/high-yield-savings-account/', 'Openbank')}</p></div>
-  <div class="card"><h3 style="margin-top:0">3. Big Four APYs are not publicly checkable</h3>
-  <p class="small">Chase requires a ZIP code, Bank of America renders placeholders, Citi injects the rate at runtime, and Wells Fargo's page showed 0.01% only for its default California market. None is verified for New York, so all four are blank here rather than quoted from third parties. Their <b>fees</b> are visible: $4.50–$5.00 per month unless a balance condition is met.</p>
+  <div class="card"><h3 style="margin-top:0">3. Branch-bank rates require precise eligibility and location checks</h3>
+  <p class="small">Chase requires a ZIP code, Bank of America renders local figures as placeholders, and Wells Fargo's Way2Save rate page showed 0.01% only for its default California market. Its separate Platinum Savings page lists 3.25% variable APY for eligible new customers who maintain $25,000, with Colorado excluded. Citi's general rate table also injects its rate at runtime, but its separate Q3 promotion page verifies a 0.98% one-year blended APY for qualifying New York balances of $25,000–$999,999. That offer is conditional and ended for new openings after 2026-10-22. Other unsupported rates are left blank rather than quoted from third parties.</p>
   <p>{link('https://www.chase.com/personal/savings/savings-account/interest-rates', 'Chase rate page')}</p></div>
 </div>
 
 <h2>Best verified 1-year return on a $250,000 deposit</h2>
-<p class="small">Interest is computed from each bank's own published APY, applying the six-month introductory rate where one exists and the published post-intro rate for the remaining six months. Balances above $250,000 are not insured at a single bank in a single ownership category.</p>
+<p class="small">Interest is computed from each bank's published APY and its disclosed eligibility and promotion term. Fixed-term introductory rates are blended over their stated period; conditional variable offers with no fixed term are modeled for one year only. Bonuses are separate. Balances above $250,000 are not insured at a single bank in a single ownership category.</p>
 <div class="tablewrap"><table>
-<thead><tr><th>#</th><th>Bank / account</th><th class="num">Headline APY</th><th class="num">Post-intro APY</th><th class="num">Year-1 interest</th><th class="num">Blended APY</th><th>Official source</th></tr></thead>
+<thead><tr><th>#</th><th>Bank / account</th><th class="num">Headline APY</th><th class="num">Standard / post-promo rate</th><th class="num">Year-1 interest</th><th class="num">Blended APY</th><th>Official source</th></tr></thead>
 <tbody>{rows}</tbody></table></div>
 <p class="legend">Full {len(ACCOUNTS)}-account table on <a href="accounts.html">Accounts</a> · all deposit sizes on <a href="returns.html">Returns</a> · bonus terms on <a href="promotions.html">Promotions</a>.</p>
 
@@ -394,12 +431,13 @@ def build_accounts():
     for a in ACCOUNTS:
         app = badge("ok", "yes") if a["app"]["verified"] else badge("no", "unverified")
         apy = pct(a["headline_apy"]) if a["headline_apy"] is not None else '<span class="unv">—</span>'
-        std = pct(a["standard_apy"]) if a["standard_apy"] is not None else '<span class="unv">—</span>'
+        std = esc(a["standard_rate_label"]) if a.get("standard_rate_label") else (pct(a["standard_apy"]) if a["standard_apy"] is not None else '<span class="unv">—</span>')
+        rate_note = f"<div class='small'>{esc(a['headline_apy_note'])}</div>" if a.get("headline_apy_note") else ""
         fee = money(a["monthly_fee"], 2) if a["monthly_fee"] is not None else '<span class="unv">—</span>'
         mino = money(a["min_open"]) if a["min_open"] is not None else '<span class="unv">—</span>'
         fdic = badge("ok", f"cert {a['fdic']['cert']}") if a["fdic"]["active"] else badge("no", "inactive")
         rows += f"""<tr>
-<td><b>{esc(a['bank'])}</b><div class="small">{esc(a['product'])}</div><div class="small">{status_cell(a)}</div></td>
+<td><b>{esc(a['bank'])}</b><div class="small">{esc(a['product'])}</div><div class="small">{status_cell(a)}</div>{rate_note}</td>
 <td class="num"><b>{apy}</b><div class="small">{esc(a.get('rate_as_of') or 'no date')}</div></td>
 <td class="num">{std}</td>
 <td class="num">{mino}</td>
@@ -408,22 +446,25 @@ def build_accounts():
 <td>{app}</td>
 <td class="small">{source_cell(a)}</td></tr>"""
     body = f"""
-<div class="banner"><div><strong>Reading the table.</strong> “Headline APY” is the best rate advertised for a new customer. “Post-intro APY” is what the same account pays after any introductory period. Where a rate could not be read from the official page it is shown in red as unverified, not guessed.</div></div>
+<div class="banner"><div><strong>Reading the table.</strong> “Headline APY” is the best verified published rate for the stated customer and balance conditions. The next column shows the bank’s standard/post-promotion APY or, where the official offer states only an interest rate, labels that rate explicitly. Account-specific qualifications appear beneath the product name. Where a rate could not be read from the official page it is shown in red as unverified, not guessed.</div></div>
 <input class="search" data-filter="#acct" placeholder="Filter by bank or product…" aria-label="Filter accounts">
 <div class="tablewrap"><table id="acct">
-<thead><tr><th>Bank / product</th><th class="num">Headline APY</th><th class="num">Post-intro APY</th><th class="num">Min. to open</th><th class="num">Monthly fee</th><th>FDIC status</th><th>Mobile app</th><th>Official source</th></tr></thead>
+<thead><tr><th>Bank / product</th><th class="num">Headline APY</th><th class="num">Standard / post-promo rate</th><th class="num">Min. to open</th><th class="num">Monthly fee</th><th>FDIC status</th><th>Mobile app</th><th>Official source</th></tr></thead>
 <tbody>{rows}</tbody></table></div>
 
-<h2>Opening rules and fees</h2>
+<h2>Opening requirements, fees, and access</h2>
+<p class="small">Product-specific eligibility is shown where it was confirmed from an official disclosure. A red note means the research did not independently confirm an extra opening condition; review the linked official account terms before applying.</p>
 <div class="tablewrap"><table>
-<thead><tr><th>Bank</th><th>Monthly fee / waiver</th><th>Minimum balance for APY</th><th>Access limits</th><th>App verification</th></tr></thead>
+<thead><tr><th>Bank</th><th>Verified opening / eligibility rules</th><th>Monthly fee / waiver</th><th>Minimum balance for APY</th><th>Access limits</th><th>App verification</th><th>Official terms</th></tr></thead>
 <tbody>
 """ + "".join(
         f"""<tr><td><b>{esc(a['bank'])}</b></td>
+<td class="small">{esc(a.get('opening_requirements')) if a.get('opening_requirements') else '<span class="unv">Not confirmed in this snapshot; review official terms.</span>'}</td>
 <td class="small">{esc(a['fee_waiver'] or '—')}</td>
 <td class="num">{money(a['min_balance_for_apy']) if a['min_balance_for_apy'] is not None else '<span class="unv">—</span>'}</td>
 <td class="small">{esc(a['withdrawal_limit'] or '—')}</td>
-<td class="small">{('Verified: ' + esc(a['app']['name'])) if a['app']['verified'] else '<span class="unv">Not verified</span>'}</td></tr>"""
+<td class="small">{('Verified: ' + esc(a['app']['name'])) if a['app']['verified'] else '<span class="unv">Not verified</span>'}</td>
+<td class="small">{source_cell(a)}</td></tr>"""
         for a in ACCOUNTS) + """
 </tbody></table></div>
 
@@ -440,8 +481,8 @@ def build_accounts():
         for a in ACCOUNTS) + """
 </tbody></table></div>
 
-<h2>Why the Big Four look different</h2>
-<div class="note bad"><b>APY unavailable from an official page for the user's market.</b> Chase shows its savings rate table only after a valid 5-digit ZIP code is entered. Bank of America's page renders fee and minimum-balance values as “$XXXX” to automated readers. Citi's rate table renders a dynamic placeholder (its footnote dates the APY to 10/21/2026 but the number is injected at runtime). Wells Fargo does print 0.01% APY — but only for the page's default market (CA 94105), not for New York. All four APYs are therefore left blank and excluded from every return calculation. See <a href="flagged.html">Flagged for review</a>.</div>
+<h2>Why the large branch-bank rates need extra care</h2>
+<div class="note bad"><b>Branch-bank rates are product- and eligibility-specific.</b> Chase shows its savings rate table only after a valid 5-digit ZIP code is entered. Bank of America's page renders fee and minimum-balance values as “$XXXX” to automated readers. Citi's general rate table renders a dynamic placeholder, but the separate Q3 2026 offer terms publish the basic New York tier's 0.98% blended APY for $25,000–$999,999 and 0.03% standard interest rate; the promotion ended for new openings after 2026-10-22. Wells Fargo Platinum Savings separately offers a 3.25% variable rate to eligible new customers in New York with at least $25,000 maintained daily. Its Way2Save 0.01% page rate is only for the default California market (CA 94105), so the Way2Save New York rate remains blank. Chase and Bank of America New York APYs remain blank. See <a href="flagged.html">Flagged for review</a>.</div>
 
 <h2>Accounts excluded</h2>
 <p class="small"><b>Discover Bank Online Savings</b> is excluded: the product page no longer exists and the FDIC lists Discover Bank certificate 5649 as inactive. Capital One, which acquired Discover, states that deposits at the two brands are combined for FDIC coverage. <a href="https://api.fdic.gov/banks/institutions?filters=CERT:5649" target="_blank" rel="noopener">FDIC record</a></p>
@@ -457,7 +498,7 @@ def build_returns():
     def matrix(years, label):
         head = "".join(f"<th class='num'>{money(t)}</th>" for t in META["primary_deposit_tiers"])
         body = ""
-        for a in sorted(accts, key=lambda x: -interest(x, 250000, years)):
+        for a in sorted(accts, key=lambda x: -(interest(x, 250000, years) if interest(x, 250000, years) is not None else -1)):
             cells = "".join(
                 f"<td class='num'>{money(interest(a, t, years))}</td>" for t in META["primary_deposit_tiers"])
             body += f"<tr><td><b>{esc(a['bank'])}</b><div class='small'>{esc(a['product'])}</div></td>{cells}</tr>"
@@ -481,7 +522,7 @@ def build_returns():
 <td class="num"><b>{money(val)}</b></td><td class="num">{pct(blended_apy(a, t))}</td><td class="num">{money(min(t, 250000))}</td><td>{source_cell(a)}</td></tr>"""
 
     body = f"""
-<div class="banner"><div><strong>Assumptions are fixed and disclosed.</strong> Deposit opened {OPEN_DATE}. Interest compounds at the stated APY; introductory rates apply for exactly the advertised period, then the bank's published post-intro rate applies. No fees, bonuses, or rate changes are assumed. Banks may change variable rates at any time.</div></div>
+<div class="banner"><div><strong>Assumptions are fixed and disclosed.</strong> Deposit opened {OPEN_DATE}. Interest compounds at the stated APY; promotional/intro rates apply only when the stated account, balance and eligibility requirements are met. Time-limited rates are applied only for their published term; conditional offers without a fixed term are modeled for one year only. No fees, bonuses, or future rate changes are assumed. Banks may change variable rates at any time.</div></div>
 
 <div class="grid g3">
   <div class="card kpi"><div class="label">Best 1-year interest, $250k</div><div class="value">{money(top_for_tier(250000)[0][0])}</div><div class="sub">{esc(top_for_tier(250000)[0][1]['bank'])}</div></div>
@@ -493,14 +534,14 @@ def build_returns():
 <div class="tablewrap"><table>
 <thead><tr><th class="num">Deposit</th><th>Best account</th><th class="num">Year-1 interest</th><th class="num">Blended APY</th><th class="num">FDIC-insured</th><th>Source</th></tr></thead>
 <tbody>{best_rows}</tbody></table></div>
-<p class="small">The insured column applies the FDIC single-ownership limit of $250,000 per depositor, per bank, per ownership category. Amounts above it are uninsured unless placed across banks or ownership categories — see <a href="fdic.html">FDIC coverage</a>.</p>
+<p class="small">The insured column applies the FDIC single-ownership limit of $250,000 per depositor, per bank, per ownership category. Accrued interest also counts toward that limit: at an unchanged 4.25% APY, a $250,000 principal would end near $260,625 after one year, while $240,000 would reach about $250,200. Use a lower principal or multiple insured banks if the goal is to keep all principal and interest covered; see <a href="fdic.html">FDIC coverage</a>.</p>
 
 <h2>First-year interest by deposit size</h2>
-<p class="small">Dollars of interest earned in the first 12 months, including the effect of any six-month introductory rate.</p>
+<p class="small">Dollars of interest earned in the first 12 months, applying current promotions and conditional rates only where their eligibility rules are met.</p>
 {matrix(1.0, "Account")}
 
 <h2>Five-year interest by deposit size</h2>
-<p class="small">Cumulative interest over five years, assuming the published post-intro rate holds after the promotional period. This is a projection, not a guarantee: every one of these APYs is variable.</p>
+<p class="small">Cumulative interest over five years, assuming the published post-intro rate holds after any stated promotional period. Offers with no defined future duration, location-unconfirmed rates and time-limited blended promotions are left blank beyond the supported period. This is a scenario, not a guarantee: savings APYs are variable.</p>
 {matrix(5.0, "Account")}
 
 <h2>Modelling assumptions that affect the ranking</h2>
@@ -512,7 +553,7 @@ def build_returns():
 </tbody></table></div>
 
 <h2>Blended first-year APY by deposit size</h2>
-<p class="small">The effective APY actually earned in year one, after mixing the intro and post-intro rates. This is the number to compare against the bank's advertised headline.</p>
+<p class="small">The effective APY for year one using the published promotion and eligibility assumptions. Fixed-term introductory offers use their actual term; conditional variable offers with no fixed duration are modeled at the current rate for one year only. This is a scenario, not a guarantee.</p>
 {apy_matrix()}
 
 <h2>Notes that change the ranking</h2>
@@ -539,7 +580,7 @@ def build_promotions():
 <td>{esc(p['type'])}</td><td class="num">{val}</td><td class="small">{esc(p['apy_offer'] or '—')}</td>
 <td class="small">{esc(p['requirements'])}</td><td>{esc(p['deadline'] or '—')}</td><td>{st}</td><td>{link(p['source'], 'official terms')}</td></tr>"""
     body = f"""
-<div class="banner warn"><div><strong>Deadlines matter.</strong> Three of these offers expire between 10/31/2026 and 1/10/2027. Bonus terms are quoted from the bank's own page; where no offer appeared on the official page it is recorded as “none found”, not as “no bonus exists”.</div></div>
+<div class="banner warn"><div><strong>Deadlines matter.</strong> Citi's qualifying savings promotion ends for new openings on 10/22/2026; Barclays' general and AARP offers have bank-page deadlines of 10/31/2026; E*TRADE's listed offer runs through 1/10/2027. Barclays AARP's partner page lists a different deadline than Barclays' own page, so check the application terms. Bonus terms are quoted from official sources; “none found” means no general offer appeared on the reviewed page, not that no targeted offer exists.</div></div>
 <div class="tablewrap"><table>
 <thead><tr><th>Bank / account</th><th>Type</th><th class="num">Value</th><th>Rate offer</th><th>Conditions</th><th>Deadline</th><th>Status</th><th>Official terms</th></tr></thead>
 <tbody>{rows}</tbody></table></div>
@@ -579,7 +620,8 @@ def build_fdic():
 <td class="num">{money(max(0, dep-250000))}</td><td class="num">{money(min(dep,500000))}</td><td class="num">{max(1, -(-dep//250000))} banks</td></tr>"""
 
     body = f"""
-<div class="banner"><div><strong>FDIC coverage is $250,000 per depositor, per insured bank, per ownership category</strong> — not $250,000 per account. All deposits in the same category at the same bank are added together. Source: <a href="{FDIC['rules']['source']}" target="_blank" rel="noopener">FDIC, Understanding Deposit Insurance</a>.</div></div>
+<div class="banner"><div><strong>FDIC coverage is $250,000 per depositor, per insured bank, per ownership category</strong> — not $250,000 per account. All deposits in the same category at the same bank are added together, including accrued interest. Source: <a href="{FDIC['rules']['source']}" target="_blank" rel="noopener">FDIC, Understanding Deposit Insurance</a>.</div></div>
+<div class="note bad"><b>Leave room for interest.</b> With an unchanged 4.25% APY and no other deposits, $250,000 principal would grow to about $260,625 after one year; $240,000 would reach about $250,200. At a 3.50% APY, $240,000 would grow to about $248,400. These are illustrations, not rate guarantees. Barclays Tiered Savings and Barclays AARP Select Savings are both at Barclays Bank Delaware and share the same bank-level coverage limit.</div>
 
 <div class="grid g3">
   <div class="card kpi"><div class="label">Single-owner limit</div><div class="value">$250,000</div><div class="sub">per depositor, per bank</div></div>
@@ -623,21 +665,23 @@ def build_analysis():
         h = a["headline_apy"]
         gap = h - FED_TOP
         mult = h / NATIONAL
-        promo_premium = (h - a["standard_apy"]) if a.get("promo_months") else 0.0
+        promo_premium = (h - a["standard_apy"]) if ((a.get("promo_months") or a.get("rate_status") == "conditional") and not a.get("standard_rate_label")) else None
+        premium_cell = f"{promo_premium:+.2f} pp" if promo_premium is not None else "—"
+        ongoing_rate = esc(a["standard_rate_label"]) if a.get("standard_rate_label") else pct(a["standard_apy"])
         vs6 = h - TREASURY["6_month"]
         signal = badge("warn", "above policy ceiling") if gap > 0.25 else (badge("info", "near ceiling") if gap >= -0.25 else badge("ok", "below ceiling"))
         rows += f"""<tr><td><b>{esc(a['bank'])}</b><div class="small">{esc(a['product'])}</div></td>
-<td class="num"><b>{pct(h)}</b></td><td class="num">{pct(a['standard_apy'])}</td>
-<td class="num">{mult:.1f}×</td><td class="num">{gap:+.2f} pp</td><td class="num">{promo_premium:+.2f} pp</td><td class="num">{vs6:+.2f} pp</td><td>{signal}</td></tr>"""
+<td class="num"><b>{pct(h)}</b></td><td class="num">{ongoing_rate}</td>
+<td class="num">{mult:.1f}×</td><td class="num">{gap:+.2f} pp</td><td class="num">{premium_cell}</td><td class="num">{vs6:+.2f} pp</td><td>{signal}</td></tr>"""
 
     body = f"""
 <div class="banner"><div><strong>Reference points, all official.</strong> FDIC national savings average <b>{NATIONAL:.2f}%</b> as of {META['fdic_national_savings_rate_as_of']}; federal funds target range <b>{META['fed_funds_target_range']}%</b> after the {META['fed_funds_as_of']} FOMC decision; 6-month Treasury yield <b>{TREASURY['6_month']:.2f}%</b>, 12-month <b>{TREASURY['12_month']:.2f}%</b> (FDIC national rate table).</div></div>
 
 <h2>Headline APY versus the policy rate, the national average, and a 6-month Treasury</h2>
 <div class="tablewrap"><table>
-<thead><tr><th>Account</th><th class="num">Headline APY</th><th class="num">Post-intro APY</th><th class="num">× national avg</th><th class="num">vs fed funds ceiling</th><th class="num">Promo premium</th><th class="num">vs 6-mo Treasury</th><th>Rate character</th></tr></thead>
+<thead><tr><th>Account</th><th class="num">Headline APY</th><th class="num">Standard / post-promo rate</th><th class="num">× national avg</th><th class="num">vs fed funds ceiling</th><th class="num">Promo premium</th><th class="num">vs 6-mo Treasury</th><th>Rate character</th></tr></thead>
 <tbody>{rows}</tbody></table></div>
-<p class="legend">“Above policy ceiling” = headline more than 0.25 pp above the top of the federal funds target range (4.00%). “Promo premium” = headline APY minus the bank's own post-intro APY. Every value is computed from figures on official pages.</p>
+<p class="legend">“Above policy ceiling” = headline more than 0.25 pp above the top of the federal funds target range (4.00%). “Promo premium” = headline APY minus the bank's own standard APY where both are APYs and the offer is introductory or conditional; a dash means the official source gives a different kind of rate or no comparable premium. Every value is computed from figures on official pages.</p>
 
 <h2>Five findings</h2>
 <div class="grid g2">
@@ -651,8 +695,8 @@ def build_analysis():
   <p class="small">SoFi's headline is 1.10 pp above its own ongoing rate; Axos's is 0.79 pp; CIT and E*TRADE 0.50 pp; Openbank 0.35 pp. EverBank, Synchrony, Marcus, Amex, Capital One and Ally advertise no promotional premium at all, which makes their rates easier to compare and less likely to fall at the six-month mark.</p></div>
   <div class="card"><h3 style="margin-top:0">5. “Life span” changes the winner</h3>
   <p class="small">Over one year the ranking is driven by introductory rates. Over five years it is driven by the ongoing rate — which is why Axos still leads on paper but its lead narrows, and why EverBank (4.20% with no promo and no conditions) moves up relative to six-month teasers. The five-year table on <a href="returns.html">Returns</a> shows both. All of these rates are variable and none is locked.</p></div>
-  <div class="card"><h3 style="margin-top:0">6. The Big Four cannot be ranked at all</h3>
-  <p class="small">Their APYs are ZIP-gated, market-specific, or injected at runtime, so they are excluded from every calculation rather than filled in from third-party estimates. Where fees are visible they are the highest in the set: $4.50–$5.00 per month unless a balance condition is met, versus $0 at every digital bank reviewed.</p></div>
+  <div class="card"><h3 style="margin-top:0">6. Some branch-bank rates still require local verification</h3>
+  <p class="small">Chase and Bank of America New York APYs remain blank because the official rate tools are ZIP-gated or placeholder-rendered. Wells Fargo Way2Save remains market-specific and blank for New York, while its separate Platinum Savings row includes a conditional 3.25% new-customer rate. Citi's New York promotion is included only for qualifying $25,000+ funds and accounts opened by 2026-10-22; its 0.98% blended APY is not a general ongoing rate. Where fees are visible they can be avoided only under the banks' stated balance/relationship rules.</p></div>
 </div>
 
 <h2>What would change this analysis</h2>
@@ -712,7 +756,7 @@ def build_flags():
         sev = {"high": "bad", "medium": "warn", "low": "info"}[f["severity"]]
         rows += f"""<tr><td>{badge(sev, f['severity'])}</td>
 <td><b>{esc(f['title'])}</b><div class="small" style="margin-top:6px">{esc(f['detail'])}</div></td>
-<td>{link(f['source'], 'primary')}{('<br>' + link(f['second_source'], 'secondary')) if f.get('second_source') else ''}</td>
+<td>{link(f['source'], 'primary')}{('<br>' + link(f['second_source'], 'secondary')) if f.get('second_source') else ''}{('<br>' + link(f['third_source'], 'FDIC record')) if f.get('third_source') else ''}</td>
 <td>{badge('info', f['status'])}</td></tr>"""
     body = f"""
 <div class="banner warn"><div><strong>{len(FLAGS['flags'])} items are published here rather than silently resolved.</strong> Each is either a conflict between two official pages, a value that could not be read from an official page, or a term that materially changes the return. None of them blocks publication; all of them are linked for manual review.</div></div>
@@ -721,7 +765,7 @@ def build_flags():
 <tbody>{rows}</tbody></table></div>
 
 <h2>How unverified values are shown</h2>
-<div class="card"><p class="small">In the tables, an unverified value appears as <span class="unv">—</span> in red, never as an estimate. A blank means “this could not be confirmed from an official source on {VERIFIED}”, not zero and not “none”. The most consequential blanks are the four Big Four APYs, which are excluded from every return calculation rather than sourced from a comparison site.</p></div>
+<div class="card"><p class="small">In the tables, an unverified value appears as <span class="unv">—</span> in red, never as an estimate. A blank means “this could not be confirmed from an official source on {VERIFIED}”, not zero and not “none”. The most consequential remaining blanks are the Chase, Bank of America and Wells Fargo New York APYs plus the U.S. Bank local APY. Citi is shown only for its qualifying one-year New York promotion; its value is blank outside the published balance/deadline scope.</p></div>
 """
     return page_shell("Flagged for review", "flagged.html", "Flagged for review",
                       "Irregularities, conflicts, and values that could not be verified from an official source.", body)
@@ -740,7 +784,7 @@ def build_method():
 </ul>
 
 <h2>Calculation</h2>
-<div class="card"><p class="small">Interest is compounded at the stated APY. For accounts with an introductory rate, the intro rate is applied for exactly the advertised number of months, then the balance is re-tiered at the bank's published post-intro rate for the remaining period. Tiered accounts are modelled either marginally (each band applies to its portion) or as a cliff (the whole balance earns the rate of the band it falls into), according to how the bank describes the account. Bonuses are excluded. No fees are deducted because every digital account in the set has a $0 monthly fee; the Big Four's fees are shown but their APYs are unverified, so they cannot be modelled.</p>
+<div class="card"><p class="small">Interest is compounded at the stated APY. For accounts with an introductory rate, the intro rate is applied for exactly the advertised number of months, then the balance is re-tiered at the bank's published post-intro rate for the remaining period. Tiered accounts are modelled either marginally (each band applies to its portion) or as a cliff (the whole balance earns the rate of the band it falls into), according to how the bank describes the account. Bonuses are excluded. No fees are deducted. Products with monthly fees show their waiver conditions in the account table. Chase, Bank of America, and Wells Fargo New York APYs remain unverified; Citi's eligible promotional blend is modeled only for one year and qualifying balances.</p>
 <p class="small">Formulas: <code>balance = Σ portion × (1 + rate)^years</code>; blended first-year APY = <code>(balance₁ / deposit) − 1</code>; five-year projection applies the post-intro rate for the remaining 4.5 years.</p></div>
 
 <h2>Verification standard</h2>

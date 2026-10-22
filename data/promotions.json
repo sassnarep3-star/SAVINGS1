@@ -158,25 +158,36 @@
     },
     {
       "bank": "Wells Fargo",
-      "account": "Way2Save Savings",
-      "type": "Not verified",
-      "value": null,
-      "apy_offer": "APY not published on page",
-      "requirements": "No savings bonus terms were reviewed in this session.",
+      "account": "Platinum Savings",
+      "type": "Conditional new-customer variable APY",
+      "value": "3.25% APY at $25,000+ qualifying balance",
+      "apy_offer": "3.25% variable APY for eligible new savings customers who maintain at least $25,000 in collected balance; 0.01% standard/relationship APY when conditions are not met.",
+      "requirements": "Primary owner must not have owned, jointly owned, been trustee of, or held a trust on a Wells Fargo consumer savings account in the prior 30 days. Open with $25 minimum, fund at least $25,000 within 30 days, and maintain at least $25,000 collected balance each day. Offer is available in all states except Colorado. This is not a cash bonus; rate is variable.",
       "deadline": null,
-      "source": "https://www.wellsfargo.com/savings-cds/way2save/",
-      "status": "unverified"
+      "source": "https://www.wellsfargo.com/savings-cds/rates/",
+      "status": "verified"
     },
     {
       "bank": "Citibank",
-      "account": "Citi Savings",
-      "type": "Not verified",
-      "value": null,
-      "apy_offer": "APY not rendered on page",
-      "requirements": "No savings bonus terms were reviewed in this session.",
-      "deadline": null,
-      "source": "https://www.citi.com/banking/savings-account",
-      "status": "unverified"
+      "account": "Citi Savings (New York basic tier)",
+      "type": "Promotional interest rate",
+      "value": "3.75% promotional interest; 0.98% blended one-year APY on qualifying balances",
+      "apy_offer": "3.75% for up to 3 months; 0.98% blended APY for one year at $25,000–$999,999 in the New York basic tier; 0.03% standard interest rate thereafter.",
+      "requirements": "Eligible new Citi Savings account opened 07/14/2026–10/22/2026. At least $25,000 in New-to-Citibank Funds must be deposited within 10 business days; Citi checks the qualifying balance on the 11th business day. If the balance drops below the required amount after 10 business days, the promotional rate ends. Maximum promotional interest is $10,000. No cash bonus.",
+      "deadline": "2026-10-22",
+      "source": "https://banking.citi.com/cbol/OM/checking/tiered/featured-offers/default.htm",
+      "status": "verified"
+    },
+    {
+      "bank": "Barclays US Consumer Bank (AARP members)",
+      "account": "Select Savings from Barclays",
+      "type": "Cash bonus",
+      "value": "$400",
+      "apy_offer": "4.25% variable APY across all listed balance tiers, accurate 10/07/2026; separate from the bonus.",
+      "requirements": "Active AARP member and new Select Savings customer required. Open through 10/31/2026, deposit at least $40,000 within 30 days, maintain at least $40,000 for 120 consecutive days, then bonus is added about 60 days later. Bonus is treated as taxable interest. AARP partner page currently lists 1/31/2027, conflicting with the Barclays direct terms; dashboard uses Barclays direct deadline.",
+      "deadline": "2026-10-31",
+      "source": "https://banking.us.barclays/select-home/savings.html",
+      "status": "verified"
     }
   ]
 }
