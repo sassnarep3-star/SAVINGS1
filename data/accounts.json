@@ -159,9 +159,9 @@
         "source": "https://us.etrade.com/bank/premium-savings-account"
       },
       "security": {
-        "verified": false,
-        "note": "Security center page not reviewed in this session.",
-        "source": null
+        "verified": true,
+        "note": "Six-digit multi-factor authentication, end-to-end encryption, automatic session timeout, real-time login monitoring, 24/7 incident response.",
+        "source": "https://us.etrade.com/security-center"
       },
       "bonus": {
         "value": "$400 or $800 cash bonus",
@@ -660,9 +660,9 @@
         "source": "https://www.americanexpress.com/en-us/banking/online-savings/high-yield-savings-account/"
       },
       "security": {
-        "verified": false,
-        "note": "Security features not detailed on the product page reviewed.",
-        "source": null
+        "verified": true,
+        "note": "Two-step verification, passkeys and biometrics, saved-device management, fraud alerts.",
+        "source": "https://www.americanexpress.com/en-us/security/"
       },
       "bonus": {
         "value": "No opening bonus found on official page",
@@ -829,9 +829,9 @@
         "source": "https://www.usbank.com/bank-accounts/savings-accounts/bank-smartly-savings.html"
       },
       "security": {
-        "verified": false,
-        "note": "Security page not reviewed in this session.",
-        "source": null
+        "verified": true,
+        "note": "Two-step verification, biometrics and passkeys, account alerts (security centre in online and mobile banking).",
+        "source": "https://www.usbank.com/customer-service/online-security.html"
       },
       "bonus": {
         "value": "Not verified",
@@ -883,9 +883,9 @@
         "source": "https://www.chase.com/personal/savings/savings-account"
       },
       "security": {
-        "verified": false,
-        "note": "Security page not reviewed in this session.",
-        "source": null
+        "verified": true,
+        "note": "Encryption of data in transit, biometric/passkey sign-in, one-time-code validation, 24/7 fraud monitoring, zero liability for unauthorised card use.",
+        "source": "https://www.chase.com/digital/resources/privacy-security"
       },
       "bonus": {
         "value": "Not verified",
@@ -1043,9 +1043,9 @@
         "source": "https://www.citi.com/banking/savings-account"
       },
       "security": {
-        "verified": false,
-        "note": "Security page not reviewed in this session.",
-        "source": null
+        "verified": true,
+        "note": "Two-step authentication, biometric authentication, security word/PIN, QuickLock card lock.",
+        "source": "https://online.citi.com/US/nga/security-center"
       },
       "bonus": {
         "value": "Not verified",

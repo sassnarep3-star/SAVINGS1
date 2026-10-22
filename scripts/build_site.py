@@ -427,6 +427,19 @@ def build_accounts():
         for a in ACCOUNTS) + """
 </tbody></table></div>
 
+<h2>Digital app and security</h2>
+<p class="small">Security controls are quoted from each bank's own security centre or product page. “Not verified” means the bank's security page could not be reached or did not describe account controls on the day of review — it is not a finding that the controls are absent.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Bank</th><th>Mobile app</th><th>Security controls verified</th><th>Source</th></tr></thead>
+<tbody>
+""" + "".join(
+        f"""<tr><td><b>{esc(a['bank'])}</b></td>
+<td class="small">{('Verified: ' + esc(a['app']['name'])) if a['app']['verified'] else '<span class="unv">Not verified</span>'}</td>
+<td class="small">{esc(a['security']['note']) if a.get('security', {}).get('verified') else '<span class="unv">Not verified</span>'}</td>
+<td class="small">{link(a['security']['source'], 'security page') if a.get('security', {}).get('source') else '—'}</td></tr>"""
+        for a in ACCOUNTS) + """
+</tbody></table></div>
+
 <h2>Why the Big Four look different</h2>
 <div class="note bad"><b>APY unavailable from an official page for the user's market.</b> Chase shows its savings rate table only after a valid 5-digit ZIP code is entered. Bank of America's page renders fee and minimum-balance values as “$XXXX” to automated readers. Citi's rate table renders a dynamic placeholder (its footnote dates the APY to 10/21/2026 but the number is injected at runtime). Wells Fargo does print 0.01% APY — but only for the page's default market (CA 94105), not for New York. All four APYs are therefore left blank and excluded from every return calculation. See <a href="flagged.html">Flagged for review</a>.</div>
 
