@@ -1,0 +1,249 @@
+{
+  "meta": {
+    "purpose": "Anything that could not be confirmed from an official source, plus everything that looked irregular during the line-by-line check. Nothing here blocks publication \u2014 it tells you what to review by hand.",
+    "generated_on": "2026-10-22",
+    "status_key": {
+      "unverified": "The official page did not expose the value to an automated fetch. The value is blank in every table \u2014 never guessed.",
+      "irregular": "Two official statements conflict, or a page behaves in a way that could confuse a reader.",
+      "scope": "Value is real but is tied to a location, tier or date that differs from the New York / 2026-10-22 baseline.",
+      "note": "Important limitation or context, not an error."
+    },
+    "count": 26
+  },
+  "items": [
+    {
+      "id": "F01",
+      "area": "Chase \u2014 APY",
+      "status": "unverified",
+      "item": "Chase Savings APY is blank on every table",
+      "detail": "The official rate page prints: 'In order to see rates table, please provide valid 5-digit zip code.' The table is filled client-side after a ZIP is submitted. Adding ?zipCode=10001 or ?zip=10001 to the URL did not render it. Chase's product page confirms the fee, waiver rules, no minimum to open and monthly compounding, but shows no rate.",
+      "impact": "Chase cannot be ranked by APY in this comparison. Its fee and rules are still verified.",
+      "source": "https://www.chase.com/personal/savings/savings-account/interest-rates"
+    },
+    {
+      "id": "F02",
+      "area": "Bank of America \u2014 APY, fee, minimum",
+      "status": "unverified",
+      "item": "Advantage Savings rate and monthly fee are rendered as placeholders",
+      "detail": "The official product page ships literal '$XXXX' placeholders in the fee and rate fields and replaces them client-side. The dedicated rates URL returned 'Error 405: HTTP method GET is not supported' to a GET request. Only the six-month new-account fee waiver, the waiver conditions and the FDIC banner could be read.",
+      "impact": "Bank of America is listed but unranked; treat its cost line as unknown until checked with a ZIP in a browser.",
+      "source": "https://www.bankofamerica.com/deposits/savings/savings-accounts/"
+    },
+    {
+      "id": "F03",
+      "area": "Citibank \u2014 APY",
+      "status": "unverified",
+      "item": "No single national Citi Savings APY exists to quote",
+      "detail": "The page ships rate tokens such as ':BLUE_AccSavings_Rate%' that are replaced by rate region, Relationship Tier and any applicable promotion. Citi's own disclosure says the APY is accurate as of a stated date 'in the location entered upon accessing citi.com'. Any number copied from a comparison site would be a guess for New York.",
+      "impact": "Citi is unranked. Fee ($4.50) and waiver rules are verified.",
+      "source": "https://www.citi.com/banking/savings-account"
+    },
+    {
+      "id": "F04",
+      "area": "TD Bank \u2014 APY",
+      "status": "unverified",
+      "item": "TD rate table renders empty without a location",
+      "detail": "The TD rates page prints 'APY is accurate as of 10/21/2026 and subject to change after the account is opened' but the rate table has no default region, so every cell is blank in an automated fetch.",
+      "impact": "TD is unranked. Its $0 opening deposit, $5/$15 fees, waiver rules and 45-day funding rule are verified.",
+      "source": "https://www.td.com/us/en/personal-banking/savings-accounts/rates"
+    },
+    {
+      "id": "F05",
+      "area": "Synchrony \u2014 rate conflict",
+      "status": "irregular",
+      "item": "3.55% headline vs 2.85% in the page's own calculator",
+      "detail": "The product page headline reads 'Special Member Rates 3.55% APY' and the disclosure block says 'All APYs are accurate as of 10/21/2026'. The savings calculator on the same page labels 'Our HYS APY' as 2.85%. The 3.55% figure is tagged 'Special Member Rates', so the qualifying condition is probably membership/eligibility, but the page never states it.",
+      "impact": "3.55% is used in the projections because it is the headline APY and it is dated; confirm the applicable rate at application. If only 2.85% applies, one-year interest on $250,000 falls from $8,875 to $7,125.",
+      "source": "https://www.synchrony.com/banking/products/hys-core"
+    },
+    {
+      "id": "F06",
+      "area": "U.S. Bank \u2014 rate market",
+      "status": "scope",
+      "item": "Rate sheet is pinned to ZIP 55402 (Minneapolis)",
+      "detail": "The rate page states the APYs are 'effective as of October 21, 2026 for ZIP code [55402] and are accurate for accounts opened on today's date'. Appending ?zip=10001 did not change the ZIP the page reported, and the ZIP is normally set with a cookie/interactive selector.",
+      "impact": "U.S. Bank's 0.05% standard and 3.50% relationship figures may differ in New York. The relationship rate also requires a U.S. Bank checking account, Safe Debit account or Smartly card.",
+      "source": "https://www.usbank.com/bank-accounts/savings-accounts/bank-smartly-savings/savings-account-interest-rates.html"
+    },
+    {
+      "id": "F07",
+      "area": "PNC \u2014 rate market",
+      "status": "scope",
+      "item": "Rate sheet is pinned to ZIP 15222 (Allegheny County, PA)",
+      "detail": "Header on the rate page: 'Your Location: 15222 \u2014 Allegheny County, PA - 10/21/2026'. Appending ?zip=10001 did not change it. PNC also states 'The Program and the rates associated with the Select Tiers may not be available in your market.'",
+      "impact": "PNC's 0.02%\u20130.06% APY range is a Pennsylvania quote, not a New York quote. It is directionally the same order of magnitude as the other branch banks.",
+      "source": "https://www.pnc.com/en/personal-banking/banking/deposit-rates/standard-savings.html"
+    },
+    {
+      "id": "F08",
+      "area": "Wells Fargo \u2014 rate market",
+      "status": "scope",
+      "item": "Way2Save 0.01% APY shown for location CA 94105",
+      "detail": "The product page displays 'CA, 94105' in its location control and prints a Standard Interest Rate and APY of 0.01% for balances of $0 or more. The page asks for a ZIP to give 'accurate rate and fee information for your location'.",
+      "impact": "The New York rate may differ, but branch-bank savings rates in this market are all in the 0.01%\u20130.06% band, so the ranking does not change.",
+      "source": "https://www.wellsfargo.com/savings-cds/way2save/"
+    },
+    {
+      "id": "F09",
+      "area": "Barclays \u2014 rate date",
+      "status": "scope",
+      "item": "Tiered Savings table is dated 10/07/2026, not 10/21/2026",
+      "detail": "The tier table says 'This information is accurate as of 10/07/2026', two weeks older than the snapshot date used for the other banks. The Online Savings headline (3.20%) carries no as-of date at all, so its as-of cell is blank and the value is dated by fetch date.",
+      "impact": "Barclays' 3.65% top tier is used for the $250,000\u2013$1,000,000 band; re-check the table before opening, because it is the best verified rate in this comparison.",
+      "source": "https://banking.us.barclays/tiered-savings.html"
+    },
+    {
+      "id": "F10",
+      "area": "Capital One \u2014 page rendering",
+      "status": "irregular",
+      "item": "Product page shows 'NaN APY'",
+      "detail": "The 360 Performance Savings product page renders the headline rate as 'NaN APY' to an automated fetch while stating 'APY (Annual Percentage Yield) is variable and effective 10/21/2026'. The 3.20% figure is taken from Capital One's own savings category page, which prints '3.20% variable annual percentage yield (APY)'.",
+      "impact": "The value is still first-party and dated; it is not from a rate aggregator. The product page itself should be re-checked in a browser.",
+      "source": "https://www.capitalone.com/bank/savings-accounts/online-performance-savings-account/"
+    },
+    {
+      "id": "F11",
+      "area": "American Express \u2014 mobile app",
+      "status": "unverified",
+      "item": "No mobile-app capability stated on the product page",
+      "detail": "The Amex High Yield Savings page describes online account opening, online access and 24/7 phone support, but does not mention a mobile app in the page text that was fetched. The requirement 'there should be a digital app' is therefore not confirmed for Amex here.",
+      "impact": "If an app is mandatory for you, verify before choosing Amex. It remains a fully verified 3.20% FDIC-insured account.",
+      "source": "https://www.americanexpress.com/en-us/banking/online-savings/account/"
+    },
+    {
+      "id": "F12",
+      "area": "Barclays \u2014 mobile app",
+      "status": "unverified",
+      "item": "Barclays pages describe 'digital banking' but not a native app",
+      "detail": "Barclays describes 'a U.S. digital banking platform', 'secure 24/7 online access' and remote check deposit from a computer/laptop/mobile device, but no app-store listing or app name appears on the pages fetched.",
+      "impact": "Same as Amex: confirm app availability if that is a hard requirement.",
+      "source": "https://banking.us.barclays/online-savings.html"
+    },
+    {
+      "id": "F13",
+      "area": "Marcus \u2014 referral terms",
+      "status": "note",
+      "item": "The referral promotion's full terms were not opened",
+      "detail": "Marcus's savings page states the 3-month +1.00% APY increase and illustrates a 3.75% combined APY for a year with one referral. The linked referral terms page was not fetched in this session, so the eligibility conditions are unverified.",
+      "impact": "The 3.75% derived row on the Returns page is an illustration of Marcus's own published example, not a guaranteed rate.",
+      "source": "https://www.marcus.com/us/en/savings/high-yield-savings"
+    },
+    {
+      "id": "F14",
+      "area": "SoFi \u2014 $3M FDIC claim",
+      "status": "note",
+      "item": "'Up to $3M' FDIC insurance is extra coverage through partner banks",
+      "detail": "SoFi advertises FDIC insurance 'up to $3M through a network of participating banks'. SoFi Bank, N.A. itself is an FDIC-insured charter with the standard $250,000 per depositor, per bank, per ownership category limit; the higher figure comes from sweeping deposits to partner banks.",
+      "impact": "Do not treat $3M as a single-bank limit. The standard $250,000 rule is what the FDIC-Max tables on this site use.",
+      "source": "https://www.sofi.com/banking/high-yield-savings-account/"
+    },
+    {
+      "id": "F15",
+      "area": "Capital One \u2014 Discover combination",
+      "status": "note",
+      "item": "Capital One and Discover deposit accounts are counted together for FDIC coverage",
+      "detail": "Capital One's own FAQ: 'any Capital One or Discover Bank deposit accounts opened on or after May 18, 2025 are immediately counted with your other Capital One deposit accounts for determining deposit insurance coverage by the FDIC.'",
+      "impact": "Splitting money between Capital One and Discover does not double your $250,000 coverage after that date. No Discover account is listed separately in this comparison for that reason.",
+      "source": "https://www.capitalone.com/bank/savings-accounts/online-performance-savings-account/"
+    },
+    {
+      "id": "F16",
+      "area": "Marcus / Barclays \u2014 balance ceilings",
+      "status": "note",
+      "item": "Deposit ceilings can cap a large FDIC-max strategy",
+      "detail": "Marcus: $1,000,000 per Online Savings account and $3,000,000 per owner across all deposit accounts. Barclays Tiered Savings: $1,000,000 per account and a maximum of 3 accounts. PNC: PNC may return deposits that push combined savings + money-market balances above $5,000,000.",
+      "impact": "Above those ceilings the account either stops accepting deposits or pays nothing extra, so very large balances need more than one bank.",
+      "source": "https://www.marcus.com/us/en/faqs"
+    },
+    {
+      "id": "F17",
+      "area": "FDIC data snapshot",
+      "status": "note",
+      "item": "Bank assets are an FDIC snapshot dated 2026-10-16",
+      "detail": "Assets, domestic deposits and active status come from the FDIC institutions API index created 2026-10-16T11:58:03Z \u2014 the newest available when this was built. The API returns three closed legacy charters under names that match live brands (U.S. Bank cert 5134, Goldman Sachs cert 57485, PNC cert 7944); they are listed but excluded.",
+      "impact": "Use the certificate number, not the name, to confirm you are looking at the right charter on BankFind.",
+      "source": "https://banks.data.fdic.gov/api/institutions"
+    },
+    {
+      "id": "F18",
+      "area": "Coverage of this comparison",
+      "status": "note",
+      "item": "Four of twenty accounts have no APY, so the 'cheapest megabank' question is partly open",
+      "detail": "Chase, Bank of America, Citibank and TD Bank all render their deposit rates behind a ZIP-code lookup that an automated fetch cannot complete, so those four rows carry no APY. Twenty accounts are in the dataset after the cross-session merge; sixteen have a rate read from the bank's own page.",
+      "impact": "If you want an exact figure for one of the four, open the official rate page with your ZIP in a normal browser.",
+      "source": "https://www.fdic.gov/national-rates-and-rate-caps"
+    },
+    {
+      "id": "F19",
+      "area": "Repo audit \u2014 starting state",
+      "status": "note",
+      "item": "The repository contained a single one-line README and nothing else",
+      "detail": "main at commit e6a9e13 ('Initial commit') held only README.md, whose entire content was '# SAVINGS1---'. There was no data, no site, no COORDINATION.md, no .gitignore, no LICENSE and no CI workflow. Nothing existed to reconcile, and no earlier agent claims were present.",
+      "impact": "Everything published here was created in this session; there is no inherited data to trust or distrust. A LICENSE file is still missing if the repo is meant to be reused.",
+      "source": "https://github.com/sassnarep3-star/SAVINGS1"
+    },
+    {
+      "id": "F20",
+      "area": "Repo audit \u2014 publishing setup",
+      "status": "note",
+      "item": "GitHub Pages is set to a legacy build from the main branch root",
+      "detail": "The Pages API reported build_type 'legacy', source branch 'main', path '/', public true, https enforced. There is no CI workflow and no branch protection configured, so the only merge gate is tools/check_links.py plus the manual review of each page.",
+      "impact": "Any HTML committed at the repo root is published immediately after merge. Because the build is legacy (Jekyll), a .nojekyll file is committed so that files starting with an underscore or containing Liquid-like text are served verbatim.",
+      "source": "https://api.github.com/repos/sassnarep3-star/SAVINGS1/pages"
+    },
+    {
+      "id": "F21",
+      "area": "Axos ONE Savings",
+      "status": "risk",
+      "item": "The 4.21% rate depends on a checking-account bundle, and missing it drops the rate to 1.00%",
+      "detail": "Axos pays 4.21% only while the customer holds Axos ONE Checking with $1,500 in monthly direct deposits plus a $1,500 average daily balance, or $5,000 in direct deposits plus a $5,000 average daily balance, with the qualifying activity posted by the 25th. The page states that if the requirements are not met the savings rate is 1.00%.",
+      "impact": "A saver who moves direct deposits or lets the average balance slip loses about 3.21 percentage points \u2014 roughly $8,025 a year on $250,000.",
+      "source": "https://www.axosbank.com/personal/bank/axos-one"
+    },
+    {
+      "id": "F22",
+      "area": "Axos ONE Savings",
+      "status": "unverified",
+      "item": "No deposit cap is published for the boosted tier",
+      "detail": "The page publishes tier rates ($0\u2013$249,999.99 at 4.21%, $250,000+ at 3.50%) and says up to $2,500,000 can be held through the Axos Insured Deposit Program, but it does not state a maximum for the savings account itself.",
+      "impact": "The projections apply the published tiers with no cap. A large balance above $250,000 earns 3.50%, not 4.21% \u2014 that is the bank's own stated step-down, not an assumption.",
+      "source": "https://www.axosbank.com/personal/bank/axos-one"
+    },
+    {
+      "id": "F23",
+      "area": "E*TRADE Premium Savings",
+      "status": "risk",
+      "item": "$10,000,000 maximum balance, and the entire balance may drop to the base rate above it",
+      "detail": "The page states a $10M maximum for the account and warns that if the balance exceeds the maximum the entire balance may earn the base rate rather than the promotional rate.",
+      "impact": "Only relevant to very large deposits, but the penalty applies to the whole balance rather than the excess.",
+      "source": "https://us.etrade.com/bank/premium-savings-account"
+    },
+    {
+      "id": "F24",
+      "area": "Rate effective dates",
+      "status": "unverified",
+      "item": "Four of the five newly added accounts print no effective date for their rate",
+      "detail": "Axos, E*TRADE, Openbank and EverBank show the current APY without a dated rate sheet; only CIT dates its tiers (2026-07-01). The snapshot column therefore records the fetch date for these rows or is left blank.",
+      "impact": "There is no way to tell from the page whether the rate shown is today's or an older cached figure, and no way to compute how competitive the rate has been over time.",
+      "source": "https://www.everbank.com/banking/performance-savings"
+    },
+    {
+      "id": "F25",
+      "area": "Promotional windows",
+      "status": "note",
+      "item": "Three promotional rates expire on stated dates and one has no end date",
+      "detail": "CIT BOOST50 runs 2026-09-29 to 2026-12-15 and pays 4.25% for six months; E*TRADE's funding window closes 2027-01-10 and its 4.25% lasts six months; the Openbank boost lasts six months with no application deadline published; Axos's 5.00% intro lasts six months with no published end date.",
+      "impact": "Opening after a deadline forfeits the promotional rate. The year-one rows on the returns page apply the boost for six months and the standard rate for the other six.",
+      "source": "https://www.cit.com/cit-bank/platinum-savings/boost"
+    },
+    {
+      "id": "F26",
+      "area": "Cross-session reconciliation",
+      "status": "note",
+      "item": "The two sessions blended Axos's year-one rate differently (4.28% vs 4.25%)",
+      "detail": "The earlier session reported a blended 4.28% and $10,703 of interest on $250,000; this session computes sqrt((1+0.0500)*(1+0.0350))-1 = 4.2473% and $10,618, because $250,000 falls in Axos's $250,000+ tier, which pays 3.50% after the intro. A blend of the intro with the sub-$250,000 tier (4.21%) gives 4.60%.",
+      "impact": "The $85 difference is entirely the tier boundary. This site states the formula and the tier used rather than carrying both numbers.",
+      "source": "https://www.axosbank.com/personal/bank/axos-one"
+    }
+  ]
+}

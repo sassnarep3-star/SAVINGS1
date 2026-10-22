@@ -1,0 +1,1092 @@
+{
+  "meta": {
+    "checked_on": "2026-10-22",
+    "rows": 120,
+    "verified": 91,
+    "unverified": 17,
+    "none_displayed": 12,
+    "rule": "A field is 'verified' only when the value was read on a bank domain or a .gov domain during this session. 'none-displayed' means the official page was checked and carried no offer. 'unverified' means the page did not reveal the value \u2014 the field is blank everywhere on the site."
+  },
+  "rows": [
+    {
+      "account": "Chase",
+      "account_id": "chase-savings",
+      "field": "APY / rate",
+      "value": "",
+      "status": "unverified",
+      "source": "https://www.chase.com/personal/savings/savings-account",
+      "method": "Page gated by ZIP / rendered client-side \u2014 left blank"
+    },
+    {
+      "account": "Chase",
+      "account_id": "chase-savings",
+      "field": "Minimum to open",
+      "value": "$0 \u2014 no minimum balance to open",
+      "status": "verified",
+      "source": "https://www.chase.com/personal/savings/savings-account",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "Chase",
+      "account_id": "chase-savings",
+      "field": "Monthly fee",
+      "value": "$5",
+      "status": "verified",
+      "source": "https://www.chase.com/personal/savings/savings-account",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "Chase",
+      "account_id": "chase-savings",
+      "field": "FDIC charter",
+      "value": "Certificate 628 \u00b7 active=1 \u00b7 JPMorgan Chase Bank, National Association",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/628",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "Chase",
+      "account_id": "chase-savings",
+      "field": "Digital app",
+      "value": "Chase Mobile\u00ae app: check deposit and transfers stated on the product page",
+      "status": "verified",
+      "source": "https://www.chase.com/personal/savings/savings-account",
+      "method": "App capability named on the bank's own page"
+    },
+    {
+      "account": "Chase",
+      "account_id": "chase-savings",
+      "field": "Opening bonus / promotion",
+      "value": "No opening cash bonus or promotional APY displayed",
+      "status": "none-displayed",
+      "source": "https://www.chase.com/personal/savings/savings-account",
+      "method": "No bonus or promotional APY printed on the fetched product page"
+    },
+    {
+      "account": "Bank of America",
+      "account_id": "boa-advantage-savings",
+      "field": "APY / rate",
+      "value": "",
+      "status": "unverified",
+      "source": "https://www.bankofamerica.com/deposits/savings/savings-accounts/",
+      "method": "Page gated by ZIP / rendered client-side \u2014 left blank"
+    },
+    {
+      "account": "Bank of America",
+      "account_id": "boa-advantage-savings",
+      "field": "Minimum to open",
+      "value": "",
+      "status": "unverified",
+      "source": "https://www.bankofamerica.com/deposits/savings/savings-accounts/",
+      "method": "Not stated on the fetched page \u2014 left blank"
+    },
+    {
+      "account": "Bank of America",
+      "account_id": "boa-advantage-savings",
+      "field": "Monthly fee",
+      "value": "",
+      "status": "unverified",
+      "source": "https://www.bankofamerica.com/deposits/savings/savings-accounts/",
+      "method": "Rendered as a placeholder on the page \u2014 left blank"
+    },
+    {
+      "account": "Bank of America",
+      "account_id": "boa-advantage-savings",
+      "field": "FDIC charter",
+      "value": "Certificate 3510 \u00b7 active=1 \u00b7 Bank of America, National Association",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/3510",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "Bank of America",
+      "account_id": "boa-advantage-savings",
+      "field": "Digital app",
+      "value": "Bank of America mobile banking app offered for iPhone/iPad/Android on the product page",
+      "status": "verified",
+      "source": "https://www.bankofamerica.com/deposits/savings/savings-accounts/",
+      "method": "App capability named on the bank's own page"
+    },
+    {
+      "account": "Bank of America",
+      "account_id": "boa-advantage-savings",
+      "field": "Opening bonus / promotion",
+      "value": "No opening cash bonus or promotional APY displayed \u2014 The page does advertise a six-month waiver of the monthly maintenance fee for new accounts.",
+      "status": "none-displayed",
+      "source": "https://www.bankofamerica.com/deposits/savings/savings-accounts/",
+      "method": "No bonus or promotional APY printed on the fetched product page"
+    },
+    {
+      "account": "Wells Fargo",
+      "account_id": "wells-way2save",
+      "field": "APY / rate",
+      "value": "0.01%",
+      "status": "verified",
+      "source": "https://www.wellsfargo.com/savings-cds/way2save/",
+      "method": "Read on the bank's rate page"
+    },
+    {
+      "account": "Wells Fargo",
+      "account_id": "wells-way2save",
+      "field": "Minimum to open",
+      "value": "$25 minimum opening deposit",
+      "status": "verified",
+      "source": "https://www.wellsfargo.com/savings-cds/way2save/",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "Wells Fargo",
+      "account_id": "wells-way2save",
+      "field": "Monthly fee",
+      "value": "$5",
+      "status": "verified",
+      "source": "https://www.wellsfargo.com/savings-cds/way2save/",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "Wells Fargo",
+      "account_id": "wells-way2save",
+      "field": "FDIC charter",
+      "value": "Certificate 3511 \u00b7 active=1 \u00b7 Wells Fargo Bank, National Association",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/3511",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "Wells Fargo",
+      "account_id": "wells-way2save",
+      "field": "Digital app",
+      "value": "Wells Fargo mobile app / mobile deposit referenced for account access and funding",
+      "status": "verified",
+      "source": "https://www.wellsfargo.com/savings-cds/way2save/",
+      "method": "App capability named on the bank's own page"
+    },
+    {
+      "account": "Wells Fargo",
+      "account_id": "wells-way2save",
+      "field": "Opening bonus / promotion",
+      "value": "No opening cash bonus or promotional APY displayed",
+      "status": "none-displayed",
+      "source": "https://www.wellsfargo.com/savings-cds/way2save/",
+      "method": "No bonus or promotional APY printed on the fetched product page"
+    },
+    {
+      "account": "Citibank",
+      "account_id": "citi-savings",
+      "field": "APY / rate",
+      "value": "",
+      "status": "unverified",
+      "source": "https://www.citi.com/banking/savings-account",
+      "method": "Page gated by ZIP / rendered client-side \u2014 left blank"
+    },
+    {
+      "account": "Citibank",
+      "account_id": "citi-savings",
+      "field": "Minimum to open",
+      "value": "",
+      "status": "unverified",
+      "source": "https://www.citi.com/banking/savings-account",
+      "method": "Not stated on the fetched page \u2014 left blank"
+    },
+    {
+      "account": "Citibank",
+      "account_id": "citi-savings",
+      "field": "Monthly fee",
+      "value": "$4.50 (Savings)",
+      "status": "verified",
+      "source": "https://www.citi.com/banking/savings-account",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "Citibank",
+      "account_id": "citi-savings",
+      "field": "FDIC charter",
+      "value": "Certificate 7213 \u00b7 active=1 \u00b7 Citibank, National Association",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/7213",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "Citibank",
+      "account_id": "citi-savings",
+      "field": "Digital app",
+      "value": "Citi Mobile\u00ae App, mobile check deposit and 65,000+ fee-free ATMs stated on the product page",
+      "status": "verified",
+      "source": "https://www.citi.com/banking/savings-account",
+      "method": "App capability named on the bank's own page"
+    },
+    {
+      "account": "Citibank",
+      "account_id": "citi-savings",
+      "field": "Opening bonus / promotion",
+      "value": "No opening cash bonus displayed on the product page \u2014 Citi states that APY is determined by rate region, Relationship Tier and applicable promotion \u2014 a promotional APY may apply by location and is not printed on the page.",
+      "status": "none-displayed",
+      "source": "https://www.citi.com/banking/savings-account",
+      "method": "No bonus or promotional APY printed on the fetched product page"
+    },
+    {
+      "account": "U.S. Bank",
+      "account_id": "usbank-smartly-savings",
+      "field": "APY / rate",
+      "value": "0.05% standard; 1.00% / 2.00% / 3.50% with relationship tiers",
+      "status": "verified",
+      "source": "https://www.usbank.com/bank-accounts/savings-accounts.html",
+      "method": "Read on the bank's rate page"
+    },
+    {
+      "account": "U.S. Bank",
+      "account_id": "usbank-smartly-savings",
+      "field": "Minimum to open",
+      "value": "$25 minimum opening deposit",
+      "status": "verified",
+      "source": "https://www.usbank.com/bank-accounts/savings-accounts.html",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "U.S. Bank",
+      "account_id": "usbank-smartly-savings",
+      "field": "Monthly fee",
+      "value": "$5",
+      "status": "verified",
+      "source": "https://www.usbank.com/bank-accounts/savings-accounts.html",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "U.S. Bank",
+      "account_id": "usbank-smartly-savings",
+      "field": "FDIC charter",
+      "value": "Certificate 6548 \u00b7 active=1 \u00b7 U.S. Bank National Association",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/6548",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "U.S. Bank",
+      "account_id": "usbank-smartly-savings",
+      "field": "Digital app",
+      "value": "Mobile app / online banking and mobile deposit stated on the product page",
+      "status": "verified",
+      "source": "https://www.usbank.com/bank-accounts/savings-accounts.html",
+      "method": "App capability named on the bank's own page"
+    },
+    {
+      "account": "U.S. Bank",
+      "account_id": "usbank-smartly-savings",
+      "field": "Opening bonus / promotion",
+      "value": "No opening cash bonus displayed; relationship rate bump up to 3.50% APY \u2014 Relationship rates require a Bank Smartly Checking account, Safe Debit account or Bank Smartly Visa Signature card and combined qualifying balances (see rate tiers).",
+      "status": "none-displayed",
+      "source": "https://www.usbank.com/bank-accounts/savings-accounts/bank-smartly-savings/savings-account-interest-rates.html",
+      "method": "No bonus or promotional APY printed on the fetched product page"
+    },
+    {
+      "account": "PNC",
+      "account_id": "pnc-standard-savings",
+      "field": "APY / rate",
+      "value": "0.02%\u20130.03% standard; 0.03%\u20130.06% with TotalRewards tier",
+      "status": "verified",
+      "source": "https://www.pnc.com/en/personal-banking/banking/savings/standard-savings.html",
+      "method": "Read on the bank's rate page"
+    },
+    {
+      "account": "PNC",
+      "account_id": "pnc-standard-savings",
+      "field": "Minimum to open",
+      "value": "$0 online ($25 in a branch)",
+      "status": "verified",
+      "source": "https://www.pnc.com/en/personal-banking/banking/savings/standard-savings.html",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "PNC",
+      "account_id": "pnc-standard-savings",
+      "field": "Monthly fee",
+      "value": "$5",
+      "status": "verified",
+      "source": "https://www.pnc.com/en/personal-banking/banking/savings/standard-savings.html",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "PNC",
+      "account_id": "pnc-standard-savings",
+      "field": "FDIC charter",
+      "value": "Certificate 6384 \u00b7 active=1 \u00b7 PNC Bank, National Association",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/6384",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "PNC",
+      "account_id": "pnc-standard-savings",
+      "field": "Digital app",
+      "value": "Online Banking and the PNC Mobile app (iOS/Android links on page); mobile deposit and alerts",
+      "status": "verified",
+      "source": "https://www.pnc.com/en/personal-banking/banking/savings/standard-savings.html",
+      "method": "App capability named on the bank's own page"
+    },
+    {
+      "account": "PNC",
+      "account_id": "pnc-standard-savings",
+      "field": "Opening bonus / promotion",
+      "value": "No opening cash bonus displayed; TotalRewards tier boost of up to +0.03 percentage points \u2014 Enroll in the PNC TotalRewards Select Tier (Silver $25,000+, Gold $100,000+, Platinum $500,000+ of average eligible balance).",
+      "status": "none-displayed",
+      "source": "https://www.pnc.com/en/personal-banking/banking/deposit-rates/standard-savings.html",
+      "method": "No bonus or promotional APY printed on the fetched product page"
+    },
+    {
+      "account": "TD Bank",
+      "account_id": "td-simple-savings",
+      "field": "APY / rate",
+      "value": "",
+      "status": "unverified",
+      "source": "https://www.td.com/us/en/personal-banking/savings-accounts",
+      "method": "Page gated by ZIP / rendered client-side \u2014 left blank"
+    },
+    {
+      "account": "TD Bank",
+      "account_id": "td-simple-savings",
+      "field": "Minimum to open",
+      "value": "$0",
+      "status": "verified",
+      "source": "https://www.td.com/us/en/personal-banking/savings-accounts",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "TD Bank",
+      "account_id": "td-simple-savings",
+      "field": "Monthly fee",
+      "value": "$5 (TD Simple Savings); $15 (TD Signature Savings)",
+      "status": "verified",
+      "source": "https://www.td.com/us/en/personal-banking/savings-accounts",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "TD Bank",
+      "account_id": "td-simple-savings",
+      "field": "FDIC charter",
+      "value": "Certificate 18409 \u00b7 active=1 \u00b7 TD Bank, National Association",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/18409",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "TD Bank",
+      "account_id": "td-simple-savings",
+      "field": "Digital app",
+      "value": "TD Bank Mobile Deposit and the TD app referenced for deposits and account access",
+      "status": "verified",
+      "source": "https://www.td.com/us/en/personal-banking/savings-accounts",
+      "method": "App capability named on the bank's own page"
+    },
+    {
+      "account": "TD Bank",
+      "account_id": "td-simple-savings",
+      "field": "Opening bonus / promotion",
+      "value": "No opening cash bonus or promotional APY displayed",
+      "status": "none-displayed",
+      "source": "https://www.td.com/us/en/personal-banking/savings-accounts",
+      "method": "No bonus or promotional APY printed on the fetched product page"
+    },
+    {
+      "account": "Ally Bank",
+      "account_id": "ally-savings",
+      "field": "APY / rate",
+      "value": "3.10%",
+      "status": "verified",
+      "source": "https://www.ally.com/bank/online-savings-account/",
+      "method": "Read on the bank's rate page"
+    },
+    {
+      "account": "Ally Bank",
+      "account_id": "ally-savings",
+      "field": "Minimum to open",
+      "value": "$0 \u2014 no minimum balance requirement",
+      "status": "verified",
+      "source": "https://www.ally.com/bank/online-savings-account/",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "Ally Bank",
+      "account_id": "ally-savings",
+      "field": "Monthly fee",
+      "value": "\u2014 no monthly maintenance fees",
+      "status": "verified",
+      "source": "https://www.ally.com/bank/online-savings-account/",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "Ally Bank",
+      "account_id": "ally-savings",
+      "field": "FDIC charter",
+      "value": "Certificate 57803 \u00b7 active=1 \u00b7 Ally Bank",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/57803",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "Ally Bank",
+      "account_id": "ally-savings",
+      "field": "Digital app",
+      "value": "Ally mobile app with savings buckets, boosters, round-ups and surprise savings",
+      "status": "verified",
+      "source": "https://www.ally.com/bank/online-savings-account/",
+      "method": "App capability named on the bank's own page"
+    },
+    {
+      "account": "Ally Bank",
+      "account_id": "ally-savings",
+      "field": "Opening bonus / promotion",
+      "value": "No opening cash bonus displayed",
+      "status": "none-displayed",
+      "source": "https://www.ally.com/bank/online-savings-account/",
+      "method": "No bonus or promotional APY printed on the fetched product page"
+    },
+    {
+      "account": "Marcus by Goldman Sachs",
+      "account_id": "marcus-online-savings",
+      "field": "APY / rate",
+      "value": "3.50%",
+      "status": "verified",
+      "source": "https://www.marcus.com/us/en/savings/high-yield-savings",
+      "method": "Read on the bank's rate page"
+    },
+    {
+      "account": "Marcus by Goldman Sachs",
+      "account_id": "marcus-online-savings",
+      "field": "Minimum to open",
+      "value": "$0 \u2014 no minimum deposit",
+      "status": "verified",
+      "source": "https://www.marcus.com/us/en/savings/high-yield-savings",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "Marcus by Goldman Sachs",
+      "account_id": "marcus-online-savings",
+      "field": "Monthly fee",
+      "value": "",
+      "status": "unverified",
+      "source": "https://www.marcus.com/us/en/savings/high-yield-savings",
+      "method": "Rendered as a placeholder on the page \u2014 left blank"
+    },
+    {
+      "account": "Marcus by Goldman Sachs",
+      "account_id": "marcus-online-savings",
+      "field": "FDIC charter",
+      "value": "Certificate 33124 \u00b7 active=1 \u00b7 Goldman Sachs Bank USA",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/33124",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "Marcus by Goldman Sachs",
+      "account_id": "marcus-online-savings",
+      "field": "Digital app",
+      "value": "Marcus app login and transfer capability stated on the FAQ page",
+      "status": "verified",
+      "source": "https://www.marcus.com/us/en/savings/high-yield-savings",
+      "method": "App capability named on the bank's own page"
+    },
+    {
+      "account": "Marcus by Goldman Sachs",
+      "account_id": "marcus-online-savings",
+      "field": "Opening bonus / promotion",
+      "value": "3-month promotional APY increase of 1.00% \u2014 Referral-based: the promo increase is on top of the stated Online Savings APY for 3 months; after 3 months the account earns the then-current standard APY. Marcus illustrates a combined APY of 3.75% for a year if one referral is made and the standard APY is unchanged.",
+      "status": "verified",
+      "source": "https://www.marcus.com/us/en/savings/high-yield-savings",
+      "method": "Offer terms read on the bank's own page"
+    },
+    {
+      "account": "American Express",
+      "account_id": "amex-hysa",
+      "field": "APY / rate",
+      "value": "3.20%",
+      "status": "verified",
+      "source": "https://www.americanexpress.com/en-us/banking/online-savings/account/",
+      "method": "Read on the bank's rate page"
+    },
+    {
+      "account": "American Express",
+      "account_id": "amex-hysa",
+      "field": "Minimum to open",
+      "value": "$0 \u2014 no minimum balance required to open",
+      "status": "verified",
+      "source": "https://www.americanexpress.com/en-us/banking/online-savings/account/",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "American Express",
+      "account_id": "amex-hysa",
+      "field": "Monthly fee",
+      "value": "\u2014 no monthly fees",
+      "status": "verified",
+      "source": "https://www.americanexpress.com/en-us/banking/online-savings/account/",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "American Express",
+      "account_id": "amex-hysa",
+      "field": "FDIC charter",
+      "value": "Certificate 27471 \u00b7 active=1 \u00b7 American Express National  Bank",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/27471",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "American Express",
+      "account_id": "amex-hysa",
+      "field": "Digital app",
+      "value": "No mobile-app capability is stated on the product page fetched; app support flagged for manual review",
+      "status": "unverified",
+      "source": "https://www.americanexpress.com/en-us/banking/online-savings/account/",
+      "method": "Not stated on the fetched page \u2014 flagged"
+    },
+    {
+      "account": "American Express",
+      "account_id": "amex-hysa",
+      "field": "Opening bonus / promotion",
+      "value": "No opening cash bonus displayed",
+      "status": "none-displayed",
+      "source": "https://www.americanexpress.com/en-us/banking/online-savings/account/",
+      "method": "No bonus or promotional APY printed on the fetched product page"
+    },
+    {
+      "account": "Capital One",
+      "account_id": "capitalone-360-performance",
+      "field": "APY / rate",
+      "value": "3.20%",
+      "status": "verified",
+      "source": "https://www.capitalone.com/bank/savings-accounts/",
+      "method": "Read on the bank's rate page"
+    },
+    {
+      "account": "Capital One",
+      "account_id": "capitalone-360-performance",
+      "field": "Minimum to open",
+      "value": "$0 \u2014 no minimum balance required",
+      "status": "verified",
+      "source": "https://www.capitalone.com/bank/savings-accounts/",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "Capital One",
+      "account_id": "capitalone-360-performance",
+      "field": "Monthly fee",
+      "value": "",
+      "status": "unverified",
+      "source": "https://www.capitalone.com/bank/savings-accounts/",
+      "method": "Rendered as a placeholder on the page \u2014 left blank"
+    },
+    {
+      "account": "Capital One",
+      "account_id": "capitalone-360-performance",
+      "field": "FDIC charter",
+      "value": "Certificate 4297 \u00b7 active=1 \u00b7 Capital One, National Association",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/4297",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "Capital One",
+      "account_id": "capitalone-360-performance",
+      "field": "Digital app",
+      "value": "Capital One Mobile app: mobile check deposit, transfers, AutoSave, manage kids' accounts",
+      "status": "verified",
+      "source": "https://www.capitalone.com/bank/savings-accounts/",
+      "method": "App capability named on the bank's own page"
+    },
+    {
+      "account": "Capital One",
+      "account_id": "capitalone-360-performance",
+      "field": "Opening bonus / promotion",
+      "value": "No opening cash bonus displayed for 360 Performance Savings \u2014 The savings category page does advertise a separate 11-month 360 CD at 4.40% APY (a CD, not a savings account).",
+      "status": "none-displayed",
+      "source": "https://www.capitalone.com/bank/savings-accounts/",
+      "method": "No bonus or promotional APY printed on the fetched product page"
+    },
+    {
+      "account": "Synchrony",
+      "account_id": "synchrony-hys",
+      "field": "APY / rate",
+      "value": "3.55% ('Special Member Rates')",
+      "status": "verified",
+      "source": "https://www.synchrony.com/banking/products/hys-core",
+      "method": "Read on the bank's rate page"
+    },
+    {
+      "account": "Synchrony",
+      "account_id": "synchrony-hys",
+      "field": "Minimum to open",
+      "value": "$0 \u2014 no minimum deposit",
+      "status": "verified",
+      "source": "https://www.synchrony.com/banking/products/hys-core",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "Synchrony",
+      "account_id": "synchrony-hys",
+      "field": "Monthly fee",
+      "value": "",
+      "status": "unverified",
+      "source": "https://www.synchrony.com/banking/products/hys-core",
+      "method": "Rendered as a placeholder on the page \u2014 left blank"
+    },
+    {
+      "account": "Synchrony",
+      "account_id": "synchrony-hys",
+      "field": "FDIC charter",
+      "value": "Certificate 27314 \u00b7 active=1 \u00b7 Synchrony Bank",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/27314",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "Synchrony",
+      "account_id": "synchrony-hys",
+      "field": "Digital app",
+      "value": "Synchrony Bank app for iOS/Android; mobile check deposit",
+      "status": "verified",
+      "source": "https://www.synchrony.com/banking/products/hys-core",
+      "method": "App capability named on the bank's own page"
+    },
+    {
+      "account": "Synchrony",
+      "account_id": "synchrony-hys",
+      "field": "Opening bonus / promotion",
+      "value": "'Special Member Rates' 3.55% APY \u2014 Headline APY is labelled 'Special Member Rates'. The same page's calculator shows 'Our HYS APY 2.85%', so the conditions that unlock 3.55% are not stated on the page. Confirm the rate at application.",
+      "status": "verified",
+      "source": "https://www.synchrony.com/banking/products/hys-core",
+      "method": "Offer terms read on the bank's own page"
+    },
+    {
+      "account": "Barclays US",
+      "account_id": "barclays-tiered-savings",
+      "field": "APY / rate",
+      "value": "3.50% under $250,000; 3.65% $250,000\u2013$1,000,000",
+      "status": "verified",
+      "source": "https://banking.us.barclays/tiered-savings.html",
+      "method": "Read on the bank's rate page"
+    },
+    {
+      "account": "Barclays US",
+      "account_id": "barclays-tiered-savings",
+      "field": "Minimum to open",
+      "value": "$0 \u2014 no minimum balance to open",
+      "status": "verified",
+      "source": "https://banking.us.barclays/tiered-savings.html",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "Barclays US",
+      "account_id": "barclays-tiered-savings",
+      "field": "Monthly fee",
+      "value": "\u2014 no monthly maintenance fees",
+      "status": "verified",
+      "source": "https://banking.us.barclays/tiered-savings.html",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "Barclays US",
+      "account_id": "barclays-tiered-savings",
+      "field": "FDIC charter",
+      "value": "Certificate 57203 \u00b7 active=1 \u00b7 Barclays Bank Delaware",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/57203",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "Barclays US",
+      "account_id": "barclays-tiered-savings",
+      "field": "Digital app",
+      "value": "Page speaks of a 'U.S. digital banking platform' and 'secure 24/7 online access'; a native mobile app is not stated on the pages fetched \u2014 flagged for manual review",
+      "status": "unverified",
+      "source": "https://banking.us.barclays/tiered-savings.html",
+      "method": "Not stated on the fetched page \u2014 flagged"
+    },
+    {
+      "account": "Barclays US",
+      "account_id": "barclays-tiered-savings",
+      "field": "Opening bonus / promotion",
+      "value": "$200 cash bonus \u2014 Be a new Barclays Tiered Savings customer (current or previous Barclays savings/CD customers are ineligible); open by 10/31/2026; fund the new account with at least $25,000 within the first 30 days; keep at least $25,000 for 120 consecutive days. Bonus posts about 60 days after the 120-day period and is reported on Form 1099-INT as interest.",
+      "status": "verified",
+      "source": "https://banking.us.barclays/tiered-savings.html",
+      "method": "Offer terms read on the bank's own page"
+    },
+    {
+      "account": "Barclays US",
+      "account_id": "barclays-online-savings",
+      "field": "APY / rate",
+      "value": "3.20%",
+      "status": "verified",
+      "source": "https://banking.us.barclays/online-savings.html",
+      "method": "Read on the bank's rate page"
+    },
+    {
+      "account": "Barclays US",
+      "account_id": "barclays-online-savings",
+      "field": "Minimum to open",
+      "value": "$0 \u2014 no minimum balance to open",
+      "status": "verified",
+      "source": "https://banking.us.barclays/online-savings.html",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "Barclays US",
+      "account_id": "barclays-online-savings",
+      "field": "Monthly fee",
+      "value": "",
+      "status": "unverified",
+      "source": "https://banking.us.barclays/online-savings.html",
+      "method": "Rendered as a placeholder on the page \u2014 left blank"
+    },
+    {
+      "account": "Barclays US",
+      "account_id": "barclays-online-savings",
+      "field": "FDIC charter",
+      "value": "Certificate 57203 \u00b7 active=1 \u00b7 Barclays Bank Delaware",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/57203",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "Barclays US",
+      "account_id": "barclays-online-savings",
+      "field": "Digital app",
+      "value": "Remote deposit from computer/laptop/mobile browser is described; a native app is not stated on the page fetched \u2014 flagged",
+      "status": "unverified",
+      "source": "https://banking.us.barclays/online-savings.html",
+      "method": "Not stated on the fetched page \u2014 flagged"
+    },
+    {
+      "account": "Barclays US",
+      "account_id": "barclays-online-savings",
+      "field": "Opening bonus / promotion",
+      "value": "No opening cash bonus displayed for Online Savings \u2014 The $200 bonus on the Barclays site applies to the separate Tiered Savings account.",
+      "status": "none-displayed",
+      "source": "https://banking.us.barclays/online-savings.html",
+      "method": "No bonus or promotional APY printed on the fetched product page"
+    },
+    {
+      "account": "SoFi",
+      "account_id": "sofi-savings",
+      "field": "APY / rate",
+      "value": "3.30%; up to 4.40% with 1.10% direct-deposit boost (6 months)",
+      "status": "verified",
+      "source": "https://www.sofi.com/banking/high-yield-savings-account/",
+      "method": "Read on the bank's rate page"
+    },
+    {
+      "account": "SoFi",
+      "account_id": "sofi-savings",
+      "field": "Minimum to open",
+      "value": "$0",
+      "status": "verified",
+      "source": "https://www.sofi.com/banking/high-yield-savings-account/",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "SoFi",
+      "account_id": "sofi-savings",
+      "field": "Monthly fee",
+      "value": "$0 \u2014 no account, overdraft or minimum-balance fees",
+      "status": "verified",
+      "source": "https://www.sofi.com/banking/high-yield-savings-account/",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "SoFi",
+      "account_id": "sofi-savings",
+      "field": "FDIC charter",
+      "value": "Certificate 26881 \u00b7 active=1 \u00b7 SoFi Bank, National Association",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/26881",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "SoFi",
+      "account_id": "sofi-savings",
+      "field": "Digital app",
+      "value": "SoFi app: mobile check deposit, alerts, early paycheck, joint account holders",
+      "status": "verified",
+      "source": "https://www.sofi.com/banking/high-yield-savings-account/",
+      "method": "App capability named on the bank's own page"
+    },
+    {
+      "account": "SoFi",
+      "account_id": "sofi-savings",
+      "field": "Opening bonus / promotion",
+      "value": "$50 or $400 cash bonus (plus a 1.10% APY boost for up to 6 months) \u2014 Open a SoFi Checking and Savings account and set up eligible direct deposit of $1,000 or more; the $400 tier is the top advertised amount ('up to $400'). The 1.10% APY boost requires the eligible direct deposit (or $5,000 of qualifying deposits every 31 days) within 60 days and lasts up to 6 months.",
+      "status": "verified",
+      "source": "https://www.sofi.com/banking/high-yield-savings-account/",
+      "method": "Offer terms read on the bank's own page"
+    },
+    {
+      "account": "Axos",
+      "account_id": "axos-one-savings",
+      "field": "APY / rate",
+      "value": "4.21% ($0\u2013$249,999.99) / 3.50% ($250,000+); 5.00% for the first 6 months for new customers; 1.00% if requirements are missed",
+      "status": "verified",
+      "source": "https://www.axosbank.com/personal/bank/axos-one",
+      "method": "Read on the bank's rate page"
+    },
+    {
+      "account": "Axos",
+      "account_id": "axos-one-savings",
+      "field": "Minimum to open",
+      "value": "$0",
+      "status": "verified",
+      "source": "https://www.axosbank.com/personal/bank/axos-one",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "Axos",
+      "account_id": "axos-one-savings",
+      "field": "Monthly fee",
+      "value": "",
+      "status": "unverified",
+      "source": "https://www.axosbank.com/personal/bank/axos-one",
+      "method": "Rendered as a placeholder on the page \u2014 left blank"
+    },
+    {
+      "account": "Axos",
+      "account_id": "axos-one-savings",
+      "field": "FDIC charter",
+      "value": "Certificate 35546 \u00b7 active=1 \u00b7 Axos Bank",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/35546",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "Axos",
+      "account_id": "axos-one-savings",
+      "field": "Digital app",
+      "value": "Axos All-In-One mobile app; ATM locator in the app",
+      "status": "verified",
+      "source": "https://www.axosbank.com/personal/bank/axos-one",
+      "method": "App capability named on the bank's own page"
+    },
+    {
+      "account": "Axos",
+      "account_id": "axos-one-savings",
+      "field": "Opening bonus / promotion",
+      "value": "5.00% APY for the first 6 months, then 4.21% (balances under $250,000) or 3.50% ($250,000+) \u2014 Open and fund an Axos ONE Savings account and hold an Axos ONE Checking account with qualifying activity: $1,500 in monthly direct deposits plus a $1,500 average daily balance, or $5,000 in direct deposits plus a $5,000 average daily balance. Qualifying deposits must post by the 25th of the month. If the requirement is missed the rate is 1.00%.",
+      "status": "verified",
+      "source": "https://www.axosbank.com/personal/bank/axos-one",
+      "method": "Offer terms read on the bank's own page"
+    },
+    {
+      "account": "E*TRADE from Morgan Stanley",
+      "account_id": "etrade-premium-savings",
+      "field": "APY / rate",
+      "value": "3.75% base; 4.25% guaranteed for 6 months on new accounts",
+      "status": "verified",
+      "source": "https://us.etrade.com/bank/premium-savings-account",
+      "method": "Read on the bank's rate page"
+    },
+    {
+      "account": "E*TRADE from Morgan Stanley",
+      "account_id": "etrade-premium-savings",
+      "field": "Minimum to open",
+      "value": "$0 \u2014 no minimum deposit",
+      "status": "verified",
+      "source": "https://us.etrade.com/bank/premium-savings-account",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "E*TRADE from Morgan Stanley",
+      "account_id": "etrade-premium-savings",
+      "field": "Monthly fee",
+      "value": "",
+      "status": "unverified",
+      "source": "https://us.etrade.com/bank/premium-savings-account",
+      "method": "Rendered as a placeholder on the page \u2014 left blank"
+    },
+    {
+      "account": "E*TRADE from Morgan Stanley",
+      "account_id": "etrade-premium-savings",
+      "field": "FDIC charter",
+      "value": "Certificate 34221 \u00b7 active=1 \u00b7 Morgan Stanley Private Bank, National Association",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/34221",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "E*TRADE from Morgan Stanley",
+      "account_id": "etrade-premium-savings",
+      "field": "Digital app",
+      "value": "E*TRADE mobile app for account access and transfers",
+      "status": "verified",
+      "source": "https://us.etrade.com/bank/premium-savings-account",
+      "method": "App capability named on the bank's own page"
+    },
+    {
+      "account": "E*TRADE from Morgan Stanley",
+      "account_id": "etrade-premium-savings",
+      "field": "Opening bonus / promotion",
+      "value": "Up to $800 cash bonus (promo code SAVE800) plus 4.25% APY for 6 months \u2014 Use promo code SAVE800 when opening a new Premium Savings account and fund it within the stated window (2026-09-22 through 2027-01-10). The bonus is tiered by the amount deposited; $800 is the top tier advertised on the page.",
+      "status": "verified",
+      "source": "https://us.etrade.com/bank/premium-savings-account",
+      "method": "Offer terms read on the bank's own page"
+    },
+    {
+      "account": "Openbank by Santander",
+      "account_id": "openbank-hys",
+      "field": "APY / rate",
+      "value": "4.00% standard; 4.35% for the first 6 months for new customers (4.00% + 0.35% boost)",
+      "status": "verified",
+      "source": "https://www.openbank.us/banking/high-yield-savings-account/",
+      "method": "Read on the bank's rate page"
+    },
+    {
+      "account": "Openbank by Santander",
+      "account_id": "openbank-hys",
+      "field": "Minimum to open",
+      "value": "$500 minimum initial deposit",
+      "status": "verified",
+      "source": "https://www.openbank.us/banking/high-yield-savings-account/",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "Openbank by Santander",
+      "account_id": "openbank-hys",
+      "field": "Monthly fee",
+      "value": "",
+      "status": "unverified",
+      "source": "https://www.openbank.us/banking/high-yield-savings-account/",
+      "method": "Rendered as a placeholder on the page \u2014 left blank"
+    },
+    {
+      "account": "Openbank by Santander",
+      "account_id": "openbank-hys",
+      "field": "FDIC charter",
+      "value": "Certificate 29950 \u00b7 active=1 \u00b7 Santander Bank, N.A.",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/29950",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "Openbank by Santander",
+      "account_id": "openbank-hys",
+      "field": "Digital app",
+      "value": "Openbank app (App Store / Google Play links on the page); trusted-device verification with face or fingerprint",
+      "status": "verified",
+      "source": "https://www.openbank.us/banking/high-yield-savings-account/",
+      "method": "App capability named on the bank's own page"
+    },
+    {
+      "account": "Openbank by Santander",
+      "account_id": "openbank-hys",
+      "field": "Opening bonus / promotion",
+      "value": "0.35% APY boost for the first 6 months (4.00% standard + 0.35% = 4.35%) \u2014 New Openbank High Yield Savings customers only. $500 minimum to open. No checks or debit card on the account; the bank requires a trusted device for login.",
+      "status": "verified",
+      "source": "https://www.openbank.us/banking/high-yield-savings-account/",
+      "method": "Offer terms read on the bank's own page"
+    },
+    {
+      "account": "CIT Bank",
+      "account_id": "cit-platinum-savings",
+      "field": "APY / rate",
+      "value": "3.75% ($5,000+); 0.25% (under $5,000); 4.25% on $5,000+ with the BOOST50 code for 6 months",
+      "status": "verified",
+      "source": "https://www.cit.com/cit-bank/platinum-savings/boost",
+      "method": "Read on the bank's rate page"
+    },
+    {
+      "account": "CIT Bank",
+      "account_id": "cit-platinum-savings",
+      "field": "Minimum to open",
+      "value": "$100 minimum to open",
+      "status": "verified",
+      "source": "https://www.cit.com/cit-bank/platinum-savings/boost",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "CIT Bank",
+      "account_id": "cit-platinum-savings",
+      "field": "Monthly fee",
+      "value": "\u2014 no account opening or monthly service fees",
+      "status": "verified",
+      "source": "https://www.cit.com/cit-bank/platinum-savings/boost",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "CIT Bank",
+      "account_id": "cit-platinum-savings",
+      "field": "FDIC charter",
+      "value": "Certificate 11063 \u00b7 active=1 \u00b7 First-Citizens Bank & Trust Company",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/11063",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "CIT Bank",
+      "account_id": "cit-platinum-savings",
+      "field": "Digital app",
+      "value": "CIT Bank mobile app with mobile check deposit",
+      "status": "verified",
+      "source": "https://www.cit.com/cit-bank/platinum-savings/boost",
+      "method": "App capability named on the bank's own page"
+    },
+    {
+      "account": "CIT Bank",
+      "account_id": "cit-platinum-savings",
+      "field": "Opening bonus / promotion",
+      "value": "BOOST50 promo code: 4.25% APY for 6 months (0.75% on balances under $5,000) \u2014 Apply promo code BOOST50 when opening a new Platinum Savings account. Promo window 2026-09-29 through 2026-12-15. $100 minimum to open. Boost applies to balances up to $9,999,999. After 6 months the rate returns to 3.75% on $5,000+ and 0.25% below $5,000.",
+      "status": "verified",
+      "source": "https://www.cit.com/cit-bank/platinum-savings/boost",
+      "method": "Offer terms read on the bank's own page"
+    },
+    {
+      "account": "EverBank",
+      "account_id": "everbank-performance-savings",
+      "field": "APY / rate",
+      "value": "4.20% (new accounts, all balances)",
+      "status": "verified",
+      "source": "https://www.everbank.com/banking/performance-savings",
+      "method": "Read on the bank's rate page"
+    },
+    {
+      "account": "EverBank",
+      "account_id": "everbank-performance-savings",
+      "field": "Minimum to open",
+      "value": "$0",
+      "status": "verified",
+      "source": "https://www.everbank.com/banking/performance-savings",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "EverBank",
+      "account_id": "everbank-performance-savings",
+      "field": "Monthly fee",
+      "value": "\u2014 no monthly maintenance fee at any balance",
+      "status": "verified",
+      "source": "https://www.everbank.com/banking/performance-savings",
+      "method": "Read on the bank's product page"
+    },
+    {
+      "account": "EverBank",
+      "account_id": "everbank-performance-savings",
+      "field": "FDIC charter",
+      "value": "Certificate 34775 \u00b7 active=1 \u00b7 EverBank, National Association",
+      "status": "verified",
+      "source": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/34775",
+      "method": "Matched in the FDIC institutions API (index 2026-10-16) and rendered as the official BankFind detail link"
+    },
+    {
+      "account": "EverBank",
+      "account_id": "everbank-performance-savings",
+      "field": "Digital app",
+      "value": "EverBank mobile app with mobile check deposit",
+      "status": "verified",
+      "source": "https://www.everbank.com/banking/performance-savings",
+      "method": "App capability named on the bank's own page"
+    },
+    {
+      "account": "EverBank",
+      "account_id": "everbank-performance-savings",
+      "field": "Opening bonus / promotion",
+      "value": "No opening bonus or promotional rate advertised \u2014 The official product page was checked on 2026-10-22 and showed no opening bonus, promo code or introductory APY \u2014 only the 4.20% rate for new accounts.",
+      "status": "none-displayed",
+      "source": "https://www.everbank.com/banking/performance-savings",
+      "method": "No bonus or promotional APY printed on the fetched product page"
+    }
+  ]
+}

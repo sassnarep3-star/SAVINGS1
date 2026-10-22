@@ -1,0 +1,182 @@
+{
+  "as_of": "2026-10-22",
+  "note": "Only offers printed on the bank's own domain are listed. 'None found' means no offer appeared on the official product page reviewed on the verification date; it is not proof that no offer exists.",
+  "promotions": [
+    {
+      "bank": "E*TRADE from Morgan Stanley",
+      "account": "Premium Savings Account",
+      "type": "Cash bonus + boosted APY",
+      "value": "$400 or $800",
+      "apy_offer": "4.25% APY for 6 months (base 3.75%)",
+      "requirements": "Open a new Premium Savings Account by 1/10/2027 with promo code SAVE800. Deposit qualifying new money within 30 days: $20,000-$99,999 earns $400; $100,000+ earns $800. Maintain the balance for 45 additional days after the 30-day funding period.",
+      "deadline": "2027-01-10",
+      "source": "https://us.etrade.com/promo/savings",
+      "status": "verified"
+    },
+    {
+      "bank": "SoFi Bank",
+      "account": "SoFi Savings",
+      "type": "Cash bonus + boosted APY",
+      "value": "$50 or $400",
+      "apy_offer": "3.30% base + 1.10% boost for up to 6 months = 4.40%",
+      "requirements": "Set up an eligible direct deposit (payroll, pension, or government benefit) on or before 12/31/2027. SoFi sums eligible direct deposits received in the 25 calendar days after the first one: $1,000-$4,999.99 earns $50; $5,000+ earns $400. Bonus paid in the SoFi Checking account within 7 business days of completing requirements.",
+      "deadline": "2027-12-31",
+      "source": "https://www.sofi.com/banking/high-yield-savings-account/",
+      "status": "verified"
+    },
+    {
+      "bank": "Barclays US Consumer Bank",
+      "account": "Tiered Savings",
+      "type": "Cash bonus",
+      "value": "$200",
+      "apy_offer": "None (standard tiered APY applies)",
+      "requirements": "New Barclays Tiered Savings customer (current or previous Barclays savings/CD customers are ineligible). Open by 10/31/2026, deposit at least $25,000 within the first 30 days, and maintain $25,000 for 120 consecutive days. Bonus paid about 60 days after that.",
+      "deadline": "2026-10-31",
+      "source": "https://banking.us.barclays/tiered-savings.html",
+      "status": "verified"
+    },
+    {
+      "bank": "CIT Bank",
+      "account": "Platinum Savings",
+      "type": "Boosted APY",
+      "value": "0.50% APY boost",
+      "apy_offer": "4.25% APY for 6 months on $5,000+ (standard 3.75%)",
+      "requirements": "Use promo code BOOST50 at account opening; minimum $100 to open; boost applies for 6 months from opening to the full balance, up to $9,999,999. Promotion runs 9/29/2026-12/15/2026 and may end early without notice. Balances below $5,000 earn 0.75% during the boost.",
+      "deadline": "2026-12-15",
+      "source": "https://www.cit.com/cit-bank/platinum-savings/boost",
+      "status": "verified"
+    },
+    {
+      "bank": "Axos Bank",
+      "account": "Axos ONE Savings",
+      "type": "Intro APY",
+      "value": "5.00% APY for 6 months",
+      "apy_offer": "5.00% intro; 4.21% ongoing on $0-$249,999.99 while requirements are met; 1.00% if requirements are not met",
+      "requirements": "Open an Axos ONE checking and savings bundle. Option 1: $1,500+ total monthly qualifying direct deposits and $1,500 average daily balance in checking. Option 2: $5,000+ total monthly qualifying deposits and $5,000 average daily balance. Transactions must post by the 25th of the month.",
+      "deadline": null,
+      "source": "https://www.axosbank.com/personal/bank/axos-one",
+      "status": "verified"
+    },
+    {
+      "bank": "Openbank by Santander",
+      "account": "High Yield Savings",
+      "type": "Boosted APY",
+      "value": "0.35% APY boost",
+      "apy_offer": "4.35% APY for 6 months (standard 4.00%)",
+      "requirements": "New customers only. Open a High Yield Savings account and fund it; the 0.35% boost applies for 6 months even if the standard APY changes. Minimum $500 deposit to open.",
+      "deadline": null,
+      "source": "https://www.openbank.us/banking/high-yield-savings-account/",
+      "status": "verified"
+    },
+    {
+      "bank": "Marcus by Goldman Sachs",
+      "account": "Online Savings",
+      "type": "Referral rate increase",
+      "value": "1.00% APY increase for 3 months",
+      "apy_offer": "3.50% standard; 3.75% combined APY for a year if one referral is made and the standard APY is unchanged",
+      "requirements": "Referral required. The 1.00% promotional increase applies for 3 months on top of the standard APY. Not an opening bonus and not available without a referral.",
+      "deadline": null,
+      "source": "https://www.marcus.com/us/en/savings/high-yield-savings",
+      "status": "verified"
+    },
+    {
+      "bank": "Capital One",
+      "account": "360 Performance Savings",
+      "type": "None found",
+      "value": null,
+      "apy_offer": "3.20% APY (no promo)",
+      "requirements": "No cash bonus or promotional APY appeared on the official product page on 2026-10-22.",
+      "deadline": null,
+      "source": "https://www.capitalone.com/bank/savings-accounts/online-performance-savings-account/",
+      "status": "none_found"
+    },
+    {
+      "bank": "Ally Bank",
+      "account": "Savings",
+      "type": "None found",
+      "value": null,
+      "apy_offer": "3.10% APY (no promo)",
+      "requirements": "No cash bonus or promotional APY appeared on the official rates page on 2026-10-22.",
+      "deadline": null,
+      "source": "https://www.ally.com/bank/view-rates/",
+      "status": "none_found"
+    },
+    {
+      "bank": "American Express National Bank",
+      "account": "High Yield Savings",
+      "type": "None found",
+      "value": null,
+      "apy_offer": "3.20% APY (no promo)",
+      "requirements": "No cash bonus or promotional APY appeared on the official product page on 2026-10-22.",
+      "deadline": null,
+      "source": "https://www.americanexpress.com/en-us/banking/online-savings/high-yield-savings-account/",
+      "status": "none_found"
+    },
+    {
+      "bank": "Synchrony Bank",
+      "account": "High Yield Savings",
+      "type": "None found",
+      "value": null,
+      "apy_offer": "3.55% APY (no promo)",
+      "requirements": "No cash bonus or promotional APY appeared on the official product page on 2026-10-22.",
+      "deadline": null,
+      "source": "https://www.synchrony.com/banking/products/hys-core",
+      "status": "none_found"
+    },
+    {
+      "bank": "EverBank",
+      "account": "Performance Savings",
+      "type": "None found",
+      "value": null,
+      "apy_offer": "4.20% APY (no promo)",
+      "requirements": "No cash bonus or promotional APY appeared on the official product or rates page on 2026-10-22.",
+      "deadline": null,
+      "source": "https://www.everbank.com/banking/performance-savings",
+      "status": "none_found"
+    },
+    {
+      "bank": "JPMorgan Chase",
+      "account": "Chase Savings",
+      "type": "Not verified",
+      "value": null,
+      "apy_offer": "APY not published without ZIP code",
+      "requirements": "No savings bonus terms were reviewed in this session; the rate page requires a ZIP code.",
+      "deadline": null,
+      "source": "https://www.chase.com/personal/savings/savings-account/interest-rates",
+      "status": "unverified"
+    },
+    {
+      "bank": "Bank of America",
+      "account": "Advantage Savings",
+      "type": "Not verified",
+      "value": null,
+      "apy_offer": "APY not rendered on page",
+      "requirements": "No savings bonus terms were reviewed in this session.",
+      "deadline": null,
+      "source": "https://www.bankofamerica.com/deposits/savings/savings-accounts/",
+      "status": "unverified"
+    },
+    {
+      "bank": "Wells Fargo",
+      "account": "Way2Save Savings",
+      "type": "Not verified",
+      "value": null,
+      "apy_offer": "APY not published on page",
+      "requirements": "No savings bonus terms were reviewed in this session.",
+      "deadline": null,
+      "source": "https://www.wellsfargo.com/savings-cds/way2save/",
+      "status": "unverified"
+    },
+    {
+      "bank": "Citibank",
+      "account": "Citi Savings",
+      "type": "Not verified",
+      "value": null,
+      "apy_offer": "APY not rendered on page",
+      "requirements": "No savings bonus terms were reviewed in this session.",
+      "deadline": null,
+      "source": "https://www.citi.com/banking/savings-account",
+      "status": "unverified"
+    }
+  ]
+}

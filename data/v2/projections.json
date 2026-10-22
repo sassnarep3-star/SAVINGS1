@@ -1,0 +1,3835 @@
+{
+  "meta": {
+    "opening_date": "2026-10-22",
+    "formula": "ending = principal \u00d7 (1 + APY/100)^years ; interest = ending \u2212 principal",
+    "assumption": "APY held constant for the whole horizon described in each cell. All rates compared here are variable except none \u2014 no CD is included \u2014 so the bank may change the rate at any time before or after opening. Projections are arithmetic illustrations, not bank quotes or guarantees.",
+    "deposits": [
+      10000,
+      50000,
+      100000,
+      250000,
+      500000,
+      1000000
+    ],
+    "years": [
+      1,
+      3,
+      5
+    ],
+    "fdic_reference": {
+      "single_account_limit": 250000,
+      "joint_account_limit": 500000,
+      "trust_with_5_beneficiaries_limit": 1250000,
+      "source": "https://www.fdic.gov/resources/deposit-insurance/brochures/insured-deposits"
+    }
+  },
+  "rows": [
+    {
+      "id": "chase-savings",
+      "account_id": "chase-savings",
+      "label": "Chase \u2014 Chase Savings\u2120",
+      "bank": "Chase",
+      "apy_status": "unverified",
+      "apy": null,
+      "tier_label": "",
+      "note": "The official rate page states 'In order to see rates table, please provide valid 5-digit zip code.' No rate is rendered to an automated fetch, and adding ?zipCode=10001 / ?zip=10001 did not render it. Rate deliberately left blank.",
+      "apy_as_of": "",
+      "results": []
+    },
+    {
+      "id": "boa-advantage-savings",
+      "account_id": "boa-advantage-savings",
+      "label": "Bank of America \u2014 Advantage Savings",
+      "bank": "Bank of America",
+      "apy_status": "unverified",
+      "apy": null,
+      "tier_label": "",
+      "note": "The official page renders the rate area with literal placeholders ($XXXX) and fills them client-side; the dedicated rates endpoint returned HTTP 405 to a GET request. Rate deliberately left blank.",
+      "apy_as_of": "",
+      "results": []
+    },
+    {
+      "id": "wells-way2save",
+      "account_id": "wells-way2save",
+      "label": "Wells Fargo \u2014 Way2Save\u00ae Savings",
+      "bank": "Wells Fargo",
+      "apy_status": "verified",
+      "apy": 0.01,
+      "tier_label": "Single published rate",
+      "note": "",
+      "apy_as_of": "2026-10-21",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 0.01,
+          "tier_label": "Single published rate",
+          "ending": 10001.0,
+          "interest": 1.0
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 0.01,
+          "tier_label": "Single published rate",
+          "ending": 10003.0,
+          "interest": 3.0
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 0.01,
+          "tier_label": "Single published rate",
+          "ending": 10005.0,
+          "interest": 5.0
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 0.01,
+          "tier_label": "Single published rate",
+          "ending": 50005.0,
+          "interest": 5.0
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 0.01,
+          "tier_label": "Single published rate",
+          "ending": 50015.0,
+          "interest": 15.0
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 0.01,
+          "tier_label": "Single published rate",
+          "ending": 50025.01,
+          "interest": 25.01
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 0.01,
+          "tier_label": "Single published rate",
+          "ending": 100010.0,
+          "interest": 10.0
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 0.01,
+          "tier_label": "Single published rate",
+          "ending": 100030.0,
+          "interest": 30.0
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 0.01,
+          "tier_label": "Single published rate",
+          "ending": 100050.01,
+          "interest": 50.01
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 0.01,
+          "tier_label": "Single published rate",
+          "ending": 250025.0,
+          "interest": 25.0
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 0.01,
+          "tier_label": "Single published rate",
+          "ending": 250075.01,
+          "interest": 75.01
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 0.01,
+          "tier_label": "Single published rate",
+          "ending": 250125.03,
+          "interest": 125.03
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 0.01,
+          "tier_label": "Single published rate",
+          "ending": 500050.0,
+          "interest": 50.0
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 0.01,
+          "tier_label": "Single published rate",
+          "ending": 500150.02,
+          "interest": 150.02
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 0.01,
+          "tier_label": "Single published rate",
+          "ending": 500250.05,
+          "interest": 250.05
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 0.01,
+          "tier_label": "Single published rate",
+          "ending": 1000100.0,
+          "interest": 100.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 0.01,
+          "tier_label": "Single published rate",
+          "ending": 1000300.03,
+          "interest": 300.03
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 0.01,
+          "tier_label": "Single published rate",
+          "ending": 1000500.1,
+          "interest": 500.1
+        }
+      ]
+    },
+    {
+      "id": "citi-savings",
+      "account_id": "citi-savings",
+      "label": "Citibank \u2014 Citi\u00ae Savings (and Citi\u00ae Accelerate Savings)",
+      "bank": "Citibank",
+      "apy_status": "unverified",
+      "apy": null,
+      "tier_label": "",
+      "note": "The page ships rate tokens (e.g. ':BLUE_AccSavings_Rate%') that are replaced client-side by rate region and Relationship Tier; Citi's own disclosure says APY is accurate as of a stated date 'in the location entered'. No single national APY exists to quote, so no value is shown.",
+      "apy_as_of": "",
+      "results": []
+    },
+    {
+      "id": "usbank-smartly-savings",
+      "account_id": "usbank-smartly-savings",
+      "label": "U.S. Bank \u2014 Bank Smartly\u00ae Savings",
+      "bank": "U.S. Bank",
+      "apy_status": "verified",
+      "apy": 0.05,
+      "tier_label": "Standard (no relationship products)",
+      "note": "",
+      "apy_as_of": "2026-10-21",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 0.05,
+          "tier_label": "Standard (no relationship products)",
+          "ending": 10005.0,
+          "interest": 5.0
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 0.05,
+          "tier_label": "Standard (no relationship products)",
+          "ending": 10015.01,
+          "interest": 15.01
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 0.05,
+          "tier_label": "Standard (no relationship products)",
+          "ending": 10025.03,
+          "interest": 25.03
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 0.05,
+          "tier_label": "Standard (no relationship products)",
+          "ending": 50025.0,
+          "interest": 25.0
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 0.05,
+          "tier_label": "Standard (no relationship products)",
+          "ending": 50075.04,
+          "interest": 75.04
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 0.05,
+          "tier_label": "Standard (no relationship products)",
+          "ending": 50125.13,
+          "interest": 125.13
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 0.05,
+          "tier_label": "Standard (no relationship products)",
+          "ending": 100050.0,
+          "interest": 50.0
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 0.05,
+          "tier_label": "Standard (no relationship products)",
+          "ending": 100150.08,
+          "interest": 150.08
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 0.05,
+          "tier_label": "Standard (no relationship products)",
+          "ending": 100250.25,
+          "interest": 250.25
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 0.05,
+          "tier_label": "Standard (no relationship products)",
+          "ending": 250125.0,
+          "interest": 125.0
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 0.05,
+          "tier_label": "Standard (no relationship products)",
+          "ending": 250375.19,
+          "interest": 375.19
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 0.05,
+          "tier_label": "Standard (no relationship products)",
+          "ending": 250625.63,
+          "interest": 625.63
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 0.05,
+          "tier_label": "Standard (no relationship products)",
+          "ending": 500250.0,
+          "interest": 250.0
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 0.05,
+          "tier_label": "Standard (no relationship products)",
+          "ending": 500750.38,
+          "interest": 750.38
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 0.05,
+          "tier_label": "Standard (no relationship products)",
+          "ending": 501251.25,
+          "interest": 1251.25
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 0.05,
+          "tier_label": "Standard (no relationship products)",
+          "ending": 1000500.0,
+          "interest": 500.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 0.05,
+          "tier_label": "Standard (no relationship products)",
+          "ending": 1001500.75,
+          "interest": 1500.75
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 0.05,
+          "tier_label": "Standard (no relationship products)",
+          "ending": 1002502.5,
+          "interest": 2502.5
+        }
+      ]
+    },
+    {
+      "id": "pnc-standard-savings",
+      "account_id": "pnc-standard-savings",
+      "label": "PNC \u2014 Standard Savings",
+      "bank": "PNC",
+      "apy_status": "verified",
+      "apy": 0.03,
+      "tier_label": "$2,500+ \u00b7 standard",
+      "note": "",
+      "apy_as_of": "2026-10-21",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 0.03,
+          "tier_label": "$2,500+ \u00b7 standard",
+          "ending": 10003.0,
+          "interest": 3.0
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 0.03,
+          "tier_label": "$2,500+ \u00b7 standard",
+          "ending": 10009.0,
+          "interest": 9.0
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 0.03,
+          "tier_label": "$2,500+ \u00b7 standard",
+          "ending": 10015.01,
+          "interest": 15.01
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 0.03,
+          "tier_label": "$2,500+ \u00b7 standard",
+          "ending": 50015.0,
+          "interest": 15.0
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 0.03,
+          "tier_label": "$2,500+ \u00b7 standard",
+          "ending": 50045.01,
+          "interest": 45.01
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 0.03,
+          "tier_label": "$2,500+ \u00b7 standard",
+          "ending": 50075.05,
+          "interest": 75.05
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 0.03,
+          "tier_label": "$2,500+ \u00b7 standard",
+          "ending": 100030.0,
+          "interest": 30.0
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 0.03,
+          "tier_label": "$2,500+ \u00b7 standard",
+          "ending": 100090.03,
+          "interest": 90.03
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 0.03,
+          "tier_label": "$2,500+ \u00b7 standard",
+          "ending": 100150.09,
+          "interest": 150.09
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 0.03,
+          "tier_label": "$2,500+ \u00b7 standard",
+          "ending": 250075.0,
+          "interest": 75.0
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 0.03,
+          "tier_label": "$2,500+ \u00b7 standard",
+          "ending": 250225.07,
+          "interest": 225.07
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 0.03,
+          "tier_label": "$2,500+ \u00b7 standard",
+          "ending": 250375.23,
+          "interest": 375.23
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 0.03,
+          "tier_label": "$2,500+ \u00b7 standard",
+          "ending": 500150.0,
+          "interest": 150.0
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 0.03,
+          "tier_label": "$2,500+ \u00b7 standard",
+          "ending": 500450.14,
+          "interest": 450.14
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 0.03,
+          "tier_label": "$2,500+ \u00b7 standard",
+          "ending": 500750.45,
+          "interest": 750.45
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 0.03,
+          "tier_label": "$2,500+ \u00b7 standard",
+          "ending": 1000300.0,
+          "interest": 300.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 0.03,
+          "tier_label": "$2,500+ \u00b7 standard",
+          "ending": 1000900.27,
+          "interest": 900.27
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 0.03,
+          "tier_label": "$2,500+ \u00b7 standard",
+          "ending": 1001500.9,
+          "interest": 1500.9
+        }
+      ]
+    },
+    {
+      "id": "td-simple-savings",
+      "account_id": "td-simple-savings",
+      "label": "TD Bank \u2014 TD Simple Savings (and TD Signature Savings)",
+      "bank": "TD Bank",
+      "apy_status": "unverified",
+      "apy": null,
+      "tier_label": "",
+      "note": "The rates page prints the disclosure 'APY is accurate as of 10/21/2026' but the tier table itself renders empty in an automated fetch (the location selector has no default region). No value is shown.",
+      "apy_as_of": "2026-10-21",
+      "results": []
+    },
+    {
+      "id": "ally-savings",
+      "account_id": "ally-savings",
+      "label": "Ally Bank \u2014 Ally Bank Savings Account",
+      "bank": "Ally Bank",
+      "apy_status": "verified",
+      "apy": 3.1,
+      "tier_label": "Single published rate",
+      "note": "",
+      "apy_as_of": "2026-10-21",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 3.1,
+          "tier_label": "Single published rate",
+          "ending": 10310.0,
+          "interest": 310.0
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 3.1,
+          "tier_label": "Single published rate",
+          "ending": 10959.13,
+          "interest": 959.13
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 3.1,
+          "tier_label": "Single published rate",
+          "ending": 11649.13,
+          "interest": 1649.13
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 3.1,
+          "tier_label": "Single published rate",
+          "ending": 51550.0,
+          "interest": 1550.0
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 3.1,
+          "tier_label": "Single published rate",
+          "ending": 54795.64,
+          "interest": 4795.64
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 3.1,
+          "tier_label": "Single published rate",
+          "ending": 58245.63,
+          "interest": 8245.63
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 3.1,
+          "tier_label": "Single published rate",
+          "ending": 103100.0,
+          "interest": 3100.0
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 3.1,
+          "tier_label": "Single published rate",
+          "ending": 109591.28,
+          "interest": 9591.28
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 3.1,
+          "tier_label": "Single published rate",
+          "ending": 116491.26,
+          "interest": 16491.26
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 3.1,
+          "tier_label": "Single published rate",
+          "ending": 257750.0,
+          "interest": 7750.0
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 3.1,
+          "tier_label": "Single published rate",
+          "ending": 273978.2,
+          "interest": 23978.2
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 3.1,
+          "tier_label": "Single published rate",
+          "ending": 291228.14,
+          "interest": 41228.14
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 3.1,
+          "tier_label": "Single published rate",
+          "ending": 515500.0,
+          "interest": 15500.0
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 3.1,
+          "tier_label": "Single published rate",
+          "ending": 547956.4,
+          "interest": 47956.4
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 3.1,
+          "tier_label": "Single published rate",
+          "ending": 582456.28,
+          "interest": 82456.28
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 3.1,
+          "tier_label": "Single published rate",
+          "ending": 1031000.0,
+          "interest": 31000.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 3.1,
+          "tier_label": "Single published rate",
+          "ending": 1095912.79,
+          "interest": 95912.79
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 3.1,
+          "tier_label": "Single published rate",
+          "ending": 1164912.56,
+          "interest": 164912.56
+        }
+      ]
+    },
+    {
+      "id": "marcus-online-savings",
+      "account_id": "marcus-online-savings",
+      "label": "Marcus by Goldman Sachs \u2014 Marcus Online Savings Account",
+      "bank": "Marcus by Goldman Sachs",
+      "apy_status": "verified",
+      "apy": 3.5,
+      "tier_label": "Single published rate",
+      "note": "",
+      "apy_as_of": "2026-10-21",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 3.5,
+          "tier_label": "Single published rate",
+          "ending": 10350.0,
+          "interest": 350.0
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 3.5,
+          "tier_label": "Single published rate",
+          "ending": 11087.18,
+          "interest": 1087.18
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 3.5,
+          "tier_label": "Single published rate",
+          "ending": 11876.86,
+          "interest": 1876.86
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 3.5,
+          "tier_label": "Single published rate",
+          "ending": 51750.0,
+          "interest": 1750.0
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 3.5,
+          "tier_label": "Single published rate",
+          "ending": 55435.89,
+          "interest": 5435.89
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 3.5,
+          "tier_label": "Single published rate",
+          "ending": 59384.32,
+          "interest": 9384.32
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 3.5,
+          "tier_label": "Single published rate",
+          "ending": 103500.0,
+          "interest": 3500.0
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 3.5,
+          "tier_label": "Single published rate",
+          "ending": 110871.79,
+          "interest": 10871.79
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 3.5,
+          "tier_label": "Single published rate",
+          "ending": 118768.63,
+          "interest": 18768.63
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 3.5,
+          "tier_label": "Single published rate",
+          "ending": 258750.0,
+          "interest": 8750.0
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 3.5,
+          "tier_label": "Single published rate",
+          "ending": 277179.47,
+          "interest": 27179.47
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 3.5,
+          "tier_label": "Single published rate",
+          "ending": 296921.58,
+          "interest": 46921.58
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 3.5,
+          "tier_label": "Single published rate",
+          "ending": 517500.0,
+          "interest": 17500.0
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 3.5,
+          "tier_label": "Single published rate",
+          "ending": 554358.94,
+          "interest": 54358.94
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 3.5,
+          "tier_label": "Single published rate",
+          "ending": 593843.15,
+          "interest": 93843.15
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 3.5,
+          "tier_label": "Single published rate",
+          "ending": 1035000.0,
+          "interest": 35000.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 3.5,
+          "tier_label": "Single published rate",
+          "ending": 1108717.87,
+          "interest": 108717.87
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 3.5,
+          "tier_label": "Single published rate",
+          "ending": 1187686.31,
+          "interest": 187686.31
+        }
+      ]
+    },
+    {
+      "id": "amex-hysa",
+      "account_id": "amex-hysa",
+      "label": "American Express \u2014 American Express\u00ae High Yield Savings Account",
+      "bank": "American Express",
+      "apy_status": "verified",
+      "apy": 3.2,
+      "tier_label": "Single published rate",
+      "note": "",
+      "apy_as_of": "2026-10-21",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 10320.0,
+          "interest": 320.0
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 10991.05,
+          "interest": 991.05
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 11705.73,
+          "interest": 1705.73
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 51600.0,
+          "interest": 1600.0
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 54955.24,
+          "interest": 4955.24
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 58528.65,
+          "interest": 8528.65
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 103200.0,
+          "interest": 3200.0
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 109910.48,
+          "interest": 9910.48
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 117057.3,
+          "interest": 17057.3
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 258000.0,
+          "interest": 8000.0
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 274776.19,
+          "interest": 24776.19
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 292643.24,
+          "interest": 42643.24
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 516000.0,
+          "interest": 16000.0
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 549552.38,
+          "interest": 49552.38
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 585286.48,
+          "interest": 85286.48
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 1032000.0,
+          "interest": 32000.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 1099104.77,
+          "interest": 99104.77
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 1170572.96,
+          "interest": 170572.96
+        }
+      ]
+    },
+    {
+      "id": "capitalone-360-performance",
+      "account_id": "capitalone-360-performance",
+      "label": "Capital One \u2014 360 Performance Savings",
+      "bank": "Capital One",
+      "apy_status": "verified",
+      "apy": 3.2,
+      "tier_label": "Single published rate",
+      "note": "",
+      "apy_as_of": "2026-10-21",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 10320.0,
+          "interest": 320.0
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 10991.05,
+          "interest": 991.05
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 11705.73,
+          "interest": 1705.73
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 51600.0,
+          "interest": 1600.0
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 54955.24,
+          "interest": 4955.24
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 58528.65,
+          "interest": 8528.65
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 103200.0,
+          "interest": 3200.0
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 109910.48,
+          "interest": 9910.48
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 117057.3,
+          "interest": 17057.3
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 258000.0,
+          "interest": 8000.0
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 274776.19,
+          "interest": 24776.19
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 292643.24,
+          "interest": 42643.24
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 516000.0,
+          "interest": 16000.0
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 549552.38,
+          "interest": 49552.38
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 585286.48,
+          "interest": 85286.48
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 1032000.0,
+          "interest": 32000.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 1099104.77,
+          "interest": 99104.77
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 1170572.96,
+          "interest": 170572.96
+        }
+      ]
+    },
+    {
+      "id": "synchrony-hys",
+      "account_id": "synchrony-hys",
+      "label": "Synchrony \u2014 Synchrony High Yield Savings",
+      "bank": "Synchrony",
+      "apy_status": "verified",
+      "apy": 3.55,
+      "tier_label": "Single published rate",
+      "note": "",
+      "apy_as_of": "2026-10-21",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 3.55,
+          "tier_label": "Single published rate",
+          "ending": 10355.0,
+          "interest": 355.0
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 3.55,
+          "tier_label": "Single published rate",
+          "ending": 11103.25,
+          "interest": 1103.25
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 3.55,
+          "tier_label": "Single published rate",
+          "ending": 11905.58,
+          "interest": 1905.58
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 3.55,
+          "tier_label": "Single published rate",
+          "ending": 51775.0,
+          "interest": 1775.0
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 3.55,
+          "tier_label": "Single published rate",
+          "ending": 55516.27,
+          "interest": 5516.27
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 3.55,
+          "tier_label": "Single published rate",
+          "ending": 59527.89,
+          "interest": 9527.89
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 3.55,
+          "tier_label": "Single published rate",
+          "ending": 103550.0,
+          "interest": 3550.0
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 3.55,
+          "tier_label": "Single published rate",
+          "ending": 111032.55,
+          "interest": 11032.55
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 3.55,
+          "tier_label": "Single published rate",
+          "ending": 119055.79,
+          "interest": 19055.79
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 3.55,
+          "tier_label": "Single published rate",
+          "ending": 258875.0,
+          "interest": 8875.0
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 3.55,
+          "tier_label": "Single published rate",
+          "ending": 277581.37,
+          "interest": 27581.37
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 3.55,
+          "tier_label": "Single published rate",
+          "ending": 297639.47,
+          "interest": 47639.47
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 3.55,
+          "tier_label": "Single published rate",
+          "ending": 517750.0,
+          "interest": 17750.0
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 3.55,
+          "tier_label": "Single published rate",
+          "ending": 555162.74,
+          "interest": 55162.74
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 3.55,
+          "tier_label": "Single published rate",
+          "ending": 595278.94,
+          "interest": 95278.94
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 3.55,
+          "tier_label": "Single published rate",
+          "ending": 1035500.0,
+          "interest": 35500.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 3.55,
+          "tier_label": "Single published rate",
+          "ending": 1110325.49,
+          "interest": 110325.49
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 3.55,
+          "tier_label": "Single published rate",
+          "ending": 1190557.89,
+          "interest": 190557.89
+        }
+      ]
+    },
+    {
+      "id": "barclays-tiered-savings",
+      "account_id": "barclays-tiered-savings",
+      "label": "Barclays US \u2014 Barclays Tiered Savings",
+      "bank": "Barclays US",
+      "apy_status": "verified",
+      "apy": 3.5,
+      "tier_label": "$100,000\u2013<$250,000",
+      "note": "",
+      "apy_as_of": "2026-10-07",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 3.5,
+          "tier_label": "$10,000\u2013<$25,000",
+          "ending": 10350.0,
+          "interest": 350.0
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 3.5,
+          "tier_label": "$10,000\u2013<$25,000",
+          "ending": 11087.18,
+          "interest": 1087.18
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 3.5,
+          "tier_label": "$10,000\u2013<$25,000",
+          "ending": 11876.86,
+          "interest": 1876.86
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 3.5,
+          "tier_label": "$50,000\u2013<$100,000",
+          "ending": 51750.0,
+          "interest": 1750.0
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 3.5,
+          "tier_label": "$50,000\u2013<$100,000",
+          "ending": 55435.89,
+          "interest": 5435.89
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 3.5,
+          "tier_label": "$50,000\u2013<$100,000",
+          "ending": 59384.32,
+          "interest": 9384.32
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 3.5,
+          "tier_label": "$100,000\u2013<$250,000",
+          "ending": 103500.0,
+          "interest": 3500.0
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 3.5,
+          "tier_label": "$100,000\u2013<$250,000",
+          "ending": 110871.79,
+          "interest": 10871.79
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 3.5,
+          "tier_label": "$100,000\u2013<$250,000",
+          "ending": 118768.63,
+          "interest": 18768.63
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 3.65,
+          "tier_label": "$250,000\u2013$1,000,000",
+          "ending": 259125.0,
+          "interest": 9125.0
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 3.65,
+          "tier_label": "$250,000\u2013$1,000,000",
+          "ending": 278386.34,
+          "interest": 28386.34
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 3.65,
+          "tier_label": "$250,000\u2013$1,000,000",
+          "ending": 299079.43,
+          "interest": 49079.43
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 3.65,
+          "tier_label": "$250,000\u2013$1,000,000",
+          "ending": 518250.0,
+          "interest": 18250.0
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 3.65,
+          "tier_label": "$250,000\u2013$1,000,000",
+          "ending": 556772.69,
+          "interest": 56772.69
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 3.65,
+          "tier_label": "$250,000\u2013$1,000,000",
+          "ending": 598158.86,
+          "interest": 98158.86
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 3.65,
+          "tier_label": "$250,000\u2013$1,000,000",
+          "ending": 1036500.0,
+          "interest": 36500.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 3.65,
+          "tier_label": "$250,000\u2013$1,000,000",
+          "ending": 1113545.38,
+          "interest": 113545.38
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 3.65,
+          "tier_label": "$250,000\u2013$1,000,000",
+          "ending": 1196317.71,
+          "interest": 196317.71
+        }
+      ]
+    },
+    {
+      "id": "barclays-online-savings",
+      "account_id": "barclays-online-savings",
+      "label": "Barclays US \u2014 Barclays Online Savings",
+      "bank": "Barclays US",
+      "apy_status": "verified",
+      "apy": 3.2,
+      "tier_label": "Single published rate",
+      "note": "",
+      "apy_as_of": "",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 10320.0,
+          "interest": 320.0
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 10991.05,
+          "interest": 991.05
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 11705.73,
+          "interest": 1705.73
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 51600.0,
+          "interest": 1600.0
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 54955.24,
+          "interest": 4955.24
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 58528.65,
+          "interest": 8528.65
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 103200.0,
+          "interest": 3200.0
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 109910.48,
+          "interest": 9910.48
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 117057.3,
+          "interest": 17057.3
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 258000.0,
+          "interest": 8000.0
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 274776.19,
+          "interest": 24776.19
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 292643.24,
+          "interest": 42643.24
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 516000.0,
+          "interest": 16000.0
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 549552.38,
+          "interest": 49552.38
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 585286.48,
+          "interest": 85286.48
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 1032000.0,
+          "interest": 32000.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 1099104.77,
+          "interest": 99104.77
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 3.2,
+          "tier_label": "Single published rate",
+          "ending": 1170572.96,
+          "interest": 170572.96
+        }
+      ]
+    },
+    {
+      "id": "sofi-savings",
+      "account_id": "sofi-savings",
+      "label": "SoFi \u2014 SoFi Savings (with SoFi Checking)",
+      "bank": "SoFi",
+      "apy_status": "verified",
+      "apy": 3.3,
+      "tier_label": "Single published rate",
+      "note": "",
+      "apy_as_of": "2026-10-20",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 3.3,
+          "tier_label": "Single published rate",
+          "ending": 10330.0,
+          "interest": 330.0
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 3.3,
+          "tier_label": "Single published rate",
+          "ending": 11023.03,
+          "interest": 1023.03
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 3.3,
+          "tier_label": "Single published rate",
+          "ending": 11762.55,
+          "interest": 1762.55
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 3.3,
+          "tier_label": "Single published rate",
+          "ending": 51650.0,
+          "interest": 1650.0
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 3.3,
+          "tier_label": "Single published rate",
+          "ending": 55115.15,
+          "interest": 5115.15
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 3.3,
+          "tier_label": "Single published rate",
+          "ending": 58812.77,
+          "interest": 8812.77
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 3.3,
+          "tier_label": "Single published rate",
+          "ending": 103300.0,
+          "interest": 3300.0
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 3.3,
+          "tier_label": "Single published rate",
+          "ending": 110230.29,
+          "interest": 10230.29
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 3.3,
+          "tier_label": "Single published rate",
+          "ending": 117625.53,
+          "interest": 17625.53
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 3.3,
+          "tier_label": "Single published rate",
+          "ending": 258250.0,
+          "interest": 8250.0
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 3.3,
+          "tier_label": "Single published rate",
+          "ending": 275575.73,
+          "interest": 25575.73
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 3.3,
+          "tier_label": "Single published rate",
+          "ending": 294063.83,
+          "interest": 44063.83
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 3.3,
+          "tier_label": "Single published rate",
+          "ending": 516500.0,
+          "interest": 16500.0
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 3.3,
+          "tier_label": "Single published rate",
+          "ending": 551151.47,
+          "interest": 51151.47
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 3.3,
+          "tier_label": "Single published rate",
+          "ending": 588127.67,
+          "interest": 88127.67
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 3.3,
+          "tier_label": "Single published rate",
+          "ending": 1033000.0,
+          "interest": 33000.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 3.3,
+          "tier_label": "Single published rate",
+          "ending": 1102302.94,
+          "interest": 102302.94
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 3.3,
+          "tier_label": "Single published rate",
+          "ending": 1176255.34,
+          "interest": 176255.34
+        }
+      ]
+    },
+    {
+      "id": "axos-one-savings",
+      "account_id": "axos-one-savings",
+      "label": "Axos \u2014 Axos ONE\u00ae Savings (bundled with Axos ONE Checking)",
+      "bank": "Axos",
+      "apy_status": "verified",
+      "apy": 4.21,
+      "tier_label": "Boosted tier $0\u2013$249,999.99 (requirements met)",
+      "note": "",
+      "apy_as_of": "",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 4.21,
+          "tier_label": "Boosted tier $0\u2013$249,999.99 (requirements met)",
+          "ending": 10421.0,
+          "interest": 421.0
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 4.21,
+          "tier_label": "Boosted tier $0\u2013$249,999.99 (requirements met)",
+          "ending": 11316.92,
+          "interest": 1316.92
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 4.21,
+          "tier_label": "Boosted tier $0\u2013$249,999.99 (requirements met)",
+          "ending": 12289.86,
+          "interest": 2289.86
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 4.21,
+          "tier_label": "Boosted tier $0\u2013$249,999.99 (requirements met)",
+          "ending": 52105.0,
+          "interest": 2105.0
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 4.21,
+          "tier_label": "Boosted tier $0\u2013$249,999.99 (requirements met)",
+          "ending": 56584.59,
+          "interest": 6584.59
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 4.21,
+          "tier_label": "Boosted tier $0\u2013$249,999.99 (requirements met)",
+          "ending": 61449.31,
+          "interest": 11449.31
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 4.21,
+          "tier_label": "Boosted tier $0\u2013$249,999.99 (requirements met)",
+          "ending": 104210.0,
+          "interest": 4210.0
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 4.21,
+          "tier_label": "Boosted tier $0\u2013$249,999.99 (requirements met)",
+          "ending": 113169.18,
+          "interest": 13169.18
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 4.21,
+          "tier_label": "Boosted tier $0\u2013$249,999.99 (requirements met)",
+          "ending": 122898.61,
+          "interest": 22898.61
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 3.5,
+          "tier_label": "Boosted tier $250,000+ (requirements met)",
+          "ending": 258750.0,
+          "interest": 8750.0
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 3.5,
+          "tier_label": "Boosted tier $250,000+ (requirements met)",
+          "ending": 277179.47,
+          "interest": 27179.47
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 3.5,
+          "tier_label": "Boosted tier $250,000+ (requirements met)",
+          "ending": 296921.58,
+          "interest": 46921.58
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 3.5,
+          "tier_label": "Boosted tier $250,000+ (requirements met)",
+          "ending": 517500.0,
+          "interest": 17500.0
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 3.5,
+          "tier_label": "Boosted tier $250,000+ (requirements met)",
+          "ending": 554358.94,
+          "interest": 54358.94
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 3.5,
+          "tier_label": "Boosted tier $250,000+ (requirements met)",
+          "ending": 593843.15,
+          "interest": 93843.15
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 3.5,
+          "tier_label": "Boosted tier $250,000+ (requirements met)",
+          "ending": 1035000.0,
+          "interest": 35000.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 3.5,
+          "tier_label": "Boosted tier $250,000+ (requirements met)",
+          "ending": 1108717.87,
+          "interest": 108717.87
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 3.5,
+          "tier_label": "Boosted tier $250,000+ (requirements met)",
+          "ending": 1187686.31,
+          "interest": 187686.31
+        }
+      ]
+    },
+    {
+      "id": "etrade-premium-savings",
+      "account_id": "etrade-premium-savings",
+      "label": "E*TRADE from Morgan Stanley \u2014 Premium Savings Account",
+      "bank": "E*TRADE from Morgan Stanley",
+      "apy_status": "verified",
+      "apy": 3.75,
+      "tier_label": "Single published rate",
+      "note": "",
+      "apy_as_of": "2026-10-21",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 3.75,
+          "tier_label": "Single published rate",
+          "ending": 10375.0,
+          "interest": 375.0
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 3.75,
+          "tier_label": "Single published rate",
+          "ending": 11167.71,
+          "interest": 1167.71
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 3.75,
+          "tier_label": "Single published rate",
+          "ending": 12021.0,
+          "interest": 2021.0
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 3.75,
+          "tier_label": "Single published rate",
+          "ending": 51875.0,
+          "interest": 1875.0
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 3.75,
+          "tier_label": "Single published rate",
+          "ending": 55838.57,
+          "interest": 5838.57
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 3.75,
+          "tier_label": "Single published rate",
+          "ending": 60104.99,
+          "interest": 10104.99
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 3.75,
+          "tier_label": "Single published rate",
+          "ending": 103750.0,
+          "interest": 3750.0
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 3.75,
+          "tier_label": "Single published rate",
+          "ending": 111677.15,
+          "interest": 11677.15
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 3.75,
+          "tier_label": "Single published rate",
+          "ending": 120209.98,
+          "interest": 20209.98
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 3.75,
+          "tier_label": "Single published rate",
+          "ending": 259375.0,
+          "interest": 9375.0
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 3.75,
+          "tier_label": "Single published rate",
+          "ending": 279192.87,
+          "interest": 29192.87
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 3.75,
+          "tier_label": "Single published rate",
+          "ending": 300524.95,
+          "interest": 50524.95
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 3.75,
+          "tier_label": "Single published rate",
+          "ending": 518750.0,
+          "interest": 18750.0
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 3.75,
+          "tier_label": "Single published rate",
+          "ending": 558385.74,
+          "interest": 58385.74
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 3.75,
+          "tier_label": "Single published rate",
+          "ending": 601049.9,
+          "interest": 101049.9
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 3.75,
+          "tier_label": "Single published rate",
+          "ending": 1037500.0,
+          "interest": 37500.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 3.75,
+          "tier_label": "Single published rate",
+          "ending": 1116771.48,
+          "interest": 116771.48
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 3.75,
+          "tier_label": "Single published rate",
+          "ending": 1202099.81,
+          "interest": 202099.81
+        }
+      ]
+    },
+    {
+      "id": "openbank-hys",
+      "account_id": "openbank-hys",
+      "label": "Openbank by Santander \u2014 Openbank High Yield Savings",
+      "bank": "Openbank by Santander",
+      "apy_status": "verified",
+      "apy": 4.0,
+      "tier_label": "Single published rate",
+      "note": "",
+      "apy_as_of": "",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 4.0,
+          "tier_label": "Single published rate",
+          "ending": 10400.0,
+          "interest": 400.0
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 4.0,
+          "tier_label": "Single published rate",
+          "ending": 11248.64,
+          "interest": 1248.64
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 4.0,
+          "tier_label": "Single published rate",
+          "ending": 12166.53,
+          "interest": 2166.53
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 4.0,
+          "tier_label": "Single published rate",
+          "ending": 52000.0,
+          "interest": 2000.0
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 4.0,
+          "tier_label": "Single published rate",
+          "ending": 56243.2,
+          "interest": 6243.2
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 4.0,
+          "tier_label": "Single published rate",
+          "ending": 60832.65,
+          "interest": 10832.65
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 4.0,
+          "tier_label": "Single published rate",
+          "ending": 104000.0,
+          "interest": 4000.0
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 4.0,
+          "tier_label": "Single published rate",
+          "ending": 112486.4,
+          "interest": 12486.4
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 4.0,
+          "tier_label": "Single published rate",
+          "ending": 121665.29,
+          "interest": 21665.29
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 4.0,
+          "tier_label": "Single published rate",
+          "ending": 260000.0,
+          "interest": 10000.0
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 4.0,
+          "tier_label": "Single published rate",
+          "ending": 281216.0,
+          "interest": 31216.0
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 4.0,
+          "tier_label": "Single published rate",
+          "ending": 304163.23,
+          "interest": 54163.23
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 4.0,
+          "tier_label": "Single published rate",
+          "ending": 520000.0,
+          "interest": 20000.0
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 4.0,
+          "tier_label": "Single published rate",
+          "ending": 562432.0,
+          "interest": 62432.0
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 4.0,
+          "tier_label": "Single published rate",
+          "ending": 608326.45,
+          "interest": 108326.45
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 4.0,
+          "tier_label": "Single published rate",
+          "ending": 1040000.0,
+          "interest": 40000.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 4.0,
+          "tier_label": "Single published rate",
+          "ending": 1124864.0,
+          "interest": 124864.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 4.0,
+          "tier_label": "Single published rate",
+          "ending": 1216652.9,
+          "interest": 216652.9
+        }
+      ]
+    },
+    {
+      "id": "cit-platinum-savings",
+      "account_id": "cit-platinum-savings",
+      "label": "CIT Bank \u2014 CIT Bank Platinum Savings",
+      "bank": "CIT Bank",
+      "apy_status": "verified",
+      "apy": 3.75,
+      "tier_label": "Balances $5,000+",
+      "note": "",
+      "apy_as_of": "2026-07-01",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 3.75,
+          "tier_label": "Balances $5,000+",
+          "ending": 10375.0,
+          "interest": 375.0
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 3.75,
+          "tier_label": "Balances $5,000+",
+          "ending": 11167.71,
+          "interest": 1167.71
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 3.75,
+          "tier_label": "Balances $5,000+",
+          "ending": 12021.0,
+          "interest": 2021.0
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 3.75,
+          "tier_label": "Balances $5,000+",
+          "ending": 51875.0,
+          "interest": 1875.0
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 3.75,
+          "tier_label": "Balances $5,000+",
+          "ending": 55838.57,
+          "interest": 5838.57
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 3.75,
+          "tier_label": "Balances $5,000+",
+          "ending": 60104.99,
+          "interest": 10104.99
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 3.75,
+          "tier_label": "Balances $5,000+",
+          "ending": 103750.0,
+          "interest": 3750.0
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 3.75,
+          "tier_label": "Balances $5,000+",
+          "ending": 111677.15,
+          "interest": 11677.15
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 3.75,
+          "tier_label": "Balances $5,000+",
+          "ending": 120209.98,
+          "interest": 20209.98
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 3.75,
+          "tier_label": "Balances $5,000+",
+          "ending": 259375.0,
+          "interest": 9375.0
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 3.75,
+          "tier_label": "Balances $5,000+",
+          "ending": 279192.87,
+          "interest": 29192.87
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 3.75,
+          "tier_label": "Balances $5,000+",
+          "ending": 300524.95,
+          "interest": 50524.95
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 3.75,
+          "tier_label": "Balances $5,000+",
+          "ending": 518750.0,
+          "interest": 18750.0
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 3.75,
+          "tier_label": "Balances $5,000+",
+          "ending": 558385.74,
+          "interest": 58385.74
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 3.75,
+          "tier_label": "Balances $5,000+",
+          "ending": 601049.9,
+          "interest": 101049.9
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 3.75,
+          "tier_label": "Balances $5,000+",
+          "ending": 1037500.0,
+          "interest": 37500.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 3.75,
+          "tier_label": "Balances $5,000+",
+          "ending": 1116771.48,
+          "interest": 116771.48
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 3.75,
+          "tier_label": "Balances $5,000+",
+          "ending": 1202099.81,
+          "interest": 202099.81
+        }
+      ]
+    },
+    {
+      "id": "everbank-performance-savings",
+      "account_id": "everbank-performance-savings",
+      "label": "EverBank \u2014 EverBank Performance\u00ae Savings",
+      "bank": "EverBank",
+      "apy_status": "verified",
+      "apy": 4.2,
+      "tier_label": "Single published rate",
+      "note": "",
+      "apy_as_of": "",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 4.2,
+          "tier_label": "Single published rate",
+          "ending": 10420.0,
+          "interest": 420.0
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 4.2,
+          "tier_label": "Single published rate",
+          "ending": 11313.66,
+          "interest": 1313.66
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 4.2,
+          "tier_label": "Single published rate",
+          "ending": 12283.97,
+          "interest": 2283.97
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 4.2,
+          "tier_label": "Single published rate",
+          "ending": 52100.0,
+          "interest": 2100.0
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 4.2,
+          "tier_label": "Single published rate",
+          "ending": 56568.3,
+          "interest": 6568.3
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 4.2,
+          "tier_label": "Single published rate",
+          "ending": 61419.83,
+          "interest": 11419.83
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 4.2,
+          "tier_label": "Single published rate",
+          "ending": 104200.0,
+          "interest": 4200.0
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 4.2,
+          "tier_label": "Single published rate",
+          "ending": 113136.61,
+          "interest": 13136.61
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 4.2,
+          "tier_label": "Single published rate",
+          "ending": 122839.66,
+          "interest": 22839.66
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 4.2,
+          "tier_label": "Single published rate",
+          "ending": 260500.0,
+          "interest": 10500.0
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 4.2,
+          "tier_label": "Single published rate",
+          "ending": 282841.52,
+          "interest": 32841.52
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 4.2,
+          "tier_label": "Single published rate",
+          "ending": 307099.14,
+          "interest": 57099.14
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 4.2,
+          "tier_label": "Single published rate",
+          "ending": 521000.0,
+          "interest": 21000.0
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 4.2,
+          "tier_label": "Single published rate",
+          "ending": 565683.04,
+          "interest": 65683.04
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 4.2,
+          "tier_label": "Single published rate",
+          "ending": 614198.28,
+          "interest": 114198.28
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 4.2,
+          "tier_label": "Single published rate",
+          "ending": 1042000.0,
+          "interest": 42000.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 4.2,
+          "tier_label": "Single published rate",
+          "ending": 1131366.09,
+          "interest": 131366.09
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 4.2,
+          "tier_label": "Single published rate",
+          "ending": 1228396.57,
+          "interest": 228396.57
+        }
+      ]
+    },
+    {
+      "id": "usbank-relationship-3.50",
+      "account_id": "usbank-smartly-savings",
+      "label": "U.S. Bank Bank Smartly Savings \u2014 relationship rate",
+      "bank": "U.S. Bank Bank Smartly Savings",
+      "apy_status": "derived",
+      "apy": 3.5,
+      "tier_label": "Requires Bank Smartly Checking/Safe Debit/Smartly card + $25,000+ CQB",
+      "note": "Same official rate sheet, relationship tier ($25,000+ combined qualifying balances).",
+      "blend": null,
+      "apy_as_of": "2026-10-21",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 3.5,
+          "year1_apy": 3.5,
+          "tier_label": "Requires Bank Smartly Checking/Safe Debit/Smartly card + $25,000+ CQB",
+          "ending": 10350.0,
+          "interest": 350.0
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 0.05,
+          "year1_apy": 3.5,
+          "tier_label": "Requires Bank Smartly Checking/Safe Debit/Smartly card + $25,000+ CQB \u00b7 then the standard APY",
+          "ending": 10360.35,
+          "interest": 360.35
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 0.05,
+          "year1_apy": 3.5,
+          "tier_label": "Requires Bank Smartly Checking/Safe Debit/Smartly card + $25,000+ CQB \u00b7 then the standard APY",
+          "ending": 10370.72,
+          "interest": 370.72
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 3.5,
+          "year1_apy": 3.5,
+          "tier_label": "Requires Bank Smartly Checking/Safe Debit/Smartly card + $25,000+ CQB",
+          "ending": 51750.0,
+          "interest": 1750.0
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 0.05,
+          "year1_apy": 3.5,
+          "tier_label": "Requires Bank Smartly Checking/Safe Debit/Smartly card + $25,000+ CQB \u00b7 then the standard APY",
+          "ending": 51801.76,
+          "interest": 1801.76
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 0.05,
+          "year1_apy": 3.5,
+          "tier_label": "Requires Bank Smartly Checking/Safe Debit/Smartly card + $25,000+ CQB \u00b7 then the standard APY",
+          "ending": 51853.58,
+          "interest": 1853.58
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 3.5,
+          "year1_apy": 3.5,
+          "tier_label": "Requires Bank Smartly Checking/Safe Debit/Smartly card + $25,000+ CQB",
+          "ending": 103500.0,
+          "interest": 3500.0
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 0.05,
+          "year1_apy": 3.5,
+          "tier_label": "Requires Bank Smartly Checking/Safe Debit/Smartly card + $25,000+ CQB \u00b7 then the standard APY",
+          "ending": 103603.53,
+          "interest": 3603.53
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 0.05,
+          "year1_apy": 3.5,
+          "tier_label": "Requires Bank Smartly Checking/Safe Debit/Smartly card + $25,000+ CQB \u00b7 then the standard APY",
+          "ending": 103707.16,
+          "interest": 3707.16
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 3.5,
+          "year1_apy": 3.5,
+          "tier_label": "Requires Bank Smartly Checking/Safe Debit/Smartly card + $25,000+ CQB",
+          "ending": 258750.0,
+          "interest": 8750.0
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 0.05,
+          "year1_apy": 3.5,
+          "tier_label": "Requires Bank Smartly Checking/Safe Debit/Smartly card + $25,000+ CQB \u00b7 then the standard APY",
+          "ending": 259008.81,
+          "interest": 9008.81
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 0.05,
+          "year1_apy": 3.5,
+          "tier_label": "Requires Bank Smartly Checking/Safe Debit/Smartly card + $25,000+ CQB \u00b7 then the standard APY",
+          "ending": 259267.89,
+          "interest": 9267.89
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 3.5,
+          "year1_apy": 3.5,
+          "tier_label": "Requires Bank Smartly Checking/Safe Debit/Smartly card + $25,000+ CQB",
+          "ending": 517500.0,
+          "interest": 17500.0
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 0.05,
+          "year1_apy": 3.5,
+          "tier_label": "Requires Bank Smartly Checking/Safe Debit/Smartly card + $25,000+ CQB \u00b7 then the standard APY",
+          "ending": 518017.63,
+          "interest": 18017.63
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 0.05,
+          "year1_apy": 3.5,
+          "tier_label": "Requires Bank Smartly Checking/Safe Debit/Smartly card + $25,000+ CQB \u00b7 then the standard APY",
+          "ending": 518535.78,
+          "interest": 18535.78
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 3.5,
+          "year1_apy": 3.5,
+          "tier_label": "Requires Bank Smartly Checking/Safe Debit/Smartly card + $25,000+ CQB",
+          "ending": 1035000.0,
+          "interest": 35000.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 0.05,
+          "year1_apy": 3.5,
+          "tier_label": "Requires Bank Smartly Checking/Safe Debit/Smartly card + $25,000+ CQB \u00b7 then the standard APY",
+          "ending": 1036035.26,
+          "interest": 36035.26
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 0.05,
+          "year1_apy": 3.5,
+          "tier_label": "Requires Bank Smartly Checking/Safe Debit/Smartly card + $25,000+ CQB \u00b7 then the standard APY",
+          "ending": 1037071.55,
+          "interest": 37071.55
+        }
+      ]
+    },
+    {
+      "id": "sofi-year1-boost",
+      "account_id": "sofi-savings",
+      "label": "SoFi Savings \u2014 including the 1.10% six-month boost",
+      "bank": "SoFi Savings",
+      "apy_status": "derived",
+      "apy": 3.8485,
+      "tier_label": "Requires eligible direct deposit; boost lasts 6 months",
+      "note": "Blend computed as sqrt((1+0.0440)*(1+0.0330))-1 from SoFi's own published 4.40% boosted and 3.30% base APYs.",
+      "blend": [
+        4.4,
+        3.3
+      ],
+      "apy_as_of": "2026-10-20",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 3.8485,
+          "year1_apy": 3.8485,
+          "tier_label": "Requires eligible direct deposit; boost lasts 6 months",
+          "ending": 10384.85,
+          "interest": 384.85
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 3.3,
+          "year1_apy": 3.8485,
+          "tier_label": "Requires eligible direct deposit; boost lasts 6 months \u00b7 then the standard APY",
+          "ending": 11081.56,
+          "interest": 1081.56
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 3.3,
+          "year1_apy": 3.8485,
+          "tier_label": "Requires eligible direct deposit; boost lasts 6 months \u00b7 then the standard APY",
+          "ending": 11825.01,
+          "interest": 1825.01
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 3.8485,
+          "year1_apy": 3.8485,
+          "tier_label": "Requires eligible direct deposit; boost lasts 6 months",
+          "ending": 51924.27,
+          "interest": 1924.27
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 3.3,
+          "year1_apy": 3.8485,
+          "tier_label": "Requires eligible direct deposit; boost lasts 6 months \u00b7 then the standard APY",
+          "ending": 55407.82,
+          "interest": 5407.82
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 3.3,
+          "year1_apy": 3.8485,
+          "tier_label": "Requires eligible direct deposit; boost lasts 6 months \u00b7 then the standard APY",
+          "ending": 59125.07,
+          "interest": 9125.07
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 3.8485,
+          "year1_apy": 3.8485,
+          "tier_label": "Requires eligible direct deposit; boost lasts 6 months",
+          "ending": 103848.54,
+          "interest": 3848.54
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 3.3,
+          "year1_apy": 3.8485,
+          "tier_label": "Requires eligible direct deposit; boost lasts 6 months \u00b7 then the standard APY",
+          "ending": 110815.64,
+          "interest": 10815.64
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 3.3,
+          "year1_apy": 3.8485,
+          "tier_label": "Requires eligible direct deposit; boost lasts 6 months \u00b7 then the standard APY",
+          "ending": 118250.15,
+          "interest": 18250.15
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 3.8485,
+          "year1_apy": 3.8485,
+          "tier_label": "Requires eligible direct deposit; boost lasts 6 months",
+          "ending": 259621.36,
+          "interest": 9621.36
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 3.3,
+          "year1_apy": 3.8485,
+          "tier_label": "Requires eligible direct deposit; boost lasts 6 months \u00b7 then the standard APY",
+          "ending": 277039.1,
+          "interest": 27039.1
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 3.3,
+          "year1_apy": 3.8485,
+          "tier_label": "Requires eligible direct deposit; boost lasts 6 months \u00b7 then the standard APY",
+          "ending": 295625.37,
+          "interest": 45625.37
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 3.8485,
+          "year1_apy": 3.8485,
+          "tier_label": "Requires eligible direct deposit; boost lasts 6 months",
+          "ending": 519242.72,
+          "interest": 19242.72
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 3.3,
+          "year1_apy": 3.8485,
+          "tier_label": "Requires eligible direct deposit; boost lasts 6 months \u00b7 then the standard APY",
+          "ending": 554078.19,
+          "interest": 54078.19
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 3.3,
+          "year1_apy": 3.8485,
+          "tier_label": "Requires eligible direct deposit; boost lasts 6 months \u00b7 then the standard APY",
+          "ending": 591250.74,
+          "interest": 91250.74
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 3.8485,
+          "year1_apy": 3.8485,
+          "tier_label": "Requires eligible direct deposit; boost lasts 6 months",
+          "ending": 1038485.44,
+          "interest": 38485.44
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 3.3,
+          "year1_apy": 3.8485,
+          "tier_label": "Requires eligible direct deposit; boost lasts 6 months \u00b7 then the standard APY",
+          "ending": 1108156.39,
+          "interest": 108156.39
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 3.3,
+          "year1_apy": 3.8485,
+          "tier_label": "Requires eligible direct deposit; boost lasts 6 months \u00b7 then the standard APY",
+          "ending": 1182501.49,
+          "interest": 182501.49
+        }
+      ]
+    },
+    {
+      "id": "axos-year1-intro",
+      "account_id": "axos-one-savings",
+      "label": "Axos ONE Savings \u2014 with the 5.00% six-month intro",
+      "bank": "Axos ONE Savings",
+      "apy_status": "derived",
+      "apy": 4.2473,
+      "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it)",
+      "note": "Blend computed as sqrt((1+0.0500)*(1+0.0350))-1 from Axos's own published intro rate and the tier that applies at $250,000. At $249,999 or less the post-intro rate is 4.21% and the blend would be 4.60%. Both rates require the Axos ONE checking bundle; miss it and the post-intro rate is 1.00%.",
+      "blend": [
+        5.0,
+        3.5
+      ],
+      "apy_as_of": "",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 4.2473,
+          "year1_apy": 4.2473,
+          "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it)",
+          "ending": 10424.73,
+          "interest": 424.73
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 4.21,
+          "year1_apy": 4.2473,
+          "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it) \u00b7 then the standard APY",
+          "ending": 11320.97,
+          "interest": 1320.97
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 4.21,
+          "year1_apy": 4.2473,
+          "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it) \u00b7 then the standard APY",
+          "ending": 12294.26,
+          "interest": 2294.26
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 4.2473,
+          "year1_apy": 4.2473,
+          "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it)",
+          "ending": 52123.65,
+          "interest": 2123.65
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 4.21,
+          "year1_apy": 4.2473,
+          "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it) \u00b7 then the standard APY",
+          "ending": 56604.85,
+          "interest": 6604.85
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 4.21,
+          "year1_apy": 4.2473,
+          "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it) \u00b7 then the standard APY",
+          "ending": 61471.3,
+          "interest": 11471.3
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 4.2473,
+          "year1_apy": 4.2473,
+          "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it)",
+          "ending": 104247.3,
+          "interest": 4247.3
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 4.21,
+          "year1_apy": 4.2473,
+          "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it) \u00b7 then the standard APY",
+          "ending": 113209.69,
+          "interest": 13209.69
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 4.21,
+          "year1_apy": 4.2473,
+          "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it) \u00b7 then the standard APY",
+          "ending": 122942.6,
+          "interest": 22942.6
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 4.2473,
+          "year1_apy": 4.2473,
+          "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it)",
+          "ending": 260618.26,
+          "interest": 10618.26
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 3.5,
+          "year1_apy": 4.2473,
+          "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it) \u00b7 then the standard APY",
+          "ending": 279180.79,
+          "interest": 29180.79
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 3.5,
+          "year1_apy": 4.2473,
+          "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it) \u00b7 then the standard APY",
+          "ending": 299065.44,
+          "interest": 49065.44
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 4.2473,
+          "year1_apy": 4.2473,
+          "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it)",
+          "ending": 521236.51,
+          "interest": 21236.51
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 3.5,
+          "year1_apy": 4.2473,
+          "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it) \u00b7 then the standard APY",
+          "ending": 558361.58,
+          "interest": 58361.58
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 3.5,
+          "year1_apy": 4.2473,
+          "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it) \u00b7 then the standard APY",
+          "ending": 598130.88,
+          "interest": 98130.88
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 4.2473,
+          "year1_apy": 4.2473,
+          "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it)",
+          "ending": 1042473.02,
+          "interest": 42473.02
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 3.5,
+          "year1_apy": 4.2473,
+          "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it) \u00b7 then the standard APY",
+          "ending": 1116723.16,
+          "interest": 116723.16
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 3.5,
+          "year1_apy": 4.2473,
+          "tier_label": "5.00% for 6 months, then 3.50% once the balance reaches $250,000 (4.21% below it) \u00b7 then the standard APY",
+          "ending": 1196261.77,
+          "interest": 196261.77
+        }
+      ]
+    },
+    {
+      "id": "etrade-year1-boost",
+      "account_id": "etrade-premium-savings",
+      "label": "E*TRADE Premium Savings \u2014 with the 6-month 4.25% boost",
+      "bank": "E*TRADE Premium Savings",
+      "apy_status": "derived",
+      "apy": 3.9997,
+      "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate",
+      "note": "Blend computed as sqrt((1+0.0425)*(1+0.0375))-1 from E*TRADE's own published boosted and base APYs.",
+      "blend": [
+        4.25,
+        3.75
+      ],
+      "apy_as_of": "2026-10-21",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 3.9997,
+          "year1_apy": 3.9997,
+          "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate",
+          "ending": 10399.97,
+          "interest": 399.97
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate \u00b7 then the standard APY",
+          "ending": 11194.59,
+          "interest": 1194.59
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate \u00b7 then the standard APY",
+          "ending": 12049.93,
+          "interest": 2049.93
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 3.9997,
+          "year1_apy": 3.9997,
+          "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate",
+          "ending": 51999.85,
+          "interest": 1999.85
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate \u00b7 then the standard APY",
+          "ending": 55972.96,
+          "interest": 5972.96
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate \u00b7 then the standard APY",
+          "ending": 60249.65,
+          "interest": 10249.65
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 3.9997,
+          "year1_apy": 3.9997,
+          "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate",
+          "ending": 103999.7,
+          "interest": 3999.7
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate \u00b7 then the standard APY",
+          "ending": 111945.93,
+          "interest": 11945.93
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate \u00b7 then the standard APY",
+          "ending": 120499.3,
+          "interest": 20499.3
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 3.9997,
+          "year1_apy": 3.9997,
+          "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate",
+          "ending": 259999.25,
+          "interest": 9999.25
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate \u00b7 then the standard APY",
+          "ending": 279864.82,
+          "interest": 29864.82
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate \u00b7 then the standard APY",
+          "ending": 301248.24,
+          "interest": 51248.24
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 3.9997,
+          "year1_apy": 3.9997,
+          "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate",
+          "ending": 519998.5,
+          "interest": 19998.5
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate \u00b7 then the standard APY",
+          "ending": 559729.63,
+          "interest": 59729.63
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate \u00b7 then the standard APY",
+          "ending": 602496.48,
+          "interest": 102496.48
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 3.9997,
+          "year1_apy": 3.9997,
+          "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate",
+          "ending": 1039997.0,
+          "interest": 39997.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate \u00b7 then the standard APY",
+          "ending": 1119459.27,
+          "interest": 119459.27
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "Guaranteed 4.25% for 6 months on new accounts, then the 3.75% base rate \u00b7 then the standard APY",
+          "ending": 1204992.95,
+          "interest": 204992.95
+        }
+      ]
+    },
+    {
+      "id": "openbank-year1-boost",
+      "account_id": "openbank-hys",
+      "label": "Openbank High Yield Savings \u2014 with the 0.35% six-month boost",
+      "bank": "Openbank High Yield Savings",
+      "apy_status": "derived",
+      "apy": 4.1749,
+      "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY",
+      "note": "Blend computed as sqrt((1+0.0435)*(1+0.0400))-1 from Openbank's own published boosted and standard APYs.",
+      "blend": [
+        4.35,
+        4.0
+      ],
+      "apy_as_of": "",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 4.1749,
+          "year1_apy": 4.1749,
+          "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY",
+          "ending": 10417.49,
+          "interest": 417.49
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 4.0,
+          "year1_apy": 4.1749,
+          "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY \u00b7 then the standard APY",
+          "ending": 11267.55,
+          "interest": 1267.55
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 4.0,
+          "year1_apy": 4.1749,
+          "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY \u00b7 then the standard APY",
+          "ending": 12186.98,
+          "interest": 2186.98
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 4.1749,
+          "year1_apy": 4.1749,
+          "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY",
+          "ending": 52087.43,
+          "interest": 2087.43
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 4.0,
+          "year1_apy": 4.1749,
+          "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY \u00b7 then the standard APY",
+          "ending": 56337.76,
+          "interest": 6337.76
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 4.0,
+          "year1_apy": 4.1749,
+          "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY \u00b7 then the standard APY",
+          "ending": 60934.92,
+          "interest": 10934.92
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 4.1749,
+          "year1_apy": 4.1749,
+          "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY",
+          "ending": 104174.85,
+          "interest": 4174.85
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 4.0,
+          "year1_apy": 4.1749,
+          "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY \u00b7 then the standard APY",
+          "ending": 112675.52,
+          "interest": 12675.52
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 4.0,
+          "year1_apy": 4.1749,
+          "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY \u00b7 then the standard APY",
+          "ending": 121869.84,
+          "interest": 21869.84
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 4.1749,
+          "year1_apy": 4.1749,
+          "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY",
+          "ending": 260437.13,
+          "interest": 10437.13
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 4.0,
+          "year1_apy": 4.1749,
+          "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY \u00b7 then the standard APY",
+          "ending": 281688.8,
+          "interest": 31688.8
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 4.0,
+          "year1_apy": 4.1749,
+          "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY \u00b7 then the standard APY",
+          "ending": 304674.61,
+          "interest": 54674.61
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 4.1749,
+          "year1_apy": 4.1749,
+          "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY",
+          "ending": 520874.27,
+          "interest": 20874.27
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 4.0,
+          "year1_apy": 4.1749,
+          "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY \u00b7 then the standard APY",
+          "ending": 563377.61,
+          "interest": 63377.61
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 4.0,
+          "year1_apy": 4.1749,
+          "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY \u00b7 then the standard APY",
+          "ending": 609349.22,
+          "interest": 109349.22
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 4.1749,
+          "year1_apy": 4.1749,
+          "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY",
+          "ending": 1041748.53,
+          "interest": 41748.53
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 4.0,
+          "year1_apy": 4.1749,
+          "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY \u00b7 then the standard APY",
+          "ending": 1126755.21,
+          "interest": 126755.21
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 4.0,
+          "year1_apy": 4.1749,
+          "tier_label": "4.35% for 6 months for new customers, then the 4.00% standard APY \u00b7 then the standard APY",
+          "ending": 1218698.44,
+          "interest": 218698.44
+        }
+      ]
+    },
+    {
+      "id": "cit-year1-boost",
+      "account_id": "cit-platinum-savings",
+      "label": "CIT Platinum Savings \u2014 with the BOOST50 six-month boost",
+      "bank": "CIT Platinum Savings",
+      "apy_status": "derived",
+      "apy": 3.9997,
+      "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75%",
+      "note": "Blend computed as sqrt((1+0.0425)*(1+0.0375))-1 from CIT's own published boosted and standard APYs.",
+      "blend": [
+        4.25,
+        3.75
+      ],
+      "apy_as_of": "2026-07-01",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 3.9997,
+          "year1_apy": 3.9997,
+          "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75%",
+          "ending": 10399.97,
+          "interest": 399.97
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75% \u00b7 then the standard APY",
+          "ending": 11194.59,
+          "interest": 1194.59
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75% \u00b7 then the standard APY",
+          "ending": 12049.93,
+          "interest": 2049.93
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 3.9997,
+          "year1_apy": 3.9997,
+          "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75%",
+          "ending": 51999.85,
+          "interest": 1999.85
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75% \u00b7 then the standard APY",
+          "ending": 55972.96,
+          "interest": 5972.96
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75% \u00b7 then the standard APY",
+          "ending": 60249.65,
+          "interest": 10249.65
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 3.9997,
+          "year1_apy": 3.9997,
+          "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75%",
+          "ending": 103999.7,
+          "interest": 3999.7
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75% \u00b7 then the standard APY",
+          "ending": 111945.93,
+          "interest": 11945.93
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75% \u00b7 then the standard APY",
+          "ending": 120499.3,
+          "interest": 20499.3
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 3.9997,
+          "year1_apy": 3.9997,
+          "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75%",
+          "ending": 259999.25,
+          "interest": 9999.25
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75% \u00b7 then the standard APY",
+          "ending": 279864.82,
+          "interest": 29864.82
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75% \u00b7 then the standard APY",
+          "ending": 301248.24,
+          "interest": 51248.24
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 3.9997,
+          "year1_apy": 3.9997,
+          "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75%",
+          "ending": 519998.5,
+          "interest": 19998.5
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75% \u00b7 then the standard APY",
+          "ending": 559729.63,
+          "interest": 59729.63
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75% \u00b7 then the standard APY",
+          "ending": 602496.48,
+          "interest": 102496.48
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 3.9997,
+          "year1_apy": 3.9997,
+          "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75%",
+          "ending": 1039997.0,
+          "interest": 39997.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75% \u00b7 then the standard APY",
+          "ending": 1119459.27,
+          "interest": 119459.27
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 3.75,
+          "year1_apy": 3.9997,
+          "tier_label": "4.25% for 6 months on $5,000+ with promo code BOOST50, then 3.75% \u00b7 then the standard APY",
+          "ending": 1204992.95,
+          "interest": 204992.95
+        }
+      ]
+    },
+    {
+      "id": "marcus-year1-referral",
+      "account_id": "marcus-online-savings",
+      "label": "Marcus Online Savings \u2014 year 1 with one referral",
+      "bank": "Marcus Online Savings",
+      "apy_status": "derived",
+      "apy": 3.75,
+      "tier_label": "Requires a referral; 3-month +1.00% increase",
+      "note": "3.75% is Marcus's own published illustration for a year with one referral and an unchanged standard APY.",
+      "blend": null,
+      "apy_as_of": "2026-10-21",
+      "results": [
+        {
+          "deposit": 10000,
+          "years": 1,
+          "apy": 3.75,
+          "year1_apy": 3.75,
+          "tier_label": "Requires a referral; 3-month +1.00% increase",
+          "ending": 10375.0,
+          "interest": 375.0
+        },
+        {
+          "deposit": 10000,
+          "years": 3,
+          "apy": 3.5,
+          "year1_apy": 3.75,
+          "tier_label": "Requires a referral; 3-month +1.00% increase \u00b7 then the standard APY",
+          "ending": 11113.96,
+          "interest": 1113.96
+        },
+        {
+          "deposit": 10000,
+          "years": 5,
+          "apy": 3.5,
+          "year1_apy": 3.75,
+          "tier_label": "Requires a referral; 3-month +1.00% increase \u00b7 then the standard APY",
+          "ending": 11905.55,
+          "interest": 1905.55
+        },
+        {
+          "deposit": 50000,
+          "years": 1,
+          "apy": 3.75,
+          "year1_apy": 3.75,
+          "tier_label": "Requires a referral; 3-month +1.00% increase",
+          "ending": 51875.0,
+          "interest": 1875.0
+        },
+        {
+          "deposit": 50000,
+          "years": 3,
+          "apy": 3.5,
+          "year1_apy": 3.75,
+          "tier_label": "Requires a referral; 3-month +1.00% increase \u00b7 then the standard APY",
+          "ending": 55569.8,
+          "interest": 5569.8
+        },
+        {
+          "deposit": 50000,
+          "years": 5,
+          "apy": 3.5,
+          "year1_apy": 3.75,
+          "tier_label": "Requires a referral; 3-month +1.00% increase \u00b7 then the standard APY",
+          "ending": 59527.76,
+          "interest": 9527.76
+        },
+        {
+          "deposit": 100000,
+          "years": 1,
+          "apy": 3.75,
+          "year1_apy": 3.75,
+          "tier_label": "Requires a referral; 3-month +1.00% increase",
+          "ending": 103750.0,
+          "interest": 3750.0
+        },
+        {
+          "deposit": 100000,
+          "years": 3,
+          "apy": 3.5,
+          "year1_apy": 3.75,
+          "tier_label": "Requires a referral; 3-month +1.00% increase \u00b7 then the standard APY",
+          "ending": 111139.59,
+          "interest": 11139.59
+        },
+        {
+          "deposit": 100000,
+          "years": 5,
+          "apy": 3.5,
+          "year1_apy": 3.75,
+          "tier_label": "Requires a referral; 3-month +1.00% increase \u00b7 then the standard APY",
+          "ending": 119055.51,
+          "interest": 19055.51
+        },
+        {
+          "deposit": 250000,
+          "years": 1,
+          "apy": 3.75,
+          "year1_apy": 3.75,
+          "tier_label": "Requires a referral; 3-month +1.00% increase",
+          "ending": 259375.0,
+          "interest": 9375.0
+        },
+        {
+          "deposit": 250000,
+          "years": 3,
+          "apy": 3.5,
+          "year1_apy": 3.75,
+          "tier_label": "Requires a referral; 3-month +1.00% increase \u00b7 then the standard APY",
+          "ending": 277848.98,
+          "interest": 27848.98
+        },
+        {
+          "deposit": 250000,
+          "years": 5,
+          "apy": 3.5,
+          "year1_apy": 3.75,
+          "tier_label": "Requires a referral; 3-month +1.00% increase \u00b7 then the standard APY",
+          "ending": 297638.78,
+          "interest": 47638.78
+        },
+        {
+          "deposit": 500000,
+          "years": 1,
+          "apy": 3.75,
+          "year1_apy": 3.75,
+          "tier_label": "Requires a referral; 3-month +1.00% increase",
+          "ending": 518750.0,
+          "interest": 18750.0
+        },
+        {
+          "deposit": 500000,
+          "years": 3,
+          "apy": 3.5,
+          "year1_apy": 3.75,
+          "tier_label": "Requires a referral; 3-month +1.00% increase \u00b7 then the standard APY",
+          "ending": 555697.97,
+          "interest": 55697.97
+        },
+        {
+          "deposit": 500000,
+          "years": 5,
+          "apy": 3.5,
+          "year1_apy": 3.75,
+          "tier_label": "Requires a referral; 3-month +1.00% increase \u00b7 then the standard APY",
+          "ending": 595277.56,
+          "interest": 95277.56
+        },
+        {
+          "deposit": 1000000,
+          "years": 1,
+          "apy": 3.75,
+          "year1_apy": 3.75,
+          "tier_label": "Requires a referral; 3-month +1.00% increase",
+          "ending": 1037500.0,
+          "interest": 37500.0
+        },
+        {
+          "deposit": 1000000,
+          "years": 3,
+          "apy": 3.5,
+          "year1_apy": 3.75,
+          "tier_label": "Requires a referral; 3-month +1.00% increase \u00b7 then the standard APY",
+          "ending": 1111395.94,
+          "interest": 111395.94
+        },
+        {
+          "deposit": 1000000,
+          "years": 5,
+          "apy": 3.5,
+          "year1_apy": 3.75,
+          "tier_label": "Requires a referral; 3-month +1.00% increase \u00b7 then the standard APY",
+          "ending": 1190555.11,
+          "interest": 190555.11
+        }
+      ]
+    }
+  ]
+}
