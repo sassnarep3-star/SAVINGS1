@@ -5,7 +5,7 @@
       "2026-10-21",
       "2026-10-22"
     ],
-    "source_count": 40
+    "source_count": 41
   },
   "sources": [
     {
@@ -131,7 +131,7 @@
     {
       "url": "https://www.fdic.gov/national-rates-and-rate-caps",
       "method": "fetched",
-      "used_for": "FDIC National Rates and Rate Caps \u2013 October 2026 (revised 2026-10-19): savings national rate 0.38%, used as the benchmark"
+      "used_for": "FDIC National Rates and Rate Caps - October 2026 (revised 2026-10-19): savings national rate 0.38%, savings national rate cap 4.63%, and the Treasury yields published in the same table (6-month 4.33%, 12-month 4.54%). Used as the market benchmark."
     },
     {
       "url": "https://www.fdic.gov/resources/deposit-insurance",
@@ -207,6 +207,11 @@
       "url": "https://www.everbank.com/banking/performance-savings",
       "method": "fetched",
       "used_for": "EverBank Performance Savings: 4.20% for new accounts, $0 minimum and no monthly fee, interest compounded daily, mobile deposit up to $50,000/day, compared by the bank with a 0.38% national average"
+    },
+    {
+      "url": "https://www.federalreserve.gov/monetarypolicy/openmarket.htm",
+      "method": "fetched",
+      "used_for": "Federal Reserve open market operations page: FOMC target range 3.75%-4.00% after the 2026-09-17 increase of 25 basis points, following three 25 bp cuts in 2025 (Sept 18, Oct 30, Dec 11)."
     }
   ],
   "patterns": [

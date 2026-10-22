@@ -482,6 +482,18 @@ those rows are still listed so you can see the fee and access rules, and every b
 </section>
 
 <section>
+  <div class="section-head"><h2>Where these rates sit in the market</h2>
+    <p>Competitiveness over the year: the same money measured against five official reference points, each read on or after 2026-10-19.</p></div>
+  {table(["Reference point", "Rate", "As of", "What it means"], 
+      [[f'<strong>{esc(m["name"])}</strong>', esc(m["value"]), esc(m["as_of"]),
+        f'{esc(m["meaning"])} <span class="src">{link(m["source"])}</span>'] for m in accounts["meta"]["market_context"]],
+      num_cols=(1,),
+      caption="FDIC national rates and the Federal Reserve's target range are government-published; nothing here comes from a rate aggregator.",
+      foot="A savings APY is variable, so a 4.20% account can fall below a 4.54% one-year Treasury before the year is out. The Treasury locks the yield; the savings account keeps the money liquid. That is the actual trade-off, not the headline number."
+  )}
+</section>
+
+<section>
   <div class="section-head"><h2>Every published tier</h2>
     <p>Three banks price by balance or relationship. These are the exact tables, not summaries.</p></div>
   {''.join(tier_blocks)}

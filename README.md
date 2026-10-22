@@ -18,7 +18,7 @@ This repository was built by two agent sessions in parallel and then reconciled:
 
 The two datasets were merged by re-verifying every one of the other session's high-rate finds (Axos, E*TRADE,
 Openbank, CIT, EverBank, Barclays, Synchrony, Marcus, Amex, Capital One, Ally, SoFi) against the banks' own pages.
-The merged dataset holds **20 accounts, 19 FDIC charters, 40 official sources, 26 flagged items**.
+The merged dataset holds **20 accounts, 19 FDIC charters, 41 official sources, 26 flagged items**.
 
 ## What is in here
 

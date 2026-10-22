@@ -17,7 +17,44 @@
       "source": "https://www.fdic.gov/national-rates-and-rate-caps",
       "note": "FDIC 'National Rates and Rate Caps \u2013 October 2026', revised 2026-10-19; Savings national deposit rate 0.38%. Used as the market benchmark for the competitiveness column."
     },
-    "accounts_note": "20 accounts: 15 verified in the first pass plus 5 high-rate national banks added during the cross-session reconciliation (Axos, E*TRADE, Openbank, CIT, EverBank), each re-verified here against the bank's own page."
+    "accounts_note": "20 accounts: 15 verified in the first pass plus 5 high-rate national banks added during the cross-session reconciliation (Axos, E*TRADE, Openbank, CIT, EverBank), each re-verified here against the bank's own page.",
+    "market_context": [
+      {
+        "name": "FDIC national rate \u2014 savings",
+        "value": "0.38%",
+        "as_of": "2026-10-19",
+        "source": "https://www.fdic.gov/national-rates-and-rate-caps",
+        "meaning": "The average insured savings account in the country. The high-yield accounts here pay roughly 8 to 11 times this; the branch-bank tiers pay a fraction of it."
+      },
+      {
+        "name": "FDIC national rate cap \u2014 savings",
+        "value": "4.63%",
+        "as_of": "2026-10-19",
+        "source": "https://www.fdic.gov/national-rates-and-rate-caps",
+        "meaning": "A regulatory ceiling that applies only to banks that are less than well capitalized, not a market rate. No bank on this page is anywhere near it; it is context, not a target."
+      },
+      {
+        "name": "U.S. Treasury \u2014 6-month bill",
+        "value": "4.33%",
+        "as_of": "2026-10-19",
+        "source": "https://www.fdic.gov/national-rates-and-rate-caps",
+        "meaning": "A 6-month government bill yield as published by the FDIC. Slightly above the best no-conditions savings rate, but the money is locked for six months."
+      },
+      {
+        "name": "U.S. Treasury \u2014 12-month bill",
+        "value": "4.54%",
+        "as_of": "2026-10-19",
+        "source": "https://www.fdic.gov/national-rates-and-rate-caps",
+        "meaning": "The one-year government yield. Treasury interest is exempt from state and local income tax; savings interest is not."
+      },
+      {
+        "name": "Federal funds target range",
+        "value": "3.75%\u20134.00%",
+        "as_of": "2026-09-17",
+        "source": "https://www.federalreserve.gov/monetarypolicy/openmarket.htm",
+        "meaning": "Set by the FOMC; raised 25 bp at the 2026-09-17 meeting after three cuts in 2025. Deposit rates tend to follow this floor with a lag."
+      }
+    ]
   },
   "accounts": [
     {
