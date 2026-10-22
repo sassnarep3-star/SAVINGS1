@@ -114,6 +114,9 @@ for page in pages:
         target = (page.parent / href.split("#")[0]).resolve()
         if not target.exists():
             errors.append(f"{page.name}: broken internal link -> {href}")
+    for literal in ("{link(", "{money(", "{esc(", "{pct("):
+        if literal in html:
+            errors.append(f"{page.name}: unrendered template expression {literal}")
     for bad in ("None", "NaN", "undefined", "$XXXX"):
         if re.search(rf">\s*{re.escape(bad)}\s*<", html):
             errors.append(f"{page.name}: renders literal '{bad}'")
