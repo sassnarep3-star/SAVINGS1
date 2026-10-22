@@ -180,6 +180,15 @@
       "source": "https://www.usbank.com/bank-accounts/savings-accounts/bank-smartly-savings.html",
       "second_source": "https://api.fdic.gov/banks/institutions?filters=CERT:6548",
       "status": "needs review"
+    },
+    {
+      "id": "F21",
+      "severity": "low",
+      "title": "Security controls could not be verified for two banks",
+      "detail": "Security pages were reviewed for Chase, Citi, American Express, U.S. Bank, E*TRADE, Capital One, Ally, Axos, SoFi, CIT, EverBank, Synchrony, Openbank and Barclays. Marcus by Goldman Sachs and Wells Fargo did not expose a security page describing account controls at a reachable URL during this review, so their security field is shown as unverified rather than assumed. The absence of a verified statement is not evidence that controls are missing.",
+      "source": "https://www.marcus.com/us/en/savings/high-yield-savings",
+      "second_source": "https://www.wellsfargo.com/savings-cds/way2save/",
+      "status": "needs review"
     }
   ]
 }
