@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Max FDIC coverage · SAVINGS1 Resolution Layer</title>
+<meta name="description" content="Primary-source resolution layer: ZIP-gated Big Four savings APYs resolved from official regional rate sheets, plus accounts and FDIC coverage routes the main dashboards did not carry.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%94%8E</text></svg>">
+</head>
+<body>
+<header class="site"><div class="wrap"><nav class="nav">
+<a class="brand" href="index.html">RESOLUTION<span>·LAYER</span></a>
+<a class="lnk" href="index.html">Overview</a><a class="lnk" href="resolved.html">Resolved blanks</a><a class="lnk" href="accounts.html">Added accounts</a><a class="lnk" href="returns.html">Returns</a><a class="lnk active" href="coverage.html">Max FDIC coverage</a><a class="lnk" href="flagged.html">Flagged for review</a><a class="lnk" href="sources.html">Sources</a>
+<span class="spacer"></span>
+<a class="lnk" href="../index.html">← Main dashboard</a>
+</nav></div></header>
+<main><div class="wrap">
+<div class="banner"><div><strong>This is the third dashboard in this repository.</strong>
+The <a href="../index.html">main dashboard</a> ranks 18 products and the
+<a href="../verified/index.html">cross-check dashboard</a> independently re-verifies 20.
+This layer does something different: it goes back to the <strong>items those two left blank</strong>
+and resolves them from official regional rate-sheet PDFs and fee schedules, then adds the
+nationally-available accounts neither dataset carried.</div></div>
+<h1>Insuring the maximum, precisely</h1>
+<p class="lede">Ownership categories, the $1,250,000 trust ceiling the other dashboards omit, the shared-certificate traps, and a fully-insured $1,000,000 built from verified rates.</p>
+
+<div class="banner"><div><strong>The rule, stated exactly.</strong> FDIC insurance is
+<b>$250,000 per depositor, per insured bank, for each account ownership category</b> — not per account.
+All deposits you hold in the same category at the same bank are added together, including accrued interest.
+Source: <a href="https://www.fdic.gov/resources/deposit-insurance/brochures/deposits-at-a-glance" target="_blank" rel="noopener">FDIC — Deposit Insurance At A Glance</a>.</div></div>
+
+<h2>The ownership categories, and what each one is worth</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Ownership category</th><th class="num">Limit at ONE bank</th><th class="num">Maximum insured</th><th>What it means in practice</th></tr></thead>
+<tbody><tr><td><b>Single accounts</b></td><td class='num'><b>$250,000 per owner</b></td><td class='num'>$250,000</td><td class='small'>One person, no beneficiaries. All single accounts you hold at the same bank are added together.</td></tr><tr><td><b>Joint accounts</b></td><td class='num'><b>$500,000 per account (2 owners)</b></td><td class='num'>$500,000</td><td class='small'>Each co-owner is insured to $250,000 for their share. A two-owner joint account is insured to $500,000, and that is separate from either owner's single accounts.</td></tr><tr><td><b>Trust accounts (revocable + irrevocable)</b></td><td class='num'><b>up to $1,250,000 per owner</b></td><td class='num'>$1,250,000</td><td class='small'>Since 1 April 2024 the FDIC combines revocable (POD/ITF) and irrevocable trusts into one category: $250,000 per eligible beneficiary, capped at five beneficiaries — a $1,250,000 maximum per owner, per bank.</td></tr><tr><td><b>Certain retirement accounts</b></td><td class='num'><b>$250,000 per owner</b></td><td class='num'>$250,000</td><td class='small'>IRAs and certain self-directed retirement deposits are a separate ownership category from single accounts at the same bank.</td></tr></tbody></table></div>
+
+<h2>Stacking categories at a single bank</h2>
+<p class="small">These categories are independent of each other. One depositor, at one FDIC-insured bank, can
+therefore be covered well beyond $250,000 — provided each category genuinely applies and is correctly titled.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Added at the same bank</th><th class="num">Coverage added</th><th class="num">Running total insured</th></tr></thead>
+<tbody><tr><td>Single account</td><td class='num'>$250,000</td><td class='num'><b>$250,000</b></td></tr><tr><td>+ Joint account with one other person</td><td class='num'>$500,000</td><td class='num'><b>$750,000</b></td></tr><tr><td>+ Trust account naming 5 beneficiaries</td><td class='num'>$1,250,000</td><td class='num'><b>$2,000,000</b></td></tr><tr><td>+ IRA / certain retirement deposits</td><td class='num'>$250,000</td><td class='num'><b>$2,250,000</b></td></tr></tbody></table></div>
+<div class="note"><p class="small" style="margin:0">The FDIC's own calculator,
+<a href="https://edie.fdic.gov/" target="_blank" rel="noopener">EDIE</a>, prices a specific combination of
+accounts and titling. Use it before relying on any stacked figure — the categories must genuinely apply, and
+beneficiaries must be eligible.</p></div>
+
+<h2>Getting to a target, with the best verified rate in this layer</h2>
+<p class="small">Using Barclays Bank Delaware at 4.25%. "Banks needed" assumes a single ownership
+category only — stacking categories as above reduces the number of banks required.</p>
+<div class="tablewrap"><table>
+<thead><tr><th class="num">Target balance</th><th class="num">Banks needed (single category only)</th><th class="num">Insurable at ONE bank using single + joint + trust</th><th class="num">Year-1 interest at 4.25%</th></tr></thead>
+<tbody><tr><td class='num'><b>$250,000</b></td><td class='num'>1</td><td class='num'>$250,000</td><td class='num'>$10,625</td></tr><tr><td class='num'><b>$500,000</b></td><td class='num'>2</td><td class='num'>$500,000</td><td class='num'>$21,250</td></tr><tr><td class='num'><b>$1,000,000</b></td><td class='num'>4</td><td class='num'>$1,000,000</td><td class='num'>$42,500</td></tr><tr><td class='num'><b>$1,250,000</b></td><td class='num'>5</td><td class='num'>$1,250,000</td><td class='num'>$53,125</td></tr><tr><td class='num'><b>$2,000,000</b></td><td class='num'>8</td><td class='num'>$1,250,000</td><td class='num'>$85,000</td></tr></tbody></table></div>
+
+<h2>A fully-insured $1,000,000 built from this layer's verified rates</h2>
+<p class="small">Four separate FDIC certificates, $250,000 in each, all in a single ownership category — the
+simplest structure that is unambiguously covered end to end.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Bank</th><th class="num">FDIC cert</th><th class="num">Deposit</th><th class="num">APY</th><th class="num">Year-1 interest</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td><b>Barclays Bank Delaware</b><div class="small">Select Savings from Barclays (AARP Digital Banking)</div></td><td class="num">57203</td><td class="num">$250,000</td><td class="num">4.25%</td><td class="num">$10,625</td><td class="small"><a href="https://banking.us.barclays/select-home/savings.html" target="_blank" rel="noopener">official</a></td></tr>
+<tr><td><b>U.S. Bank National Association</b><div class="small">Elite Money Market — new-client rate</div></td><td class="num">6548</td><td class="num">$250,000</td><td class="num">4.00%</td><td class="num">$10,000</td><td class="small"><a href="https://www.usbank.com/bank-accounts/savings-accounts/elite-money-market.html" target="_blank" rel="noopener">official</a></td></tr>
+<tr><td><b>First-Citizens Bank &amp; Trust Company (CIT Bank division)</b><div class="small">Savings Connect</div></td><td class="num">11063</td><td class="num">$250,000</td><td class="num">3.65%</td><td class="num">$9,125</td><td class="small"><a href="https://www.cit.com/cit-bank/bank/savings" target="_blank" rel="noopener">official</a></td></tr>
+<tr><td><b>Fourth certificate of your choice</b><div class="small">see the main and cross-check dashboards for further options</div></td><td class="num">—</td><td class="num">$250,000</td><td class="num">—</td><td class="num">—</td><td class="small"><a href="../index.html">main dashboard</a></td></tr>
+</tbody></table></div>
+
+<h2>Certificate traps that break a max-coverage plan</h2>
+<div class="note bad"><p class="small" style="margin:0">Several well-known brands are <b>not</b> separate banks.
+Openbank and Santander share FDIC Cert #29950. CIT Bank and First-Citizens Bank &amp; Trust share Cert #11063.
+Alto and BMO Bank N.A. share Cert #16571. Barclays Tiered Savings, Barclays Online Savings and Select Savings
+from Barclays all share Cert #57203. Capital One 360 and the former Discover Bank share Cert #4297 — Discover's
+own Cert #5649 is inactive. Depositing $250,000 at each brand in a pair produces $250,000 of coverage, not
+$500,000. Published as flag <a href="flagged.html">S05</a>.</p></div>
+
+<h2>Programme coverage is real, but it is not the host bank's insurance</h2>
+<p class="small">SoFi advertises up to $3,000,000 and Axos up to $2,500,000 of FDIC coverage. In both cases the
+host bank provides only the standard $250,000; the excess is swept into partner banks, and the coverage depends
+on those partners and on you not already holding deposits at them. SoFi's own participating-bank list includes
+Citibank (#7213), Citizens Bank (#57957) and Morgan Stanley Bank (#32992) — so a depositor who already holds
+$250,000 at any of those banks directly can lose part of the benefit. Check the partner list before relying on
+a programme figure.</p>
+<p class="small"><a href="https://www.sofi.com/banking/fdic/participatingbanks/" target="_blank" rel="noopener">SoFi participating banks</a> ·
+<a href="https://www.axosbank.com/personal/bank/axos-insured-deposit-program" target="_blank" rel="noopener">Axos Insured Deposit Program</a></p>
+
+</div></main>
+<footer><div class="wrap">
+<p><strong>SAVINGS1 · Resolution Layer</strong> — session <code>S-37CFC7F4</code>, verified 2026-10-22.
+Reference opening date for every return figure: 2026-10-22. Reference market: New York, NY.</p>
+<p>Every value links to the bank's own page or a .gov page. A blank cell means the value could not be read
+from an official source — it is never an estimate. All APYs are variable unless the bank states otherwise.
+This is research, not financial advice.</p>
+<p><a href="../index.html">Main dashboard</a> · <a href="../verified/index.html">Cross-check dashboard</a> · <a href="flagged.html">Flagged for review</a></p>
+</div></footer>
+</body></html>

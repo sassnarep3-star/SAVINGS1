@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Added accounts · SAVINGS1 Resolution Layer</title>
+<meta name="description" content="Primary-source resolution layer: ZIP-gated Big Four savings APYs resolved from official regional rate sheets, plus accounts and FDIC coverage routes the main dashboards did not carry.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%94%8E</text></svg>">
+</head>
+<body>
+<header class="site"><div class="wrap"><nav class="nav">
+<a class="brand" href="index.html">RESOLUTION<span>·LAYER</span></a>
+<a class="lnk" href="index.html">Overview</a><a class="lnk" href="resolved.html">Resolved blanks</a><a class="lnk active" href="accounts.html">Added accounts</a><a class="lnk" href="returns.html">Returns</a><a class="lnk" href="coverage.html">Max FDIC coverage</a><a class="lnk" href="flagged.html">Flagged for review</a><a class="lnk" href="sources.html">Sources</a>
+<span class="spacer"></span>
+<a class="lnk" href="../index.html">← Main dashboard</a>
+</nav></div></header>
+<main><div class="wrap">
+<div class="banner"><div><strong>This is the third dashboard in this repository.</strong>
+The <a href="../index.html">main dashboard</a> ranks 18 products and the
+<a href="../verified/index.html">cross-check dashboard</a> independently re-verifies 20.
+This layer does something different: it goes back to the <strong>items those two left blank</strong>
+and resolves them from official regional rate-sheet PDFs and fee schedules, then adds the
+nationally-available accounts neither dataset carried.</div></div>
+<h1>6 accounts neither dashboard carried</h1>
+<p class="lede">Nationally available, FDIC-insured savings accounts missing from both published datasets — including the highest flat APY found anywhere in this repository.</p>
+
+<div class="banner"><div><strong>Why these matter.</strong> Each of these is nationally available, FDIC-insured
+and absent from both published datasets. Two of them — Select Savings from Barclays at 4.25% and the U.S. Bank
+Elite Money Market at 4.00% for new clients — sit at or near the top of the whole comparison, and one of them is
+at a top-ten-by-assets national bank.</div></div>
+
+<div class="tablewrap"><table>
+<thead><tr><th>Bank / product</th><th class="num">APY</th><th class="num">Min. to open</th><th class="num">Monthly fee</th><th>App</th><th>Security</th><th>Official sources</th></tr></thead>
+<tbody><tr>
+<td><b>Barclays Bank Delaware</b><div class="small">Select Savings from Barclays (AARP Digital Banking)</div><div class="small">National digital bank — membership-gated</div></td>
+<td class="num"><b>4.25%</b><div class="small">2026-10-07</div></td>
+<td class="num">$0 (no minimum balance; a zero balance for 6 months auto-closes the account)</td>
+<td class="num">$0</td>
+<td><span class="badge ok">verified</span></td><td><span class="badge ok">verified</span></td>
+<td class="small"><a href="https://banking.us.barclays/select-home/savings.html" target="_blank" rel="noopener">product page</a><br><a href="https://banking.us.barclays/select-home/faqs.html" target="_blank" rel="noopener">app page</a><br><a href="https://banks.data.fdic.gov/bankfind-suite/bankfind/details/57203" target="_blank" rel="noopener">FDIC record</a><br><span class="small">FDIC cert 57203</span></td></tr><tr>
+<td><b>Barclays Bank Delaware</b><div class="small">Online Savings</div><div class="small">National digital bank</div></td>
+<td class="num"><b>3.20%</b><div class="small">2026-10-22</div></td>
+<td class="num">$0</td>
+<td class="num">$0</td>
+<td><span class="badge ok">verified</span></td><td><span class="badge ok">verified</span></td>
+<td class="small"><a href="https://banking.us.barclays/online-savings.html" target="_blank" rel="noopener">product page</a><br><a href="https://banking.us.barclays/faq.html" target="_blank" rel="noopener">app page</a><br><span class="small">FDIC cert 57203</span></td></tr><tr>
+<td><b>BMO Bank N.A. (Alto, formerly BMO Alto)</b><div class="small">Alto Online Savings Account</div><div class="small">National digital bank — mega-bank parent</div></td>
+<td class="num"><b>3.00%</b><div class="small">2026-10-21</div></td>
+<td class="num">$0</td>
+<td class="num">$0</td>
+<td><span class="badge no">unverified</span></td><td><span class="badge no">unverified</span></td>
+<td class="small"><a href="https://www.alto.bmo.com/en-us/" target="_blank" rel="noopener">product page</a><br><a href="https://www.alto.bmo.com/en-us/high-yield-online-savings/" target="_blank" rel="noopener">savings detail</a><br><span class="small">FDIC cert 16571</span></td></tr><tr>
+<td><b>Truist Bank</b><div class="small">Truist One Savings</div><div class="small">Mega bank — branch network</div></td>
+<td class="num"><b>0.01%</b><div class="small">2026-09-28</div></td>
+<td class="num">$50</td>
+<td class="num">$5</td>
+<td><span class="badge no">unverified</span></td><td><span class="badge no">unverified</span></td>
+<td class="small"><a href="https://www.truist.com/savings/truist-one-savings/disclosures-and-fees" target="_blank" rel="noopener">disclosures</a><br><a href="https://www.truist.com/savings/truist-one-savings" target="_blank" rel="noopener">product page</a><br><a href="https://www.truist.com/content/dam/truist-bank/us/en/documents/disclosures/personal/aog-truist-one-savings.pdf" target="_blank" rel="noopener">account overview (PDF)</a><br><span class="small">FDIC cert 9846</span></td></tr><tr>
+<td><b>U.S. Bank National Association</b><div class="small">Elite Money Market — new-client rate</div><div class="small">Mega bank — branch network (money market, savings-adjacent)</div></td>
+<td class="num"><b>4.00%</b><div class="small">2026-10-20</div></td>
+<td class="num">$100</td>
+<td class="num">$10</td>
+<td><span class="badge ok">verified</span></td><td><span class="badge no">unverified</span></td>
+<td class="small"><a href="https://www.usbank.com/bank-accounts/savings-accounts/elite-money-market.html" target="_blank" rel="noopener">product page</a><br><a href="https://www.usbank.com/bank-accounts/savings-accounts.html" target="_blank" rel="noopener">comparison page</a><br><a href="https://www.usbank.com/dam/en/documents/pdfs/disclosures/consumer-pricing-information.pdf" target="_blank" rel="noopener">pricing (PDF)</a><br><span class="small">FDIC cert 6548</span></td></tr><tr>
+<td><b>First-Citizens Bank &amp; Trust Company (CIT Bank division)</b><div class="small">Savings Connect</div><div class="small">National digital bank</div></td>
+<td class="num"><b>3.65%</b><div class="small">2026-07-01</div></td>
+<td class="num">$100</td>
+<td class="num">$0</td>
+<td><span class="badge ok">verified</span></td><td><span class="badge ok">verified</span></td>
+<td class="small"><a href="https://www.cit.com/cit-bank/bank/savings" target="_blank" rel="noopener">product page</a><br><a href="https://www.cit.com/cit-bank/bank/savings/savings-connect-account" target="_blank" rel="noopener">product detail</a><br><a href="https://www.cit.com/cit-bank/learn/why-cit-bank/fdic-insurance" target="_blank" rel="noopener">FDIC record</a><br><span class="small">FDIC cert 11063</span></td></tr></tbody></table></div>
+
+<h2>Full detail per account</h2>
+<details><summary>Barclays Bank Delaware — Select Savings from Barclays (AARP Digital Banking) · 4.25%</summary>
+<p class="small"><b>Why it is here:</b> NEW — the highest flat, unconditional-on-balance APY found in this review. Carried by neither published dataset.</p>
+<p class="small"><b>Rate scope:</b> 4.25% on EVERY balance tier: &lt;$10,000 · $10,000–$24,999.99 · $25,000–$49,999.99 · $50,000–$99,999.99 · $100,000–$249,999.99 · $250,000+. No balance condition and no intro clock.</p>
+<p class="small"><b>Effective date:</b> APY on all balance tiers is accurate as of 10/07/2026</p>
+<p class="small"><b>Fee waiver:</b> No monthly maintenance fees</p>
+<p class="small"><b>Compounding:</b> Compounded daily, credited monthly</p>
+<p class='small'><b>Opening bonus:</b> $400 — open by 10/31/2026, fund $40,000+ within 30 days, hold $40,000+ for 120 consecutive days; bonus added about 60 days later and reported on Form 1099-INT</p><p class='small'><b>Eligibility:</b> Requires a current, active AARP membership number at application. AARP is not an FDIC-insured institution; the bank is Barclays Bank Delaware, Member FDIC.</p><p class='small'><b>Balance / account limits:</b> Maximum $1,000,000 per Select Savings account; maximum 3 Select Savings accounts per customer; 25 total Barclays deposit accounts; up to 4 beneficiaries per account</p><p class='small'><b>Mobile app:</b> Barclays US App (iOS 15+ / Android 12+); mobile check deposit</p><p class='small'><b>Security:</b> Password protection, internet firewalls and encryption on the website and app; one-time passcodes for password reset; device access can be revoked by phone</p>
+<p class="small"><a href="https://banking.us.barclays/select-home/savings.html" target="_blank" rel="noopener">product page</a><br><a href="https://banking.us.barclays/select-home/faqs.html" target="_blank" rel="noopener">app page</a><br><a href="https://banks.data.fdic.gov/bankfind-suite/bankfind/details/57203" target="_blank" rel="noopener">FDIC record</a><br><span class="small">FDIC cert 57203</span></p></details><details><summary>Barclays Bank Delaware — Online Savings · 3.20%</summary>
+<p class="small"><b>Why it is here:</b> NEW — Barclays' non-tiered product; the live dashboards carried only Tiered Savings.</p>
+<p class="small"><b>Rate scope:</b> Same APY regardless of balance (this is what distinguishes it from Tiered Savings)</p>
+<p class="small"><b>Effective date:</b> Read on the official product page 2026-10-22; the page prints no separate effective date for this product</p>
+<p class="small"><b>Fee waiver:</b> No monthly maintenance fees; no minimum balance to open</p>
+<p class="small"><b>Compounding:</b> Compounded daily, credited monthly</p>
+<p class='small'><b>Withdrawal rules:</b> No limit on the number or type of withdrawals and transfers per month (stated in the product FAQ)</p><p class='small'><b>Opening bonus:</b> none found on the official page reviewed</p><p class='small'><b>Mobile app:</b> Barclays US App</p><p class='small'><b>Security:</b> Password protection, firewalls, encryption; 5-business-day hold on check/electronic deposits (funds on hold still earn interest)</p>
+<p class="small"><a href="https://banking.us.barclays/online-savings.html" target="_blank" rel="noopener">product page</a><br><a href="https://banking.us.barclays/faq.html" target="_blank" rel="noopener">app page</a><br><span class="small">FDIC cert 57203</span></p></details><details><summary>BMO Bank N.A. (Alto, formerly BMO Alto) — Alto Online Savings Account · 3.00%</summary>
+<p class="small"><b>Why it is here:</b> NEW — carried by neither published dataset.</p>
+<p class="small"><b>Rate scope:</b> All balances; no tiers</p>
+<p class="small"><b>Effective date:</b> APY as of October 21, 2026 (printed on the product page)</p>
+<p class="small"><b>Fee waiver:</b> No fees; no minimum balance. Must be funded within 90 days or the account is closed; a zero balance for 90 consecutive days closes the account.</p>
+<p class="small"><b>Compounding:</b> Variable rate; may change at any time after the account is opened</p>
+<p class='small'><b>Opening bonus:</b> none found on the official page reviewed</p><p class='small'><b>Mobile app:</b> <span class='unv'>not verified</span> — Alto states accounts cannot be accessed through BMO Digital Banking, BMO branches or BMO ATMs; servicing is via Alto Online Banking. No separate Alto mobile app was named on the official page.</p><p class='small'><b>Security:</b> <span class='unv'>not verified</span></p><div class='note bad'><p class='small' style='margin:0'><b>FDIC aggregation warning:</b> Deposits made through Alto and in other U.S. accounts under the BMO brand are NOT separately insured — they count toward one FDIC limit at BMO Bank N.A. (Cert #16571).</p></div>
+<p class="small"><a href="https://www.alto.bmo.com/en-us/" target="_blank" rel="noopener">product page</a><br><a href="https://www.alto.bmo.com/en-us/high-yield-online-savings/" target="_blank" rel="noopener">savings detail</a><br><span class="small">FDIC cert 16571</span></p></details><details><summary>Truist Bank — Truist One Savings · 0.01%</summary>
+<p class="small"><b>Why it is here:</b> NEW — the only top-10-by-assets national bank absent from both published datasets. Its rate IS published, dated and un-gated.</p>
+<p class="small"><b>Rate scope:</b> Every tier from $0–$4,999.99 up to $5,000,000+ pays 0.01%. Truist states tiered interest is NOT applicable to this account.</p>
+<p class="small"><b>Effective date:</b> Interest rates and APY accurate as of 9/28/2026</p>
+<p class="small"><b>Fee waiver:</b> $0 with ANY ONE of: a related Truist personal checking account; a $300+ minimum daily ledger balance; a recurring preauthorized internal transfer of $25+ per statement cycle; or an owner under 18 (must open in branch)</p>
+<p class="small"><b>Compounding:</b> Calculated and compounded daily on the collected balance, credited monthly</p>
+<p class='small'><b>Withdrawal rules:</b> No fee for the first 6 withdrawals each statement cycle</p><p class='small'><b>Opening bonus:</b> none found on the official page reviewed</p><p class='small'><b>Mobile app:</b> <span class='unv'>not verified</span></p><p class='small'><b>Security:</b> <span class='unv'>not verified</span></p>
+<p class="small"><a href="https://www.truist.com/savings/truist-one-savings/disclosures-and-fees" target="_blank" rel="noopener">disclosures</a><br><a href="https://www.truist.com/savings/truist-one-savings" target="_blank" rel="noopener">product page</a><br><a href="https://www.truist.com/content/dam/truist-bank/us/en/documents/disclosures/personal/aog-truist-one-savings.pdf" target="_blank" rel="noopener">account overview (PDF)</a><br><span class="small">FDIC cert 9846</span></p></details><details><summary>U.S. Bank National Association — Elite Money Market — new-client rate · 4.00%</summary>
+<p class="small"><b>Why it is here:</b> NEW — the live dashboards left U.S. Bank's savings APY blank. This separate U.S. Bank product publishes a dated new-client rate plus its full standard tier ladder without a ZIP gate.</p>
+<p class="small"><b>Rate scope:</b> Up to 4.00% APY for new Elite Money Market clients who deposit at least $25,000 within 30 days of opening and keep a $25,000+ minimum daily balance. Standard tiers otherwise: under $10,000 → 0.01%; $10,000–$24,999.99 → 0.01%; $25,000–$49,999.99 → 0.05%; $50,000–$99,999.99 → 0.05%.</p>
+<p class="small"><b>Effective date:</b> Read on the official product page 2026-10-20 / 2026-10-21; the page states APYs may vary by location</p>
+<p class="small"><b>Fee waiver:</b> $0 with a $10,000 minimum daily balance, OR as an owner of a U.S. Bank Smartly Checking account; also waived on all new Elite Money Market accounts for twelve months from opening</p>
+<p class="small"><b>Compounding:</b> Compounded daily, credited monthly</p>
+<p class='small'><b>Opening bonus:</b> none found on the official page reviewed</p><p class='small'><b>Eligibility:</b> Rate is for NEW Elite Money Market clients only and is not valid for clients with an existing U.S. Bank savings or money market account. Both new and existing accounts open fewer than 30 days qualify with a $25,000+ balance.</p><p class='small'><b>Mobile app:</b> U.S. Bank Mobile App</p><p class='small'><b>Security:</b> <span class='unv'>not verified</span></p><div class='note'><p class='small' style='margin:0'><b>Product caveat:</b> This is a money market deposit account, not a statement savings account. It is FDIC-insured on the same terms, but it is a different product type from the savings accounts elsewhere in this comparison.</p></div>
+<p class="small"><a href="https://www.usbank.com/bank-accounts/savings-accounts/elite-money-market.html" target="_blank" rel="noopener">product page</a><br><a href="https://www.usbank.com/bank-accounts/savings-accounts.html" target="_blank" rel="noopener">comparison page</a><br><a href="https://www.usbank.com/dam/en/documents/pdfs/disclosures/consumer-pricing-information.pdf" target="_blank" rel="noopener">pricing (PDF)</a><br><span class="small">FDIC cert 6548</span></p></details><details><summary>First-Citizens Bank &amp; Trust Company (CIT Bank division) — Savings Connect · 3.65%</summary>
+<p class="small"><b>Why it is here:</b> NEW — CIT's flat-rate account. The live dashboards carried only the tiered Platinum Savings, which pays just 0.25% below $5,000.</p>
+<p class="small"><b>Rate scope:</b> 3.65% on the full balance with no tiers and no qualifying-balance requirement</p>
+<p class="small"><b>Effective date:</b> APY accurate as of July 1, 2026 (the date printed in CIT's footnote)</p>
+<p class="small"><b>Fee waiver:</b> No account opening or monthly maintenance fees</p>
+<p class="small"><b>Compounding:</b> Compounded daily, credited monthly</p>
+<p class='small'><b>Opening bonus:</b> none found on the official page reviewed</p><p class='small'><b>Mobile app:</b> CIT Bank mobile app with mobile check deposit and transfers</p><p class='small'><b>Security:</b> Continuous fraud monitoring (stated on CIT's own Platinum Savings boost page)</p><div class='note bad'><p class='small' style='margin:0'><b>FDIC aggregation warning:</b> CIT Bank is a division of First-Citizens Bank &amp; Trust Company. Deposits held under First-Citizens and all of its divisions are NOT separately insured — they must be combined against one $250,000 limit (Cert #11063).</p></div>
+<p class="small"><a href="https://www.cit.com/cit-bank/bank/savings" target="_blank" rel="noopener">product page</a><br><a href="https://www.cit.com/cit-bank/bank/savings/savings-connect-account" target="_blank" rel="noopener">product detail</a><br><a href="https://www.cit.com/cit-bank/learn/why-cit-bank/fdic-insurance" target="_blank" rel="noopener">FDIC record</a><br><span class="small">FDIC cert 11063</span></p></details>
+
+<h2>How these compare to the benchmarks</h2>
+<p class="small">All reference points are from .gov sources read on 2026-10-19.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Account</th><th class="num">APY</th><th class="num">× FDIC national savings average (0.38%)</th><th class="num">vs federal funds ceiling (4.00%)</th><th class="num">vs 6-month Treasury (4.33%)</th><th class="num">vs 12-month Treasury (4.54%)</th></tr></thead>
+<tbody><tr><td><b>Barclays Bank Delaware</b><div class="small">Select Savings from Barclays (AARP Digital Banking)</div></td>
+<td class="num"><b>4.25%</b></td>
+<td class="num">11.2×</td>
+<td class="num">+0.25 pp</td>
+<td class="num">-0.08 pp</td>
+<td class="num">-0.29 pp</td></tr><tr><td><b>U.S. Bank National Association</b><div class="small">Elite Money Market — new-client rate</div></td>
+<td class="num"><b>4.00%</b></td>
+<td class="num">10.5×</td>
+<td class="num">+0.00 pp</td>
+<td class="num">-0.33 pp</td>
+<td class="num">-0.54 pp</td></tr><tr><td><b>First-Citizens Bank &amp; Trust Company (CIT Bank division)</b><div class="small">Savings Connect</div></td>
+<td class="num"><b>3.65%</b></td>
+<td class="num">9.6×</td>
+<td class="num">-0.35 pp</td>
+<td class="num">-0.68 pp</td>
+<td class="num">-0.89 pp</td></tr><tr><td><b>Barclays Bank Delaware</b><div class="small">Online Savings</div></td>
+<td class="num"><b>3.20%</b></td>
+<td class="num">8.4×</td>
+<td class="num">-0.80 pp</td>
+<td class="num">-1.13 pp</td>
+<td class="num">-1.34 pp</td></tr><tr><td><b>BMO Bank N.A. (Alto, formerly BMO Alto)</b><div class="small">Alto Online Savings Account</div></td>
+<td class="num"><b>3.00%</b></td>
+<td class="num">7.9×</td>
+<td class="num">-1.00 pp</td>
+<td class="num">-1.33 pp</td>
+<td class="num">-1.54 pp</td></tr><tr><td><b>Truist Bank</b><div class="small">Truist One Savings</div></td>
+<td class="num"><b>0.01%</b></td>
+<td class="num">0.0×</td>
+<td class="num">-3.99 pp</td>
+<td class="num">-4.32 pp</td>
+<td class="num">-4.53 pp</td></tr>
+</tbody></table></div>
+<p class="legend">A negative figure against a Treasury yield does not make the account a bad choice — Treasuries
+are not FDIC-insured deposits and are far less liquid. It does show how much of the yield curve a savings
+account is giving up. Source for all three benchmarks: <a href="https://www.fdic.gov/national-rates-and-rate-caps" target="_blank" rel="noopener">FDIC National Rates and Rate Caps</a>
+and <a href="https://www.federalreserve.gov/monetarypolicy/openmarket.htm" target="_blank" rel="noopener">Federal Reserve open market operations</a>.</p>
+
+</div></main>
+<footer><div class="wrap">
+<p><strong>SAVINGS1 · Resolution Layer</strong> — session <code>S-37CFC7F4</code>, verified 2026-10-22.
+Reference opening date for every return figure: 2026-10-22. Reference market: New York, NY.</p>
+<p>Every value links to the bank's own page or a .gov page. A blank cell means the value could not be read
+from an official source — it is never an estimate. All APYs are variable unless the bank states otherwise.
+This is research, not financial advice.</p>
+<p><a href="../index.html">Main dashboard</a> · <a href="../verified/index.html">Cross-check dashboard</a> · <a href="flagged.html">Flagged for review</a></p>
+</div></footer>
+</body></html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Resolved blanks · SAVINGS1 Resolution Layer</title>
+<meta name="description" content="Primary-source resolution layer: ZIP-gated Big Four savings APYs resolved from official regional rate sheets, plus accounts and FDIC coverage routes the main dashboards did not carry.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%94%8E</text></svg>">
+</head>
+<body>
+<header class="site"><div class="wrap"><nav class="nav">
+<a class="brand" href="index.html">RESOLUTION<span>·LAYER</span></a>
+<a class="lnk" href="index.html">Overview</a><a class="lnk active" href="resolved.html">Resolved blanks</a><a class="lnk" href="accounts.html">Added accounts</a><a class="lnk" href="returns.html">Returns</a><a class="lnk" href="coverage.html">Max FDIC coverage</a><a class="lnk" href="flagged.html">Flagged for review</a><a class="lnk" href="sources.html">Sources</a>
+<span class="spacer"></span>
+<a class="lnk" href="../index.html">← Main dashboard</a>
+</nav></div></header>
+<main><div class="wrap">
+<div class="banner"><div><strong>This is the third dashboard in this repository.</strong>
+The <a href="../index.html">main dashboard</a> ranks 18 products and the
+<a href="../verified/index.html">cross-check dashboard</a> independently re-verifies 20.
+This layer does something different: it goes back to the <strong>items those two left blank</strong>
+and resolves them from official regional rate-sheet PDFs and fee schedules, then adds the
+nationally-available accounts neither dataset carried.</div></div>
+<h1>The Big Four, resolved from official rate sheets</h1>
+<p class="lede">Savings APYs the published dashboards left blank, recovered from each bank's own dated, market-specific disclosure documents.</p>
+
+<div class="banner warn"><div><strong>Why these were blank.</strong> Chase requires a 5-digit ZIP before it will
+render a rate table. Bank of America's savings page returns literal <code>$XXXX</code> placeholders to an
+automated reader. Citi injects its APY at runtime. Wells Fargo's product page shows a rate only for whatever
+market the page defaults to. All four behaviours are real — but three of these banks <em>also</em> publish the
+same numbers as static, dated, market-specific documents, which is what this page uses.</div></div>
+
+<div class="tablewrap"><table>
+<thead><tr><th>Bank / product</th><th class="num">APY (New York)</th><th>Scope of that rate</th><th class="num">Min. to open</th><th class="num">Monthly fee</th><th>Official sources</th></tr></thead>
+<tbody><tr>
+<td><b>JPMorgan Chase Bank, N.A.</b><div class="small">Chase Savings℠</div>
+<div class="small"><span class="badge ok">resolved</span></div></td>
+<td class="num"><b>0.01%</b><div class="small">RATES IN EFFECT AS OF: Friday, October 16, 2026 (printed on the sheet)</div></td>
+<td class="small">All balance tiers: $0–$9,999 · $10,000–$24,999 · $25,000–$49,999 · $50,000+ — all 0.01%</td>
+<td class="num">$0</td>
+<td class="num">$5</td>
+<td class="small"><a href="https://www.chase.com/content/dam/chase-ux/ratesheets/pdfs/rdny1.pdf" target="_blank" rel="noopener">official rate sheet (PDF)</a><br><a href="https://www.chase.com/personal/savings/savings-account" target="_blank" rel="noopener">product page</a><br><a href="https://account.chase.com/consumer/banking/savingsoffer" target="_blank" rel="noopener">bonus terms</a><br><a href="https://www.chase.com/digital/mobile-banking" target="_blank" rel="noopener">app page</a><br><a href="https://www.chase.com/digital/resources/privacy-security" target="_blank" rel="noopener">security page</a><br><span class="small">FDIC cert 628</span></td></tr><tr>
+<td><b>JPMorgan Chase Bank, N.A.</b><div class="small">Chase Premier Savings℠</div>
+<div class="small"><span class="badge ok">resolved</span></div></td>
+<td class="num"><b>0.01%</b><div class="small">RATES IN EFFECT AS OF: Friday, October 16, 2026</div></td>
+<td class="small">Standard 0.01% on every tier from $0 to $250,000+. Relationship 0.02% on every tier, requiring a linked J.P. Morgan Private Client Checking Plus / Classic Checking / Chase Private Client / Sapphire / Premier Plus Checking account AND at least five customer-initiated transactions per statement period.</td>
+<td class="num">$0</td>
+<td class="num">$25</td>
+<td class="small"><a href="https://www.chase.com/content/dam/chase-ux/ratesheets/pdfs/rdny1.pdf" target="_blank" rel="noopener">official rate sheet (PDF)</a><br><a href="https://www.chase.com/personal/savings/interest-savings" target="_blank" rel="noopener">product page</a><br><a href="https://www.chase.com/personal/fees/premier-savings" target="_blank" rel="noopener">fees</a><br><span class="small">FDIC cert 628</span></td></tr><tr>
+<td><b>Bank of America, N.A.</b><div class="small">Advantage Savings</div>
+<div class="small"><span class="badge ok">resolved</span></div></td>
+<td class="num"><b>0.04%</b><div class="small">Effective as of: October 21, 2026 (New York – Tri-State Area sheet)</div></td>
+<td class="small">Every balance tier — &lt;$5,000 · $5,000–$9,999 · $10,000–$24,999 · $25,000–$49,999 · $50,000–$99,999 · $100,000–$499,999 · $500,000–$2,499,999 · $2,500,000–$9,999,999 · $10,000,000+ — all 0.04%</td>
+<td class="num">$100</td>
+<td class="num">$8</td>
+<td class="small"><a href="https://media.bac-assets.com/DigitalDeposit_NY_NY_Tri_State_Area.pdf" target="_blank" rel="noopener">official rate sheet (PDF)</a><br><a href="https://www.bankofamerica.com/salesservices/deposits/resources/personal-schedule-fees/?request_locale=en_US" target="_blank" rel="noopener">fee schedule</a><br><a href="https://www.bankofamerica.com/deposits/savings/savings-accounts/" target="_blank" rel="noopener">product page</a><br><a href="https://web.bankofamerica.com/en/security/tools-resources/take-your-security-to-the-next-level" target="_blank" rel="noopener">security page</a><br><span class="small">FDIC cert 3510</span></td></tr><tr>
+<td><b>Wells Fargo Bank, N.A.</b><div class="small">Platinum Savings — new-savings-customer rate</div>
+<div class="small"><span class="badge ok">resolved</span></div></td>
+<td class="num"><b>3.25%</b><div class="small">Platinum Savings Rate Update, Effective October 7, 2026</div></td>
+<td class="small">3.20% interest rate / 3.25% APY on a collected balance of $25,000 or more. Below $25,000 the Standard or Relationship Interest Rate applies instead. All states excluding Colorado.</td>
+<td class="num">$25</td>
+<td class="num">$12</td>
+<td class="small"><a href="https://www.wellsfargo.com/fetch-pdf?documentName=Account+Addenda&amp;subProductCode=ANY" target="_blank" rel="noopener">account addenda (PDF)</a><br><a href="https://www.wellsfargo.com/savings-cds/platinum/" target="_blank" rel="noopener">product page</a><br><a href="https://www.wellsfargo.com/savings-cds/rates/" target="_blank" rel="noopener">rates page</a><br><a href="https://www.wellsfargo.com/mobile-online-banking/" target="_blank" rel="noopener">app page</a><br><a href="https://www.wellsfargo.com/privacy-security/fraud/security-tools-and-options/" target="_blank" rel="noopener">security page</a><br><span class="small">FDIC cert 3511</span></td></tr><tr>
+<td><b>Citibank, N.A.</b><div class="small">Citi Savings — promotional rate feature</div>
+<div class="small"><span class="badge warn">partial</span></div></td>
+<td class="num"><b><span class="unv">—</span></b><div class="small">no date printed</div></td>
+<td class="small">Standard Citi Savings APY could not be read — the rate renders as a client-side placeholder. Left blank.</td>
+<td class="num">$0 (accounts with a zero balance for 90 days are subject to closure)</td>
+<td class="num">$4.50</td>
+<td class="small"><a href="https://banking.citi.com/cbol/OM/checking/tiered/featured-offers/default.htm?ProspectID=null" target="_blank" rel="noopener">offer terms</a><br><a href="https://www.citi.com/content/dam/cfs/mobile/assets/JRS/popups/ao/Fact_Sheet.pdf" target="_blank" rel="noopener">fact sheet (PDF)</a><br><a href="https://www.citi.com/banking/savings-account" target="_blank" rel="noopener">product page</a><br><span class="small">FDIC cert 7213</span></td></tr></tbody></table></div>
+
+<h2>The gap between the branch banks and the digital banks</h2>
+<div class="note"><p class="small" style="margin:0">Now that the Big Four numbers are readable, the comparison
+that the earlier dashboards could not make is straightforward. On a $250,000 balance held for one year:
+<b>Chase Savings at 0.01% pays $25.00</b>;
+<b>Bank of America Advantage Savings at 0.04% pays $100.00</b>;
+<b>Truist One Savings at 0.01% pays $25.00</b>.
+The best flat rate in this layer, <b>Select Savings from Barclays at 4.25%, pays $10,625</b>
+— about <b>106×</b> the Bank of America figure on the
+same balance, at a bank with the same $250,000 FDIC limit.</p></div>
+
+<h2>Full detail per account</h2>
+<details><summary>JPMorgan Chase Bank, N.A. — Chase Savings℠</summary>
+<p class="small"><b>How it was resolved:</b> RESOLVED — APY was blank on the live dashboards because chase.com gates its rate table behind a ZIP code. Chase publishes the same table as a per-market PDF rate sheet; the New York sheet was read directly.</p>
+<p class="small"><b>Fee waiver:</b> $0 with ONE per statement period: $300+ balance at the beginning of each day; OR $25+ in total Autosave/repeating automatic transfers from a personal Chase checking account; OR link to a qualifying Chase checking account; OR link to a Chase College Checking account for Overdraft Protection; OR an owner under age 25</p>
+<p class="small"><b>Compounding:</b> Compounded and credited monthly on the daily collected balance</p>
+<p class='small'><b>Opening bonus:</b> $100 for $5,000–$9,999.99 of new money; $200 for $10,000+ — deposited within 30 days of offer enrollment and maintained 90 days; bonus paid within 15 days after</p><p class='small'><b>Mobile app:</b> Chase Mobile® app — Face ID / Touch ID / Android biometric login, card lock, push alerts</p><p class='small'><b>Security:</b> Data encryption, 2-step verification, passkey support, biometric sign-in, trusted-device enrolment, 24/7 fraud monitoring</p>
+<p class="small"><a href="https://www.chase.com/content/dam/chase-ux/ratesheets/pdfs/rdny1.pdf" target="_blank" rel="noopener">official rate sheet (PDF)</a><br><a href="https://www.chase.com/personal/savings/savings-account" target="_blank" rel="noopener">product page</a><br><a href="https://account.chase.com/consumer/banking/savingsoffer" target="_blank" rel="noopener">bonus terms</a><br><a href="https://www.chase.com/digital/mobile-banking" target="_blank" rel="noopener">app page</a><br><a href="https://www.chase.com/digital/resources/privacy-security" target="_blank" rel="noopener">security page</a><br><span class="small">FDIC cert 628</span></p></details><details><summary>JPMorgan Chase Bank, N.A. — Chase Premier Savings℠</summary>
+<p class="small"><b>How it was resolved:</b> RESOLVED — relationship and standard tiers read from the same New York PDF rate sheet.</p>
+<p class="small"><b>Fee waiver:</b> $0 with $15,000+ balance at the beginning of each day, OR a linked qualifying checking account</p>
+<p class="small"><b>Compounding:</b> Compounded and credited monthly</p>
+<p class='small'><b>Mobile app:</b> Chase Mobile® app</p><p class='small'><b>Security:</b> Same Chase security stack as Chase Savings</p>
+<p class="small"><a href="https://www.chase.com/content/dam/chase-ux/ratesheets/pdfs/rdny1.pdf" target="_blank" rel="noopener">official rate sheet (PDF)</a><br><a href="https://www.chase.com/personal/savings/interest-savings" target="_blank" rel="noopener">product page</a><br><a href="https://www.chase.com/personal/fees/premier-savings" target="_blank" rel="noopener">fees</a><br><span class="small">FDIC cert 628</span></p></details><details><summary>Bank of America, N.A. — Advantage Savings</summary>
+<p class="small"><b>How it was resolved:</b> RESOLVED — APY, fee and opening minimum were all blank on the live dashboards (the product page renders '$XXXX' placeholders). Bank of America publishes a New York / Tri-State regional rate sheet PDF and a Personal Schedule of Fees; both were read directly.</p>
+<p class="small"><b>Fee waiver:</b> Waived for the first six months from account opening for new accounts. Thereafter $0 for a statement cycle with the required minimum daily balance, OR an Advantage Relationship Banking® account, OR a qualifying Preferred Rewards tier, OR an owner under 25</p>
+<p class="small"><b>Compounding:</b> Daily periodic rate applied to the collected balance each day; variable tiered rate</p>
+<p class='small'><b>Balance limit:</b> New account opening limit is $250,000 in the online channel; larger accounts must be opened through the bank directly (stated on the regional rate sheet)</p><p class='small'><b>Mobile app:</b> Bank of America Mobile Banking app with in-app Security Center and security meter</p><p class='small'><b>Security:</b> Two-factor authentication, account alerts and notifications, Security Center with a security-level meter, digital wallet tokenisation</p>
+<p class="small"><a href="https://media.bac-assets.com/DigitalDeposit_NY_NY_Tri_State_Area.pdf" target="_blank" rel="noopener">official rate sheet (PDF)</a><br><a href="https://www.bankofamerica.com/salesservices/deposits/resources/personal-schedule-fees/?request_locale=en_US" target="_blank" rel="noopener">fee schedule</a><br><a href="https://www.bankofamerica.com/deposits/savings/savings-accounts/" target="_blank" rel="noopener">product page</a><br><a href="https://web.bankofamerica.com/en/security/tools-resources/take-your-security-to-the-next-level" target="_blank" rel="noopener">security page</a><br><span class="small">FDIC cert 3510</span></p></details><details><summary>Wells Fargo Bank, N.A. — Platinum Savings — new-savings-customer rate</summary>
+<p class="small"><b>How it was resolved:</b> RESOLVED — the live dashboards carried only Way2Save at 0.01% for a California default market. Wells Fargo's Consumer Account Addenda PDF publishes a dated, state-scoped Platinum Savings rate that applies in New York.</p>
+<p class="small"><b>Fee waiver:</b> $0 with a $3,500 minimum daily balance each fee period, or as a current U.S. Wells Fargo employee / qualified retiree</p>
+<p class="small"><b>Compounding:</b> Variable rate; rate applies on days the collected balance is at least $25,000</p>
+<p class='small'><b>Eligibility:</b> The primary owner must NOT have been an owner, joint owner, trustee or Trust on any existing Wells Fargo consumer savings account within the past 30 days. Deposit at least $25,000 within 30 days of opening, then maintain a $25,000+ daily collected balance.</p><p class='small'><b>Mobile app:</b> Wells Fargo Mobile® app with an in-app Security Center</p><p class='small'><b>Security:</b> Passkeys, biometric sign-on, voice verification, multi-factor / two-step verification, account alerts, automatic session sign-out</p>
+<p class="small"><a href="https://www.wellsfargo.com/fetch-pdf?documentName=Account+Addenda&amp;subProductCode=ANY" target="_blank" rel="noopener">account addenda (PDF)</a><br><a href="https://www.wellsfargo.com/savings-cds/platinum/" target="_blank" rel="noopener">product page</a><br><a href="https://www.wellsfargo.com/savings-cds/rates/" target="_blank" rel="noopener">rates page</a><br><a href="https://www.wellsfargo.com/mobile-online-banking/" target="_blank" rel="noopener">app page</a><br><a href="https://www.wellsfargo.com/privacy-security/fraud/security-tools-and-options/" target="_blank" rel="noopener">security page</a><br><span class="small">FDIC cert 3511</span></p></details><details><summary>Citibank, N.A. — Citi Savings — promotional rate feature</summary>
+<p class="small"><b>How it was resolved:</b> PARTIALLY RESOLVED — Citi's standard savings APY is still injected at runtime and remains blank. The promotional terms, however, are printed in full on Citi's own offer page and fact sheet and are reproduced here with their expiry.</p>
+<p class="small"><b>Fee waiver:</b> $0 with a $500+ Average Monthly Balance, OR an owner who also owns a Citi checking account, OR a Citi Priority / Citigold / Citigold Private Client Relationship Tier</p>
+<p class="small"><b>Compounding:</b> Variable; determined by Citibank at its sole discretion</p>
+<p class='small'><b>Promotional rate:</b> 3.75% promotional INTEREST RATE for up to 3 months (blended APY disclosed by Citi as 0.98%–1.05%), capped at $10,000 of interest, requiring $25,000+ in New-to-Citibank Funds</p><p class='small'><b>Opening bonus:</b> Separate Regular Checking offer: $500 for a $30,000 minimum balance or $1,500 for $200,000, opened 4/14/26–10/26/26 with a 45-day funding window plus 45 days of balance maintenance</p><p class='small'><b>Mobile app:</b> Citi Mobile® App</p><p class='small'><b>Security:</b> <span class='unv'>not verified</span></p>
+<p class="small"><a href="https://banking.citi.com/cbol/OM/checking/tiered/featured-offers/default.htm?ProspectID=null" target="_blank" rel="noopener">offer terms</a><br><a href="https://www.citi.com/content/dam/cfs/mobile/assets/JRS/popups/ao/Fact_Sheet.pdf" target="_blank" rel="noopener">fact sheet (PDF)</a><br><a href="https://www.citi.com/banking/savings-account" target="_blank" rel="noopener">product page</a><br><span class="small">FDIC cert 7213</span></p></details>
+
+<h2>What is still unresolved</h2>
+<div class="note bad"><p class="small" style="margin:0"><b>Citibank's standard savings APY remains blank.</b>
+Citi's rate value is injected into the page at runtime and Citi publishes no equivalent static regional rate
+sheet that could be read. Its promotional feature is documented — but Citi's own fact sheet states the
+promotional rate feature for new Citi Savings accounts is discontinued effective 23 October 2026, one day after
+this project's reference opening date. Published as flag <a href="flagged.html">S02</a>.
+<b>PNC's High Yield Savings APY is also left blank</b>, because two official PNC URLs for the same page disagree
+(3.15% versus 3.30%) and neither prints an effective date in the body — flag <a href="flagged.html">S03</a>.</p></div>
+
+</div></main>
+<footer><div class="wrap">
+<p><strong>SAVINGS1 · Resolution Layer</strong> — session <code>S-37CFC7F4</code>, verified 2026-10-22.
+Reference opening date for every return figure: 2026-10-22. Reference market: New York, NY.</p>
+<p>Every value links to the bank's own page or a .gov page. A blank cell means the value could not be read
+from an official source — it is never an estimate. All APYs are variable unless the bank states otherwise.
+This is research, not financial advice.</p>
+<p><a href="../index.html">Main dashboard</a> · <a href="../verified/index.html">Cross-check dashboard</a> · <a href="flagged.html">Flagged for review</a></p>
+</div></footer>
+</body></html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged for review · SAVINGS1 Resolution Layer</title>
+<meta name="description" content="Primary-source resolution layer: ZIP-gated Big Four savings APYs resolved from official regional rate sheets, plus accounts and FDIC coverage routes the main dashboards did not carry.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%94%8E</text></svg>">
+</head>
+<body>
+<header class="site"><div class="wrap"><nav class="nav">
+<a class="brand" href="index.html">RESOLUTION<span>·LAYER</span></a>
+<a class="lnk" href="index.html">Overview</a><a class="lnk" href="resolved.html">Resolved blanks</a><a class="lnk" href="accounts.html">Added accounts</a><a class="lnk" href="returns.html">Returns</a><a class="lnk" href="coverage.html">Max FDIC coverage</a><a class="lnk active" href="flagged.html">Flagged for review</a><a class="lnk" href="sources.html">Sources</a>
+<span class="spacer"></span>
+<a class="lnk" href="../index.html">← Main dashboard</a>
+</nav></div></header>
+<main><div class="wrap">
+<div class="banner"><div><strong>This is the third dashboard in this repository.</strong>
+The <a href="../index.html">main dashboard</a> ranks 18 products and the
+<a href="../verified/index.html">cross-check dashboard</a> independently re-verifies 20.
+This layer does something different: it goes back to the <strong>items those two left blank</strong>
+and resolves them from official regional rate-sheet PDFs and fee schedules, then adds the
+nationally-available accounts neither dataset carried.</div></div>
+<h1>Flagged for review</h1>
+<p class="lede">New irregularities found by this layer, and the previously-open items it closed against a primary source.</p>
+
+<div class="banner warn"><div><strong>8 new items, two of them high severity.</strong>
+Nothing on this page blocks publication. Each item is either a conflict between two official pages, a term that
+materially changes the return, or a structural risk to a maximum-FDIC-coverage plan. Every one is linked to the
+official page it came from so it can be checked by hand.</div></div>
+
+<div class="tablewrap"><table>
+<thead><tr><th>Severity</th><th>Item</th><th>Official sources</th><th>Status</th></tr></thead>
+<tbody><tr><td><span class="badge no">high</span></td>
+<td><b>S01 — Axos's own page contradicts itself: the 5.00% headline does not appear anywhere in its published rate table</b>
+<div class="small" style="margin-top:6px">The Axos ONE page advertises 'up to 5.00% APY' for the first six months, and the live dashboards model 5.00% on the first $50,000. But the rate table printed further down the SAME page shows the BOOSTED rate for every tier from $0 to $249,999.99 as 4.12% interest / 4.21% APY, and 3.44% / 3.50% from $250,000 up. No tier on that table pays 5.00%. Modelling 5.00% on any portion of the balance therefore overstates the return relative to Axos's own tier table. Treat the Axos ranking on the primary dashboard as unconfirmed until Axos reconciles the two figures.</div></td>
+<td class="small"><a href="https://www.axosbank.com/personal/bank/axos-one" target="_blank" rel="noopener">www.axosbank.com</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge no">high</span></td>
+<td><b>S02 — Citi's promotional savings rate feature is discontinued the day after the modelled opening date</b>
+<div class="small" style="margin-top:6px">Citi's Simplified Banking Fact Sheet states: 'Effective October 23, 2026, Promotional Rate Feature for New Citi Savings accounts will be discontinued.' The reference opening date for this whole project is 2026-10-22 — one day earlier. Any Citi promotional savings figure is valid for a one-day window and should not be relied on.</div></td>
+<td class="small"><a href="https://www.citi.com/content/dam/cfs/mobile/assets/JRS/popups/ao/Fact_Sheet.pdf" target="_blank" rel="noopener">www.citi.com</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge warn">medium</span></td>
+<td><b>S03 — PNC publishes two different High Yield Savings APYs on its own domain</b>
+<div class="small" style="margin-top:6px">The PNC High Yield Savings page served at pnc.com carries the document title 'High Yield Savings Account | 3.15% Annual Percentage Yield APY', while the same page served with PNC's own affiliate tracking parameter carries '3.30% Annual Percentage Yield'. The rate is not rendered in the page body to an automated reader. Because two official PNC URLs disagree and neither prints an effective date in the body, the PNC APY is left BLANK here rather than resolved to either figure.</div></td>
+<td class="small"><a href="https://www.pnc.com/en/personal-banking/banking/savings/high-yield-savings.html" target="_blank" rel="noopener">www.pnc.com</a><br><a href="https://www.pnc.com/content/dam/pnc-com/pdf/personal/Savings/service-charges-high-yield-savings.pdf" target="_blank" rel="noopener">www.pnc.com</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge warn">medium</span></td>
+<td><b>S04 — Alto deposits are not separately insured from other BMO accounts, and Alto has no app or branch access</b>
+<div class="small" style="margin-top:6px">BMO states that deposits made through Alto and in other U.S. accounts under the BMO brand are not separately insured and count toward one FDIC limit at BMO Bank N.A. Alto also states its accounts cannot be serviced through BMO branches, BMO ATMs or BMO Digital Banking, and the official page names no Alto mobile app — relevant because a digital app is one of this project's stated requirements.</div></td>
+<td class="small"><a href="https://www.alto.bmo.com/en-us/" target="_blank" rel="noopener">www.alto.bmo.com</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge warn">medium</span></td>
+<td><b>S05 — Four separate brand pairs share a single FDIC certificate — a real risk to a max-coverage plan</b>
+<div class="small" style="margin-top:6px">Openbank + Santander Bank share Cert #29950. CIT Bank + First-Citizens Bank &amp; Trust share Cert #11063. Alto + BMO Bank N.A. share Cert #16571. Barclays Tiered Savings + Barclays Online Savings + Select Savings (AARP) all share Cert #57203. Capital One 360 + the former Discover Bank share Cert #4297 (Discover's own Cert #5649 is inactive). Holding $250,000 at each brand in a pair does NOT produce $500,000 of coverage.</div></td>
+<td class="small"><a href="https://www.openbank.us/banking/high-yield-savings-account/" target="_blank" rel="noopener">www.openbank.us</a><br><a href="https://www.cit.com/cit-bank/platinum-savings/boost" target="_blank" rel="noopener">www.cit.com</a><br><a href="https://www.alto.bmo.com/en-us/" target="_blank" rel="noopener">www.alto.bmo.com</a><br><a href="https://api.fdic.gov/banks/institutions?filters=CERT:5649" target="_blank" rel="noopener">api.fdic.gov</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge warn">medium</span></td>
+<td><b>S06 — Three banks cap the balance they will accept, below or near the amounts in the max-coverage tables</b>
+<div class="small" style="margin-top:6px">Marcus limits each Online Savings Account to $1,000,000 and each depositor to $3,000,000 across all Marcus deposit accounts. Barclays limits each Tiered Savings and each Select Savings account to $1,000,000, with a maximum of 3 such accounts. American Express sets a maximum account balance of five million dollars and allows no more than 20 accounts. These are bank product limits, not FDIC limits, and they constrain a single-bank concentration strategy.</div></td>
+<td class="small"><a href="https://www.marcus.com/us/en/faqs" target="_blank" rel="noopener">www.marcus.com</a><br><a href="https://banking.us.barclays/tiered-savings.html" target="_blank" rel="noopener">banking.us.barclays</a><br><a href="https://www.americanexpress.com/content/dam/amex/en-us/banking/personal-savings/Savings-Schedule.pdf" target="_blank" rel="noopener">www.americanexpress.com</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge info">low</span></td>
+<td><b>S07 — Wells Fargo's 3.25% is excluded in Colorado and is lost on any day the balance dips below $25,000</b>
+<div class="small" style="margin-top:6px">The Consumer Account Addenda scopes the Platinum Savings new-customer rate to 'All states excluding Colorado', and states that on any day the collected balance is below $25,000 the Standard or Relationship Interest Rate applies instead. The primary owner must also not have held any Wells Fargo consumer savings account in the previous 30 days.</div></td>
+<td class="small"><a href="https://www.wellsfargo.com/fetch-pdf?documentName=Account+Addenda&amp;subProductCode=ANY" target="_blank" rel="noopener">www.wellsfargo.com</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge info">low</span></td>
+<td><b>S08 — The FDIC trust category raises the single-bank ceiling to $1,250,000 — a fact absent from the published coverage tables</b>
+<div class="small" style="margin-top:6px">Since April 1, 2024 the FDIC insures trust accounts at $250,000 per eligible beneficiary up to five beneficiaries, for a maximum of $1,250,000 per owner per insured bank, covering both revocable (POD/ITF) and irrevocable trusts. The live dashboards' coverage tables show only the $250,000 single and $500,000 joint figures, which understates what one bank can insure for a depositor who uses the trust category.</div></td>
+<td class="small"><a href="https://www.fdic.gov/resources/deposit-insurance/brochures/deposits-at-a-glance" target="_blank" rel="noopener">www.fdic.gov</a></td>
+<td><span class="badge info">needs review</span></td></tr></tbody></table></div>
+
+<h2>Items this layer CLOSED</h2>
+<p class="small">These were published as unverified on the main dashboard. Each has now been resolved against a
+primary source and can be removed from the open list after review.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Status</th><th>Item and resolution</th><th>Official sources</th></tr></thead>
+<tbody><tr><td><span class="badge ok">closed</span></td>
+<td><b>R01</b> — previously published as: <i>Big Four savings APYs could not be verified from official pages (published as high severity on the live site)</i>
+<div class="small" style="margin-top:6px">Three of the four are now verified from the banks' own dated, market-correct primary documents: Chase Savings 0.01% (New York PDF rate sheet, in effect 2026-10-16), Bank of America Advantage Savings 0.04% (New York – Tri-State rate sheet, effective 2026-10-21), and Wells Fargo Platinum Savings 3.25% for new savings customers with $25,000+ (Consumer Account Addenda, effective 2026-10-07). Only Citi's standard savings APY remains unreadable.</div></td>
+<td class="small"><a href="https://www.chase.com/content/dam/chase-ux/ratesheets/pdfs/rdny1.pdf" target="_blank" rel="noopener">www.chase.com</a><br><a href="https://media.bac-assets.com/DigitalDeposit_NY_NY_Tri_State_Area.pdf" target="_blank" rel="noopener">media.bac-assets.com</a><br><a href="https://www.wellsfargo.com/fetch-pdf?documentName=Account+Addenda&amp;subProductCode=ANY" target="_blank" rel="noopener">www.wellsfargo.com</a></td></tr><tr><td><span class="badge ok">closed</span></td>
+<td><b>R02</b> — previously published as: <i>Bank of America Advantage Savings fee and minimum balance could not be read ('$XXXX' placeholders)</i>
+<div class="small" style="margin-top:6px">Both are published in Bank of America's Personal Schedule of Fees, effective August 7, 2026: monthly maintenance fee $8.00, minimum amount to open $100.00, with the fee waived for the first six months from account opening for new accounts.</div></td>
+<td class="small"><a href="https://www.bankofamerica.com/salesservices/deposits/resources/personal-schedule-fees/?request_locale=en_US" target="_blank" rel="noopener">www.bankofamerica.com</a></td></tr><tr><td><span class="badge ok">closed</span></td>
+<td><b>R03</b> — previously published as: <i>Mobile app existence not confirmed for Ally, Marcus, Barclays or Wells Fargo</i>
+<div class="small" style="margin-top:6px">All four are confirmed on the banks' own pages. Ally Mobile app with biometric verification and Ally eCheck Deposit; Marcus mobile banking app with fingerprint/face login and 128-bit SSL; Barclays US App (iOS 15+/Android 12+) with mobile check deposit; Wells Fargo Mobile® app with an in-app Security Center.</div></td>
+<td class="small"><a href="https://www.ally.com/bank/online-banking/" target="_blank" rel="noopener">www.ally.com</a><br><a href="https://www.marcus.com/us/en/marcus-mobile-banking-app" target="_blank" rel="noopener">www.marcus.com</a><br><a href="https://banking.us.barclays/faq.html" target="_blank" rel="noopener">banking.us.barclays</a><br><a href="https://www.wellsfargo.com/mobile-online-banking/" target="_blank" rel="noopener">www.wellsfargo.com</a></td></tr><tr><td><span class="badge ok">closed</span></td>
+<td><b>R04</b> — previously published as: <i>Security controls could not be verified for Marcus by Goldman Sachs and Wells Fargo</i>
+<div class="small" style="margin-top:6px">Both publish security pages describing account controls. Marcus: multi-factor authentication, SSL/EV SSL encryption, firewalls, around-the-clock network monitoring, biometric app login. Wells Fargo: passkeys, biometric sign-on, voice verification, two-step verification, account alerts and automatic sign-out.</div></td>
+<td class="small"><a href="https://www.marcus.com/us/en/banking-with-us/security-center" target="_blank" rel="noopener">www.marcus.com</a><br><a href="https://www.wellsfargo.com/privacy-security/fraud/security-tools-and-options/" target="_blank" rel="noopener">www.wellsfargo.com</a></td></tr></tbody></table></div>
+
+<h2>How a blank is treated here</h2>
+<div class="card"><p class="small" style="margin:0">A blank cell renders as <span class="unv">—</span> and means
+the value could not be read from an official page on 2026-10-22. It never means zero and never means "none".
+Two values in this layer are deliberately left blank despite being partially visible: Citibank's standard savings
+APY (injected at runtime) and PNC's High Yield Savings APY (two official PNC URLs disagree). Neither was resolved
+to a number, because resolving them would require choosing between conflicting official figures.</p></div>
+
+</div></main>
+<footer><div class="wrap">
+<p><strong>SAVINGS1 · Resolution Layer</strong> — session <code>S-37CFC7F4</code>, verified 2026-10-22.
+Reference opening date for every return figure: 2026-10-22. Reference market: New York, NY.</p>
+<p>Every value links to the bank's own page or a .gov page. A blank cell means the value could not be read
+from an official source — it is never an estimate. All APYs are variable unless the bank states otherwise.
+This is research, not financial advice.</p>
+<p><a href="../index.html">Main dashboard</a> · <a href="../verified/index.html">Cross-check dashboard</a> · <a href="flagged.html">Flagged for review</a></p>
+</div></footer>
+</body></html>
