@@ -1,97 +1,115 @@
-# SAVINGS1
+# SAVINGS1 — verified national savings-account comparison
 
-A source-linked comparison of nationally available, FDIC-insured savings accounts at large US banks — built to answer one question:
+Two source-linked dashboards, one repository, no third-party rate data:
 
-> **For a deposit opened on 2026-10-22, which national bank with a digital app pays the most — and how much of that return survives after the promotional rate ends?**
+> **For a deposit opened on 2026-10-22, which US national bank with a digital app and FDIC insurance pays the most — and how much of that return survives after the promotional rate ends?**
 
-**Live dashboard:** https://sassnarep3-star.github.io/SAVINGS1/
+| Site | Where | Built by | Scope |
+|---|---|---|---|
+| **Primary dashboard** (published) | `/` → https://sassnarep3-star.github.io/SAVINGS1/ | session `S-830079CD` | 18 products, 9 pages, CI-checked on every push |
+| **Independent cross-check** | `/verified/` → https://sassnarep3-star.github.io/SAVINGS1/verified/ | session `arena-c3aa0d20` | 20 accounts, 41 registered sources, 26 flagged items, tier-aware return maths |
 
----
+Both dashboards read the banks' own pages and the FDIC; neither uses a rate aggregator. They exist together
+because two agent sessions worked on this repository in parallel and the merge rules of the project say that
+neither session's verified work may be discarded. Where the two disagree, both figures stay published and the
+difference is explained on the flagged pages (see `verified/flagged.html`, item F26).
 
-## What is in the site
+Snapshot: bank rates and fees read **2026-10-21 / 2026-10-22**. Every projection assumes the account is opened on
+**2026-10-22** and the published APY does not change.
 
-| Page | What it shows |
-|---|---|
-| **Overview** | Key findings, best 1-year return at $250,000, verification status |
-| **Accounts** | All 18 products: headline APY, post-intro APY, minimums, fees, FDIC certificate, app status, official source |
-| **Returns** | Interest by deposit size ($1k–$1M), 1-year and 5-year, blended APY, winner at each tier |
-| **Promotions** | Cash bonuses, promo APYs, referral offers, deadlines, exact conditions |
-| **FDIC coverage** | $250k rule, ownership categories, insured vs uninsured amounts, programme coverage |
-| **Analysis** | Each rate vs the Fed target range, the FDIC national average, a 6-month Treasury, and the bank's own post-promo rate |
-| **Sources** | Every official page used, with what it verified |
-| **Flagged for review** | 19 irregularities, conflicts, and unverified values |
-| **Method** | Scope, formulas, verification standard, limitations |
+## Headline findings (agreed by both dashboards)
 
-## Headline results (verified 2026-10-22)
-
-| | |
-|---|---|
-| Highest verified 1-year return on $250,000 | **Axos Bank — 4.28% blended, $10,703** (requires an Axos ONE checking bundle and monthly activity) |
-| Best no-conditions rate | **EverBank — 4.20% flat, $0 to open, $0 monthly fee** |
-| Best 6-month boost with no ongoing conditions | **Openbank — 4.35% then 4.00%** |
-| FDIC national savings average | **0.38%** (2026-10-19) |
-| Federal funds target range | **3.75%–4.00%** (after 2026-09-17) |
-| 6-month / 12-month Treasury | **4.33% / 4.54%** |
-
-All 12 APYs are variable. Only E*TRADE's 4.25% six-month boost is described as guaranteed for its term.
-
-## Data provenance
-
-Every number in `data/` was read from an official page, and every table row links to it:
-
-- **Bank product/rate pages** — APY, minimums, fees, app, promo terms
-- **`api.fdic.gov`** — certificate number and active status for every bank
-- **`fdic.gov/national-rates-and-rate-caps`** — national average, Treasury yields, CD averages
-- **`federalreserve.gov`** — target range and 2026 FOMC change
-
-No aggregator, review site, or press article is the source for any value.
-
-### Rules applied
-
-1. If a value could not be read from an official page, it is **blank** — never estimated or copied from a third party.
-2. Blank values are published on **Flagged for review**, with the URL that was attempted.
-3. Conflicting official pages are both cited; the more conservative reading is used and the conflict is flagged.
-4. FDIC status is checked by **certificate number**, not by a logo on a marketing page.
-5. Bonuses are never folded into an APY; they are listed separately.
+- **Best no-conditions rate: 4.20%** — EverBank Performance Savings, $0 to open, no monthly fee. **$10,500** of
+  interest on $250,000 for one year.
+- **Highest advertised rate: 5.00%** for six months (Axos ONE), conditional on an Axos ONE checking bundle with
+  $1,500 in monthly direct deposits plus a $1,500 average daily balance (or $5,000 + $5,000). Miss the requirement
+  and the savings rate is **1.00%**.
+- **Best one-year blend including a promo:** Axos ONE ≈ **4.25–4.28%** depending on the tier boundary — the two
+  sessions computed $10,618 and $10,703 on $250,000; both formulas are published (F26).
+- **Big-branch savings pay 0.01%–0.05%.** Wells Fargo 0.01%, PNC 0.03%, U.S. Bank 0.05% (3.50% only with a $25,000+
+  relationship bundle). The same $250,000 earns **$25–$10,500** a year depending only on the bank and the tier.
+- **FDIC insurance is identical everywhere on these pages** — $250,000 per depositor, per bank, per ownership
+  category; $500,000 joint; $1,250,000 through a trust/POD with five or more beneficiaries (rule effective
+  2024-04-01). Splitting across ownership categories or banks — not choosing a famous brand — is what raises coverage.
+- **Verified bonuses:** up to $800 (E*TRADE SAVE800, fund by 2027-01-10), $200 (Barclays, $25,000 held 120 days,
+  expires 2026-10-31), up to $400 (SoFi, eligible direct deposit), plus six-month rate boosts at Axos, E*TRADE,
+  Openbank, CIT and SoFi.
+- **Discover Bank certificate 5649 is inactive** in the FDIC register. Discover is excluded from both datasets.
+- **Market context:** FDIC national savings average **0.38%** (2026-10-19); federal funds target **3.75–4.00%**
+  (after the 2026-09-17 hike); 6-month Treasury **4.33%**, 12-month **4.54%**.
 
 ## Repository layout
 
-```
-data/
-  accounts.json      verified account records (rates, terms, sources, FDIC certs)
-  promotions.json    bonus and promo terms
-  fdic.json          coverage rules + per-bank certificate records
-  flags.json         irregularities and unverified items
-scripts/
-  build_site.py      generates docs/ from data/ (all return math lives here)
-  verify_data.py     integrity checks: sources, dates, links, no literal "None"/"NaN"
-*.html, assets/      the published site (GitHub Pages: main branch, root)
-COORDINATION.md      shared task board and verification log
-```
+| Path | What it is |
+|---|---|
+| `index.html`, `accounts.html`, `returns.html`, `promotions.html`, `fdic.html`, `analysis.html`, `sources.html`, `flagged.html`, `method.html` | **Primary site** (session `S-830079CD`), generated from `data/` by `scripts/build_site.py` |
+| `verified/` | **Independent cross-check site** (session `arena-c3aa0d20`), generated from `data/v2/` by `tools/build_site.py` |
+| `data/` | Primary dataset: `accounts.json` (18 products), `promotions.json`, `fdic.json`, `flags.json` |
+| `data/v2/` | Cross-check dataset: `accounts.json` (20 accounts), `promotions.json`, `flagged.json`, `verification.json`, `projections.json`, `banks_fdic.json`, `sources_fetched.json` |
+| `scripts/` | `build_site.py` (renders the primary site) and `verify_data.py` (integrity gate) |
+| `tools/` | `build_projections.py`, `build_verification.py`, `build_site.py`, `check_links.py` (stdlib Python only) |
+| `.github/workflows/verify.yml` | CI: rebuilds the primary site, fails if it is stale, runs the integrity checks, rejects placeholders |
+| `COORDINATION.md` | Shared task board: both sessions' claims, the two merge reconciliations, PR and deploy records |
 
-## Rebuild
+### Why there are two data directories and two sites
+
+`data/` and `scripts/` are session `S-830079CD`'s schema; `data/v2/` and `tools/` are session `arena-c3aa0d20`'s.
+The schemas differ (the cross-check records per-field verification status, tier tables and a source registry), so
+they cannot share one file name without silently corrupting one of them. Both are committed and both builds are
+reproducible. The root site is what GitHub Pages publishes; `/verified/` is published from the same branch and is
+linked from every page's footer.
+
+## Verification rules both datasets follow
+
+1. **Official sources only.** A value is used only if it was read on the bank's own domain or a `.gov` domain.
+   Rate aggregators, news articles and other banks' comparison tables are rejected.
+2. **Blank beats guessed.** If a page gates a value behind a ZIP code or renders it client-side, the cell stays
+   empty and the item is listed on the flagged page. That is why Chase, Bank of America, Citibank and TD Bank have
+   no APY in either dataset.
+3. **Dates are copied.** Each APY carries the as-of date printed on the page; when none is printed the cell is blank
+   and the row is flagged.
+4. **Arithmetic, not estimates.** Dollar figures are `principal × (1 + APY/100)^years` on the bank's own APY.
+   Introductory rates are blended over their stated six months and the blend formula is printed on the page.
+5. **Every row links to its source.** `scripts/verify_data.py` and `tools/check_links.py` both fail the build if a
+   row loses its official link or an internal link breaks.
+
+## Rebuilding
 
 ```bash
-python3 scripts/build_site.py    # data/*.json -> *.html at repo root
-python3 scripts/verify_data.py   # fails on missing sources or broken links
+# primary site (session S-830079CD)
+python3 scripts/build_site.py       # data/*.json  -> root *.html
+python3 scripts/verify_data.py      # integrity gate
+
+# independent cross-check (session arena-c3aa0d20)
+python3 tools/build_projections.py  # data/v2/projections.json
+python3 tools/build_verification.py # data/v2/verification.json
+python3 tools/build_site.py         # data/v2/*.json -> verified/*.html
+python3 tools/check_links.py        # provenance + internal links
 ```
 
-CI (`.github/workflows/verify.yml`) runs both on every push and fails if the published pages are out of date with `data/`.
-
-## Method summary
-
-Interest is compounded at the stated APY. Introductory rates apply for exactly the advertised period, then the balance is re-tiered at the bank's published post-intro rate. Tiered accounts are modelled as marginal or cliff according to how the bank describes them (CIT and Barclays are cliffs). Five-year figures hold the published post-intro rate constant and are projections, not guarantees. Bonus cash is excluded.
-
-Deposit tiers: $1,000 · $10,000 · $25,000 · $50,000 · $100,000 · $250,000 · $500,000 · $1,000,000.
+Only Python 3 standard library. No CDN, no tracking, no JavaScript required to read any number.
 
 ## Known limitations
 
-- APYs change daily; verification is a point-in-time snapshot dated 2026-10-22.
-- Four Big Four APYs (Chase, Bank of America, Citi, Wells Fargo) are unverified for the New York market and are excluded from every calculation.
-- Mobile app existence was not confirmed for Ally, Marcus, Barclays, or Wells Fargo.
-- Axos does not publish the balance cap on its 5.00% intro; the model conservatively assumes the first $50,000.
+- APYs change daily; this is a point-in-time snapshot dated 2026-10-21/22.
+- Four APYs (Chase, Bank of America, Citibank, TD Bank) are unverified in both datasets: their official rate tables
+  are ZIP-gated or render client-side.
+- Three branch-bank rate sheets are pinned to the page's default location rather than New York: U.S. Bank at ZIP
+  55402, PNC at ZIP 15222, Wells Fargo at CA 94105.
+- App-level security features (MFA, biometrics, device binding) were not verified bank by bank; only what each bank
+  publishes is stated, and the rest is flagged.
+- The two sessions compute the Axos one-year blend from different tier assumptions (F26).
 - This is research, not financial, tax, or legal advice.
 
-## Coordination
+## How the two sessions were reconciled
 
-`COORDINATION.md` is the shared task board. This repository was built by session `S-830079CD` on branch `arena/830079cd-savings1`; the board records the claim, the verification log, and the integration result.
+`COORDINATION.md` records both claims logs and both conflict resolutions. In short:
+
+1. PR #1 added the `S-830079CD` dataset, site and CI. PR #2 added the `arena-c3aa0d20` dataset and site.
+2. The second merge (this one) hit conflicts on `index.html`, `returns.html`, `promotions.html`, `flagged.html`,
+   `assets/style.css`, `README.md`, `COORDINATION.md` and on my data files that had been archived under
+   `archive/session-c3aa0d20/`.
+3. Resolution: the primary site keeps the root (it is what Pages serves and what CI rebuilds); the cross-check site
+   moved to `verified/` with its own stylesheet; the stale `archive/` copy was deleted because its numbers were out
+   of date and duplicated a dataset that is now merged; every figure from both sides is either published or
+   explicitly superseded in `COORDINATION.md`.

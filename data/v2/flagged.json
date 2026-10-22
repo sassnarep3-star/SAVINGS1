@@ -7,7 +7,8 @@
       "irregular": "Two official statements conflict, or a page behaves in a way that could confuse a reader.",
       "scope": "Value is real but is tied to a location, tier or date that differs from the New York / 2026-10-22 baseline.",
       "note": "Important limitation or context, not an error."
-    }
+    },
+    "count": 26
   },
   "items": [
     {
@@ -167,8 +168,8 @@
       "id": "F18",
       "area": "Coverage of this comparison",
       "status": "note",
-      "item": "Four of the fifteen accounts have no APY, so the 'cheapest megabank' question is partly open",
-      "detail": "Chase, Bank of America, Citibank and TD Bank are the four unpriced rows. Every megabank that did publish a fetchable rate sits between 0.01% and 0.06% APY on its standard savings product, so the ranking of the group is not in doubt even though four individual cells are blank.",
+      "item": "Four of twenty accounts have no APY, so the 'cheapest megabank' question is partly open",
+      "detail": "Chase, Bank of America, Citibank and TD Bank all render their deposit rates behind a ZIP-code lookup that an automated fetch cannot complete, so those four rows carry no APY. Twenty accounts are in the dataset after the cross-session merge; sixteen have a rate read from the bank's own page.",
       "impact": "If you want an exact figure for one of the four, open the official rate page with your ZIP in a normal browser.",
       "source": "https://www.fdic.gov/national-rates-and-rate-caps"
     },
@@ -189,6 +190,60 @@
       "detail": "The Pages API reported build_type 'legacy', source branch 'main', path '/', public true, https enforced. There is no CI workflow and no branch protection configured, so the only merge gate is tools/check_links.py plus the manual review of each page.",
       "impact": "Any HTML committed at the repo root is published immediately after merge. Because the build is legacy (Jekyll), a .nojekyll file is committed so that files starting with an underscore or containing Liquid-like text are served verbatim.",
       "source": "https://api.github.com/repos/sassnarep3-star/SAVINGS1/pages"
+    },
+    {
+      "id": "F21",
+      "area": "Axos ONE Savings",
+      "status": "risk",
+      "item": "The 4.21% rate depends on a checking-account bundle, and missing it drops the rate to 1.00%",
+      "detail": "Axos pays 4.21% only while the customer holds Axos ONE Checking with $1,500 in monthly direct deposits plus a $1,500 average daily balance, or $5,000 in direct deposits plus a $5,000 average daily balance, with the qualifying activity posted by the 25th. The page states that if the requirements are not met the savings rate is 1.00%.",
+      "impact": "A saver who moves direct deposits or lets the average balance slip loses about 3.21 percentage points \u2014 roughly $8,025 a year on $250,000.",
+      "source": "https://www.axosbank.com/personal/bank/axos-one"
+    },
+    {
+      "id": "F22",
+      "area": "Axos ONE Savings",
+      "status": "unverified",
+      "item": "No deposit cap is published for the boosted tier",
+      "detail": "The page publishes tier rates ($0\u2013$249,999.99 at 4.21%, $250,000+ at 3.50%) and says up to $2,500,000 can be held through the Axos Insured Deposit Program, but it does not state a maximum for the savings account itself.",
+      "impact": "The projections apply the published tiers with no cap. A large balance above $250,000 earns 3.50%, not 4.21% \u2014 that is the bank's own stated step-down, not an assumption.",
+      "source": "https://www.axosbank.com/personal/bank/axos-one"
+    },
+    {
+      "id": "F23",
+      "area": "E*TRADE Premium Savings",
+      "status": "risk",
+      "item": "$10,000,000 maximum balance, and the entire balance may drop to the base rate above it",
+      "detail": "The page states a $10M maximum for the account and warns that if the balance exceeds the maximum the entire balance may earn the base rate rather than the promotional rate.",
+      "impact": "Only relevant to very large deposits, but the penalty applies to the whole balance rather than the excess.",
+      "source": "https://us.etrade.com/bank/premium-savings-account"
+    },
+    {
+      "id": "F24",
+      "area": "Rate effective dates",
+      "status": "unverified",
+      "item": "Four of the five newly added accounts print no effective date for their rate",
+      "detail": "Axos, E*TRADE, Openbank and EverBank show the current APY without a dated rate sheet; only CIT dates its tiers (2026-07-01). The snapshot column therefore records the fetch date for these rows or is left blank.",
+      "impact": "There is no way to tell from the page whether the rate shown is today's or an older cached figure, and no way to compute how competitive the rate has been over time.",
+      "source": "https://www.everbank.com/banking/performance-savings"
+    },
+    {
+      "id": "F25",
+      "area": "Promotional windows",
+      "status": "note",
+      "item": "Three promotional rates expire on stated dates and one has no end date",
+      "detail": "CIT BOOST50 runs 2026-09-29 to 2026-12-15 and pays 4.25% for six months; E*TRADE's funding window closes 2027-01-10 and its 4.25% lasts six months; the Openbank boost lasts six months with no application deadline published; Axos's 5.00% intro lasts six months with no published end date.",
+      "impact": "Opening after a deadline forfeits the promotional rate. The year-one rows on the returns page apply the boost for six months and the standard rate for the other six.",
+      "source": "https://www.cit.com/cit-bank/platinum-savings/boost"
+    },
+    {
+      "id": "F26",
+      "area": "Cross-session reconciliation",
+      "status": "note",
+      "item": "The two sessions blended Axos's year-one rate differently (4.28% vs 4.25%)",
+      "detail": "The earlier session reported a blended 4.28% and $10,703 of interest on $250,000; this session computes sqrt((1+0.0500)*(1+0.0350))-1 = 4.2473% and $10,618, because $250,000 falls in Axos's $250,000+ tier, which pays 3.50% after the intro. A blend of the intro with the sub-$250,000 tier (4.21%) gives 4.60%.",
+      "impact": "The $85 difference is entirely the tier boundary. This site states the formula and the tier used rather than carrying both numbers.",
+      "source": "https://www.axosbank.com/personal/bank/axos-one"
     }
   ]
 }

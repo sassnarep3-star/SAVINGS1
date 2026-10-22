@@ -209,3 +209,6 @@ ul.sources li { margin-bottom: 5px; word-break: break-word; }
   body { background: #fff; font-size: 11px; }
   .table-wrap { box-shadow: none; }
 }
+
+.src { display:block; margin-top:4px; font-size:12px; }
+.src a { color:var(--muted); }
