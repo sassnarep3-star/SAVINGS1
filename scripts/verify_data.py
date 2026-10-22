@@ -100,7 +100,7 @@ class Checker(HTMLParser):
             self._in_row = False
 
 
-pages = sorted((ROOT / "docs").glob("*.html"))
+pages = sorted(p for p in ROOT.glob('*.html'))
 if len(pages) != 9:
     errors.append(f"expected 9 pages, found {len(pages)}")
 
@@ -121,7 +121,7 @@ for page in pages:
         errors.append(f"{page.name}: missing stylesheet")
 
 # Every row of the main accounts table must carry an official link
-acc_html = (ROOT / "docs/accounts.html").read_text()
+acc_html = (ROOT / "accounts.html").read_text()
 m = re.search(r'<table id="acct">(.*?)</table>', acc_html, re.S)
 if not m:
     errors.append("accounts.html: main accounts table not found")

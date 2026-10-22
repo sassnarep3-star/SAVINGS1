@@ -24,12 +24,12 @@
 
 | ID | Task | Status | Owner | File scope | Result |
 |----|------|--------|-------|------------|--------|
-| T1 | Verify national-bank savings products: APY, minimums, fees, opening rules | **done** | S-830079CD | `data/accounts.json`, `docs/accounts.html` | 17 products recorded; 12 APYs verified; 4 blank + flagged (Big Four); 1 closed (Discover) |
-| T2 | Verify FDIC insurance status per bank + coverage rules | **done** | S-830079CD | `data/fdic.json`, `docs/fdic.html` | 16 active certificates confirmed via `api.fdic.gov`; Discover cert 5649 inactive |
-| T3 | Verify opening bonuses / promotional APYs and terms | **done** | S-830079CD | `data/promotions.json`, `docs/promotions.html` | 16 offers/absences recorded: 6 verified offers, 6 "none found", 4 unverified |
-| T4 | Compute return tables by deposit size (FDIC-limit focus) | **done** | S-830079CD | `scripts/build_site.py`, `docs/returns.html` | 8 deposit tiers, 1-year + 5-year, blended APY, winner per tier |
-| T5 | Build static site (dashboard + category subpages) | **done** | S-830079CD | `docs/**` | 9 pages, shared CSS, no build step, internal link check passes |
-| T6 | Final integration: re-verify, link check, publish Pages, PR + merge | **in progress** | S-830079CD | `docs/**`, `README.md`, `.github/workflows/**` | PR and deploy result recorded below when complete |
+| T1 | Verify national-bank savings products: APY, minimums, fees, opening rules | **done** | S-830079CD | `data/accounts.json`, `accounts.html` | 17 products recorded; 12 APYs verified; 4 blank + flagged (Big Four); 1 closed (Discover) |
+| T2 | Verify FDIC insurance status per bank + coverage rules | **done** | S-830079CD | `data/fdic.json`, `fdic.html` | 16 active certificates confirmed via `api.fdic.gov`; Discover cert 5649 inactive |
+| T3 | Verify opening bonuses / promotional APYs and terms | **done** | S-830079CD | `data/promotions.json`, `promotions.html` | 16 offers/absences recorded: 6 verified offers, 6 "none found", 4 unverified |
+| T4 | Compute return tables by deposit size (FDIC-limit focus) | **done** | S-830079CD | `scripts/build_site.py`, `returns.html` | 8 deposit tiers, 1-year + 5-year, blended APY, winner per tier |
+| T5 | Build static site (dashboard + category subpages) | **done** | S-830079CD | `*.html`, `assets/**` | 9 pages, shared CSS, no build step, internal link check passes |
+| T6 | Final integration: re-verify, link check, publish Pages, PR + merge | **in progress** | S-830079CD | `*.html`, `assets/**`, `README.md`, `.github/workflows/**` | PR and deploy result recorded below when complete |
 
 ## Verification log
 
@@ -72,7 +72,7 @@ Axos 35546 · Morgan Stanley Private Bank 34221 · Santander 29950 · SoFi 26881
 
 ## Irregularities / flagged items
 
-19 items, published on `docs/flagged.html` with source links. Highest-severity:
+19 items, published on `flagged.html` with source links. Highest-severity:
 
 1. **Discover Bank closed** — FDIC certificate 5649 inactive; excluded from all calculations.
 2. **Capital One + Discover deposits are combined** for FDIC coverage (opened on/after 2025-05-18).
@@ -100,6 +100,6 @@ _None._
 | Session branch | `arena/830079cd-savings1` |
 | PR | _recorded after creation_ |
 | Merge result | _recorded after merge_ |
-| GitHub Pages | main branch, `/docs` |
+| GitHub Pages | main branch, root (`/`) |
 | Live URL | https://sassnarep3-star.github.io/SAVINGS1/ |
 | Deploy status | _recorded after deploy_ |

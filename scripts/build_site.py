@@ -6,7 +6,7 @@ All rates/terms come from data/*.json, which are populated only from official
 bank / FDIC / Federal Reserve pages. This script performs arithmetic on those
 verified values; it never invents a rate.
 
-Output: docs/ (GitHub Pages source: main branch, /docs)
+Output: repository root (GitHub Pages source: main branch, /)
 """
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-OUT = ROOT / "docs"
+OUT = ROOT
 
 META = json.loads((DATA / "accounts.json").read_text())["meta"]
 ACCOUNTS = json.loads((DATA / "accounts.json").read_text())["accounts"]

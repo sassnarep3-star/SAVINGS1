@@ -65,18 +65,18 @@ data/
 scripts/
   build_site.py      generates docs/ from data/ (all return math lives here)
   verify_data.py     integrity checks: sources, dates, links, no literal "None"/"NaN"
-docs/                the published site (GitHub Pages: main branch, /docs)
+*.html, assets/      the published site (GitHub Pages: main branch, root)
 COORDINATION.md      shared task board and verification log
 ```
 
 ## Rebuild
 
 ```bash
-python3 scripts/build_site.py    # data/*.json -> docs/*.html
+python3 scripts/build_site.py    # data/*.json -> *.html at repo root
 python3 scripts/verify_data.py   # fails on missing sources or broken links
 ```
 
-CI (`.github/workflows/verify.yml`) runs both on every push and fails if `docs/` is out of date with `data/`.
+CI (`.github/workflows/verify.yml`) runs both on every push and fails if the published pages are out of date with `data/`.
 
 ## Method summary
 
