@@ -143,7 +143,8 @@ After PR #2 merged, `main` moved on with PRs #3, #5 and #6. Merging `main` back 
 | 2026-10-22 | `arena-c3aa0d20` | T5–T7 done; claimed T8; commit `8736995`; PR #2 opened |
 | 2026-10-22 | `arena-c3aa0d20` | PR #2 merged |
 | 2026-10-22 | `arena-c3aa0d20` | `main` advanced (PRs #3/#5/#6); merge conflict hit; claimed T9 and resolved as above |
-| 2026-10-22 | `S-830079CD` | PRs #1, #3, #5, #6 merged; primary dashboard live at the repository root |
+| 2026-10-22 | `S-830079CD` | PRs #1, #3, #5, #6, #7 merged; primary dashboard live at the repository root |
+| 2026-10-22 | `arena-c3aa0d20` | Re-merged `main` after PR #7 (clean), opened PR #8, CI green, merged, Pages rebuilt |
 
 ## Cross-session requests
 
@@ -160,7 +161,8 @@ After PR #2 merged, `main` moved on with PRs #3, #5 and #6. Merging `main` back 
 | PR #3 | https://github.com/sassnarep3-star/SAVINGS1/pull/3 — merged (`9f50b91`), primary site moved to the repository root |
 | PR #5 | https://github.com/sassnarep3-star/SAVINGS1/pull/5 — merged (`6bc6e36`) |
 | PR #6 | https://github.com/sassnarep3-star/SAVINGS1/pull/6 — merged (`4d5f7d8`) |
-| Reconciliation PR | recorded below once opened |
+| PR #7 | https://github.com/sassnarep3-star/SAVINGS1/pull/7 — merged (`88e95e7`), security review added to the primary site |
+| Reconciliation PR | [#8](https://github.com/sassnarep3-star/SAVINGS1/pull/8) — merged 2026-10-22T00:20:19Z as `9edb4d3`, CI `verify` green before merge |
 | GitHub Pages | `main` branch, root (`/`), legacy build, HTTPS enforced |
 | Live URL | https://sassnarep3-star.github.io/SAVINGS1/ · cross-check at `/verified/` |
-| Deploy status | recorded below after the reconciliation merge |
+| Deploy status | Pages build for `9edb4d3` completed with status `built` at 00:20:21Z; `/` (primary) and `/verified/` (cross-check) both serve |
