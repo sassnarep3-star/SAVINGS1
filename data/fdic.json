@@ -28,7 +28,7 @@
       "active": true,
       "base_limit": 250000,
       "expanded_limit": 2500000,
-      "expanded_mechanism": "Axos Insured Deposit Program",
+      "expanded_mechanism": "Axos Insured Deposit Program (up to $2.5M); InsureGuard+ advertises up to $265M through IntraFi",
       "source": "https://api.fdic.gov/banks/institutions?filters=CERT:35546",
       "product_source": "https://www.axosbank.com/personal/bank/axos-one"
     },
