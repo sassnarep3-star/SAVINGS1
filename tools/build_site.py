@@ -12,7 +12,7 @@ import os
 from html import escape
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = os.path.join(ROOT, "data")
+DATA = os.path.join(ROOT, "data", "v2")
 
 accounts = json.load(open(os.path.join(DATA, "accounts.json")))
 projections = json.load(open(os.path.join(DATA, "projections.json")))
@@ -177,20 +177,58 @@ def one_year(acc_row_id, deposit=250000):
 
 
 # ---------------------------------------------------------------- derived facts
-best_tier = max((a for a in accounts["accounts"] if a.get("apy_status") == "verified" and a.get("apy_tiers")),
-                key=lambda a: max(t["apy"] for t in a["apy_tiers"]))
-best_tier_apy = max(t["apy"] for t in best_tier["apy_tiers"])
-flat = [a for a in accounts["accounts"] if a.get("apy_status") == "verified" and not a.get("apy_tiers")]
-best_flat = max(flat, key=lambda a: a["apy_primary"])
+def apy_at(acc, dep):
+    """Tier-aware APY for an arbitrary deposit, from the bank's own tier table."""
+    tiers = acc.get("apy_tiers")
+    if not tiers:
+        return acc.get("apy_primary")
+    best = None
+    for t in tiers:
+        lo = t.get("min") or 0
+        hi = t.get("max")
+        if dep >= lo and (hi is None or dep <= hi):
+            if best is None or t["apy"] > best:
+                best = t["apy"]
+    return best if best is not None else acc.get("apy_primary")
+
+
+def over_cap(acc, dep):
+    """True when the deposit exceeds a ceiling the bank itself states."""
+    txt = (acc.get("max_balance") or "").replace(",", "")
+    if "1000000 per" in txt and dep > 1000000:
+        return True
+    return False
+
+
 verified_accounts = [a for a in accounts["accounts"] if a.get("apy_status") == "verified"]
 unverified_accounts = [a for a in accounts["accounts"] if a.get("apy_status") != "verified"]
 
-i250_best = one_year(best_tier["id"])["interest"]
-i250_flat = one_year(best_flat["id"])["interest"]
-i250_usbank = one_year("usbank-smartly-savings")["interest"]
-i250_pnc = one_year("pnc-standard-savings")["interest"]
-i250_wells = one_year("wells-way2save")["interest"]
+
+def best_at(dep):
+    """Highest year-1 interest at this deposit among accounts with a verified APY."""
+    best = None
+    for a in verified_accounts:
+        if over_cap(a, dep):
+            continue
+        apy = apy_at(a, dep)
+        if apy is None:
+            continue
+        if best is None or apy > best[1]:
+            best = (a, apy)
+    return best
+
+
+best_250 = best_at(250000)
+best_flat = max((a for a in verified_accounts if not a.get("apy_tiers")), key=lambda a: a["apy_primary"])
+i250_best = 250000 * best_250[1] / 100
+i250_flat = 250000 * best_flat["apy_primary"] / 100
+i250_usbank = 250000 * 0.05 / 100
+i250_pnc = 250000 * 0.03 / 100
+i250_wells = 250000 * 0.01 / 100
 i250_natl = 250000 * BENCH["value_pct"] / 100
+n_accounts = len(accounts["accounts"])
+axos_y1 = one_year("axos-year1-intro")["interest"]
+axos_y1_apy = next(r["apy"] for r in projections["rows"] if r["id"] == "axos-year1-intro")
 
 
 def host_list(urls):
@@ -198,19 +236,17 @@ def host_list(urls):
 
 
 # ================================================================ INDEX
-ranked = sorted(verified_accounts, key=lambda a: -(max(t["apy"] for t in a.get("apy_tiers", []))
-                                                  if a.get("apy_tiers") else a["apy_primary"]))
+ranked = sorted(verified_accounts, key=lambda a: -(apy_at(a, 250000) or 0))
 lb_rows = []
-for i, a in enumerate(ranked[:7], 1):
-    apy = max(t["apy"] for t in a["apy_tiers"]) if a.get("apy_tiers") else a["apy_primary"]
-    cell = one_year(a["id"])
+for i, a in enumerate(ranked[:8], 1):
+    apy = apy_at(a, 250000)
     lb_rows.append([
         f'<span class="rank">{i}</span>',
         f'<strong>{esc(a["brand"])}</strong><span class="sub">{esc(a["product"])}</span>',
         pct(apy),
         esc(a.get("apy_as_of") or "—"),
         esc(a.get("apy_scope", "")),
-        usd(cell["interest"]) if cell else "—",
+        usd(250000 * apy / 100),
         badge("verified"),
         src_cell(a["sources"][:1]),
     ])
@@ -221,29 +257,30 @@ idx_body = f"""
 government page during this session. Nothing is copied from a rate aggregator. Where an official page would not
 show a number, the cell is left blank and the item appears on <a href="flagged.html">Flagged for review</a>.</p>
 <p class="meta-line">Snapshot 2026-10-21/22 · projections assume the account is opened <strong>{OPENING}</strong> ·
-reference market New York, NY (ZIP 10001)</p>
+reference market New York, NY (ZIP 10001) · {n_accounts} accounts, {len(verified_accounts)} with a verified APY ·
+merged with the earlier session's high-rate finds and re-verified here</p>
 
 <section>
   <div class="kpis">
     <div class="kpi accent">
-      <div class="label">Best verified APY</div>
-      <div class="value">{pct(best_tier_apy)}</div>
-      <div class="sub">{esc(best_tier["brand"])} Tiered Savings, $250,000–$1,000,000 tier</div>
+      <div class="label">Best standard APY, any balance</div>
+      <div class="value">{pct(best_flat["apy_primary"])}</div>
+      <div class="sub">{esc(best_flat["brand"])} — no tier, no relationship requirement</div>
     </div>
     <div class="kpi">
-      <div class="label">Best flat-rate APY</div>
-      <div class="value">{pct(best_flat["apy_primary"])}</div>
-      <div class="sub">{esc(best_flat["brand"])} High Yield Savings, any balance</div>
+      <div class="label">Best year-1 return on $250,000</div>
+      <div class="value">{usd(axos_y1)}</div>
+      <div class="sub">Axos ONE — 5.00% for six months, then 3.50%; needs the checking bundle</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Highest advertised promo rate</div>
+      <div class="value">5.00%</div>
+      <div class="sub">Axos ONE, first 6 months — needs the checking bundle</div>
     </div>
     <div class="kpi">
       <div class="label">FDIC national savings rate</div>
       <div class="value">{pct(BENCH["value_pct"])}</div>
       <div class="sub">FDIC, as of {esc(BENCH["as_of"])} — the market benchmark</div>
-    </div>
-    <div class="kpi">
-      <div class="label">Year 1 on $250,000</div>
-      <div class="value">{usd(i250_best)}</div>
-      <div class="sub">interest at {pct(best_tier_apy)} · {usd(i250_natl)} at the national average</div>
     </div>
   </div>
 </section>
@@ -252,28 +289,31 @@ reference market New York, NY (ZIP 10001)</p>
   <div class="section-head"><h2>The whole decision in one paragraph</h2>{badge("verified")}</div>
   <div class="callout info">
     <strong>Same $250,000. Same year. Same federal insurance.</strong>
-    {usd(i250_best)} of interest at {pct(best_tier_apy)} ({esc(best_tier["brand"])} top tier),
-    {usd(i250_flat)} at {pct(best_flat["apy_primary"])} ({esc(best_flat["brand"])}),
+    {usd(i250_best)} of interest at {pct(best_250[1])} ({esc(best_250[0]["brand"])}),
+    {usd(i250_natl)} at the FDIC national average of {pct(BENCH["value_pct"])},
     {usd(i250_usbank)} at U.S. Bank's standard 0.05%,
     {usd(i250_pnc)} at PNC's standard 0.03%,
     {usd(i250_wells)} at Wells Fargo's published 0.01%.
+    Add the six-month introductory rates and the best year one on $250,000 is {usd(axos_y1)} at Axos ONE
+    ({pct(axos_y1_apy)} blended) — but only if you run the $1,500-a-month direct deposit and $1,500 average balance
+    through its checking account, and only while the balance sits at or above $250,000.
     The gap between the best verified rate and the worst published branch-bank rate is
     <strong>{usd(i250_best - i250_wells)} a year</strong> on the same insured deposit — about
-    {i250_best / i250_wells:.0f}× the interest. FDIC insurance does not depend on which of these banks you pick,
-    so paying a branch-bank rate is a choice, not a requirement.
+    {axos_y1 / i250_wells:.0f}× the interest. FDIC insurance does not depend on which of these banks you pick,
+    so accepting a branch-bank rate is a choice, not a requirement.
   </div>
 </section>
 
 <section>
   <div class="section-head">
-    <h2>Leaderboard — verified APYs, highest first</h2>
-    <p>Tiered accounts are ranked by their best published tier.</p>
+    <h2>Leaderboard — verified rates at a $250,000 balance, highest first</h2>
+    <p>Ranked by the rate that actually applies to $250,000, not by the headline advertising rate.</p>
   </div>
   {table(
-      ["#", "Bank / account", "APY", "As of", "Rate scope", "Interest on $250k, 1 yr", "Status", "Source"],
+      ["#", "Bank / account", "APY at $250k", "As of", "Rate scope", "Interest on $250k, 1 yr", "Status", "Source"],
       lb_rows, num_cols=(2, 5),
-      caption="Only accounts whose APY was read on the bank's own page are ranked. Chase, Bank of America, Citibank and TD Bank are excluded because their rate tables are ZIP-gated.",
-      foot="Interest is arithmetic on the published APY (see <a href='methodology.html'>method</a>), assuming the rate does not change."
+      caption="Only accounts whose rate was read on the bank's own page are ranked. Chase, Bank of America, Citibank and TD Bank are excluded because their rate tables are ZIP-gated.",
+      foot="Interest is arithmetic on the published APY (<a href='methodology.html'>method</a>), assuming the rate does not change. Axos drops from 4.21% to 3.50% exactly at $250,000 — see the tier note on the rates page."
   )}
 </section>
 
@@ -281,50 +321,50 @@ reference market New York, NY (ZIP 10001)</p>
   <div class="section-head"><h2>Which one is actually best for you</h2></div>
   <div class="grid-3">
     <div class="card">
+      <h3 style="margin-top:0">Best return with no conditions</h3>
+      <p class="note" style="margin-bottom:8px">No bundle, no direct deposit, no promo code, no tier.</p>
+      <p><strong>{esc(best_flat["brand"])} Performance® Savings — {pct(best_flat["apy_primary"])}</strong><br>
+      {usd(i250_flat)} on $250,000 for a year, $0 to open, no minimum, no monthly fee, interest compounded daily.
+      The page prints no effective date for the rate — flagged.</p>
+      <p><a href="rates.html">Compare all {n_accounts} accounts →</a></p>
+    </div>
+    <div class="card">
       <h3 style="margin-top:0">Max FDIC insurance, one bank</h3>
       <p class="note" style="margin-bottom:8px">Best verified rate that still insures the whole balance at one institution.</p>
-      <p><strong>{esc(best_tier["brand"])} Tiered Savings — {pct(best_tier_apy)}</strong><br>
-      $250,000 is covered as a single-owner account; a joint account covers $500,000; a trust with five beneficiaries
-      covers $1,250,000 — but Barclays accepts a maximum of $1,000,000 per account.</p>
+      <p><strong>{esc(best_250[0]["brand"])} — {pct(best_250[1])}</strong><br>
+      $250,000 is covered as a single-owner account, $500,000 as a joint account, and $1,250,000 through a trust with
+      five beneficiaries. Some accounts cap deposits below that — Marcus at $1M per account, Barclays at $1M.</p>
       <p><a href="returns.html">See the FDIC-max placement table →</a></p>
     </div>
     <div class="card">
-      <h3 style="margin-top:0">Highest rate, no conditions</h3>
-      <p class="note" style="margin-bottom:8px">No tier, no relationship products, no direct deposit.</p>
-      <p><strong>{esc(best_flat["brand"])} High Yield Savings — {pct(best_flat["apy_primary"])}</strong><br>
-      No minimum, no monthly fee, FDIC-insured, dated {esc(best_flat.get("apy_as_of"))}. Verify the “Special Member Rates”
-      label at application — the same page also prints 2.85%.</p>
-      <p><a href="flagged.html">Read the rate conflict →</a></p>
-    </div>
-    <div class="card">
-      <h3 style="margin-top:0">Best rate at a branch megabank</h3>
-      <p class="note" style="margin-bottom:8px">If you want a branch and a national app.</p>
-      <p><strong>U.S. Bank Bank Smartly Savings — 3.50%</strong><br>
-      Only with a U.S. Bank checking/Safe Debit/Smartly card and $25,000+ combined qualifying balances; otherwise 0.05%.
-      Deposit $25 is the minimum to open.</p>
-      <p><a href="rates.html">Compare all tiers →</a></p>
+      <h3 style="margin-top:0">Biggest 6-month promo</h3>
+      <p class="note" style="margin-bottom:8px">Highest advertised rate in the whole comparison.</p>
+      <p><strong>Axos ONE — 5.00% for 6 months</strong>, then 4.21% below $250,000 or 3.50% above.
+      Requires the Axos ONE checking bundle: $1,500 in monthly direct deposits plus a $1,500 average daily balance,
+      or $5,000 + $5,000. Miss it and the rate is 1.00%.</p>
+      <p><a href="promotions.html">All verified promos →</a></p>
     </div>
     <div class="card">
       <h3 style="margin-top:0">Best cash bonus</h3>
       <p class="note" style="margin-bottom:8px">One-time money on top of interest.</p>
-      <p><strong>Barclays — $200 for $25,000 held 120 days</strong><br>
-      Offer expires 10/31/2026 and is limited to new Barclays savings customers.
-      SoFi offers up to $400 with eligible direct deposit and a 1.10% six-month APY boost.</p>
+      <p><strong>E*TRADE — up to $800</strong> with promo code SAVE800, account funded by 2027-01-10, plus 4.25%
+      guaranteed for six months. Barclays pays $200 for $25,000 held 120 days (expires 2026-10-31).</p>
       <p><a href="promotions.html">All verified bonuses →</a></p>
     </div>
     <div class="card">
-      <h3 style="margin-top:0">Simplest fully digital</h3>
-      <p class="note" style="margin-bottom:8px">No fee, no minimum, no relationship requirement.</p>
-      <p><strong>Ally Bank — 3.10%</strong> (MFA documented, security guarantee) ·
-      <strong>Marcus — 3.50%</strong> (no fees, $1M per account) ·
-      <strong>Amex — 3.20%</strong> (24/7 phone).</p>
-      <p><a href="security.html">Security comparison →</a></p>
+      <h3 style="margin-top:0">Best rate at a branch megabank</h3>
+      <p class="note" style="margin-bottom:8px">If you want branches and a national app.</p>
+      <p><strong>U.S. Bank Bank Smartly Savings — 3.50%</strong><br>
+      Only with a U.S. Bank checking/Safe Debit/Smartly card and $25,000+ combined qualifying balances; otherwise 0.05%.
+      PNC, Wells Fargo and U.S. Bank standard tiers all sit under 0.10%.</p>
+      <p><a href="rates.html#tiers">Compare all tiers →</a></p>
     </div>
     <div class="card">
       <h3 style="margin-top:0">What is still unproven</h3>
       <p class="note" style="margin-bottom:8px">Read this before you open anything.</p>
-      <p><strong>{len(unverified_accounts)} of {len(accounts["accounts"])} accounts have no publishable APY</strong>,
-      two banks do not state a mobile app on the page, and three branch-bank rate sheets are pinned to a non-New-York ZIP.</p>
+      <p><strong>{len(unverified_accounts)} of {n_accounts} accounts have no publishable APY</strong>,
+      two banks do not state a mobile app on the page, three branch-bank rate sheets are pinned to a non-New-York ZIP,
+      and five of the new high-rate accounts print no effective date.</p>
       <p><a href="flagged.html">Flagged for review →</a></p>
     </div>
   </div>
@@ -334,7 +374,7 @@ reference market New York, NY (ZIP 10001)</p>
   <div class="section-head"><h2>Go deeper</h2></div>
   <div class="grid-3">
     <a class="tile" href="rates.html"><div class="t">Rates &amp; terms</div>
-      <div class="d">All 15 accounts, every published tier, fees, minimums, as-of dates and a source link per row.</div>
+      <div class="d">All {n_accounts} accounts, every published tier, fees, minimums, as-of dates and a source link per row.</div>
       <div class="arrow">Open rates →</div></a>
     <a class="tile" href="returns.html"><div class="t">Return on your deposit</div>
       <div class="d">Interest earned at $10k → $1M over 1, 3 and 5 years, plus the FDIC-max placement table.</div>
@@ -357,7 +397,7 @@ reference market New York, NY (ZIP 10001)</p>
 <div class="callout warn">
   <strong>Read before acting</strong>
   <ul>
-    <li>Every rate here is <em>variable</em> and can change before or after the account is opened. The projections hold the rate constant only to make the comparison possible.</li>
+    <li>Every rate here is <em>variable</em> and can change before or after the account is opened. The projections hold the rate constant only to make the comparison possible. Introductory rates expire — the six-month boosts are shown as separate “derived” rows.</li>
     <li>The projections are arithmetic on published APYs, not bank quotes. Interest is taxable and is reported on Form 1099-INT.</li>
     <li>Branch-bank rate sheets are ZIP-gated. U.S. Bank was read at ZIP 55402, PNC at ZIP 15222 and Wells Fargo at CA 94105 — <a href="flagged.html">flagged</a>.</li>
     <li>FDIC coverage is $250,000 per depositor, per bank, per ownership category. Splitting cash across ownership categories or banks — not picking a famous brand — is what raises coverage.</li>
@@ -366,7 +406,7 @@ reference market New York, NY (ZIP 10001)</p>
 """
 page("index.html", "Savings dashboard — verified national savings rates and FDIC coverage",
      idx_body, "index.html",
-     "Verified savings account rates from Chase, Bank of America, Wells Fargo, Citi, U.S. Bank, PNC, TD, Ally, Marcus, Amex, Capital One, Synchrony, Barclays and SoFi, with FDIC coverage analysis.")
+     f"Verified savings rates from Chase, Bank of America, Wells Fargo, Citibank, U.S. Bank, PNC, TD, Ally, Marcus, American Express, Capital One, Synchrony, Barclays, SoFi, Axos, E*TRADE, Openbank, CIT and EverBank, with FDIC coverage analysis.")
 
 
 # ================================================================ RATES
@@ -417,7 +457,7 @@ bench_rows.append([
 ])
 
 rates_body = f"""
-<h1>Rates &amp; terms — all 15 accounts</h1>
+<h1>Rates &amp; terms — all {n_accounts} accounts</h1>
 <p class="lede">One row per account. The APY column is blank wherever the bank did not publish a fetchable number;
 those rows are still listed so you can see the fee and access rules, and every blank is explained on
 <a href="flagged.html">Flagged for review</a>.</p>
@@ -466,8 +506,8 @@ those rows are still listed so you can see the fee and access rules, and every b
   fetch date is used and the row is flagged). Variable APYs can change the same day you open the account.
 </div>
 """
-page("rates.html", "Savings rates & terms — 15 verified national accounts", rates_body, "rates.html",
-     "Side-by-side APY, fee, minimum and source for 15 national savings accounts, benchmarked against the FDIC national savings rate.")
+page("rates.html", f"Savings rates & terms — all {n_accounts} national accounts", rates_body, "rates.html",
+     f"Side-by-side APY, fee, minimum and source for {n_accounts} national savings accounts, benchmarked against the FDIC national savings rate.")
 
 
 # ================================================================ RETURNS
@@ -485,7 +525,9 @@ def return_table(years):
                 warn = " ⚠" if dep > 250000 else ""
                 cells.append(f"{usd(c['interest'])}{warn}")
         label = f'<strong>{esc(r["bank"])}</strong><span class="sub">{esc(r["label"].split(" — ", 1)[-1])}</span>'
-        apy_txt = ", ".join(pct(x) for x in apys) if apys else "—"
+        apy_txt = ", ".join(pct(x) for x in reversed(apys)) if apys else "—"
+        if len(apys) > 1:
+            apy_txt += ' <span class="sub">by tier</span>' 
         if r["apy_status"] == "unverified":
             apy_txt = '— <span class="badge b-warn">unverified</span>'
         elif r["apy_status"] == "derived":
@@ -550,7 +592,8 @@ returns_body = f"""
 <p class="lede">Interest earned if the account is opened on <strong>{OPENING}</strong> and the published APY does not change.
 Sizes run from $10,000 to $1,000,000 so you can see exactly where more money stops being fully insured at one bank.</p>
 <p class="meta-line">Formula: ending = principal × (1 + APY/100)<sup>years</sup> · APY already includes compounding ·
-{len(projections["rows"])} accounts/rows · {sum(len(r["results"]) for r in projections["rows"])} computed cells</p>
+{n_accounts} accounts · {len(projections["rows"])} projection rows
+(including {len(projections["rows"]) - n_accounts} promotional blends) · {sum(len(r["results"]) for r in projections["rows"])} computed cells</p>
 
 <div class="callout info">
   <strong>Why APY is the right input</strong>
@@ -599,6 +642,22 @@ Sizes run from $10,000 to $1,000,000 so you can see exactly where more money sto
       checking/Safe Debit/Smartly card and $25,000+ in combined qualifying balances.</li>
     </ul>
   </div>
+</section>
+
+<section>
+  <div class="section-head"><h2>How every promotional row was computed</h2>
+    <p>Blended year-one APY = sqrt((1 + promotional APY) × (1 + standard APY)) − 1. Both numbers come from the bank's own page.</p></div>
+  {table(
+      ["Promotional row", "Promotional APY", "Standard APY after it", "Blended year-one APY", "Formula check", "Source"],
+      [[f'<strong>{esc(r["bank"])}</strong><span class="sub">{esc(r["label"].split(" — ", 1)[-1])}</span>',
+        pct(r["blend"][0]), pct(r["blend"][1]), pct(r["apy"]),
+        f'sqrt(1.{(r["blend"][0]*100):04.0f} × 1.{(r["blend"][1]*100):04.0f}) − 1',
+        src_cell(next(a for a in accounts["accounts"] if a["id"] == r["account_id"])["sources"][:1])]
+       for r in projections["rows"] if r.get("blend")],
+      num_cols=(1, 2, 3),
+      caption=f"{len([r for r in projections['rows'] if r.get('blend')])} rows apply a six-month promotion and are labelled “derived” in the tables above; two more derived rows use a fixed published tier (U.S. Bank relationship rate, Marcus referral) and need no blending. Everything else is a single published APY.",
+      foot="Years 3 and 5 compound the first year at the promotional rate and the remaining years at the standard rate, so the promotional rows are not over-credited beyond the six-month window."
+  )}
 </section>
 
 <div class="callout warn">
@@ -713,7 +772,7 @@ and the ceilings that matter if you are placing a large insured balance.</p>
 </section>
 """
 page("rules.html", "Account opening rules, fees and limits", rules_body, "rules.html",
-     "Minimum opening deposits, monthly fees and waivers, balance ceilings and withdrawal rules for 15 national savings accounts.")
+     f"Minimum opening deposits, monthly fees and waivers, balance ceilings and withdrawal rules for {n_accounts} national savings accounts.")
 
 
 # ================================================================ SECURITY
@@ -813,7 +872,7 @@ Security features are the part you cannot — so the table below shows only what
   security program page. For the others, app-level security is unverified in this session and listed as such.
 </div>
 """
-page("security.html", "FDIC insurance & security — 15 verified charters", security_body, "security.html",
+page("security.html", f"FDIC insurance & security — {n_accounts} verified charters", security_body, "security.html",
      "FDIC certificate numbers, active status and asset data for every bank in the comparison, plus published security statements.")
 
 

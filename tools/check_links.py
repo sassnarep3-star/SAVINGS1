@@ -19,7 +19,7 @@ import sys
 import urllib.parse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = os.path.join(ROOT, "data")
+DATA = os.path.join(ROOT, "data", "v2")
 PAGES = ["index.html", "rates.html", "returns.html", "promotions.html", "rules.html",
          "security.html", "flagged.html", "methodology.html"]
 
@@ -80,7 +80,7 @@ def main():
             if "banks.data.fdic.gov/api/institutions" in url:
                 # API query URLs are logged verbatim in banks_fdic.json meta
                 continue
-            problems.append(f"data/{name}: unregistered URL {url}")
+            problems.append(f"data/v2/{name}: unregistered URL {url}")
 
     # ---- 3. every account has a source and every row is in the projections
     accounts = json.load(open(os.path.join(DATA, "accounts.json")))["accounts"]

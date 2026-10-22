@@ -1,0 +1,236 @@
+{
+  "meta": {
+    "source": "FDIC BankFind Suite institutions API (banks.data.fdic.gov). Values are copied verbatim from the API response fetched on 2026-10-22.",
+    "index_as_of": "2026-10-16 (API index 'institutions_20261016090006', createTimestamp 2026-10-16T11:58:03Z)",
+    "units": "ASSET and DEPDOM are reported by the FDIC in thousands of U.S. dollars. Columns on the site convert them to USD billions (value / 1,000,000).",
+    "active_flag": "ACTIVE = 1 means the institution was an active FDIC-insured institution in the snapshot; ACTIVE = 0 marks a closed/merged charter (shown only to explain duplicate name hits).",
+    "lookup_url_pattern": "https://banks.data.fdic.gov/bankfind-suite/bankfind/details/{cert}",
+    "api_query_log": [
+      "https://banks.data.fdic.gov/api/institutions?filters=NAME%3A%22ALLY%20BANK%22&fields=NAME,CERT,ACTIVE,ASSET,CITY,STALP,STNAME,NETINC,DEPDOM&limit=5&format=json",
+      "https://banks.data.fdic.gov/api/institutions?filters=CERT%3A628%20OR%20CERT%3A3510%20OR%20CERT%3A3511&fields=NAME,CERT,ACTIVE,ASSET,DEPDOM,CITY,STALP,STNAME&limit=10&format=json",
+      "https://banks.data.fdic.gov/api/institutions?filters=NAME%3A%22SYNCHRONY%20BANK%22%20OR%20NAME%3A%22GOLDMAN%20SACHS%20BANK%20USA%22%20OR%20NAME%3A%22AMERICAN%20EXPRESS%20NATIONAL%20BANK%22%20OR%20NAME%3A%22CAPITAL%20ONE%2C%20NATIONAL%20ASSOCIATION%22%20OR%20NAME%3A%22U.S.%20BANK%20NATIONAL%20ASSOCIATION%22&fields=NAME,CERT,ACTIVE,ASSET,DEPDOM,CITY,STALP,STNAME&limit=20&format=json",
+      "https://banks.data.fdic.gov/api/institutions?filters=NAME%3A%22AMERICAN%20EXPRESS%20NATIONAL%20BANK%22%20OR%20NAME%3A%22CITIBANK%2C%20NATIONAL%20ASSOCIATION%22%20OR%20NAME%3A%22TRUIST%20BANK%22%20OR%20NAME%3A%22TD%20BANK%2C%20NATIONAL%20ASSOCIATION%22%20OR%20NAME%3A%22PNC%20BANK%2C%20NATIONAL%20ASSOCIATION%22%20OR%20NAME%3A%22SOFI%20BANK%2C%20NATIONAL%20ASSOCIATION%22&fields=NAME,CERT,ACTIVE,ASSET,DEPDOM,CITY,STALP,STNAME&limit=20&format=json",
+      "https://banks.data.fdic.gov/api/institutions?filters=CERT%3A57203%20OR%20CERT%3A27471%20OR%20CERT%3A27314%20OR%20CERT%3A33124&fields=NAME,CERT,ACTIVE,ASSET,DEPDOM,CITY,STALP,STNAME,NETINC&limit=10&format=json",
+      "https://banks.data.fdic.gov/api/institutions?filters=CERT%3A35546%20OR%20CERT%3A34221%20OR%20CERT%3A29950%20OR%20CERT%3A11063%20OR%20CERT%3A34775&fields=NAME,CERT,ACTIVE,ASSET,DEPDOM,CITY,STALP,STNAME&limit=10&format=json"
+    ]
+  },
+  "institutions": [
+    {
+      "cert": 628,
+      "name": "JPMorgan Chase Bank, National Association",
+      "brand": "Chase",
+      "active": 1,
+      "asset_kusd": 4091315000,
+      "depdom_kusd": 2226790000,
+      "city": "Columbus",
+      "state": "OH"
+    },
+    {
+      "cert": 3510,
+      "name": "Bank of America, National Association",
+      "brand": "Bank of America",
+      "active": 1,
+      "asset_kusd": 2654645000,
+      "depdom_kusd": 1983484000,
+      "city": "Charlotte",
+      "state": "NC"
+    },
+    {
+      "cert": 3511,
+      "name": "Wells Fargo Bank, National Association",
+      "brand": "Wells Fargo",
+      "active": 1,
+      "asset_kusd": 1907928000,
+      "depdom_kusd": 1554614000,
+      "city": "Sioux Falls",
+      "state": "SD"
+    },
+    {
+      "cert": 7213,
+      "name": "Citibank, National Association",
+      "brand": "Citibank",
+      "active": 1,
+      "asset_kusd": 1976180000,
+      "depdom_kusd": 896647000,
+      "city": "Sioux Falls",
+      "state": "SD"
+    },
+    {
+      "cert": 6548,
+      "name": "U.S. Bank National Association",
+      "brand": "U.S. Bank",
+      "active": 1,
+      "asset_kusd": 705554946,
+      "depdom_kusd": 532853394,
+      "city": "Cincinnati",
+      "state": "OH"
+    },
+    {
+      "cert": 6384,
+      "name": "PNC Bank, National Association",
+      "brand": "PNC",
+      "active": 1,
+      "asset_kusd": 609771726,
+      "depdom_kusd": 457090936,
+      "city": "Wilmington",
+      "state": "DE"
+    },
+    {
+      "cert": 18409,
+      "name": "TD Bank, National Association",
+      "brand": "TD Bank",
+      "active": 1,
+      "asset_kusd": 342803746,
+      "depdom_kusd": 277668163,
+      "city": "Wilmington",
+      "state": "DE"
+    },
+    {
+      "cert": 57803,
+      "name": "Ally Bank",
+      "brand": "Ally Bank",
+      "active": 1,
+      "asset_kusd": 188184000,
+      "depdom_kusd": 156614000,
+      "city": "Sandy",
+      "state": "UT"
+    },
+    {
+      "cert": 33124,
+      "name": "Goldman Sachs Bank USA",
+      "brand": "Marcus by Goldman Sachs",
+      "active": 1,
+      "asset_kusd": 758788000,
+      "depdom_kusd": 473203000,
+      "city": "New York",
+      "state": "NY"
+    },
+    {
+      "cert": 27471,
+      "name": "American Express National  Bank",
+      "brand": "American Express",
+      "active": 1,
+      "asset_kusd": 213946192,
+      "depdom_kusd": 171554868,
+      "city": "Sandy",
+      "state": "UT",
+      "note": "Name reproduced with the double space exactly as the FDIC API returns it."
+    },
+    {
+      "cert": 4297,
+      "name": "Capital One, National Association",
+      "brand": "Capital One",
+      "active": 1,
+      "asset_kusd": 662157000,
+      "depdom_kusd": 512450000,
+      "city": "Mclean",
+      "state": "VA"
+    },
+    {
+      "cert": 27314,
+      "name": "Synchrony Bank",
+      "brand": "Synchrony",
+      "active": 1,
+      "asset_kusd": 115217000,
+      "depdom_kusd": 85967000,
+      "city": "Draper",
+      "state": "UT"
+    },
+    {
+      "cert": 57203,
+      "name": "Barclays Bank Delaware",
+      "brand": "Barclays US",
+      "active": 1,
+      "asset_kusd": 43454000,
+      "depdom_kusd": 35315000,
+      "city": "Wilmington",
+      "state": "DE"
+    },
+    {
+      "cert": 26881,
+      "name": "SoFi Bank, National Association",
+      "brand": "SoFi",
+      "active": 1,
+      "asset_kusd": 56821411,
+      "depdom_kusd": 46781713,
+      "city": "Cottonwood Heights",
+      "state": "UT"
+    },
+    {
+      "cert": 35546,
+      "name": "Axos Bank",
+      "brand": "Axos",
+      "active": 1,
+      "asset_kusd": 28870387,
+      "depdom_kusd": 24832413,
+      "city": "San Diego",
+      "state": "CA"
+    },
+    {
+      "cert": 34221,
+      "name": "Morgan Stanley Private Bank, National Association",
+      "brand": "E*TRADE from Morgan Stanley",
+      "active": 1,
+      "asset_kusd": 250425000,
+      "depdom_kusd": 211668000,
+      "city": "Purchase",
+      "state": "NY"
+    },
+    {
+      "cert": 29950,
+      "name": "Santander Bank, N.A.",
+      "brand": "Openbank by Santander",
+      "active": 1,
+      "asset_kusd": 103964782,
+      "depdom_kusd": 79059182,
+      "city": "Wilmington",
+      "state": "DE"
+    },
+    {
+      "cert": 11063,
+      "name": "First-Citizens Bank & Trust Company",
+      "brand": "CIT Bank",
+      "active": 1,
+      "asset_kusd": 236317000,
+      "depdom_kusd": 173951000,
+      "city": "Raleigh",
+      "state": "NC"
+    },
+    {
+      "cert": 34775,
+      "name": "EverBank, National Association",
+      "brand": "EverBank",
+      "active": 1,
+      "asset_kusd": 46690554,
+      "depdom_kusd": 37809298,
+      "city": "Jacksonville",
+      "state": "FL"
+    }
+  ],
+  "duplicate_charter_notes": [
+    {
+      "cert": 5134,
+      "name": "U.S. Bank National Association",
+      "active": 0,
+      "city": "Minneapolis",
+      "state": "MN",
+      "note": "Inactive legacy charter returned by the name search; the active charter is certificate 6548."
+    },
+    {
+      "cert": 57485,
+      "name": "Goldman Sachs Bank USA",
+      "active": 0,
+      "city": "Salt Lake City",
+      "state": "UT",
+      "note": "Inactive legacy charter returned by the name search; the active charter is certificate 33124."
+    },
+    {
+      "cert": 7944,
+      "name": "PNC Bank, National Association",
+      "active": 0,
+      "city": "Pittsburgh",
+      "state": "PA",
+      "note": "Inactive legacy charter returned by the name search; the active charter is certificate 6384."
+    }
+  ]
+}

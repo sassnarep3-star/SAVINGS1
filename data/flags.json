@@ -1,0 +1,176 @@
+{
+  "as_of": "2026-10-22",
+  "flags": [
+    {
+      "id": "F01",
+      "severity": "high",
+      "title": "Discover Bank is closed to new savings customers and its FDIC certificate is inactive",
+      "detail": "The Discover online savings page returns 'Page not found', and the FDIC BankFind API lists Discover Bank (Cert #5649, Greenwood, DE) with ACTIVE = 0. Discover merged into Capital One in 2025. Discover is excluded from all return calculations.",
+      "source": "https://api.fdic.gov/banks/institutions?filters=CERT:5649",
+      "second_source": "https://www.discover.com/online-banking/savings-accounts/",
+      "status": "needs review"
+    },
+    {
+      "id": "F02",
+      "severity": "high",
+      "title": "Capital One and Discover deposits are counted together for FDIC coverage",
+      "detail": "Capital One's official product page states that any Capital One or Discover Bank deposit accounts opened on or after May 18, 2025 are immediately counted with other Capital One deposit accounts when determining FDIC coverage. A saver holding both brands does not get two separate $250,000 limits.",
+      "source": "https://www.capitalone.com/bank/savings-accounts/online-performance-savings-account/",
+      "second_source": "https://www.fdic.gov/resources/deposit-insurance/understanding-deposit-insurance",
+      "status": "needs review"
+    },
+    {
+      "id": "F03",
+      "severity": "high",
+      "title": "Axos does not publish the balance cap on its 5.00% introductory rate",
+      "detail": "Axos advertises 'up to 5.00% APY for their first 6 months' but the page reviewed does not state which balances earn it. Its Axos ONE rate table shows an ongoing 4.21% APY on $0-$249,999.99 and 3.50% at $250,000+, with 1.00% if requirements are not met. This study conservatively applies 5.00% to the first $50,000 only; the actual cap must be confirmed at account opening. (Axos's indexed page content references a $49,999.99 cap, but that sentence was not present in the page version read on 2026-10-22.)",
+      "source": "https://www.axosbank.com/personal/bank/savings-accounts",
+      "second_source": "https://www.axosbank.com/personal/bank/axos-one",
+      "status": "needs review"
+    },
+    {
+      "id": "F04",
+      "severity": "high",
+      "title": "Axos standard APY falls to 1.00% if monthly requirements are not met",
+      "detail": "The 4.21% APY on $0-$249,999.99 is a 'boosted' rate that requires an Axos ONE Checking account plus either $1,500 in monthly qualifying direct deposits and a $1,500 average daily balance, or $5,000 in monthly qualifying deposits and a $5,000 average daily balance. The standard rate shown in the same table is 1.00%. Missing a month is expensive.",
+      "source": "https://www.axosbank.com/personal/bank/axos-one",
+      "second_source": null,
+      "status": "needs review"
+    },
+    {
+      "id": "F05",
+      "severity": "high",
+      "title": "SoFi's headline 4.40% is a 6-month boost and excludes the 4.70% SoFi Plus tier",
+      "detail": "The 4.40% figure is 3.30% base plus a 1.10% boost for up to 6 months, requiring eligible direct deposit. SoFi's own rate sheet dated October 20, 2026 lists a separate SoFi Plus member tier paying 4.70% APY on balances up to $20,000 (3.30% above $20,000) for members who pay a monthly subscription fee. The two offers are not the same, and neither rate is permanent.",
+      "source": "https://www.sofi.com/legal/banking-rate-sheet",
+      "second_source": "https://www.sofi.com/banking/high-yield-savings-account/",
+      "status": "needs review"
+    },
+    {
+      "id": "F06",
+      "severity": "medium",
+      "title": "SoFi's $3,000,000 FDIC figure is not SoFi's own insurance",
+      "detail": "SoFi states it provides no more than $250,000 of FDIC insurance per depositor per legal category; any additional coverage (up to $3M) comes from the SoFi Insured Deposit Program and depends on participating banks. Treat the headline $3M as program-dependent, not a direct SoFi limit.",
+      "source": "https://www.sofi.com/banking/high-yield-savings-account/",
+      "second_source": "https://www.fdic.gov/resources/deposit-insurance/understanding-deposit-insurance",
+      "status": "needs review"
+    },
+    {
+      "id": "F07",
+      "severity": "medium",
+      "title": "E*TRADE advertises FDIC coverage up to $500,000 but does not disclose the conditions",
+      "detail": "The E*TRADE product page states bank deposits are 'FDIC-insured up to $500,000 if certain conditions are met' without listing those conditions on the page reviewed. The standard FDIC limit is $250,000 per depositor per bank per ownership category; the extra $250,000 needs a documented mechanism.",
+      "source": "https://us.etrade.com/promo/savings",
+      "second_source": "https://www.fdic.gov/resources/deposit-insurance/understanding-deposit-insurance",
+      "status": "needs review"
+    },
+    {
+      "id": "F08",
+      "severity": "medium",
+      "title": "CIT's standard APY footnote is dated July 1, 2026 while the boost runs through December 15, 2026",
+      "detail": "The CIT Platinum Savings page states standard APYs are accurate as of July 1, 2026 (3.75% on $5,000+), but the BOOST50 promotion began September 29, 2026. The standard tier may have moved in between; confirm on the day of opening. Balances under $5,000 earn only 0.25% standard.",
+      "source": "https://www.cit.com/cit-bank/platinum-savings/boost",
+      "second_source": null,
+      "status": "needs review"
+    },
+    {
+      "id": "F09",
+      "severity": "medium",
+      "title": "Openbank's parent announced a combination with Webster Bank",
+      "detail": "Openbank's home page states 'Santander and Webster Bank are building a stronger bank, together.' Openbank deposits are FDIC-insured through Santander Bank, N.A. (Cert #29950) and are combined with Santander deposits for coverage. Branding, account terms, or insurance mechanics could change; confirm before opening.",
+      "source": "https://www.openbank.us/",
+      "second_source": "https://api.fdic.gov/banks/institutions?filters=CERT:29950",
+      "status": "needs review"
+    },
+    {
+      "id": "F10",
+      "severity": "medium",
+      "title": "Barclays' 3.65% headline applies only to the $250,000-$1,000,000 tier",
+      "detail": "Balances below $250,000 earn 3.50% APY. The account also caps deposits at $1,000,000 and limits customers to 3 Tiered Savings accounts. The $200 bonus expires 10/31/2026 and requires a $25,000 balance held for 120 days.",
+      "source": "https://banking.us.barclays/tiered-savings.html",
+      "second_source": null,
+      "status": "needs review"
+    },
+    {
+      "id": "F11",
+      "severity": "high",
+      "title": "Big Four savings APYs could not be verified from official pages",
+      "detail": "Chase requires a valid 5-digit ZIP code before displaying its rate table. Bank of America's page returns fee and balance figures as placeholders ('$XXXX') to automated readers. Citi's rate table renders a dynamic placeholder (':BLUE_AccSavings_Rate%') even though its footnote dates the APY to 10/21/2026. Wells Fargo does display 0.01% APY, but only for the page's default market (CA 94105), not for New York. Per the no-inference rule, all four APYs are left blank in the tables and excluded from return calculations.",
+      "source": "https://www.chase.com/personal/savings/savings-account/interest-rates",
+      "second_source": "https://www.bankofamerica.com/deposits/savings/savings-accounts/",
+      "status": "needs review"
+    },
+    {
+      "id": "F12",
+      "severity": "low",
+      "title": "Synchrony's 3.55% APY has no effective date next to it",
+      "detail": "The High Yield Savings page displays 3.55% APY but the rate block does not print an effective date. The value was captured on 2026-10-22 and is treated as verified on that date only.",
+      "source": "https://www.synchrony.com/banking/products/hys-core",
+      "second_source": null,
+      "status": "needs review"
+    },
+    {
+      "id": "F13",
+      "severity": "low",
+      "title": "Mobile app existence not confirmed for four banks",
+      "detail": "App availability was verified on official pages for Capital One, Amex, Chase, BofA, Synchrony, SoFi, Axos, CIT, EverBank, E*TRADE, Openbank and Citi (Citi Mobile App). It was NOT confirmed for Ally, Marcus, Barclays or Wells Fargo in this session. Blank does not mean absent; it means unverified.",
+      "source": "https://www.ally.com/bank/view-rates/",
+      "second_source": "https://www.marcus.com/us/en/savings/high-yield-savings",
+      "status": "needs review"
+    },
+    {
+      "id": "F14",
+      "severity": "low",
+      "title": "Banks disagree with the FDIC on the national average savings rate",
+      "detail": "American Express cites 0.37% and Marcus cites 0.40% as the FDIC national savings average, while the FDIC's October 19, 2026 table shows 0.38% for the $2,500 tier. This study uses the FDIC's own 0.38% for all competitiveness calculations.",
+      "source": "https://www.fdic.gov/national-rates-and-rate-caps",
+      "second_source": "https://www.americanexpress.com/en-us/banking/online-savings/high-yield-savings-account/",
+      "status": "needs review"
+    },
+    {
+      "id": "F15",
+      "severity": "low",
+      "title": "Bank of America Advantage Savings fee and minimum balance could not be read",
+      "detail": "The official page renders both values as '$XXXX' placeholders. No fee or minimum is shown in this study for that account, and no value was inferred from third-party sources.",
+      "source": "https://www.bankofamerica.com/deposits/savings/savings-accounts/",
+      "second_source": null,
+      "status": "needs review"
+    },
+    {
+      "id": "F16",
+      "severity": "medium",
+      "title": "Three promotions expire within 10 weeks of the verification date",
+      "detail": "Barclays $200 bonus expires 10/31/2026; CIT BOOST50 ends 12/15/2026; E*TRADE SAVE800 requires funding by 1/10/2027. Rates and offers must be re-checked before opening.",
+      "source": "https://banking.us.barclays/tiered-savings.html",
+      "second_source": "https://www.cit.com/cit-bank/platinum-savings/boost",
+      "status": "needs review"
+    },
+    {
+      "id": "F17",
+      "severity": "low",
+      "title": "Absence of an opening bonus is not proof that none exists",
+      "detail": "For Capital One, Ally, American Express, Synchrony, and EverBank, no bonus appeared on the official page reviewed. These are recorded as 'none found on official page', not as 'no bonus exists'.",
+      "source": "https://www.capitalone.com/bank/savings-accounts/online-performance-savings-account/",
+      "second_source": null,
+      "status": "needs review"
+    },
+    {
+      "id": "F18",
+      "severity": "low",
+      "title": "Every APY in this study is variable unless explicitly called fixed",
+      "detail": "Each bank's disclosure says the savings APY may change at any time before or after the account is opened. Only E*TRADE's 4.25% six-month boost is described as guaranteed for its term.",
+      "source": "https://www.everbank.com/rates",
+      "second_source": "https://www.marcus.com/us/en/savings/high-yield-savings",
+      "status": "needs review"
+    },
+    {
+      "id": "F19",
+      "severity": "medium",
+      "title": "Citi Accelerate Savings is not offered to New York residents",
+      "detail": "Citi's page lists the states and territories where Citi Accelerate Savings is available. New York is not among them; the list ends with 'select markets in Florida and Illinois'. A New York resident can open a Citi Savings account through a branch or online only where eligible, but the higher-yield Accelerate product appears unavailable. Confirm eligibility before applying.",
+      "source": "https://www.citi.com/banking/savings-account",
+      "second_source": null,
+      "status": "needs review"
+    }
+  ]
+}

@@ -4,7 +4,8 @@
     "fetched_on": [
       "2026-10-21",
       "2026-10-22"
-    ]
+    ],
+    "source_count": 40
   },
   "sources": [
     {
@@ -181,6 +182,31 @@
       "url": "https://api.github.com/repos/sassnarep3-star/SAVINGS1",
       "method": "fetched",
       "used_for": "Repository metadata: default branch main, public visibility, Pages enabled"
+    },
+    {
+      "url": "https://www.axosbank.com/personal/bank/axos-one",
+      "method": "fetched",
+      "used_for": "Axos ONE Savings: 4.21% boosted $0-$249,999.99, 3.50% $250,000+, 1.00% if requirements missed, 5.00% first six months, $0 minimum, no monthly/overdraft fee, $1,500 direct deposit + $1,500 average daily balance (or $5,000 + $5,000) to qualify, requirements must post by the 25th, up to $2.5M through the Axos Insured Deposit Program, 95,000 fee-free ATMs"
+    },
+    {
+      "url": "https://us.etrade.com/bank/premium-savings-account",
+      "method": "fetched",
+      "used_for": "E*TRADE Premium Savings (Morgan Stanley Private Bank): 3.75% base as of 10/21/2026, 4.25% guaranteed for six months, $0 minimum, no monthly fee, $10M maximum (entire balance may revert to base above it), SAVE800 bonus up to $800, funding window 2026-09-22 to 2027-01-10"
+    },
+    {
+      "url": "https://www.openbank.us/banking/high-yield-savings-account/",
+      "method": "fetched",
+      "used_for": "Openbank High Yield Savings (Santander): 4.00% standard plus 0.35% six-month new-customer boost = 4.35%, $500 minimum, no checks or debit card, trusted-device requirement, FDIC through Santander Bank N.A. cert 29950"
+    },
+    {
+      "url": "https://www.cit.com/cit-bank/platinum-savings/boost",
+      "method": "fetched",
+      "used_for": "CIT Platinum Savings: 3.75% on $5,000+ and 0.25% below, tiers dated 2026-07-01, BOOST50 raises to 4.25% (0.75% under $5,000) for six months, promo window 2026-09-29 to 2026-12-15, $100 minimum, no monthly fee, boost applies up to $9,999,999"
+    },
+    {
+      "url": "https://www.everbank.com/banking/performance-savings",
+      "method": "fetched",
+      "used_for": "EverBank Performance Savings: 4.20% for new accounts, $0 minimum and no monthly fee, interest compounded daily, mobile deposit up to $50,000/day, compared by the bank with a 0.38% national average"
     }
   ],
   "patterns": [
