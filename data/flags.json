@@ -171,6 +171,15 @@
       "source": "https://www.citi.com/banking/savings-account",
       "second_source": null,
       "status": "needs review"
+    },
+    {
+      "id": "F20",
+      "severity": "medium",
+      "title": "U.S. Bank quotes savings APYs only for the page's default location",
+      "detail": "The Bank Smartly Savings page states APYs are 'effective as of October 21, 2026 for ZIP code' but the ZIP itself is resolved client-side and defaulted to 55402 (Minneapolis) during verification. The advertised 3.50% is a relationship rate that also requires a Bank Smartly Checking/Safe Debit/Visa Signature account and a Combined Qualifying Balance of at least $25,000. No New York rate was verified, so the APY is blank.",
+      "source": "https://www.usbank.com/bank-accounts/savings-accounts/bank-smartly-savings.html",
+      "second_source": "https://api.fdic.gov/banks/institutions?filters=CERT:6548",
+      "status": "needs review"
     }
   ]
 }

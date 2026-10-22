@@ -335,7 +335,7 @@ def build_index():
   <div class="card kpi"><div class="label">Highest 1-year return on $250,000</div><div class="value">{pct(blended_apy(best[1], 250000), 2)}</div><div class="sub">{esc(best[1]['bank'])} · {money(best[0])} interest</div></div>
   <div class="card kpi"><div class="label">FDIC national savings average</div><div class="value">{NATIONAL:.2f}%</div><div class="sub">as of {META['fdic_national_savings_rate_as_of']} · <a href="https://www.fdic.gov/national-rates-and-rate-caps" target="_blank" rel="noopener">FDIC</a></div></div>
   <div class="card kpi"><div class="label">Federal funds target</div><div class="value">{META['fed_funds_target_range']}%</div><div class="sub">after the {META['fed_funds_as_of']} FOMC move · <a href="https://www.federalreserve.gov/monetarypolicy/openmarket.htm" target="_blank" rel="noopener">Federal Reserve</a></div></div>
-  <div class="card kpi"><div class="label">Accounts with a verified APY</div><div class="value">{n_active}<span style="font-size:16px;color:#667085">/{len(ACCOUNTS)}</span></div><div class="sub">4 unverified (Big Four) · 1 closed · {n_flags} flags</div></div>
+  <div class="card kpi"><div class="label">Accounts with a verified APY</div><div class="value">{n_active}<span style="font-size:16px;color:#667085">/{len(ACCOUNTS)}</span></div><div class="sub">5 unverified (Big Four + U.S. Bank) · 1 closed · {n_flags} flags</div></div>
 </div>
 
 <h2>What the data says</h2>
@@ -375,7 +375,7 @@ def build_index():
 
 <h2>Jump to</h2>
 <div class="grid g3">
-  <a class="tile" href="accounts.html"><b>Accounts →</b><span class="small">All 16 products: APY, minimums, fees, FDIC certificate, app, source.</span></a>
+  <a class="tile" href="accounts.html"><b>Accounts →</b><span class="small">All {len(ACCOUNTS)} products: APY, minimums, fees, FDIC certificate, app, source.</span></a>
   <a class="tile" href="returns.html"><b>Returns →</b><span class="small">Interest by deposit size at $1k through $1M, 1-year and 5-year.</span></a>
   <a class="tile" href="fdic.html"><b>FDIC coverage →</b><span class="small">What $250,000 really covers, and how to insure larger balances.</span></a>
   <a class="tile" href="promotions.html"><b>Promotions →</b><span class="small">$800, $400, $200, BOOST50, 5.00% intro and their conditions.</span></a>
@@ -432,7 +432,7 @@ def build_accounts():
 <h2>Accounts excluded</h2>
 <p class="small"><b>Discover Bank Online Savings</b> is excluded: the product page no longer exists and the FDIC lists Discover Bank certificate 5649 as inactive. Capital One, which acquired Discover, states that deposits at the two brands are combined for FDIC coverage. {link('https://api.fdic.gov/banks/institutions?filters=CERT:5649', 'FDIC record')}</p>
 """
-    return page_shell("Accounts", "accounts.html", "All 16 accounts, line by line",
+    return page_shell("Accounts", "accounts.html", f"All {len(ACCOUNTS)} accounts, line by line",
                       "National branch banks and national digital banks, with the rate, minimums, fees, FDIC certificate and app status each verified against the bank's own page.", body)
 
 

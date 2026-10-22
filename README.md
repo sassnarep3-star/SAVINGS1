@@ -13,7 +13,7 @@ A source-linked comparison of nationally available, FDIC-insured savings account
 | Page | What it shows |
 |---|---|
 | **Overview** | Key findings, best 1-year return at $250,000, verification status |
-| **Accounts** | All 17 products: headline APY, post-intro APY, minimums, fees, FDIC certificate, app status, official source |
+| **Accounts** | All 18 products: headline APY, post-intro APY, minimums, fees, FDIC certificate, app status, official source |
 | **Returns** | Interest by deposit size ($1k–$1M), 1-year and 5-year, blended APY, winner at each tier |
 | **Promotions** | Cash bonuses, promo APYs, referral offers, deadlines, exact conditions |
 | **FDIC coverage** | $250k rule, ownership categories, insured vs uninsured amounts, programme coverage |

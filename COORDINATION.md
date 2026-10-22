@@ -24,7 +24,7 @@
 
 | ID | Task | Status | Owner | File scope | Result |
 |----|------|--------|-------|------------|--------|
-| T1 | Verify national-bank savings products: APY, minimums, fees, opening rules | **done** | S-830079CD | `data/accounts.json`, `accounts.html` | 17 products recorded; 12 APYs verified; 4 blank + flagged (Big Four); 1 closed (Discover) |
+| T1 | Verify national-bank savings products: APY, minimums, fees, opening rules | **done** | S-830079CD | `data/accounts.json`, `accounts.html` | 18 products recorded; 12 APYs verified; 5 blank + flagged (Big Four + U.S. Bank); 1 closed (Discover) |
 | T2 | Verify FDIC insurance status per bank + coverage rules | **done** | S-830079CD | `data/fdic.json`, `fdic.html` | 16 active certificates confirmed via `api.fdic.gov`; Discover cert 5649 inactive |
 | T3 | Verify opening bonuses / promotional APYs and terms | **done** | S-830079CD | `data/promotions.json`, `promotions.html` | 16 offers/absences recorded: 6 verified offers, 6 "none found", 4 unverified |
 | T4 | Compute return tables by deposit size (FDIC-limit focus) | **done** | S-830079CD | `scripts/build_site.py`, `returns.html` | 8 deposit tiers, 1-year + 5-year, blended APY, winner per tier |
@@ -89,17 +89,41 @@ Axos 35546 · Morgan Stanley Private Bank 34221 · Santander 29950 · SoFi 26881
 
 Lower-severity items (Synchrony's undated APY, four unverified mobile apps, banks disagreeing with the FDIC on the national average, BofA's unreadable fee, three expiring promotions, absence-of-bonus caveat, variable-rate caveat) are on the same page.
 
+## Parallel session integration
+
+A second session, `arena-c3aa0d20` (branch `arena/c3aa0d20-savings1`, PR #2), built a separate 15-account dashboard in parallel and also recorded itself as the only active session. Both sessions were therefore working blind to each other. `S-830079CD` acted as the final integration session.
+
+**What was preserved**
+
+- The complete `arena/c3aa0d20-savings1` tree (9 HTML pages, `data/*.json`, `tools/*.py`, its `COORDINATION.md` and `README.md`) is archived byte-for-byte at `archive/session-c3aa0d20/`.
+- Its branch history is merged into the integration branch with a merge commit, so no commits are lost.
+- Its PR #2 is closed with a pointer to the integrated build, not deleted.
+
+**What was promoted into the live dataset after independent re-verification**
+
+| Item from PR #2 | Action | Independent check performed |
+|---|---|---|
+| U.S. Bank Bank Smartly Savings | **Added** (APY left blank for New York) | `usbank.com` product page: $25 minimum, $5 fee + waiver, up to 3.50% relationship APY, APY tied to ZIP 55402 default; FDIC cert 6548 confirmed active via `api.fdic.gov` |
+| Ally security centre | **Added** to Ally row | `ally.com/security/`: multi-factor authentication and online/mobile security guarantee |
+| PNC Standard Savings | Not promoted | Rate is location-defaulted (ZIP 15222) and could not be re-verified for New York; record retained in the archive |
+| TD Bank Simple/Signature Savings | Not promoted | TD's own rates table rendered empty in an automated fetch (their session recorded it as unverified) |
+| Barclays Online Savings | Not promoted | My Barclays row covers Tiered Savings; the separate Online Savings product was not re-verified |
+| Chase / BofA / Wells / Citi fee details | Not promoted | Their APY fields were blank/unverified; my rows retain only what I could verify directly |
+
+**Conflict resolution:** no file from the other session was deleted or overwritten in place. The archived tree is the original; the live site remains the `S-830079CD` build. No rebase conflicts occurred because the two branches were merged with an explicit merge commit.
+
 ## Cross-session requests
 
-_None._
+_None outstanding. PR #2 (session `arena-c3aa0d20`) integrated as above._
 
 ## Pull request and deployment
 
 | Item | Value |
 |---|---|
 | Session branch | `arena/830079cd-savings1` |
-| PR | _recorded after creation_ |
-| Merge result | _recorded after merge_ |
+| PR | #1 (merged) · #3 (this branch, root-publish fix) |
+| Merge result | PR #1 merged to main at 2026-10-22T00:10:33Z (commit `442a5e1`); PR #3 pending |
+| Parallel session | PR #2 (`arena/c3aa0d20-savings1`) archived + integrated; closed with explanation |
 | GitHub Pages | main branch, root (`/`) |
 | Live URL | https://sassnarep3-star.github.io/SAVINGS1/ |
 | Deploy status | _recorded after deploy_ |
