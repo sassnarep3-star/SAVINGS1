@@ -67,7 +67,7 @@
       "min_open": "",
       "min_open_status": "unverified",
       "monthly_fee": "",
-      "fee_waiver": "Monthly maintenance fee is waived for six months from account opening for new accounts; thereafter $0 for a statement cycle with the required minimum daily balance, or with an Advantage Relationship Banking\u00ae account, or for a BofA Rewards\u2122 Preferred Plus/Preferred Honors/Premier member, or when an owner is under 25 (fee amount is rendered as a placeholder on the page)",
+      "fee_waiver": "The page states the monthly maintenance fee is waived for the first six months from account opening; the fee amount itself renders as a placeholder ($XXXX) and is not published in the fetched page.",
       "min_to_earn": "",
       "max_balance": "",
       "withdrawal_rules": "",
@@ -76,7 +76,7 @@
       "app_note": "Bank of America mobile banking app offered for iPhone/iPad/Android on the product page",
       "security_note": "",
       "fdic_statement": "Deposit products are FDIC-Insured \u2014 backed by the full faith and credit of the U.S. Government (banner on the product page)",
-      "rules_note": "Open online through the Advantage Savings application flow.",
+      "rules_note": "Open online through the Advantage Savings application flow. The monthly maintenance fee is waived for the first six months from account opening; after that the fee and its waiver conditions are rendered as placeholders on the official page and are not recorded here.",
       "sources": [
         "https://www.bankofamerica.com/deposits/savings/savings-accounts/"
       ]
