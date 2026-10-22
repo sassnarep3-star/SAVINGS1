@@ -122,8 +122,12 @@ _None outstanding. PR #2 (session `arena-c3aa0d20`) integrated as above._
 |---|---|
 | Session branch | `arena/830079cd-savings1` |
 | PR #1 | https://github.com/sassnarep3-star/SAVINGS1/pull/1 — merged 2026-10-22T00:10:33Z as `442a5e1` |
-| PR #3 | https://github.com/sassnarep3-star/SAVINGS1/pull/3 — merged 2026-10-22T00:14:00Z as `9f50b91` (moves output from `docs/` to repo root) |
+| PR #3 | https://github.com/sassnarep3-star/SAVINGS1/pull/3 — merged as `9f50b91` (moves output from `docs/` to repo root) |
+| PR #5 | https://github.com/sassnarep3-star/SAVINGS1/pull/5 — merged as `6bc6e36` (PR/deploy record, account-count label) |
+| PR #6 | https://github.com/sassnarep3-star/SAVINGS1/pull/6 — merged as `4d5f7d8` (U.S. Bank added to FDIC table) |
+| PR #7 | https://github.com/sassnarep3-star/SAVINGS1/pull/7 — merged as `88e95e7` (per-bank app and security review) |
+| PR #9 | https://github.com/sassnarep3-star/SAVINGS1/pull/9 — merged as `4f65343` (unrendered template expression fixed, CI guard added) |
 | Parallel session | PR #2 (`arena/c3aa0d20-savings1`) merged as `4640e47` with its tree archived; closed |
 | GitHub Pages | main branch, root (`/`) |
 | Live URL | https://sassnarep3-star.github.io/SAVINGS1/ |
-| Deploy status | `built` for commit `9f50b91` at 2026-10-22T00:13:48Z; root document and `accounts.html` verified live |
+| Deploy status | every merge above produced a `built` Pages deployment; root, `accounts.html`, `returns.html`, `fdic.html`, `analysis.html` and `flagged.html` verified live |

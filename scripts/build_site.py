@@ -317,6 +317,8 @@ def build_index():
     n_active = len(active_accounts())
     n_flags = len(FLAGS["flags"])
 
+    nc_best = max(((interest(a, 250000, 1.0), a) for a in active_accounts() if not a.get("promo_months")),
+                  key=lambda row: row[0])
     rows = ""
     for i, (val, a) in enumerate(t250[:6], 1):
         rows += f"""<tr>
@@ -337,6 +339,23 @@ def build_index():
   <div class="card kpi"><div class="label">Federal funds target</div><div class="value">{META['fed_funds_target_range']}%</div><div class="sub">after the {META['fed_funds_as_of']} FOMC move · <a href="https://www.federalreserve.gov/monetarypolicy/openmarket.htm" target="_blank" rel="noopener">Federal Reserve</a></div></div>
   <div class="card kpi"><div class="label">Accounts with a verified APY</div><div class="value">{n_active}<span style="font-size:16px;color:#667085">/{len(ACCOUNTS)}</span></div><div class="sub">5 unverified (Big Four + U.S. Bank) · 1 closed · {n_flags} flags</div></div>
 </div>
+
+<h2>Bottom line</h2>
+<div class="grid g2">
+  <div class="card"><h3 style="margin-top:0">Best one-year return — Axos ONE, if you will meet the conditions</h3>
+  <p class="small"><b>{pct(blended_apy(best[1], 250000), 2)}</b> blended in year one on $250,000 ({money(best[0])} of interest), from a 5.00% six-month introductory rate on the first $50,000 and 4.21% above it. The 4.21% ongoing rate needs an Axos ONE checking account plus either $1,500 of monthly direct deposits and a $1,500 average daily balance, or $5,000 of monthly deposits and a $5,000 balance. Miss a month and the rate falls to <b>1.00%</b>.</p>
+  <p>{link('https://www.axosbank.com/personal/bank/axos-one', 'Axos terms')} · <a href="analysis.html">Competitiveness analysis</a></p></div>
+  <div class="card"><h3 style="margin-top:0">Best return with no conditions — EverBank</h3>
+  <p class="small"><b>4.20%</b> on every balance, no monthly fee, $0 to open. That is <b>{money(interest(nc_best[1], 250000, 1.0))}</b> of interest on $250,000 in year one, and it does not depend on a second account, direct deposit, or a promotional deadline.</p>
+  <p>{link('https://www.everbank.com/banking/performance-savings', 'EverBank terms')} · {link('https://www.everbank.com/rates', 'rates')}</p></div>
+  <div class="card"><h3 style="margin-top:0">Best large-brand account — American Express or Capital One, both 3.20%</h3>
+  <p class="small">Both pay <b>3.20%</b> with no minimum and no monthly fee, and both have a verified mobile app. That is well below the online specialists, but it is a straightforward account at a large national bank — the trade-off the Big Four cannot even be compared on, because their savings APYs are not published in a readable form.</p>
+  <p>{link('https://www.americanexpress.com/en-us/banking/online-savings/high-yield-savings-account/', 'Amex terms')} · {link('https://www.capitalone.com/bank/open-an-account/', 'Capital One terms')}</p></div>
+  <div class="card"><h3 style="margin-top:0">If the goal is maximum FDIC coverage — split, don't concentrate</h3>
+  <p class="small">One bank insures $250,000 per depositor per ownership category. Above that, either open accounts at separate banks ($1,000,000 needs four), use joint/trust/IRA categories, or rely on a deposit programme — SoFi advertises up to $3,000,000 and Axos up to $2,500,000 through partner banks. Programme coverage depends on the partners, so treat it as conditional.</p>
+  <p><a href="fdic.html">FDIC coverage detail</a> · <a href="flagged.html">Flagged for review</a></p></div>
+</div>
+<p class="small" style="margin-top:12px">This is a comparison of published terms as of {VERIFIED}, not personal financial advice. Every APY shown is variable and can change after the account is opened.</p>
 
 <h2>What the data says</h2>
 <div class="grid g3">
