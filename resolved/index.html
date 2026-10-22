@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Overview · SAVINGS1 Resolution Layer</title>
+<meta name="description" content="Primary-source resolution layer: ZIP-gated Big Four savings APYs resolved from official regional rate sheets, plus accounts and FDIC coverage routes the main dashboards did not carry.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%94%8E</text></svg>">
+</head>
+<body>
+<header class="site"><div class="wrap"><nav class="nav">
+<a class="brand" href="index.html">RESOLUTION<span>·LAYER</span></a>
+<a class="lnk active" href="index.html">Overview</a><a class="lnk" href="resolved.html">Resolved blanks</a><a class="lnk" href="accounts.html">Added accounts</a><a class="lnk" href="returns.html">Returns</a><a class="lnk" href="coverage.html">Max FDIC coverage</a><a class="lnk" href="flagged.html">Flagged for review</a><a class="lnk" href="sources.html">Sources</a>
+<span class="spacer"></span>
+<a class="lnk" href="../index.html">← Main dashboard</a>
+</nav></div></header>
+<main><div class="wrap">
+<div class="banner"><div><strong>This is the third dashboard in this repository.</strong>
+The <a href="../index.html">main dashboard</a> ranks 18 products and the
+<a href="../verified/index.html">cross-check dashboard</a> independently re-verifies 20.
+This layer does something different: it goes back to the <strong>items those two left blank</strong>
+and resolves them from official regional rate-sheet PDFs and fee schedules, then adds the
+nationally-available accounts neither dataset carried.</div></div>
+<h1>Primary-source resolution layer</h1>
+<p class="lede">Closing the blanks the two published dashboards left open — using the banks' own dated regional rate sheets, fee schedules and disclosure PDFs.</p>
+
+<div class="grid g4">
+  <div class="card kpi"><div class="label">Previously-blank values resolved</div><div class="value">4</div><div class="sub">from official PDFs &amp; fee schedules</div></div>
+  <div class="card kpi"><div class="label">Accounts added</div><div class="value">6</div><div class="sub">carried by neither published dataset</div></div>
+  <div class="card kpi"><div class="label">Highest verified flat APY</div><div class="value">4.25%</div><div class="sub">Barclays Bank Delaware</div></div>
+  <div class="card kpi"><div class="label">New irregularities flagged</div><div class="value">8</div><div class="sub">2 high severity</div></div>
+</div>
+
+<h2>What this layer found</h2>
+<div class="grid g2">
+  <div class="card"><h3 style="margin-top:0">The Big Four rates were never actually unpublished</h3>
+  <p class="small">Both live dashboards report that Chase, Bank of America, Citi and Wells Fargo savings APYs
+  "could not be verified" because the websites gate them behind a ZIP code or render them client-side.
+  That is true of the <em>web pages</em> — but three of these four banks publish the same rates as
+  <strong>dated, market-specific PDF rate sheets</strong> on their own domains, which render perfectly.
+  Chase New York: <b>0.01%</b>. Bank of America New York–Tri-State: <b>0.04%</b>.
+  Wells Fargo Platinum Savings new-customer rate: <b>3.25%</b> on $25,000+.</p>
+  <p class="small"><a href="https://www.chase.com/content/dam/chase-ux/ratesheets/pdfs/rdny1.pdf" target="_blank" rel="noopener">Chase NY rate sheet</a> ·
+  <a href="https://media.bac-assets.com/DigitalDeposit_NY_NY_Tri_State_Area.pdf" target="_blank" rel="noopener">BofA NY–Tri-State rate sheet</a> ·
+  <a href="https://www.wellsfargo.com/fetch-pdf?documentName=Account+Addenda&amp;subProductCode=ANY" target="_blank" rel="noopener">Wells Fargo addenda</a></p></div>
+
+  <div class="card"><h3 style="margin-top:0">The headline that does not appear in its own rate table</h3>
+  <p class="small">Axos advertises "up to 5.00% APY" and the main dashboard ranks it first on that basis.
+  The rate table printed lower on the <em>same</em> Axos page shows the boosted rate for every tier from
+  $0 to $249,999.99 as <b>4.21% APY</b>, and <b>3.50%</b> from $250,000 up. No tier pays 5.00%.
+  Published here as flag <a href="flagged.html">S01</a> rather than silently corrected.</p>
+  <p class="small"><a href="https://www.axosbank.com/personal/bank/axos-one" target="_blank" rel="noopener">Axos ONE page</a></p></div>
+
+  <div class="card"><h3 style="margin-top:0">A 4.25% flat rate with no tier, no clock and no checking bundle</h3>
+  <p class="small">Select Savings from Barclays pays <b>4.25% APY on every balance tier</b> — not an
+  introductory rate, not conditional on a linked checking account, not conditional on a balance threshold.
+  It requires an active AARP membership number at application. A $400 bonus is attached to a $40,000
+  deposit held 120 days, but the offer closes 10/31/2026.</p>
+  <p class="small"><a href="https://banking.us.barclays/select-home/savings.html" target="_blank" rel="noopener">Barclays Select Savings</a></p></div>
+
+  <div class="card"><h3 style="margin-top:0">One bank can insure $1,250,000 — not $250,000</h3>
+  <p class="small">Both live dashboards' coverage tables stop at the $250,000 single-owner and $500,000 joint
+  figures. Since 1 April 2024 the FDIC insures trust accounts at $250,000 per eligible beneficiary up to five
+  beneficiaries, for <b>$1,250,000 per owner, per insured bank</b>. For a max-coverage goal that changes the
+  arithmetic materially — see <a href="coverage.html">Max FDIC coverage</a>.</p>
+  <p class="small"><a href="https://www.fdic.gov/resources/deposit-insurance/brochures/deposits-at-a-glance" target="_blank" rel="noopener">FDIC — Deposit Insurance At A Glance</a></p></div>
+</div>
+
+<h2>Every account in this layer with a verified APY</h2>
+<p class="small">Ranked by published APY. "Year-1 interest on $250,000" is arithmetic on the bank's own
+published APY at the FDIC single-owner limit — it is an illustration, not a quote, and every rate here is
+variable unless the bank states otherwise.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>#</th><th>Bank / product</th><th class="num">APY</th><th>Effective date printed by the bank</th><th class="num">Year-1 interest on $250,000</th><th>Official sources</th></tr></thead>
+<tbody><tr>
+<td><span class="rank">1</span></td>
+<td><b>Barclays Bank Delaware</b><div class="small">Select Savings from Barclays (AARP Digital Banking)</div></td>
+<td class="num"><b>4.25%</b></td>
+<td class="small">APY on all balance tiers is accurate as of 10/07/2026</td>
+<td class="num">$10,625</td>
+<td class="small"><a href="https://banking.us.barclays/select-home/savings.html" target="_blank" rel="noopener">product page</a><br><a href="https://banking.us.barclays/select-home/faqs.html" target="_blank" rel="noopener">app page</a><br><a href="https://banks.data.fdic.gov/bankfind-suite/bankfind/details/57203" target="_blank" rel="noopener">FDIC record</a><br><span class="small">FDIC cert 57203</span></td></tr><tr>
+<td><span class="rank">2</span></td>
+<td><b>U.S. Bank National Association</b><div class="small">Elite Money Market — new-client rate</div></td>
+<td class="num"><b>4.00%</b></td>
+<td class="small">Read on the official product page 2026-10-20 / 2026-10-21; the page states APYs may vary by location</td>
+<td class="num">$10,000</td>
+<td class="small"><a href="https://www.usbank.com/bank-accounts/savings-accounts/elite-money-market.html" target="_blank" rel="noopener">product page</a><br><a href="https://www.usbank.com/bank-accounts/savings-accounts.html" target="_blank" rel="noopener">comparison page</a><br><a href="https://www.usbank.com/dam/en/documents/pdfs/disclosures/consumer-pricing-information.pdf" target="_blank" rel="noopener">pricing (PDF)</a><br><span class="small">FDIC cert 6548</span></td></tr><tr>
+<td><span class="rank">3</span></td>
+<td><b>First-Citizens Bank &amp; Trust Company (CIT Bank division)</b><div class="small">Savings Connect</div></td>
+<td class="num"><b>3.65%</b></td>
+<td class="small">APY accurate as of July 1, 2026 (the date printed in CIT's footnote)</td>
+<td class="num">$9,125</td>
+<td class="small"><a href="https://www.cit.com/cit-bank/bank/savings" target="_blank" rel="noopener">product page</a><br><a href="https://www.cit.com/cit-bank/bank/savings/savings-connect-account" target="_blank" rel="noopener">product detail</a><br><a href="https://www.cit.com/cit-bank/learn/why-cit-bank/fdic-insurance" target="_blank" rel="noopener">FDIC record</a><br><span class="small">FDIC cert 11063</span></td></tr><tr>
+<td><span class="rank">4</span></td>
+<td><b>Wells Fargo Bank, N.A.</b><div class="small">Platinum Savings — new-savings-customer rate</div></td>
+<td class="num"><b>3.25%</b></td>
+<td class="small">Platinum Savings Rate Update, Effective October 7, 2026</td>
+<td class="num">$8,125</td>
+<td class="small"><a href="https://www.wellsfargo.com/fetch-pdf?documentName=Account+Addenda&amp;subProductCode=ANY" target="_blank" rel="noopener">account addenda (PDF)</a><br><a href="https://www.wellsfargo.com/savings-cds/platinum/" target="_blank" rel="noopener">product page</a><br><a href="https://www.wellsfargo.com/savings-cds/rates/" target="_blank" rel="noopener">rates page</a><br><a href="https://www.wellsfargo.com/mobile-online-banking/" target="_blank" rel="noopener">app page</a><br><a href="https://www.wellsfargo.com/privacy-security/fraud/security-tools-and-options/" target="_blank" rel="noopener">security page</a><br><span class="small">FDIC cert 3511</span></td></tr><tr>
+<td><span class="rank">5</span></td>
+<td><b>Barclays Bank Delaware</b><div class="small">Online Savings</div></td>
+<td class="num"><b>3.20%</b></td>
+<td class="small">Read on the official product page 2026-10-22; the page prints no separate effective date for this product</td>
+<td class="num">$8,000</td>
+<td class="small"><a href="https://banking.us.barclays/online-savings.html" target="_blank" rel="noopener">product page</a><br><a href="https://banking.us.barclays/faq.html" target="_blank" rel="noopener">app page</a><br><span class="small">FDIC cert 57203</span></td></tr><tr>
+<td><span class="rank">6</span></td>
+<td><b>BMO Bank N.A. (Alto, formerly BMO Alto)</b><div class="small">Alto Online Savings Account</div></td>
+<td class="num"><b>3.00%</b></td>
+<td class="small">APY as of October 21, 2026 (printed on the product page)</td>
+<td class="num">$7,500</td>
+<td class="small"><a href="https://www.alto.bmo.com/en-us/" target="_blank" rel="noopener">product page</a><br><a href="https://www.alto.bmo.com/en-us/high-yield-online-savings/" target="_blank" rel="noopener">savings detail</a><br><span class="small">FDIC cert 16571</span></td></tr><tr>
+<td><span class="rank">7</span></td>
+<td><b>Bank of America, N.A.</b><div class="small">Advantage Savings</div></td>
+<td class="num"><b>0.04%</b></td>
+<td class="small">Effective as of: October 21, 2026 (New York – Tri-State Area sheet)</td>
+<td class="num">$100</td>
+<td class="small"><a href="https://media.bac-assets.com/DigitalDeposit_NY_NY_Tri_State_Area.pdf" target="_blank" rel="noopener">official rate sheet (PDF)</a><br><a href="https://www.bankofamerica.com/salesservices/deposits/resources/personal-schedule-fees/?request_locale=en_US" target="_blank" rel="noopener">fee schedule</a><br><a href="https://www.bankofamerica.com/deposits/savings/savings-accounts/" target="_blank" rel="noopener">product page</a><br><a href="https://web.bankofamerica.com/en/security/tools-resources/take-your-security-to-the-next-level" target="_blank" rel="noopener">security page</a><br><span class="small">FDIC cert 3510</span></td></tr><tr>
+<td><span class="rank">8</span></td>
+<td><b>JPMorgan Chase Bank, N.A.</b><div class="small">Chase Savings℠</div></td>
+<td class="num"><b>0.01%</b></td>
+<td class="small">RATES IN EFFECT AS OF: Friday, October 16, 2026 (printed on the sheet)</td>
+<td class="num">$25</td>
+<td class="small"><a href="https://www.chase.com/content/dam/chase-ux/ratesheets/pdfs/rdny1.pdf" target="_blank" rel="noopener">official rate sheet (PDF)</a><br><a href="https://www.chase.com/personal/savings/savings-account" target="_blank" rel="noopener">product page</a><br><a href="https://account.chase.com/consumer/banking/savingsoffer" target="_blank" rel="noopener">bonus terms</a><br><a href="https://www.chase.com/digital/mobile-banking" target="_blank" rel="noopener">app page</a><br><a href="https://www.chase.com/digital/resources/privacy-security" target="_blank" rel="noopener">security page</a><br><span class="small">FDIC cert 628</span></td></tr><tr>
+<td><span class="rank">9</span></td>
+<td><b>JPMorgan Chase Bank, N.A.</b><div class="small">Chase Premier Savings℠</div></td>
+<td class="num"><b>0.01%</b></td>
+<td class="small">RATES IN EFFECT AS OF: Friday, October 16, 2026</td>
+<td class="num">$25</td>
+<td class="small"><a href="https://www.chase.com/content/dam/chase-ux/ratesheets/pdfs/rdny1.pdf" target="_blank" rel="noopener">official rate sheet (PDF)</a><br><a href="https://www.chase.com/personal/savings/interest-savings" target="_blank" rel="noopener">product page</a><br><a href="https://www.chase.com/personal/fees/premier-savings" target="_blank" rel="noopener">fees</a><br><span class="small">FDIC cert 628</span></td></tr><tr>
+<td><span class="rank">10</span></td>
+<td><b>Truist Bank</b><div class="small">Truist One Savings</div></td>
+<td class="num"><b>0.01%</b></td>
+<td class="small">Interest rates and APY accurate as of 9/28/2026</td>
+<td class="num">$25</td>
+<td class="small"><a href="https://www.truist.com/savings/truist-one-savings/disclosures-and-fees" target="_blank" rel="noopener">disclosures</a><br><a href="https://www.truist.com/savings/truist-one-savings" target="_blank" rel="noopener">product page</a><br><a href="https://www.truist.com/content/dam/truist-bank/us/en/documents/disclosures/personal/aog-truist-one-savings.pdf" target="_blank" rel="noopener">account overview (PDF)</a><br><span class="small">FDIC cert 9846</span></td></tr></tbody></table></div>
+
+<h2>Items closed against a primary source</h2>
+<div class="grid g2"><div class="card"><h3 style="margin-top:0">R01 — Big Four savings APYs could not be verified from official pages (published as high severity on the live site)</h3>
+<p class="small">Three of the four are now verified from the banks' own dated, market-correct primary documents: Chase Savings 0.01% (New York PDF rate sheet, in effect 2026-10-16), Bank of America Advantage Savings 0.04% (New York – Tri-State rate sheet, effective 2026-10-21), and Wells Fargo Platinum Savings 3.25% for new savings customers with $25,000+ (Consumer Account Addenda, effective 2026-10-07). Only Citi's standard savings APY remains unreadable.</p><p class="small"><a href="https://www.chase.com/content/dam/chase-ux/ratesheets/pdfs/rdny1.pdf" target="_blank" rel="noopener">www.chase.com</a> · <a href="https://media.bac-assets.com/DigitalDeposit_NY_NY_Tri_State_Area.pdf" target="_blank" rel="noopener">media.bac-assets.com</a> · <a href="https://www.wellsfargo.com/fetch-pdf?documentName=Account+Addenda&amp;subProductCode=ANY" target="_blank" rel="noopener">www.wellsfargo.com</a></p></div><div class="card"><h3 style="margin-top:0">R02 — Bank of America Advantage Savings fee and minimum balance could not be read ('$XXXX' placeholders)</h3>
+<p class="small">Both are published in Bank of America's Personal Schedule of Fees, effective August 7, 2026: monthly maintenance fee $8.00, minimum amount to open $100.00, with the fee waived for the first six months from account opening for new accounts.</p><p class="small"><a href="https://www.bankofamerica.com/salesservices/deposits/resources/personal-schedule-fees/?request_locale=en_US" target="_blank" rel="noopener">www.bankofamerica.com</a></p></div><div class="card"><h3 style="margin-top:0">R03 — Mobile app existence not confirmed for Ally, Marcus, Barclays or Wells Fargo</h3>
+<p class="small">All four are confirmed on the banks' own pages. Ally Mobile app with biometric verification and Ally eCheck Deposit; Marcus mobile banking app with fingerprint/face login and 128-bit SSL; Barclays US App (iOS 15+/Android 12+) with mobile check deposit; Wells Fargo Mobile® app with an in-app Security Center.</p><p class="small"><a href="https://www.ally.com/bank/online-banking/" target="_blank" rel="noopener">www.ally.com</a> · <a href="https://www.marcus.com/us/en/marcus-mobile-banking-app" target="_blank" rel="noopener">www.marcus.com</a> · <a href="https://banking.us.barclays/faq.html" target="_blank" rel="noopener">banking.us.barclays</a> · <a href="https://www.wellsfargo.com/mobile-online-banking/" target="_blank" rel="noopener">www.wellsfargo.com</a></p></div><div class="card"><h3 style="margin-top:0">R04 — Security controls could not be verified for Marcus by Goldman Sachs and Wells Fargo</h3>
+<p class="small">Both publish security pages describing account controls. Marcus: multi-factor authentication, SSL/EV SSL encryption, firewalls, around-the-clock network monitoring, biometric app login. Wells Fargo: passkeys, biometric sign-on, voice verification, two-step verification, account alerts and automatic sign-out.</p><p class="small"><a href="https://www.marcus.com/us/en/banking-with-us/security-center" target="_blank" rel="noopener">www.marcus.com</a> · <a href="https://www.wellsfargo.com/privacy-security/fraud/security-tools-and-options/" target="_blank" rel="noopener">www.wellsfargo.com</a></p></div></div>
+
+<h2>Where to go next</h2>
+<div class="grid g3">
+  <a class="tile" href="resolved.html"><b>Resolved blanks →</b><span class="small">The Big Four, line by line, with the PDF each rate came from.</span></a>
+  <a class="tile" href="accounts.html"><b>Added accounts →</b><span class="small">6 nationally-available accounts neither dataset carried.</span></a>
+  <a class="tile" href="returns.html"><b>Returns →</b><span class="small">1, 2, 3 and 5-year interest at seven deposit sizes.</span></a>
+  <a class="tile" href="coverage.html"><b>Max FDIC coverage →</b><span class="small">Single, joint and trust routes to $1.25M at one bank.</span></a>
+  <a class="tile" href="flagged.html"><b>Flagged for review →</b><span class="small">8 new irregularities with source links.</span></a>
+  <a class="tile" href="sources.html"><b>Sources →</b><span class="small">Every URL used, grouped by what it verified.</span></a>
+</div>
+
+</div></main>
+<footer><div class="wrap">
+<p><strong>SAVINGS1 · Resolution Layer</strong> — session <code>S-37CFC7F4</code>, verified 2026-10-22.
+Reference opening date for every return figure: 2026-10-22. Reference market: New York, NY.</p>
+<p>Every value links to the bank's own page or a .gov page. A blank cell means the value could not be read
+from an official source — it is never an estimate. All APYs are variable unless the bank states otherwise.
+This is research, not financial advice.</p>
+<p><a href="../index.html">Main dashboard</a> · <a href="../verified/index.html">Cross-check dashboard</a> · <a href="flagged.html">Flagged for review</a></p>
+</div></footer>
+</body></html>
