@@ -23,7 +23,7 @@
       "id": "F03",
       "severity": "high",
       "title": "Axos does not publish the balance cap on its 5.00% introductory rate",
-      "detail": "Axos advertises 'up to 5.00% APY for their first 6 months' but the page reviewed does not state which balances earn it. Its Axos ONE rate table shows an ongoing 4.21% APY on $0-$249,999.99 and 3.50% at $250,000+, with 1.00% if requirements are not met. This study conservatively applies 5.00% to the first $50,000 only; the actual cap must be confirmed at account opening. (Axos's indexed page content references a $49,999.99 cap, but that sentence was not present in the page version read on 2026-10-22.)",
+      "detail": "Axos advertises 'up to 5.00% APY for their first 6 months' but the page read on 2026-10-22 does not state which balances earn it. Its Axos ONE rate table shows an ongoing 4.21% APY on $0-$249,999.99 and 3.50% at $250,000+, with 1.00% if the monthly requirements are not met. Axos's indexed page content elsewhere refers to a $49,999.99 balance limit, but that sentence was not present in the page version read. Because the cap cannot be confirmed, this study conservatively applies 5.00% to the first $50,000 only; the actual cap must be confirmed at account opening, and a higher cap would raise the return.",
       "source": "https://www.axosbank.com/personal/bank/savings-accounts",
       "second_source": "https://www.axosbank.com/personal/bank/axos-one",
       "status": "needs review"
@@ -95,7 +95,7 @@
       "id": "F11",
       "severity": "high",
       "title": "Big Four savings APYs could not be verified from official pages",
-      "detail": "Chase requires a valid 5-digit ZIP code before displaying its rate table. Bank of America's page returns fee and balance figures as placeholders ('$XXXX') to automated readers. Citi's rate table renders a dynamic placeholder (':BLUE_AccSavings_Rate%') even though its footnote dates the APY to 10/21/2026. Wells Fargo does display 0.01% APY, but only for the page's default market (CA 94105), not for New York. Per the no-inference rule, all four APYs are left blank in the tables and excluded from return calculations.",
+      "detail": "Chase requires a valid 5-digit ZIP code before displaying its rate table. Bank of America's page returns fee and balance figures as placeholders ('$XXXX') to automated readers. Citi's rate table renders a dynamic placeholder (':BLUE_AccSavings_Rate%') even though its footnote dates the APY to 10/21/2026. Wells Fargo displayed 0.01% APY on 2026-10-22, but against the page's default location (CA, ZIP 94105), not New York. Per the no-inference rule, all four APYs are left blank in the tables and excluded from return calculations until a New York market rate can be read.",
       "source": "https://www.chase.com/personal/savings/savings-account/interest-rates",
       "second_source": "https://www.bankofamerica.com/deposits/savings/savings-accounts/",
       "status": "needs review"

@@ -155,17 +155,17 @@ After PR #2 merged, `main` moved on with PRs #3, #5 and #6. Merging `main` back 
 
 | Item | Value |
 |---|---|
-| Session branch | `arena/c3aa0d20-savings1` |
-| PR #1 | https://github.com/sassnarep3-star/SAVINGS1/pull/1 — merged 2026-10-22T00:10:33Z (`442a5e1`) |
+| Session branch | `arena/830079cd-savings1` (integration) · `arena/c3aa0d20-savings1` (independent cross-check) |
+| PR #1 | https://github.com/sassnarep3-star/SAVINGS1/pull/1 — merged 2026-10-22T00:10:33Z as `442a5e1` |
 | PR #2 | https://github.com/sassnarep3-star/SAVINGS1/pull/2 — merged 2026-10-22T00:13:48Z (15-account dashboard) |
-| PR #3 | https://github.com/sassnarep3-star/SAVINGS1/pull/3 — merged (`9f50b91`), primary site moved to the repository root |
-| PR #5 | https://github.com/sassnarep3-star/SAVINGS1/pull/5 — merged (`6bc6e36`) |
-| PR #6 | https://github.com/sassnarep3-star/SAVINGS1/pull/6 — merged (`4d5f7d8`) |
-| PR #7 | https://github.com/sassnarep3-star/SAVINGS1/pull/7 — merged (`88e95e7`), security review added to the primary site |
-| PR #8 | https://github.com/sassnarep3-star/SAVINGS1/pull/8 — merged 2026-10-22T00:20:19Z (`9edb4d3`), cross-check published at `/verified/` |
-| PR #9 | https://github.com/sassnarep3-star/SAVINGS1/pull/9 — merged (`4f65343`), primary-site security table |
-| PR #10 | https://github.com/sassnarep3-star/SAVINGS1/pull/10 — merged (`c29522c`), deploy record for the reconciliation |
-| Reconciliation PR | [#8](https://github.com/sassnarep3-star/SAVINGS1/pull/8) — merged 2026-10-22T00:20:19Z as `9edb4d3`, CI `verify` green before merge; follow-up [#10](https://github.com/sassnarep3-star/SAVINGS1/pull/10) merged as `c29522c` |
-| GitHub Pages | `main` branch, root (`/`), legacy build, HTTPS enforced |
-| Live URL | https://sassnarep3-star.github.io/SAVINGS1/ · cross-check at `/verified/` |
-| Deploy status | Pages builds for `9edb4d3` and `c29522c` completed with status `built`; `/` (primary) and `/verified/` (cross-check) both serve |
+| PR #3 | https://github.com/sassnarep3-star/SAVINGS1/pull/3 — merged as `9f50b91` (primary site moved to repo root) |
+| PR #5 | https://github.com/sassnarep3-star/SAVINGS1/pull/5 — merged as `6bc6e36` (PR/deploy record, account-count label) |
+| PR #6 | https://github.com/sassnarep3-star/SAVINGS1/pull/6 — merged as `4d5f7d8` (U.S. Bank added to FDIC table) |
+| PR #7 | https://github.com/sassnarep3-star/SAVINGS1/pull/7 — merged as `88e95e7` (per-bank app and security review) |
+| PR #8 | https://github.com/sassnarep3-star/SAVINGS1/pull/8 — merged as `9edb4d3` (cross-check published at `/verified/`) |
+| PR #9 | https://github.com/sassnarep3-star/SAVINGS1/pull/9 — merged as `4f65343` (unrendered template expression fixed, CI guard added) |
+| PR #10 | https://github.com/sassnarep3-star/SAVINGS1/pull/10 — merged as `c29522c` (deploy record for the reconciliation) |
+| Parallel session | `arena/c3aa0d20` board preserved; its 20-account build is published at `/verified/` and is not merged into the primary tables |
+| GitHub Pages | `main` branch, root (`/`), HTTPS enforced |
+| Live URL | https://sassnarep3-star.github.io/SAVINGS1/ · cross-check at /verified/ |
+| Deploy status | Pages builds for `9edb4d3`, `c29522c`, `88e95e7` and `4f65343` completed with status `built`; both `/` and `/verified/` serve |
