@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged for review · SAVINGS1</title>
+<meta name="description" content="Verified comparison of national-bank savings accounts: APYs, returns by deposit size, FDIC coverage, promotions, and flagged irregularities.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%8F%A6</text></svg>">
+</head>
+<body>
+<header class="site"><div class="wrap"><nav class="nav">
+<a class="brand" href="index.html">SAVINGS<span>1</span></a>
+<a class="lnk" href="index.html">Overview</a><a class="lnk" href="accounts.html">Accounts</a><a class="lnk" href="returns.html">Returns</a><a class="lnk" href="promotions.html">Promotions</a><a class="lnk" href="fdic.html">FDIC coverage</a><a class="lnk" href="analysis.html">Analysis</a><a class="lnk" href="sources.html">Sources</a><a class="lnk active" href="flagged.html">Flagged for review</a><a class="lnk" href="method.html">Method</a>
+<span class="spacer"></span>
+</nav></div></header>
+<main><div class="wrap">
+<h1>Flagged for review</h1><p class='lede'>Irregularities, conflicts, and values that could not be verified from an official source.</p>
+<div class="banner warn"><div><strong>19 items are published here rather than silently resolved.</strong> Each is either a conflict between two official pages, a value that could not be read from an official page, or a term that materially changes the return. None of them blocks publication; all of them are linked for manual review.</div></div>
+<div class="tablewrap"><table>
+<thead><tr><th>Severity</th><th>Item</th><th>Sources</th><th>Status</th></tr></thead>
+<tbody><tr><td><span class="badge bad">high</span></td>
+<td><b>Discover Bank is closed to new savings customers and its FDIC certificate is inactive</b><div class="small" style="margin-top:6px">The Discover online savings page returns 'Page not found', and the FDIC BankFind API lists Discover Bank (Cert #5649, Greenwood, DE) with ACTIVE = 0. Discover merged into Capital One in 2025. Discover is excluded from all return calculations.</div></td>
+<td><a href="https://api.fdic.gov/banks/institutions?filters=CERT:5649" target="_blank" rel="noopener">primary</a><br><a href="https://www.discover.com/online-banking/savings-accounts/" target="_blank" rel="noopener">secondary</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge bad">high</span></td>
+<td><b>Capital One and Discover deposits are counted together for FDIC coverage</b><div class="small" style="margin-top:6px">Capital One's official product page states that any Capital One or Discover Bank deposit accounts opened on or after May 18, 2025 are immediately counted with other Capital One deposit accounts when determining FDIC coverage. A saver holding both brands does not get two separate $250,000 limits.</div></td>
+<td><a href="https://www.capitalone.com/bank/savings-accounts/online-performance-savings-account/" target="_blank" rel="noopener">primary</a><br><a href="https://www.fdic.gov/resources/deposit-insurance/understanding-deposit-insurance" target="_blank" rel="noopener">secondary</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge bad">high</span></td>
+<td><b>Axos does not publish the balance cap on its 5.00% introductory rate</b><div class="small" style="margin-top:6px">Axos advertises 'up to 5.00% APY for their first 6 months' but the page reviewed does not state which balances earn it. Its Axos ONE rate table shows an ongoing 4.21% APY on $0-$249,999.99 and 3.50% at $250,000+, with 1.00% if requirements are not met. This study conservatively applies 5.00% to the first $50,000 only; the actual cap must be confirmed at account opening. (Axos's indexed page content references a $49,999.99 cap, but that sentence was not present in the page version read on 2026-10-22.)</div></td>
+<td><a href="https://www.axosbank.com/personal/bank/savings-accounts" target="_blank" rel="noopener">primary</a><br><a href="https://www.axosbank.com/personal/bank/axos-one" target="_blank" rel="noopener">secondary</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge bad">high</span></td>
+<td><b>Axos standard APY falls to 1.00% if monthly requirements are not met</b><div class="small" style="margin-top:6px">The 4.21% APY on $0-$249,999.99 is a 'boosted' rate that requires an Axos ONE Checking account plus either $1,500 in monthly qualifying direct deposits and a $1,500 average daily balance, or $5,000 in monthly qualifying deposits and a $5,000 average daily balance. The standard rate shown in the same table is 1.00%. Missing a month is expensive.</div></td>
+<td><a href="https://www.axosbank.com/personal/bank/axos-one" target="_blank" rel="noopener">primary</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge bad">high</span></td>
+<td><b>SoFi's headline 4.40% is a 6-month boost and excludes the 4.70% SoFi Plus tier</b><div class="small" style="margin-top:6px">The 4.40% figure is 3.30% base plus a 1.10% boost for up to 6 months, requiring eligible direct deposit. SoFi's own rate sheet dated October 20, 2026 lists a separate SoFi Plus member tier paying 4.70% APY on balances up to $20,000 (3.30% above $20,000) for members who pay a monthly subscription fee. The two offers are not the same, and neither rate is permanent.</div></td>
+<td><a href="https://www.sofi.com/legal/banking-rate-sheet" target="_blank" rel="noopener">primary</a><br><a href="https://www.sofi.com/banking/high-yield-savings-account/" target="_blank" rel="noopener">secondary</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge warn">medium</span></td>
+<td><b>SoFi's $3,000,000 FDIC figure is not SoFi's own insurance</b><div class="small" style="margin-top:6px">SoFi states it provides no more than $250,000 of FDIC insurance per depositor per legal category; any additional coverage (up to $3M) comes from the SoFi Insured Deposit Program and depends on participating banks. Treat the headline $3M as program-dependent, not a direct SoFi limit.</div></td>
+<td><a href="https://www.sofi.com/banking/high-yield-savings-account/" target="_blank" rel="noopener">primary</a><br><a href="https://www.fdic.gov/resources/deposit-insurance/understanding-deposit-insurance" target="_blank" rel="noopener">secondary</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge warn">medium</span></td>
+<td><b>E*TRADE advertises FDIC coverage up to $500,000 but does not disclose the conditions</b><div class="small" style="margin-top:6px">The E*TRADE product page states bank deposits are 'FDIC-insured up to $500,000 if certain conditions are met' without listing those conditions on the page reviewed. The standard FDIC limit is $250,000 per depositor per bank per ownership category; the extra $250,000 needs a documented mechanism.</div></td>
+<td><a href="https://us.etrade.com/promo/savings" target="_blank" rel="noopener">primary</a><br><a href="https://www.fdic.gov/resources/deposit-insurance/understanding-deposit-insurance" target="_blank" rel="noopener">secondary</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge warn">medium</span></td>
+<td><b>CIT's standard APY footnote is dated July 1, 2026 while the boost runs through December 15, 2026</b><div class="small" style="margin-top:6px">The CIT Platinum Savings page states standard APYs are accurate as of July 1, 2026 (3.75% on $5,000+), but the BOOST50 promotion began September 29, 2026. The standard tier may have moved in between; confirm on the day of opening. Balances under $5,000 earn only 0.25% standard.</div></td>
+<td><a href="https://www.cit.com/cit-bank/platinum-savings/boost" target="_blank" rel="noopener">primary</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge warn">medium</span></td>
+<td><b>Openbank's parent announced a combination with Webster Bank</b><div class="small" style="margin-top:6px">Openbank's home page states 'Santander and Webster Bank are building a stronger bank, together.' Openbank deposits are FDIC-insured through Santander Bank, N.A. (Cert #29950) and are combined with Santander deposits for coverage. Branding, account terms, or insurance mechanics could change; confirm before opening.</div></td>
+<td><a href="https://www.openbank.us/" target="_blank" rel="noopener">primary</a><br><a href="https://api.fdic.gov/banks/institutions?filters=CERT:29950" target="_blank" rel="noopener">secondary</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge warn">medium</span></td>
+<td><b>Barclays' 3.65% headline applies only to the $250,000-$1,000,000 tier</b><div class="small" style="margin-top:6px">Balances below $250,000 earn 3.50% APY. The account also caps deposits at $1,000,000 and limits customers to 3 Tiered Savings accounts. The $200 bonus expires 10/31/2026 and requires a $25,000 balance held for 120 days.</div></td>
+<td><a href="https://banking.us.barclays/tiered-savings.html" target="_blank" rel="noopener">primary</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge bad">high</span></td>
+<td><b>Big Four savings APYs could not be verified from official pages</b><div class="small" style="margin-top:6px">Chase requires a valid 5-digit ZIP code before displaying its rate table. Bank of America's page returns fee and balance figures as placeholders ('$XXXX') to automated readers. Citi's rate table renders a dynamic placeholder (':BLUE_AccSavings_Rate%') even though its footnote dates the APY to 10/21/2026. Wells Fargo does display 0.01% APY, but only for the page's default market (CA 94105), not for New York. Per the no-inference rule, all four APYs are left blank in the tables and excluded from return calculations.</div></td>
+<td><a href="https://www.chase.com/personal/savings/savings-account/interest-rates" target="_blank" rel="noopener">primary</a><br><a href="https://www.bankofamerica.com/deposits/savings/savings-accounts/" target="_blank" rel="noopener">secondary</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge info">low</span></td>
+<td><b>Synchrony's 3.55% APY has no effective date next to it</b><div class="small" style="margin-top:6px">The High Yield Savings page displays 3.55% APY but the rate block does not print an effective date. The value was captured on 2026-10-22 and is treated as verified on that date only.</div></td>
+<td><a href="https://www.synchrony.com/banking/products/hys-core" target="_blank" rel="noopener">primary</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge info">low</span></td>
+<td><b>Mobile app existence not confirmed for four banks</b><div class="small" style="margin-top:6px">App availability was verified on official pages for Capital One, Amex, Chase, BofA, Synchrony, SoFi, Axos, CIT, EverBank, E*TRADE, Openbank and Citi (Citi Mobile App). It was NOT confirmed for Ally, Marcus, Barclays or Wells Fargo in this session. Blank does not mean absent; it means unverified.</div></td>
+<td><a href="https://www.ally.com/bank/view-rates/" target="_blank" rel="noopener">primary</a><br><a href="https://www.marcus.com/us/en/savings/high-yield-savings" target="_blank" rel="noopener">secondary</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge info">low</span></td>
+<td><b>Banks disagree with the FDIC on the national average savings rate</b><div class="small" style="margin-top:6px">American Express cites 0.37% and Marcus cites 0.40% as the FDIC national savings average, while the FDIC's October 19, 2026 table shows 0.38% for the $2,500 tier. This study uses the FDIC's own 0.38% for all competitiveness calculations.</div></td>
+<td><a href="https://www.fdic.gov/national-rates-and-rate-caps" target="_blank" rel="noopener">primary</a><br><a href="https://www.americanexpress.com/en-us/banking/online-savings/high-yield-savings-account/" target="_blank" rel="noopener">secondary</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge info">low</span></td>
+<td><b>Bank of America Advantage Savings fee and minimum balance could not be read</b><div class="small" style="margin-top:6px">The official page renders both values as '$XXXX' placeholders. No fee or minimum is shown in this study for that account, and no value was inferred from third-party sources.</div></td>
+<td><a href="https://www.bankofamerica.com/deposits/savings/savings-accounts/" target="_blank" rel="noopener">primary</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge warn">medium</span></td>
+<td><b>Three promotions expire within 10 weeks of the verification date</b><div class="small" style="margin-top:6px">Barclays $200 bonus expires 10/31/2026; CIT BOOST50 ends 12/15/2026; E*TRADE SAVE800 requires funding by 1/10/2027. Rates and offers must be re-checked before opening.</div></td>
+<td><a href="https://banking.us.barclays/tiered-savings.html" target="_blank" rel="noopener">primary</a><br><a href="https://www.cit.com/cit-bank/platinum-savings/boost" target="_blank" rel="noopener">secondary</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge info">low</span></td>
+<td><b>Absence of an opening bonus is not proof that none exists</b><div class="small" style="margin-top:6px">For Capital One, Ally, American Express, Synchrony, and EverBank, no bonus appeared on the official page reviewed. These are recorded as 'none found on official page', not as 'no bonus exists'.</div></td>
+<td><a href="https://www.capitalone.com/bank/savings-accounts/online-performance-savings-account/" target="_blank" rel="noopener">primary</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge info">low</span></td>
+<td><b>Every APY in this study is variable unless explicitly called fixed</b><div class="small" style="margin-top:6px">Each bank's disclosure says the savings APY may change at any time before or after the account is opened. Only E*TRADE's 4.25% six-month boost is described as guaranteed for its term.</div></td>
+<td><a href="https://www.everbank.com/rates" target="_blank" rel="noopener">primary</a><br><a href="https://www.marcus.com/us/en/savings/high-yield-savings" target="_blank" rel="noopener">secondary</a></td>
+<td><span class="badge info">needs review</span></td></tr><tr><td><span class="badge warn">medium</span></td>
+<td><b>Citi Accelerate Savings is not offered to New York residents</b><div class="small" style="margin-top:6px">Citi's page lists the states and territories where Citi Accelerate Savings is available. New York is not among them; the list ends with 'select markets in Florida and Illinois'. A New York resident can open a Citi Savings account through a branch or online only where eligible, but the higher-yield Accelerate product appears unavailable. Confirm eligibility before applying.</div></td>
+<td><a href="https://www.citi.com/banking/savings-account" target="_blank" rel="noopener">primary</a></td>
+<td><span class="badge info">needs review</span></td></tr></tbody></table></div>
+
+<h2>How unverified values are shown</h2>
+<div class="card"><p class="small">In the tables, an unverified value appears as <span class="unv">—</span> in red, never as an estimate. A blank means “this could not be confirmed from an official source on 2026-10-22”, not zero and not “none”. The most consequential blanks are the four Big Four APYs, which are excluded from every return calculation rather than sourced from a comparison site.</p></div>
+
+</div></main>
+<footer><div class="wrap">
+<p><strong>SAVINGS1</strong> — independent, source-linked comparison built 2026-10-22. Account opening date used for all return math: 2026-10-22.</p>
+<p>Rates change daily. Every figure links to the official page it came from; blank cells are unverified and listed on the <a href="flagged.html">Flagged for review</a> page. This is research, not financial advice.</p>
+</div></footer>
+<script src="assets/app.js"></script>
+</body></html>

@@ -1,0 +1,43 @@
+name: Verify data and site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Rebuild site from data
+        run: python3 scripts/build_site.py
+
+      - name: Fail if committed site is stale
+        run: |
+          if [ -n "$(git status --porcelain docs)" ]; then
+            echo "::error::docs/ is out of date. Run python3 scripts/build_site.py and commit the result."
+            git --no-pager diff --stat docs
+            exit 1
+          fi
+
+      - name: Verify sources, dates, and links
+        run: python3 scripts/verify_data.py
+
+      - name: Check for unresolved placeholders
+        run: |
+          if grep -rnE "TODO|FIXME|Lorem ipsum" docs/ ; then
+            echo "::error::Unresolved placeholder found in published site."
+            exit 1
+          fi
+          echo "No placeholders."
